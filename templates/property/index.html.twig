@@ -1,0 +1,70 @@
+{% extends 'base.html.twig' %}
+
+{% block title 'Acheter ou vendre un bien' %}
+
+{% block body %}
+    <div class="container mt-4">
+        <div class="jumbotron"> 
+            <div class="container">
+                <button id="togg2" class="btn btn-primary">Afficher / Cacher les options de recherche</button>
+                <br><br>
+                {{ form_start(form) }}
+                    <div class="form_row">
+                        <div id="d2">    
+                            <div class="row">
+                                <div class="col-md-5">{{ form_row(form.minSurface) }}</div>
+                                <div class="col-md-5">{{ form_row(form.maxPrice) }}</div>
+                            </div>
+                            <div class="row">
+                                <p>Options :</p>
+                                <div>{{ form_row(form.options)}}</div>
+                                <p>Agences :</p>
+                                <div>{{ form_row(form.agences)}}</div>
+                            </div>
+                            
+                            <div class="col">
+                                <button class="btn btn-primary">Rechercher</button>
+                            </div>
+                        </div>
+                    </div>
+                {{ form_end(form) }}
+            </div>
+        </div>
+    </div>
+
+    <br>
+    <div class="container mt-4">
+        <h1>Voir tous les biens</h1>
+
+        <div class="row">
+            {% for property in properties %}
+                <div class="col-md-4">
+                    {% include 'property/_property.html.twig' %}
+                </div>
+            {% endfor %}
+        </div>
+        <div class="pagination">
+            {{ knp_pagination_render(properties) }} 
+        </div> 
+    </div>
+
+    <style>
+    .pagination {
+        justify-content: center;
+    }
+
+    </style>
+
+    <script>
+        d2.style.display = "none";
+        function togg(){
+            if(getComputedStyle(d2).display != "none"){
+                d2.style.display = "none";
+            } else {
+                d2.style.display = "block";
+            }
+        };
+        togg2.onclick = togg;
+    </script>
+  
+{% endblock %}

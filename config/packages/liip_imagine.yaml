@@ -1,0 +1,20 @@
+liip_imagine:
+    # valid drivers options include "gd" or "gmagick" or "imagick"
+    driver: "gd"
+    filter_sets:
+        thumb:
+            quality: 75
+            filters :
+                thumbnail: 
+                    size:          [360, 230]
+                    mode:          outbound 
+                    # { size: [360, 230], mode: outbound }
+                    
+        medium:
+            quality: 75
+            filters:
+                thumbnail:
+                    size:          [800, 530]
+                    mode:          outbound 
+
+# "ext-gd": "*", dans le composer.json

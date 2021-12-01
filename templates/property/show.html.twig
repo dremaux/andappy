@@ -1,0 +1,89 @@
+{% extends 'base.html.twig' %}
+
+{% block title property.title %}
+
+{% block body %}
+
+    <div class="container mt-4">
+        <div class="row">
+            <div class="col-md-7">
+                {% if property.filename %}
+                    <img src="{{ vich_uploader_asset(property, 'imageFile') }}" alt="card-img-top" style="width: 700px; height:430px;">
+                {% else %}
+                    <img src="{{ '/images/properties/nophoto.jpg' }}" alt="card-img-top" style="width: 650px; height:475px;">
+                {% endif %}
+            </div>
+            <div class="col-md-4">
+            </br></br></br></br></br>
+                <h1>{{ property.title }}</h1>
+                <h2>{{ property.rooms }} pièces - {{ property.surface }} m²</h2>
+                <div class="text-primary" style="font-size: 2rem; font-weight: bold;">{{ property.formatedPrice }} €</div>
+            </div>
+        </div>
+        </br></br>
+        <nav class="nav nav-tabs" id="tabs"></nav> 
+
+        <p>
+        {{ property.description | nl2br }}
+        </P>
+
+        <div class="row">
+            <div class="col-md-8">
+                <h2>Caractéristiques</h2>
+                <table class="table table-striped">
+                    <tr>
+                        <td>Surface Habitable</td>
+                        <td>{{ property.surface }} m²</td>
+                    </tr>
+                    <tr>
+                        <td>Pièces</td>
+                        <td>{{ property.rooms }}</td>
+                    </tr>
+                    <tr>
+                        <td>Chambres</td>
+                        <td>{{ property.bedrooms }}</td>
+                    </tr>
+                    <tr>
+                        <td>Etage</td>
+                        <td>{{ property.floor }}</td>
+                    </tr>
+                    <tr>
+                        <td>Chaffage</td>
+                        <td>{{ property.heatType }}</td>
+                    </tr>
+                </table>
+            </div>
+            <div class="col-md-4">
+                <h2>Spécificité(s)</h2>
+                <ul class="list-group">
+                    {% for option in property.options %}
+                    <li class="list-group-item">{{ option.name }}</li>
+                    {% endfor %}
+            </div>
+        </div>
+
+        <div id="contactForm" class="mt-4">
+            <h3>Contacter une Agence</h3>
+                {{form_start(form)}}
+                <div class="row">
+                    <p>Selectionné une ou plusieurs agences :</p>
+                    <div class="col">{{ form_row(form.agences) }}</div>
+                </div>
+                <div class="row">
+                    <div class="col">{{ form_row(form.firstname) }}</div>
+                    <div class="col">{{ form_row(form.lastname) }}</div>
+                </div>
+                <div class="row">
+                    <div class="col">{{ form_row(form.phone) }}</div>
+                    <div class="col">{{ form_row(form.email) }}</div>
+                </div>
+                
+                {{ form_rest(form) }}
+                <div class="form-group">
+                    <button class="btn btn-primary">Envoyer</button>
+                    <br><br>
+                </div>
+            {{ form_end(form) }}   
+        </div>
+    </div>
+{% endblock %}

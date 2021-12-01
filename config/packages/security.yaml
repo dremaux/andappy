@@ -1,0 +1,29 @@
+# config/packages/security.yaml
+security:
+    providers:
+        from_database:
+            entity:
+                class: App\Entity\User
+                property: username
+        
+    firewalls:
+        dev:
+            pattern: ^/(_(profiler|wdt)|css|images|js)/
+            security: false
+        main:
+            anonymous: true
+            logout:
+                path: /logout
+                target: /
+
+            form_login: 
+                check_path: login
+            
+    access_control:
+        - { path: ^/admin, roles: ROLE_ADMIN }
+        # - { path: ^/profile, roles: ROLE_USER }
+        
+    encoders: # plaintext
+        App\Entity\User: 
+            algorithm: bcrypt
+            cost: 12    
