@@ -7,22 +7,16 @@ namespace <?= $namespace; ?>;
 class <?= $class_name; ?> extends <?= $parent_class_name; ?><?= "\n" ?>
 {
 <?php if ($will_verify_email): ?>
-    private $emailVerifier;
+    private <?= $generator->getPropertyType($email_verifier_class_details) ?>$emailVerifier;
 
-    public function __construct(EmailVerifier $emailVerifier)
+    public function __construct(<?= $email_verifier_class_details->getShortName() ?> $emailVerifier)
     {
         $this->emailVerifier = $emailVerifier;
     }
 
 <?php endif; ?>
-<?php if ($use_attributes) { ?>
-    #[Route('<?= $route_path ?>', name: '<?= $route_name ?>')]
-<?php } else { ?>
-    /**
-     * @Route("<?= $route_path ?>", name="<?= $route_name ?>")
-     */
-<?php } ?>
-    public function register(Request $request, UserPasswordEncoderInterface $passwordEncoder<?= $authenticator_full_class_name ? sprintf(', GuardAuthenticatorHandler $guardHandler, %s $authenticator', $authenticator_class_name) : '' ?>): Response
+<?= $generator->generateRouteForControllerMethod($route_path, $route_name) ?>
+    public function register(Request $request, <?= $password_hasher_class_details->getShortName() ?> <?= $password_hasher_variable_name ?><?= $authenticator_full_class_name ? sprintf(', %s %s, %s $authenticator', ($use_new_authenticator_system ? 'UserAuthenticatorInterface' : 'GuardAuthenticatorHandler'), ($use_new_authenticator_system ? '$userAuthenticator' : '$guardHandler'), $authenticator_class_name) : '' ?>, EntityManagerInterface $entityManager): Response
     {
         $user = new <?= $user_class_name ?>();
         $form = $this->createForm(<?= $form_class_name ?>::class, $user);
@@ -31,13 +25,12 @@ class <?= $class_name; ?> extends <?= $parent_class_name; ?><?= "\n" ?>
         if ($form->isSubmitted() && $form->isValid()) {
             // encode the plain password
             $user->set<?= ucfirst($password_field) ?>(
-                $passwordEncoder->encodePassword(
+            <?= $password_hasher_variable_name ?>-><?= $use_password_hasher ? 'hashPassword' : 'encodePassword' ?>(
                     $user,
                     $form->get('plainPassword')->getData()
                 )
             );
 
-            $entityManager = $this->getDoctrine()->getManager();
             $entityManager->persist($user);
             $entityManager->flush();
 <?php if ($will_verify_email): ?>
@@ -54,12 +47,20 @@ class <?= $class_name; ?> extends <?= $parent_class_name; ?><?= "\n" ?>
             // do anything else you need here, like send an email
 
 <?php if ($authenticator_full_class_name): ?>
+<?php if ($use_new_authenticator_system): ?>
+            return $userAuthenticator->authenticateUser(
+                $user,
+                $authenticator,
+                $request
+            );
+<?php else: ?>
             return $guardHandler->authenticateUserAndHandleSuccess(
                 $user,
                 $request,
                 $authenticator,
                 '<?= $firewall_name; ?>' // firewall name in security.yaml
             );
+<?php endif; ?>
 <?php else: ?>
             return $this->redirectToRoute('<?= $redirect_route_name ?>');
 <?php endif; ?>
@@ -71,13 +72,7 @@ class <?= $class_name; ?> extends <?= $parent_class_name; ?><?= "\n" ?>
     }
 <?php if ($will_verify_email): ?>
 
-<?php if ($use_attributes) { ?>
-    #[Route('/verify/email', name: 'app_verify_email')]
-<?php } else { ?>
-    /**
-     * @Route("/verify/email", name="app_verify_email")
-     */
-<?php } ?>
+<?= $generator->generateRouteForControllerMethod('/verify/email', 'app_verify_email') ?>
     public function verifyUserEmail(Request $request<?= $verify_email_anonymously ? sprintf(', %s %s', $repository_class_name, $repository_var) : null ?>): Response
     {
 <?php if (!$verify_email_anonymously): ?>

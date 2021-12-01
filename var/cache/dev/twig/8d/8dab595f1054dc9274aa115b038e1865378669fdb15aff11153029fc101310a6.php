@@ -165,6 +165,6 @@ class __TwigTemplate_24d24d0b9c568e56803475af47bcf451be40509a25248a5111678e788a4
     </div>
 </div>        
 
-{% endblock %}", "pages/home.html.twig", "C:\\Users\\Lucas.DREMAUX\\Desktop\\clone\\templates\\pages\\home.html.twig");
+{% endblock %}", "pages/home.html.twig", "C:\\Users\\Lucas.DREMAUX\\Documents\\GitHub\\andappy\\templates\\pages\\home.html.twig");
     }
 }

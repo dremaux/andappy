@@ -60,6 +60,26 @@ final class CacheCompatibilityPass implements CompilerPassInterface
             assert($factoryDefinition instanceof Definition);
             $aliasId = (string) $factoryDefinition->getArgument(1);
             $this->wrapIfNecessary($container, $aliasId, (string) $container->getAlias($aliasId), false);
+            foreach ($factoryDefinition->getMethodCalls() as $factoryMethodCall) {
+                if ($factoryMethodCall[0] !== 'setRegion') {
+                    continue;
+                }
+
+                $regionDefinition = $container->getDefinition($factoryMethodCall[1][0]);
+
+                // We don't know how to adjust custom region classes
+                if ($regionDefinition->getClass() !== '%doctrine.orm.second_level_cache.default_region.class%') {
+                    continue;
+                }
+
+                $driverId = (string) $regionDefinition->getArgument(1);
+                if (! $container->hasAlias($driverId)) {
+                    continue;
+                }
+
+                $this->wrapIfNecessary($container, $driverId, (string) $container->getAlias($driverId), false);
+            }
+
             break;
         }
     }

@@ -35,7 +35,7 @@ class OrmConfig
     }
     
     /**
-     * Auto generate mode possible values are: "NEVER", "ALWAYS", "FILE_NOT_EXISTS", "EVAL"
+     * Auto generate mode possible values are: "NEVER", "ALWAYS", "FILE_NOT_EXISTS", "EVAL", "FILE_NOT_EXISTS_OR_CHANGED"
      * @default false
      * @param ParamConfigurator|mixed $value
      * @return $this

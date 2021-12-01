@@ -248,8 +248,9 @@ class ContextListener extends AbstractListener
                     $context = ['provider' => \get_class($provider), 'username' => method_exists($refreshedUser, 'getUserIdentifier') ? $refreshedUser->getUserIdentifier() : $refreshedUser->getUsername()];
 
                     if ($token instanceof SwitchUserToken) {
-                        // @deprecated since Symfony 5.3, change to $token->getUserIdentifier() in 6.0
-                        $context['impersonator_username'] = method_exists($token, 'getUserIdentifier') ? $token->getUserIdentifier() : $token->getOriginalToken()->getUsername();
+                        $originalToken = $token->getOriginalToken();
+                        // @deprecated since Symfony 5.3, change to $originalToken->getUserIdentifier() in 6.0
+                        $context['impersonator_username'] = method_exists($originalToken, 'getUserIdentifier') ? $originalToken->getUserIdentifier() : $originalToken->getUsername();
                     }
 
                     $this->logger->debug('User was reloaded from a user provider.', $context);
@@ -292,7 +293,7 @@ class ContextListener extends AbstractListener
         $prevUnserializeHandler = ini_set('unserialize_callback_func', __CLASS__.'::handleUnserializeCallback');
         $prevErrorHandler = set_error_handler(function ($type, $msg, $file, $line, $context = []) use (&$prevErrorHandler) {
             if (__FILE__ === $file) {
-                throw new \ErrorException($msg, 0x37313bc, $type, $file, $line);
+                throw new \ErrorException($msg, 0x37313BC, $type, $file, $line);
             }
 
             return $prevErrorHandler ? $prevErrorHandler($type, $msg, $file, $line, $context) : false;
@@ -305,7 +306,7 @@ class ContextListener extends AbstractListener
         restore_error_handler();
         ini_set('unserialize_callback_func', $prevUnserializeHandler);
         if ($e) {
-            if (!$e instanceof \ErrorException || 0x37313bc !== $e->getCode()) {
+            if (!$e instanceof \ErrorException || 0x37313BC !== $e->getCode()) {
                 throw $e;
             }
             if ($this->logger) {
@@ -321,7 +322,7 @@ class ContextListener extends AbstractListener
      */
     public static function handleUnserializeCallback(string $class)
     {
-        throw new \ErrorException('Class not found: '.$class, 0x37313bc);
+        throw new \ErrorException('Class not found: '.$class, 0x37313BC);
     }
 
     public function setRememberMeServices(RememberMeServicesInterface $rememberMeServices)
