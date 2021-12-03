@@ -5,7 +5,7 @@
         'type' => 'project',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
-        'reference' => '2b1cbc7c67a5d1019c59f972deca0f69bf1edffc',
+        'reference' => '56272b8918379ba7242cb68dc68f7bcd98b75b45',
         'name' => '__root__',
         'dev' => true,
     ),
@@ -16,7 +16,7 @@
             'type' => 'project',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),
-            'reference' => '2b1cbc7c67a5d1019c59f972deca0f69bf1edffc',
+            'reference' => '56272b8918379ba7242cb68dc68f7bcd98b75b45',
             'dev_requirement' => false,
         ),
         'cocur/slugify' => array(

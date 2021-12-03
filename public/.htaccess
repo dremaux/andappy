@@ -1,0 +1,12 @@
+< SiModule mod_rewrite.c>
+    Options - Multivues
+    RewriteEngine On
+    RewriteCond  %{REQUEST_FILENAME}  !-f
+    RewriteRule  ^(.*)$  index.php  [QSA,L]
+</ IfModule >
+
+< SiModule !mod_rewrite.c>
+    < SiModule alias_module.c>
+        RedirectMatch 302 ^/$ /index.php/
+    </ IfModule >
+</ IfModule >
