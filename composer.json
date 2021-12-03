@@ -91,8 +91,9 @@
             "assets:install %PUBLIC_DIR%": "symfony-cmd"
         },
         "post-install-cmd": [
+            "php artisan clear-compiled",
             "@auto-scripts",
-            "chmod -R 775 public/"
+            "chmod -R 777 public/"
         ],
         "post-update-cmd": [
             "@auto-scripts"
