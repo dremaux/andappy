@@ -1482,17 +1482,17 @@
         },
         {
             "name": "doctrine/orm",
-            "version": "2.10.2",
-            "version_normalized": "2.10.2.0",
+            "version": "2.10.3",
+            "version_normalized": "2.10.3.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/doctrine/orm.git",
-                "reference": "81d472f6f96b8b571cafefe8d2fef89ed9446a62"
+                "reference": "7b242753466508e1dd10f67c1baee95785f845c1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/doctrine/orm/zipball/81d472f6f96b8b571cafefe8d2fef89ed9446a62",
-                "reference": "81d472f6f96b8b571cafefe8d2fef89ed9446a62",
+                "url": "https://api.github.com/repos/doctrine/orm/zipball/7b242753466508e1dd10f67c1baee95785f845c1",
+                "reference": "7b242753466508e1dd10f67c1baee95785f845c1",
                 "shasum": ""
             },
             "require": {
@@ -1522,18 +1522,18 @@
                 "doctrine/annotations": "^1.13",
                 "doctrine/coding-standard": "^9.0",
                 "phpbench/phpbench": "^0.16.10 || ^1.0",
-                "phpstan/phpstan": "0.12.99",
+                "phpstan/phpstan": "1.2.0",
                 "phpunit/phpunit": "^7.5 || ^8.5 || ^9.4",
                 "squizlabs/php_codesniffer": "3.6.1",
                 "symfony/cache": "^4.4 || ^5.2",
                 "symfony/yaml": "^3.4 || ^4.0 || ^5.0 || ^6.0",
-                "vimeo/psalm": "4.10.0"
+                "vimeo/psalm": "4.13.1"
             },
             "suggest": {
                 "symfony/cache": "Provides cache support for Setup Tool with doctrine/cache 2.0",
                 "symfony/yaml": "If you want to use YAML Metadata Mapping Driver"
             },
-            "time": "2021-10-21T17:57:02+00:00",
+            "time": "2021-12-03T12:27:05+00:00",
             "bin": [
                 "bin/doctrine"
             ],
@@ -1578,7 +1578,7 @@
             ],
             "support": {
                 "issues": "https://github.com/doctrine/orm/issues",
-                "source": "https://github.com/doctrine/orm/tree/2.10.2"
+                "source": "https://github.com/doctrine/orm/tree/2.10.3"
             },
             "install-path": "../doctrine/orm"
         },
@@ -2242,46 +2242,45 @@
         },
         {
             "name": "laminas/laminas-code",
-            "version": "4.4.3",
-            "version_normalized": "4.4.3.0",
+            "version": "4.5.0",
+            "version_normalized": "4.5.0.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laminas/laminas-code.git",
-                "reference": "bb324850d09dd437b6acb142c13e64fdc725b0e1"
+                "reference": "c99ef8e5629c33bfaa3a8f1df773e916af564cd6"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laminas/laminas-code/zipball/bb324850d09dd437b6acb142c13e64fdc725b0e1",
-                "reference": "bb324850d09dd437b6acb142c13e64fdc725b0e1",
+                "url": "https://api.github.com/repos/laminas/laminas-code/zipball/c99ef8e5629c33bfaa3a8f1df773e916af564cd6",
+                "reference": "c99ef8e5629c33bfaa3a8f1df773e916af564cd6",
                 "shasum": ""
             },
             "require": {
-                "php": "^7.4 || ~8.0.0"
-            },
-            "conflict": {
-                "phpspec/prophecy": "<1.9.0"
+                "php": ">=7.4, <8.2"
             },
             "require-dev": {
-                "doctrine/annotations": "^1.10.4",
+                "doctrine/annotations": "^1.13.2",
                 "ext-phar": "*",
-                "laminas/laminas-coding-standard": "^2.1.4",
-                "laminas/laminas-stdlib": "^3.3.0",
-                "phpunit/phpunit": "^9.4.2",
-                "psalm/plugin-phpunit": "^0.14.0",
-                "vimeo/psalm": "^4.3.1"
+                "laminas/laminas-coding-standard": "^2.3.0",
+                "laminas/laminas-stdlib": "^3.6.1",
+                "phpunit/phpunit": "^9.5.10",
+                "psalm/plugin-phpunit": "^0.16.1",
+                "vimeo/psalm": "^4.13.1"
             },
             "suggest": {
                 "doctrine/annotations": "Doctrine\\Common\\Annotations >=1.0 for annotation features",
-                "laminas/laminas-stdlib": "Laminas\\Stdlib component",
-                "laminas/laminas-zendframework-bridge": "A bridge with Zend Framework"
+                "laminas/laminas-stdlib": "Laminas\\Stdlib component"
             },
-            "time": "2021-09-21T13:40:23+00:00",
+            "time": "2021-12-07T06:00:32+00:00",
             "type": "library",
             "installation-source": "dist",
             "autoload": {
                 "psr-4": {
                     "Laminas\\Code\\": "src/"
-                }
+                },
+                "files": [
+                    "polyfill/ReflectionEnumPolyfill.php"
+                ]
             },
             "notification-url": "https://packagist.org/downloads/",
             "license": [
@@ -2312,29 +2311,29 @@
         },
         {
             "name": "liip/imagine-bundle",
-            "version": "2.7.2",
-            "version_normalized": "2.7.2.0",
+            "version": "2.7.3",
+            "version_normalized": "2.7.3.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/liip/LiipImagineBundle.git",
-                "reference": "8581eed5dddbecaf7e442b0fd968b33c65a13db8"
+                "reference": "25098c758380933ba4f2d4ffc68614c4c1c90a72"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/liip/LiipImagineBundle/zipball/8581eed5dddbecaf7e442b0fd968b33c65a13db8",
-                "reference": "8581eed5dddbecaf7e442b0fd968b33c65a13db8",
+                "url": "https://api.github.com/repos/liip/LiipImagineBundle/zipball/25098c758380933ba4f2d4ffc68614c4c1c90a72",
+                "reference": "25098c758380933ba4f2d4ffc68614c4c1c90a72",
                 "shasum": ""
             },
             "require": {
                 "ext-mbstring": "*",
                 "imagine/imagine": "^1.2.4",
                 "php": "^7.1|^8.0",
-                "symfony/filesystem": "^3.4|^4.4|^5.3",
-                "symfony/finder": "^3.4|^4.4|^5.3",
-                "symfony/framework-bundle": "^3.4.23|^4.4|^5.3",
-                "symfony/mime": "^4.4|^5.3",
-                "symfony/options-resolver": "^3.4|^4.4|^5.3",
-                "symfony/process": "^3.4|^4.4|^5.3",
+                "symfony/filesystem": "^3.4|^4.4|^5.3|^6.0",
+                "symfony/finder": "^3.4|^4.4|^5.3|^6.0",
+                "symfony/framework-bundle": "^3.4.23|^4.4|^5.3|^6.0",
+                "symfony/mime": "^4.4|^5.3|^6.0",
+                "symfony/options-resolver": "^3.4|^4.4|^5.3|^6.0",
+                "symfony/process": "^3.4|^4.4|^5.3|^6.0",
                 "twig/twig": "^1.44|^2.9|^3.0"
             },
             "require-dev": {
@@ -2348,16 +2347,16 @@
                 "phpstan/phpstan": "^0.12.64",
                 "psr/cache": "^1.0|^2.0|^3.0",
                 "psr/log": "^1.0",
-                "symfony/browser-kit": "^3.4|^4.4|^5.3",
-                "symfony/cache": "^3.4|^4.4|^5.3",
-                "symfony/console": "^3.4|^4.4|^5.3",
-                "symfony/dependency-injection": "^3.4|^4.4|^5.3",
-                "symfony/form": "^3.4|^4.4|^5.3",
-                "symfony/messenger": "^4.4|^5.3",
+                "symfony/browser-kit": "^3.4|^4.4|^5.3|^6.0",
+                "symfony/cache": "^3.4|^4.4|^5.3|^6.0",
+                "symfony/console": "^3.4|^4.4|^5.3|^6.0",
+                "symfony/dependency-injection": "^3.4|^4.4|^5.3|^6.0",
+                "symfony/form": "^3.4|^4.4|^5.3|^6.0",
+                "symfony/messenger": "^4.4|^5.3|^6.0",
                 "symfony/phpunit-bridge": "^5.3",
-                "symfony/templating": "^3.4|^4.4|^5.3",
-                "symfony/validator": "^3.4|^4.4|^5.3",
-                "symfony/yaml": "^3.4|^4.4|^5.3"
+                "symfony/templating": "^3.4|^4.4|^5.3|^6.0",
+                "symfony/validator": "^3.4|^4.4|^5.3|^6.0",
+                "symfony/yaml": "^3.4|^4.4|^5.3|^6.0"
             },
             "suggest": {
                 "alcaeus/mongo-php-adapter": "required for mongodb components",
@@ -2375,7 +2374,7 @@
                 "symfony/messenger": "If you like to process images in background",
                 "symfony/templating": "required to use deprecated Templating component instead of Twig"
             },
-            "time": "2021-11-11T12:21:07+00:00",
+            "time": "2021-12-03T13:56:56+00:00",
             "type": "symfony-bundle",
             "installation-source": "dist",
             "autoload": {
@@ -2411,7 +2410,7 @@
             ],
             "support": {
                 "issues": "https://github.com/liip/LiipImagineBundle/issues",
-                "source": "https://github.com/liip/LiipImagineBundle/tree/2.7.2"
+                "source": "https://github.com/liip/LiipImagineBundle/tree/2.7.3"
             },
             "install-path": "../liip/imagine-bundle"
         },
@@ -2925,17 +2924,17 @@
         },
         {
             "name": "phpspec/prophecy",
-            "version": "1.14.0",
-            "version_normalized": "1.14.0.0",
+            "version": "v1.15.0",
+            "version_normalized": "1.15.0.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/phpspec/prophecy.git",
-                "reference": "d86dfc2e2a3cd366cee475e52c6bb3bbc371aa0e"
+                "reference": "bbcd7380b0ebf3961ee21409db7b38bc31d69a13"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/phpspec/prophecy/zipball/d86dfc2e2a3cd366cee475e52c6bb3bbc371aa0e",
-                "reference": "d86dfc2e2a3cd366cee475e52c6bb3bbc371aa0e",
+                "url": "https://api.github.com/repos/phpspec/prophecy/zipball/bbcd7380b0ebf3961ee21409db7b38bc31d69a13",
+                "reference": "bbcd7380b0ebf3961ee21409db7b38bc31d69a13",
                 "shasum": ""
             },
             "require": {
@@ -2949,7 +2948,7 @@
                 "phpspec/phpspec": "^6.0 || ^7.0",
                 "phpunit/phpunit": "^8.0 || ^9.0"
             },
-            "time": "2021-09-10T09:02:12+00:00",
+            "time": "2021-12-08T12:19:24+00:00",
             "type": "library",
             "extra": {
                 "branch-alias": {
@@ -2989,23 +2988,23 @@
             ],
             "support": {
                 "issues": "https://github.com/phpspec/prophecy/issues",
-                "source": "https://github.com/phpspec/prophecy/tree/1.14.0"
+                "source": "https://github.com/phpspec/prophecy/tree/v1.15.0"
             },
             "install-path": "../phpspec/prophecy"
         },
         {
             "name": "phpunit/php-code-coverage",
-            "version": "9.2.9",
-            "version_normalized": "9.2.9.0",
+            "version": "9.2.10",
+            "version_normalized": "9.2.10.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/sebastianbergmann/php-code-coverage.git",
-                "reference": "f301eb1453c9e7a1bc912ee8b0ea9db22c60223b"
+                "reference": "d5850aaf931743067f4bfc1ae4cbd06468400687"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sebastianbergmann/php-code-coverage/zipball/f301eb1453c9e7a1bc912ee8b0ea9db22c60223b",
-                "reference": "f301eb1453c9e7a1bc912ee8b0ea9db22c60223b",
+                "url": "https://api.github.com/repos/sebastianbergmann/php-code-coverage/zipball/d5850aaf931743067f4bfc1ae4cbd06468400687",
+                "reference": "d5850aaf931743067f4bfc1ae4cbd06468400687",
                 "shasum": ""
             },
             "require": {
@@ -3030,7 +3029,7 @@
                 "ext-pcov": "*",
                 "ext-xdebug": "*"
             },
-            "time": "2021-11-19T15:21:02+00:00",
+            "time": "2021-12-05T09:12:13+00:00",
             "type": "library",
             "extra": {
                 "branch-alias": {
@@ -3063,7 +3062,7 @@
             ],
             "support": {
                 "issues": "https://github.com/sebastianbergmann/php-code-coverage/issues",
-                "source": "https://github.com/sebastianbergmann/php-code-coverage/tree/9.2.9"
+                "source": "https://github.com/sebastianbergmann/php-code-coverage/tree/9.2.10"
             },
             "funding": [
                 {

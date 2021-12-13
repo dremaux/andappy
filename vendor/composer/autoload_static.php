@@ -23,6 +23,7 @@ class ComposerStaticInit09188a52ea82c9376593948a2fe9f982
         '8825ede83f2f289127722d4e842cf7e8' => __DIR__ . '/..' . '/symfony/polyfill-intl-grapheme/bootstrap.php',
         'b6b991a57620e2fb6b2f66f03fe9ddc2' => __DIR__ . '/..' . '/symfony/string/Resources/functions.php',
         'a1105708a18b76903365ca1c4aa61b02' => __DIR__ . '/..' . '/symfony/translation/Resources/functions.php',
+        'c2aad8997a98dfc4771bdbffea3d62b7' => __DIR__ . '/..' . '/laminas/laminas-code/polyfill/ReflectionEnumPolyfill.php',
     );
 
     public static $prefixLengthsPsr4 = array (
@@ -2425,6 +2426,11 @@ class ComposerStaticInit09188a52ea82c9376593948a2fe9f982
         'Laminas\\Code\\Generator\\DocBlock\\Tag\\TagInterface' => __DIR__ . '/..' . '/laminas/laminas-code/src/Generator/DocBlock/Tag/TagInterface.php',
         'Laminas\\Code\\Generator\\DocBlock\\Tag\\ThrowsTag' => __DIR__ . '/..' . '/laminas/laminas-code/src/Generator/DocBlock/Tag/ThrowsTag.php',
         'Laminas\\Code\\Generator\\DocBlock\\Tag\\VarTag' => __DIR__ . '/..' . '/laminas/laminas-code/src/Generator/DocBlock/Tag/VarTag.php',
+        'Laminas\\Code\\Generator\\EnumGenerator\\Cases\\BackedCases' => __DIR__ . '/..' . '/laminas/laminas-code/src/Generator/EnumGenerator/Cases/BackedCases.php',
+        'Laminas\\Code\\Generator\\EnumGenerator\\Cases\\CaseFactory' => __DIR__ . '/..' . '/laminas/laminas-code/src/Generator/EnumGenerator/Cases/CaseFactory.php',
+        'Laminas\\Code\\Generator\\EnumGenerator\\Cases\\PureCases' => __DIR__ . '/..' . '/laminas/laminas-code/src/Generator/EnumGenerator/Cases/PureCases.php',
+        'Laminas\\Code\\Generator\\EnumGenerator\\EnumGenerator' => __DIR__ . '/..' . '/laminas/laminas-code/src/Generator/EnumGenerator/EnumGenerator.php',
+        'Laminas\\Code\\Generator\\EnumGenerator\\Name' => __DIR__ . '/..' . '/laminas/laminas-code/src/Generator/EnumGenerator/Name.php',
         'Laminas\\Code\\Generator\\Exception\\ClassNotFoundException' => __DIR__ . '/..' . '/laminas/laminas-code/src/Generator/Exception/ClassNotFoundException.php',
         'Laminas\\Code\\Generator\\Exception\\ExceptionInterface' => __DIR__ . '/..' . '/laminas/laminas-code/src/Generator/Exception/ExceptionInterface.php',
         'Laminas\\Code\\Generator\\Exception\\InvalidArgumentException' => __DIR__ . '/..' . '/laminas/laminas-code/src/Generator/Exception/InvalidArgumentException.php',
@@ -2434,6 +2440,7 @@ class ComposerStaticInit09188a52ea82c9376593948a2fe9f982
         'Laminas\\Code\\Generator\\InterfaceGenerator' => __DIR__ . '/..' . '/laminas/laminas-code/src/Generator/InterfaceGenerator.php',
         'Laminas\\Code\\Generator\\MethodGenerator' => __DIR__ . '/..' . '/laminas/laminas-code/src/Generator/MethodGenerator.php',
         'Laminas\\Code\\Generator\\ParameterGenerator' => __DIR__ . '/..' . '/laminas/laminas-code/src/Generator/ParameterGenerator.php',
+        'Laminas\\Code\\Generator\\PromotedParameterGenerator' => __DIR__ . '/..' . '/laminas/laminas-code/src/Generator/PromotedParameterGenerator.php',
         'Laminas\\Code\\Generator\\PropertyGenerator' => __DIR__ . '/..' . '/laminas/laminas-code/src/Generator/PropertyGenerator.php',
         'Laminas\\Code\\Generator\\PropertyValueGenerator' => __DIR__ . '/..' . '/laminas/laminas-code/src/Generator/PropertyValueGenerator.php',
         'Laminas\\Code\\Generator\\TraitGenerator' => __DIR__ . '/..' . '/laminas/laminas-code/src/Generator/TraitGenerator.php',
