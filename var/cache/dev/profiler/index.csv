@@ -1,0 +1,12 @@
+10836b,::1,GET,https://localhost:8000/biens,1639475929,,200
+a25c15,::1,GET,https://localhost:8000/favicon.ico,1639475930,4551b3,404
+4551b3,::1,GET,https://localhost:8000/favicon.ico,1639475930,,404
+418597,::1,GET,https://localhost:8000/,1639475939,,200
+383f4e,::1,GET,https://localhost:8000/biens,1639475942,,200
+200fad,::1,GET,https://localhost:8000/admin,1639475949,,302
+344541,::1,GET,https://localhost:8000/login,1639475949,,200
+8f590f,::1,POST,https://localhost:8000/login,1639475954,,302
+78a135,::1,GET,https://localhost:8000/admin,1639475955,,200
+819c46,::1,GET,https://localhost:8000/admin/option/,1639475959,,200
+d2ad73,::1,GET,https://localhost:8000/admin/agence/,1639475960,,200
+0c74b3,::1,GET,https://localhost:8000/admin/option/,1639475968,,200
