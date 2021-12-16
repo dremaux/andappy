@@ -16,7 +16,7 @@ class RecaptchaSubmitType extends AbstractType {
     {
         return 'recaptcha_submit';
     }
-
+    
 }
 
 ?>
