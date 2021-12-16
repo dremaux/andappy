@@ -1,0 +1,10 @@
+services:
+  recaptcha.type:
+    class: Grafikart\RecaptchaBundle\Type\RecaptchaSubmitType
+    tags: ['form.type']
+    arguments:
+      $key: '6LeIohoUAAAAAtXJ1_WbAwVoPiALqCg3q2KiKX'
+
+#recaptcha:
+#  key: 6LeIohoUAAAAAtXJ1_WbAwVoPiALqCg3q2KiKX
+#  secret: 6LeIohoUAAAAANrafW8NeM5y44AzzvmoLXLq09jk

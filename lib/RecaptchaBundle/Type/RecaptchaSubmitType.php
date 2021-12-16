@@ -10,6 +10,11 @@ use Symfony\Component\OptionsResolver\OptionsResolver;
 
 class RecaptchaSubmitType extends AbstractType {
 
+    public function __construct(String $key)
+    {
+        $this->key = $key;
+    }
+
     public function configureOptions(OptionsResolver $resolver)
     {
         $resolver->setDefaults([
@@ -20,6 +25,7 @@ class RecaptchaSubmitType extends AbstractType {
     public function  buildView(FormView $view, FormInterface $form, array $options)
     {
         $view->vars['label'] = false;
+        $view->vars['key'] = $this->key;
         $view->vars['button'] = $options['label']; 
     }
 
