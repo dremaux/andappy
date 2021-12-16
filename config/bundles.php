@@ -1,5 +1,7 @@
 <?php
 
+use Grafikart\RecaptchaBundle\RecaptchaBundle;
+
 return [
     Symfony\Bundle\FrameworkBundle\FrameworkBundle::class => ['all' => true],
     Sensio\Bundle\FrameworkExtraBundle\SensioFrameworkExtraBundle::class => ['all' => true],
@@ -16,4 +18,5 @@ return [
     Knp\Bundle\PaginatorBundle\KnpPaginatorBundle::class => ['all' => true],
     Vich\UploaderBundle\VichUploaderBundle::class => ['all' => true],
     Liip\ImagineBundle\LiipImagineBundle::class => ['all' => true],
+    \Grafikart\RecaptchaBundle\RecaptchaBundle::class => ['all' => true]
 ];

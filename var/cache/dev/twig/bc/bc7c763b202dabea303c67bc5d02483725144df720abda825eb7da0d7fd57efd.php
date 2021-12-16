@@ -177,14 +177,6 @@ class __TwigTemplate_ef378c144e7dd96b2baa9a925135c1d3c6df5f916ec4fc9f339a503e371
         // line 50
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("admin.property.new");
         echo "\" class=\"btn btn-primary\">Créer un nouveau bien</a>
-            <a href=\"";
-        // line 51
-        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("admin.option.new");
-        echo "\" class=\"btn btn-primary\">Ajouter une nouvelle option</a>
-            <a href=\"";
-        // line 52
-        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("admin.agence.new");
-        echo "\" class=\"btn btn-primary\">Ajouter une nouvelle agence</a>
         </div>
 
     </div>     
@@ -209,7 +201,7 @@ class __TwigTemplate_ef378c144e7dd96b2baa9a925135c1d3c6df5f916ec4fc9f339a503e371
 
     public function getDebugInfo()
     {
-        return array (  186 => 52,  182 => 51,  178 => 50,  172 => 46,  159 => 39,  154 => 37,  149 => 35,  144 => 33,  141 => 32,  137 => 31,  126 => 22,  117 => 19,  114 => 18,  110 => 17,  103 => 13,  99 => 12,  95 => 11,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
+        return array (  178 => 50,  172 => 46,  159 => 39,  154 => 37,  149 => 35,  144 => 33,  141 => 32,  137 => 31,  126 => 22,  117 => 19,  114 => 18,  110 => 17,  103 => 13,  99 => 12,  95 => 11,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
     }
 
     public function getSourceContext()
@@ -264,8 +256,6 @@ class __TwigTemplate_ef378c144e7dd96b2baa9a925135c1d3c6df5f916ec4fc9f339a503e371
 
         <div class=\"text-center\">
             <a href=\"{{ path('admin.property.new') }}\" class=\"btn btn-primary\">Créer un nouveau bien</a>
-            <a href=\"{{ path('admin.option.new') }}\" class=\"btn btn-primary\">Ajouter une nouvelle option</a>
-            <a href=\"{{ path('admin.agence.new') }}\" class=\"btn btn-primary\">Ajouter une nouvelle agence</a>
         </div>
 
     </div>     

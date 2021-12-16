@@ -175,14 +175,6 @@ class __TwigTemplate_1e316c2af2e69eb21b5a159013cf864c98282770d4701971377bf3e0f8b
         <div class=\"text-center\">
             <a href=\"";
         // line 50
-        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("admin.property.new");
-        echo "\" class=\"btn btn-primary\">Créer un nouveau bien</a>
-            <a href=\"";
-        // line 51
-        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("admin.option.new");
-        echo "\" class=\"btn btn-primary\">Ajouter une nouvelle option</a>
-            <a href=\"";
-        // line 52
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("admin.agence.new");
         echo "\" class=\"btn btn-primary\">Ajouter une nouvelle agence</a>
         </div>
@@ -209,7 +201,7 @@ class __TwigTemplate_1e316c2af2e69eb21b5a159013cf864c98282770d4701971377bf3e0f8b
 
     public function getDebugInfo()
     {
-        return array (  186 => 52,  182 => 51,  178 => 50,  172 => 46,  159 => 39,  154 => 37,  149 => 35,  144 => 33,  141 => 32,  137 => 31,  126 => 22,  117 => 19,  114 => 18,  110 => 17,  103 => 13,  99 => 12,  95 => 11,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
+        return array (  178 => 50,  172 => 46,  159 => 39,  154 => 37,  149 => 35,  144 => 33,  141 => 32,  137 => 31,  126 => 22,  117 => 19,  114 => 18,  110 => 17,  103 => 13,  99 => 12,  95 => 11,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
     }
 
     public function getSourceContext()
@@ -263,8 +255,6 @@ class __TwigTemplate_1e316c2af2e69eb21b5a159013cf864c98282770d4701971377bf3e0f8b
         </table>
 
         <div class=\"text-center\">
-            <a href=\"{{ path('admin.property.new') }}\" class=\"btn btn-primary\">Créer un nouveau bien</a>
-            <a href=\"{{ path('admin.option.new') }}\" class=\"btn btn-primary\">Ajouter une nouvelle option</a>
             <a href=\"{{ path('admin.agence.new') }}\" class=\"btn btn-primary\">Ajouter une nouvelle agence</a>
         </div>
 
