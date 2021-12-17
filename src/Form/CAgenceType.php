@@ -32,9 +32,7 @@ class CAgenceType extends AbstractType
                 'choice_label' => 'name',
                 'multiple' => 'multiple'
             ])
-            ->add('captcha', RecaptchaSubmitType::class, [
-                'label' => 'Envoyer'
-            ])
+            
             ;
     }   
 
