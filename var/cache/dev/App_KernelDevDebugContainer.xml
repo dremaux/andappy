@@ -24,7 +24,6 @@
       <parameter key="KnpPaginatorBundle">Knp\Bundle\PaginatorBundle\KnpPaginatorBundle</parameter>
       <parameter key="VichUploaderBundle">Vich\UploaderBundle\VichUploaderBundle</parameter>
       <parameter key="LiipImagineBundle">Liip\ImagineBundle\LiipImagineBundle</parameter>
-      <parameter key="RecaptchaBundle">Grafikart\RecaptchaBundle\RecaptchaBundle</parameter>
     </parameter>
     <parameter key="kernel.bundles_metadata" type="collection">
       <parameter key="FrameworkBundle" type="collection">
@@ -86,10 +85,6 @@
       <parameter key="LiipImagineBundle" type="collection">
         <parameter key="path">C:\Users\Lucas.DREMAUX\Documents\GitHub\andappy\vendor\liip\imagine-bundle</parameter>
         <parameter key="namespace">Liip\ImagineBundle</parameter>
-      </parameter>
-      <parameter key="RecaptchaBundle" type="collection">
-        <parameter key="path">C:\Users\Lucas.DREMAUX\Documents\GitHub\andappy\lib\RecaptchaBundle</parameter>
-        <parameter key="namespace">Grafikart\RecaptchaBundle</parameter>
       </parameter>
     </parameter>
     <parameter key="kernel.charset">UTF-8</parameter>
@@ -157,7 +152,6 @@
     <parameter key="request_listener.https_port">443</parameter>
     <parameter key="serializer.mapping.cache.file">C:\Users\Lucas.DREMAUX\Documents\GitHub\andappy\var\cache\dev/serialization.php</parameter>
     <parameter key="twig.form.resources" type="collection">
-      <parameter>@Recaptcha/fields.html.twig</parameter>
       <parameter>@VichUploader/Form/fields.html.twig</parameter>
       <parameter>form_div_layout.html.twig</parameter>
       <parameter>@LiipImagine/Form/form_div_layout.html.twig</parameter>
@@ -2344,7 +2338,6 @@
           <argument>C:\Users\Lucas.DREMAUX\Documents\GitHub\andappy\vendor\twig\extra-bundle/translations</argument>
           <argument>C:\Users\Lucas.DREMAUX\Documents\GitHub\andappy\vendor\doctrine\doctrine-fixtures-bundle/translations</argument>
           <argument>C:\Users\Lucas.DREMAUX\Documents\GitHub\andappy\vendor\liip\imagine-bundle/translations</argument>
-          <argument>C:\Users\Lucas.DREMAUX\Documents\GitHub\andappy\lib\RecaptchaBundle/translations</argument>
         </argument>
         <argument key="cache_vary" type="collection">
           <argument key="scanned_directories" type="collection">
@@ -2367,7 +2360,6 @@
             <argument>C:\Users\Lucas.DREMAUX\Documents\GitHub\andappy\vendor\twig\extra-bundle/translations</argument>
             <argument>C:\Users\Lucas.DREMAUX\Documents\GitHub\andappy\vendor\doctrine\doctrine-fixtures-bundle/translations</argument>
             <argument>C:\Users\Lucas.DREMAUX\Documents\GitHub\andappy\vendor\liip\imagine-bundle/translations</argument>
-            <argument>C:\Users\Lucas.DREMAUX\Documents\GitHub\andappy\lib\RecaptchaBundle/translations</argument>
           </argument>
         </argument>
       </argument>
@@ -4035,14 +4027,6 @@
       <call method="addPath">
         <argument>C:\Users\Lucas.DREMAUX\Documents\GitHub\andappy\vendor\liip\imagine-bundle/Resources/views</argument>
         <argument>!LiipImagine</argument>
-      </call>
-      <call method="addPath">
-        <argument>C:\Users\Lucas.DREMAUX\Documents\GitHub\andappy\lib\RecaptchaBundle/Resources/views</argument>
-        <argument>Recaptcha</argument>
-      </call>
-      <call method="addPath">
-        <argument>C:\Users\Lucas.DREMAUX\Documents\GitHub\andappy\lib\RecaptchaBundle/Resources/views</argument>
-        <argument>!Recaptcha</argument>
       </call>
       <call method="addPath">
         <argument>C:\Users\Lucas.DREMAUX\Documents\GitHub\andappy/templates</argument>

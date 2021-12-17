@@ -79,8 +79,10 @@
                 </div>
                 
                 {{ form_rest(form) }}
+
+                
                 <div class="form-group">
-                    <button class="btn btn-primary">Envoyer</button>
+                    <button class="g-recaptcha" data-sitekey="reCAPTCHA_site_key" data-callback='onSubmit' data-action='submit'>Envoyer</button>
                     <br><br>
                 </div>
             {{ form_end(form) }}   

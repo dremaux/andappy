@@ -1,6 +1,5 @@
 <?php
 
-use Grafikart\RecaptchaBundle\RecaptchaBundle;
 
 return [
     Symfony\Bundle\FrameworkBundle\FrameworkBundle::class => ['all' => true],
@@ -17,6 +16,5 @@ return [
     Doctrine\Bundle\FixturesBundle\DoctrineFixturesBundle::class => ['all' => true],
     Knp\Bundle\PaginatorBundle\KnpPaginatorBundle::class => ['all' => true],
     Vich\UploaderBundle\VichUploaderBundle::class => ['all' => true],
-    Liip\ImagineBundle\LiipImagineBundle::class => ['all' => true],
-    \Grafikart\RecaptchaBundle\RecaptchaBundle::class => ['all' => true]
+    Liip\ImagineBundle\LiipImagineBundle::class => ['all' => true]
 ];
