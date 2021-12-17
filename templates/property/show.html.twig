@@ -79,17 +79,16 @@
                 </div>
                 
             {{ form_rest(form) }}
-                
+                <body>
+                    <form action="?" method="POST">
+                    <div class="g-recaptcha" data-sitekey="6LeSzqsdAAAAAKGTQ0uwY0zAwg246HyHTOOPOlf_"></div>
+                    <br/>
+                    <input type="submit" value="Submit">
+                    </form>
+                </body>
+                <br>
                 <div class="form-group">
                     <button class="btn btn-primary">
-                     <body>
-                        <form action="?" method="POST">
-                        <div class="g-recaptcha" data-sitekey="6LeSzqsdAAAAAKGTQ0uwY0zAwg246HyHTOOPOlf_"></div>
-                        <br/>
-                        <input type="submit" value="Submit">
-                        </form>
-                    </body>
-                    
                     <br><br>
                 </div>
             {{ form_end(form) }}   
