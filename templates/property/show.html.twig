@@ -64,7 +64,7 @@
 
         <div id="contactForm" class="mt-4">
             <h3>Contacter une Agence</h3>
-                {{form_start(form)}}
+            {{form_start(form)}}
                 <div class="row">
                     <p>Selectionné une ou plusieurs agences :</p>
                     <div class="col">{{ form_row(form.agences) }}</div>
@@ -78,14 +78,18 @@
                     <div class="col">{{ form_row(form.email) }}</div>
                 </div>
                 
-                {{ form_rest(form) }}
-
+            {{ form_rest(form) }}
                 
                 <div class="form-group">
-                    <button class="g-recaptcha btn btn-primary"
-                    data-sitekey="6LdZZKsdAAAAAE5lRmYR-ZL9TdxZ2uymy7ml0v3f" 
-                    data-callback='onSubmit' 
-                    data-action='submit'>Envoyer</button>
+                    <button class="btn btn-primary">
+                     <body>
+                        <form action="?" method="POST">
+                        <div class="g-recaptcha" data-sitekey="6LeSzqsdAAAAAKGTQ0uwY0zAwg246HyHTOOPOlf_"></div>
+                        <br/>
+                        <input type="submit" value="Submit">
+                        </form>
+                    </body>
+                    
                     <br><br>
                 </div>
             {{ form_end(form) }}   
