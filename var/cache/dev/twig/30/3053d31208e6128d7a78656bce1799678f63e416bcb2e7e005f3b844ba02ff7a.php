@@ -116,14 +116,34 @@ class __TwigTemplate_0d1537a57c29f7af6c5aa086831fbde46fe4c6bd263526f8271f2e66e50
         <script src=\"https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js\" integrity=\"sha384-W8fXfP3gkOKtndU4JGtKDvXbO53Wy8SZCQHczT5FMiiqmQfUpWbYdTil/SxwZgAN\" crossorigin=\"anonymous\"></script>
         <script src=\"https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.min.js\" integrity=\"sha384-skAcpIdS7UcVUC05LJ9Dxay8AXcDYfBJqt1CJ85S/CFujBsIzCIv+l9liuYLaMQ/\" crossorigin=\"anonymous\"></script>
         <script src=\"https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.13/js/select2.min.js\" integrity=\"sha512-2ImtlRlf2VVmiGZsjm9bEyhjGW4dU7B6TNwh/hx/iSByxNENtj3WVE6o/9Lj4TJeVXPi4bnOIMXFIJJAeufa0A==\" crossorigin=\"anonymous\" referrerpolicy=\"no-referrer\"></script>
+        <script src=\"https://www.google.com/recaptcha/api.js\" async defer></script>
         <script> 
             \$('.form-select').select2({ width: '50%' }); 
         </script>
+
+        <script>
+            function ";
+        // line 54
+        echo twig_escape_filter($this->env, (isset($context["id"]) || array_key_exists("id", $context) ? $context["id"] : (function () { throw new RuntimeError('Variable "id" does not exist.', 54, $this->source); })()), "html", null, true);
+        echo "RecaptchaSubmit(token) {
+                var elem = document.getElementById('";
+        // line 55
+        echo twig_escape_filter($this->env, (isset($context["id"]) || array_key_exists("id", $context) ? $context["id"] : (function () { throw new RuntimeError('Variable "id" does not exist.', 55, $this->source); })()), "html", null, true);
+        echo "');
+                while (elem.parentElement !== null) {
+                    if(elem.tagName = 'FORM') {
+                        elem.submit()
+                        break;
+                    }
+                elem = elem.parentElement
+                }
+            }
+        </script>
         
         ";
-        // line 52
+        // line 66
         $this->displayBlock('javascripts', $context, $blocks);
-        // line 53
+        // line 67
         echo "    </body>
 </html>";
         
@@ -189,7 +209,7 @@ class __TwigTemplate_0d1537a57c29f7af6c5aa086831fbde46fe4c6bd263526f8271f2e66e50
 
     }
 
-    // line 52
+    // line 66
     public function block_javascripts($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -219,7 +239,7 @@ class __TwigTemplate_0d1537a57c29f7af6c5aa086831fbde46fe4c6bd263526f8271f2e66e50
 
     public function getDebugInfo()
     {
-        return array (  193 => 52,  175 => 42,  157 => 12,  138 => 7,  127 => 53,  125 => 52,  114 => 43,  112 => 42,  102 => 35,  96 => 32,  83 => 26,  71 => 17,  65 => 13,  63 => 12,  55 => 7,  47 => 1,);
+        return array (  213 => 66,  195 => 42,  177 => 12,  158 => 7,  147 => 67,  145 => 66,  131 => 55,  127 => 54,  114 => 43,  112 => 42,  102 => 35,  96 => 32,  83 => 26,  71 => 17,  65 => 13,  63 => 12,  55 => 7,  47 => 1,);
     }
 
     public function getSourceContext()
@@ -271,8 +291,22 @@ class __TwigTemplate_0d1537a57c29f7af6c5aa086831fbde46fe4c6bd263526f8271f2e66e50
         <script src=\"https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js\" integrity=\"sha384-W8fXfP3gkOKtndU4JGtKDvXbO53Wy8SZCQHczT5FMiiqmQfUpWbYdTil/SxwZgAN\" crossorigin=\"anonymous\"></script>
         <script src=\"https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.min.js\" integrity=\"sha384-skAcpIdS7UcVUC05LJ9Dxay8AXcDYfBJqt1CJ85S/CFujBsIzCIv+l9liuYLaMQ/\" crossorigin=\"anonymous\"></script>
         <script src=\"https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.13/js/select2.min.js\" integrity=\"sha512-2ImtlRlf2VVmiGZsjm9bEyhjGW4dU7B6TNwh/hx/iSByxNENtj3WVE6o/9Lj4TJeVXPi4bnOIMXFIJJAeufa0A==\" crossorigin=\"anonymous\" referrerpolicy=\"no-referrer\"></script>
+        <script src=\"https://www.google.com/recaptcha/api.js\" async defer></script>
         <script> 
             \$('.form-select').select2({ width: '50%' }); 
+        </script>
+
+        <script>
+            function {{ id }}RecaptchaSubmit(token) {
+                var elem = document.getElementById('{{ id }}');
+                while (elem.parentElement !== null) {
+                    if(elem.tagName = 'FORM') {
+                        elem.submit()
+                        break;
+                    }
+                elem = elem.parentElement
+                }
+            }
         </script>
         
         {% block javascripts %}{% endblock %}

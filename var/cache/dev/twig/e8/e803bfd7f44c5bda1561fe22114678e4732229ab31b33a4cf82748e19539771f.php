@@ -27,7 +27,6 @@ class __TwigTemplate_8c40ccd0d555ca6e9c4e4b05ce7fba39a1ac2042f1bb79c05d952b96ae7
         $this->blocks = [
             'title' => [$this, 'block_title'],
             'body' => [$this, 'block_body'],
-            'javascripts' => [$this, 'block_javascripts'],
         ];
     }
 
@@ -199,7 +198,7 @@ class __TwigTemplate_8c40ccd0d555ca6e9c4e4b05ce7fba39a1ac2042f1bb79c05d952b96ae7
 
         <div id=\"contactForm\" class=\"mt-4\">
             <h3>Contacter une Agence</h3>
-                ";
+            ";
         // line 67
         echo         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 67, $this->source); })()), 'form_start');
         echo "
@@ -231,47 +230,29 @@ class __TwigTemplate_8c40ccd0d555ca6e9c4e4b05ce7fba39a1ac2042f1bb79c05d952b96ae7
         echo "</div>
                 </div>
                 
-                ";
+            ";
         // line 81
         echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock((isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 81, $this->source); })()), 'rest');
         echo "
+                <body>
 
-                ";
-        // line 83
-        $this->displayBlock('javascripts', $context, $blocks);
-        // line 86
-        echo "                <div class=\"form-group\">
-                    <button class=\"btn btn-primary\">Envoyer</button>
-                    <br><br>
-                </div>
+                    
+
+                    <form method=\"POST\">
+                    <div class=\"g-recaptcha\" data-sitekey=\"6LfnmLYdAAAAAK-hT48uVTshJvD0z-uFZJ1_gMoN\"></div>
+                    <br/>
+                    <input type=\"submit\" value=\"Submit\" class=\"btn btn-primary\">
+                    </form>
+                    <br/>
+                </body>
+                
             ";
-        // line 90
-        echo         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 90, $this->source); })()), 'form_end');
+        // line 94
+        echo         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 94, $this->source); })()), 'form_end');
         echo "   
         </div>
     </div>
 ";
-        
-        $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->leave($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof);
-
-        
-        $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e->leave($__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e_prof);
-
-    }
-
-    // line 83
-    public function block_javascripts($context, array $blocks = [])
-    {
-        $macros = $this->macros;
-        $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e = $this->extensions["Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension"];
-        $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e->enter($__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "javascripts"));
-
-        $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
-        $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "javascripts"));
-
-        // line 84
-        echo "                    <script src'https://www.google.com/recaptcha/api.js'></script>
-                ";
         
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->leave($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof);
 
@@ -292,7 +273,7 @@ class __TwigTemplate_8c40ccd0d555ca6e9c4e4b05ce7fba39a1ac2042f1bb79c05d952b96ae7
 
     public function getDebugInfo()
     {
-        return array (  273 => 84,  263 => 83,  249 => 90,  243 => 86,  241 => 83,  236 => 81,  230 => 78,  226 => 77,  220 => 74,  216 => 73,  210 => 70,  204 => 67,  197 => 62,  188 => 60,  184 => 59,  174 => 52,  167 => 48,  160 => 44,  153 => 40,  146 => 36,  134 => 27,  124 => 20,  118 => 19,  114 => 18,  109 => 15,  103 => 13,  97 => 11,  95 => 10,  89 => 6,  79 => 5,  60 => 3,  37 => 1,);
+        return array (  251 => 94,  235 => 81,  229 => 78,  225 => 77,  219 => 74,  215 => 73,  209 => 70,  203 => 67,  196 => 62,  187 => 60,  183 => 59,  173 => 52,  166 => 48,  159 => 44,  152 => 40,  145 => 36,  133 => 27,  123 => 20,  117 => 19,  113 => 18,  108 => 15,  102 => 13,  96 => 11,  94 => 10,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
     }
 
     public function getSourceContext()
@@ -363,7 +344,7 @@ class __TwigTemplate_8c40ccd0d555ca6e9c4e4b05ce7fba39a1ac2042f1bb79c05d952b96ae7
 
         <div id=\"contactForm\" class=\"mt-4\">
             <h3>Contacter une Agence</h3>
-                {{form_start(form)}}
+            {{form_start(form)}}
                 <div class=\"row\">
                     <p>Selectionné une ou plusieurs agences :</p>
                     <div class=\"col\">{{ form_row(form.agences) }}</div>
@@ -377,15 +358,19 @@ class __TwigTemplate_8c40ccd0d555ca6e9c4e4b05ce7fba39a1ac2042f1bb79c05d952b96ae7
                     <div class=\"col\">{{ form_row(form.email) }}</div>
                 </div>
                 
-                {{ form_rest(form) }}
+            {{ form_rest(form) }}
+                <body>
 
-                {% block javascripts %}
-                    <script src'https://www.google.com/recaptcha/api.js'></script>
-                {% endblock %}
-                <div class=\"form-group\">
-                    <button class=\"btn btn-primary\">Envoyer</button>
-                    <br><br>
-                </div>
+                    
+
+                    <form method=\"POST\">
+                    <div class=\"g-recaptcha\" data-sitekey=\"6LfnmLYdAAAAAK-hT48uVTshJvD0z-uFZJ1_gMoN\"></div>
+                    <br/>
+                    <input type=\"submit\" value=\"Submit\" class=\"btn btn-primary\">
+                    </form>
+                    <br/>
+                </body>
+                
             {{ form_end(form) }}   
         </div>
     </div>
