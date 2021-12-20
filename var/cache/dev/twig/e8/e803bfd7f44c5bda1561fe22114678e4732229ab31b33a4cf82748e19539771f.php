@@ -235,7 +235,6 @@ class __TwigTemplate_8c40ccd0d555ca6e9c4e4b05ce7fba39a1ac2042f1bb79c05d952b96ae7
         echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock((isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 81, $this->source); })()), 'rest');
         echo "
                 <body>
-
                     <form method=\"POST\">
                     <div class=\"g-recaptcha\" data-sitekey=\"6LfnmLYdAAAAAK-hT48uVTshJvD0z-uFZJ1_gMoN\"></div>
                     <br/>
@@ -245,8 +244,8 @@ class __TwigTemplate_8c40ccd0d555ca6e9c4e4b05ce7fba39a1ac2042f1bb79c05d952b96ae7
                 </body>
                 
             ";
-        // line 92
-        echo         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 92, $this->source); })()), 'form_end');
+        // line 91
+        echo         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 91, $this->source); })()), 'form_end');
         echo "   
         </div>
     </div>
@@ -271,7 +270,7 @@ class __TwigTemplate_8c40ccd0d555ca6e9c4e4b05ce7fba39a1ac2042f1bb79c05d952b96ae7
 
     public function getDebugInfo()
     {
-        return array (  249 => 92,  235 => 81,  229 => 78,  225 => 77,  219 => 74,  215 => 73,  209 => 70,  203 => 67,  196 => 62,  187 => 60,  183 => 59,  173 => 52,  166 => 48,  159 => 44,  152 => 40,  145 => 36,  133 => 27,  123 => 20,  117 => 19,  113 => 18,  108 => 15,  102 => 13,  96 => 11,  94 => 10,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
+        return array (  248 => 91,  235 => 81,  229 => 78,  225 => 77,  219 => 74,  215 => 73,  209 => 70,  203 => 67,  196 => 62,  187 => 60,  183 => 59,  173 => 52,  166 => 48,  159 => 44,  152 => 40,  145 => 36,  133 => 27,  123 => 20,  117 => 19,  113 => 18,  108 => 15,  102 => 13,  96 => 11,  94 => 10,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
     }
 
     public function getSourceContext()
@@ -358,7 +357,6 @@ class __TwigTemplate_8c40ccd0d555ca6e9c4e4b05ce7fba39a1ac2042f1bb79c05d952b96ae7
                 
             {{ form_rest(form) }}
                 <body>
-
                     <form method=\"POST\">
                     <div class=\"g-recaptcha\" data-sitekey=\"6LfnmLYdAAAAAK-hT48uVTshJvD0z-uFZJ1_gMoN\"></div>
                     <br/>
