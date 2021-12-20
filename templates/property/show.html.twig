@@ -80,8 +80,20 @@
                 
             {{ form_rest(form) }}
                 <body>
+
+                <?php
+                $ recaptcha = new \ ReCaptcha \ ReCaptcha ( $ secret );
+                $ resp = $ recaptcha -> setExpectedHostname ( 'recaptcha-demo.appspot.com' ) 
+                                -> verify ( $ gRecaptchaResponse , $ remoteIp );
+                if ( $ resp -> isSuccess ()) {
+                    // Vérifié ! 
+                } else {
+                    $ erreurs =$ resp -> getErrorCodes (); 
+                }
+                ?>
+                
                     <form method="POST">
-                    <div class="g-recaptcha" data-sitekey="6LfnmLYdAAAAAK-hT48uVTshJvD0z-uFZJ1_gMoN"></div>
+                    <div class="g-recaptcha" data-sitekey="6LfnmLYdAAAAAK-hT48uVTshJvD0z-uFZJ1_gMoN">test</div>
                     <br/>
                     <input type="submit" value="Submit" class="btn btn-primary">
                     </form>
