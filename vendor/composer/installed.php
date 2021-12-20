@@ -5,7 +5,7 @@
         'type' => 'project',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
-        'reference' => '600143a2f45198127e98b866d1d49a1b605bc2f3',
+        'reference' => 'a54771da771abe7ff6786c94b3da0f6498907f3b',
         'name' => '__root__',
         'dev' => true,
     ),
@@ -16,7 +16,7 @@
             'type' => 'project',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),
-            'reference' => '600143a2f45198127e98b866d1d49a1b605bc2f3',
+            'reference' => 'a54771da771abe7ff6786c94b3da0f6498907f3b',
             'dev_requirement' => false,
         ),
         'cocur/slugify' => array(
@@ -251,15 +251,6 @@
             'install_path' => __DIR__ . '/../jms/metadata',
             'aliases' => array(),
             'reference' => 'c3a3214354b5a765a19875f7b7c5ebcd94e462e5',
-            'dev_requirement' => false,
-        ),
-        'karser/karser-recaptcha3-bundle' => array(
-            'pretty_version' => 'v0.1.20',
-            'version' => '0.1.20.0',
-            'type' => 'symfony-bundle',
-            'install_path' => __DIR__ . '/../karser/karser-recaptcha3-bundle',
-            'aliases' => array(),
-            'reference' => '5e44481d4cdc6469cfe794727a395931c314c2f9',
             'dev_requirement' => false,
         ),
         'knplabs/knp-components' => array(

@@ -147,7 +147,6 @@ class ComposerStaticInit09188a52ea82c9376593948a2fe9f982
         array (
             'Knp\\Component\\' => 14,
             'Knp\\Bundle\\PaginatorBundle\\' => 27,
-            'Karser\\Recaptcha3Bundle\\' => 24,
         ),
         'I' => 
         array (
@@ -563,10 +562,6 @@ class ComposerStaticInit09188a52ea82c9376593948a2fe9f982
         'Knp\\Bundle\\PaginatorBundle\\' => 
         array (
             0 => __DIR__ . '/..' . '/knplabs/knp-paginator-bundle/src',
-        ),
-        'Karser\\Recaptcha3Bundle\\' => 
-        array (
-            0 => __DIR__ . '/..' . '/karser/karser-recaptcha3-bundle',
         ),
         'Imagine\\' => 
         array (
@@ -2372,23 +2367,6 @@ class ComposerStaticInit09188a52ea82c9376593948a2fe9f982
         'Imagine\\Utils\\Matrix' => __DIR__ . '/..' . '/imagine/imagine/src/Utils/Matrix.php',
         'IntlDateFormatter' => __DIR__ . '/..' . '/symfony/polyfill-intl-icu/Resources/stubs/IntlDateFormatter.php',
         'JsonException' => __DIR__ . '/..' . '/symfony/polyfill-php73/Resources/stubs/JsonException.php',
-        'Karser\\Recaptcha3Bundle\\DependencyInjection\\Configuration' => __DIR__ . '/..' . '/karser/karser-recaptcha3-bundle/DependencyInjection/Configuration.php',
-        'Karser\\Recaptcha3Bundle\\DependencyInjection\\KarserRecaptcha3Extension' => __DIR__ . '/..' . '/karser/karser-recaptcha3-bundle/DependencyInjection/KarserRecaptcha3Extension.php',
-        'Karser\\Recaptcha3Bundle\\Form\\Recaptcha3Type' => __DIR__ . '/..' . '/karser/karser-recaptcha3-bundle/Form/Recaptcha3Type.php',
-        'Karser\\Recaptcha3Bundle\\KarserRecaptcha3Bundle' => __DIR__ . '/..' . '/karser/karser-recaptcha3-bundle/KarserRecaptcha3Bundle.php',
-        'Karser\\Recaptcha3Bundle\\Services\\HostProvider' => __DIR__ . '/..' . '/karser/karser-recaptcha3-bundle/Services/HostProvider.php',
-        'Karser\\Recaptcha3Bundle\\Services\\HostProviderInterface' => __DIR__ . '/..' . '/karser/karser-recaptcha3-bundle/Services/HostProviderInterface.php',
-        'Karser\\Recaptcha3Bundle\\Services\\IpResolver' => __DIR__ . '/..' . '/karser/karser-recaptcha3-bundle/Services/IpResolver.php',
-        'Karser\\Recaptcha3Bundle\\Services\\IpResolverInterface' => __DIR__ . '/..' . '/karser/karser-recaptcha3-bundle/Services/IpResolverInterface.php',
-        'Karser\\Recaptcha3Bundle\\Tests\\DependencyInjection\\ConfigurationTest' => __DIR__ . '/..' . '/karser/karser-recaptcha3-bundle/Tests/DependencyInjection/ConfigurationTest.php',
-        'Karser\\Recaptcha3Bundle\\Tests\\Form\\Recaptcha3TypeTest' => __DIR__ . '/..' . '/karser/karser-recaptcha3-bundle/Tests/Form/Recaptcha3TypeTest.php',
-        'Karser\\Recaptcha3Bundle\\Tests\\FunctionalTest' => __DIR__ . '/..' . '/karser/karser-recaptcha3-bundle/Tests/FunctionalTest.php',
-        'Karser\\Recaptcha3Bundle\\Tests\\Services\\IpResolverTest' => __DIR__ . '/..' . '/karser/karser-recaptcha3-bundle/Tests/Services/IpResolverTest.php',
-        'Karser\\Recaptcha3Bundle\\Tests\\TestKernel' => __DIR__ . '/..' . '/karser/karser-recaptcha3-bundle/Tests/TestKernel.php',
-        'Karser\\Recaptcha3Bundle\\Tests\\Validator\\Constraints\\Recaptcha3ValidatorTest' => __DIR__ . '/..' . '/karser/karser-recaptcha3-bundle/Tests/Validator/Constraints/Recaptcha3ValidatorTest.php',
-        'Karser\\Recaptcha3Bundle\\Tests\\fixtures\\RecaptchaMock' => __DIR__ . '/..' . '/karser/karser-recaptcha3-bundle/Tests/fixtures/RecaptchaMock.php',
-        'Karser\\Recaptcha3Bundle\\Validator\\Constraints\\Recaptcha3' => __DIR__ . '/..' . '/karser/karser-recaptcha3-bundle/Validator/Constraints/Recaptcha3.php',
-        'Karser\\Recaptcha3Bundle\\Validator\\Constraints\\Recaptcha3Validator' => __DIR__ . '/..' . '/karser/karser-recaptcha3-bundle/Validator/Constraints/Recaptcha3Validator.php',
         'Knp\\Bundle\\PaginatorBundle\\Definition\\AbstractPaginatorAware' => __DIR__ . '/..' . '/knplabs/knp-paginator-bundle/src/Definition/AbstractPaginatorAware.php',
         'Knp\\Bundle\\PaginatorBundle\\Definition\\PaginatorAware' => __DIR__ . '/..' . '/knplabs/knp-paginator-bundle/src/Definition/PaginatorAware.php',
         'Knp\\Bundle\\PaginatorBundle\\Definition\\PaginatorAwareInterface' => __DIR__ . '/..' . '/knplabs/knp-paginator-bundle/src/Definition/PaginatorAwareInterface.php',

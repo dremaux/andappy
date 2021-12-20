@@ -97,7 +97,6 @@ return array(
     'Laminas\\Code\\' => array($vendorDir . '/laminas/laminas-code/src'),
     'Knp\\Component\\' => array($vendorDir . '/knplabs/knp-components/src/Knp/Component'),
     'Knp\\Bundle\\PaginatorBundle\\' => array($vendorDir . '/knplabs/knp-paginator-bundle/src'),
-    'Karser\\Recaptcha3Bundle\\' => array($vendorDir . '/karser/karser-recaptcha3-bundle'),
     'Imagine\\' => array($vendorDir . '/imagine/imagine/src'),
     'Grafikart\\RecaptchaBundle\\' => array($baseDir . '/lib/RecaptchaBundle'),
     'Faker\\' => array($vendorDir . '/fzaninotto/faker/src/Faker'),

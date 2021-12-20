@@ -122,28 +122,15 @@ class __TwigTemplate_0d1537a57c29f7af6c5aa086831fbde46fe4c6bd263526f8271f2e66e50
         </script>
 
         <script>
-            function ";
-        // line 54
-        echo twig_escape_filter($this->env, (isset($context["id"]) || array_key_exists("id", $context) ? $context["id"] : (function () { throw new RuntimeError('Variable "id" does not exist.', 54, $this->source); })()), "html", null, true);
-        echo "RecaptchaSubmit(token) {
-                var elem = document.getElementById('";
-        // line 55
-        echo twig_escape_filter($this->env, (isset($context["id"]) || array_key_exists("id", $context) ? $context["id"] : (function () { throw new RuntimeError('Variable "id" does not exist.', 55, $this->source); })()), "html", null, true);
-        echo "');
-                while (elem.parentElement !== null) {
-                    if(elem.tagName = 'FORM') {
-                        elem.submit()
-                        break;
-                    }
-                elem = elem.parentElement
-                }
+            function onSubmit(token) {
+                document.getElementById(\"demo-form\").submit();
             }
         </script>
         
         ";
-        // line 66
+        // line 59
         $this->displayBlock('javascripts', $context, $blocks);
-        // line 67
+        // line 60
         echo "    </body>
 </html>";
         
@@ -209,7 +196,7 @@ class __TwigTemplate_0d1537a57c29f7af6c5aa086831fbde46fe4c6bd263526f8271f2e66e50
 
     }
 
-    // line 66
+    // line 59
     public function block_javascripts($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -239,7 +226,7 @@ class __TwigTemplate_0d1537a57c29f7af6c5aa086831fbde46fe4c6bd263526f8271f2e66e50
 
     public function getDebugInfo()
     {
-        return array (  213 => 66,  195 => 42,  177 => 12,  158 => 7,  147 => 67,  145 => 66,  131 => 55,  127 => 54,  114 => 43,  112 => 42,  102 => 35,  96 => 32,  83 => 26,  71 => 17,  65 => 13,  63 => 12,  55 => 7,  47 => 1,);
+        return array (  200 => 59,  182 => 42,  164 => 12,  145 => 7,  134 => 60,  132 => 59,  114 => 43,  112 => 42,  102 => 35,  96 => 32,  83 => 26,  71 => 17,  65 => 13,  63 => 12,  55 => 7,  47 => 1,);
     }
 
     public function getSourceContext()
@@ -297,15 +284,8 @@ class __TwigTemplate_0d1537a57c29f7af6c5aa086831fbde46fe4c6bd263526f8271f2e66e50
         </script>
 
         <script>
-            function {{ id }}RecaptchaSubmit(token) {
-                var elem = document.getElementById('{{ id }}');
-                while (elem.parentElement !== null) {
-                    if(elem.tagName = 'FORM') {
-                        elem.submit()
-                        break;
-                    }
-                elem = elem.parentElement
-                }
+            function onSubmit(token) {
+                document.getElementById(\"demo-form\").submit();
             }
         </script>
         

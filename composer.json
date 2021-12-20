@@ -16,7 +16,6 @@
         "doctrine/orm": "^2.9",
         "fzaninotto/faker": "^1.5",
         "google/recaptcha": "^1.2",
-        "karser/karser-recaptcha3-bundle": "^0.1.20",
         "knplabs/knp-paginator-bundle": "^5.7",
         "liip/imagine-bundle": "^2.7",
         "phpdocumentor/reflection-docblock": "^5.2",
