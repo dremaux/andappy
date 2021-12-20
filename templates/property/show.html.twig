@@ -82,16 +82,15 @@
                 <body>
 
                 <?php
-                $ recaptcha = new \ ReCaptcha \ ReCaptcha ( $ secret );
-                $ resp = $ recaptcha -> setExpectedHostname ( 'recaptcha-demo.appspot.com' ) 
-                                -> verify ( $ gRecaptchaResponse , $ remoteIp );
-                if ( $ resp -> isSuccess ()) {
-                    // Vérifié ! 
-                } else {
-                    $ erreurs =$ resp -> getErrorCodes (); 
-                }
+                    $recaptcha = new \ReCaptcha\ReCaptcha('6LfnmLYdAAAAAN8R-5HYQVoI8c9dlAZ2XEf84Oqf');
+                    $resp = $recaptcha->setExpectedHostname('recaptcha-demo.appspot.com')
+                                      ->verify($gRecaptchaResponse);
+                    if ($resp->isSuccess()) {
+                        // Verified!
+                    } else {
+                        $errors = $resp->getErrorCodes();
+                    }
                 ?>
-                
                     <form method="POST">
                     <div class="g-recaptcha" data-sitekey="6LfnmLYdAAAAAK-hT48uVTshJvD0z-uFZJ1_gMoN">test</div>
                     <br/>
