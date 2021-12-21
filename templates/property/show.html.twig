@@ -79,7 +79,8 @@
                 </div>
                 
             {{ form_rest(form) }}
-            <?php
+
+            
             if(isset($_POST['submitpost'])){
                 if(isset($_POST['g-recaptcha-response'])){
                     $recaptcha = new \ReCaptcha\ReCaptcha('6LfnmLYdAAAAAN8R-5HYQVoI8c9dlAZ2XEf84Oqf');
@@ -93,7 +94,7 @@
                     var_dump('Captcha non rempli');
                 }
             }
-            ?>
+            
                 <body>
                     <form method="POST">
                     <div class="g-recaptcha" data-sitekey="6LfnmLYdAAAAAK-hT48uVTshJvD0z-uFZJ1_gMoN">test</div>
