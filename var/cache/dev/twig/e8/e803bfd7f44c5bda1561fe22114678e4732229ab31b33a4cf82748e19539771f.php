@@ -234,18 +234,35 @@ class __TwigTemplate_8c40ccd0d555ca6e9c4e4b05ce7fba39a1ac2042f1bb79c05d952b96ae7
         // line 81
         echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock((isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 81, $this->source); })()), 'rest');
         echo "
+
+            <?php
+            if(isset(\$_POST['submitpost'])){
+                if(isset(\$_POST['g-recaptcha-response'])){
+                    \$recaptcha = new \\ReCaptcha\\ReCaptcha('6LfnmLYdAAAAAN8R-5HYQVoI8c9dlAZ2XEf84Oqf');
+                    \$resp = \$recaptcha->verify(\$_POST['g-recaptcha-response']);
+                    if (\$resp->isSuccess()) {
+                        // Verified!
+                    } else {
+                        \$errors = \$resp->getErrorCodes();
+                    }
+                } else {
+                    var_dump('Captcha non rempli');
+                }
+            }
+            ?>
+            
                 <body>
                     <form method=\"POST\">
-                    <div class=\"g-recaptcha\" data-sitekey=\"6LfnmLYdAAAAAK-hT48uVTshJvD0z-uFZJ1_gMoN\"></div>
+                    <div class=\"g-recaptcha\" data-sitekey=\"6LfnmLYdAAAAAK-hT48uVTshJvD0z-uFZJ1_gMoN\">test</div>
                     <br/>
-                    <input type=\"submit\" value=\"Submit\" class=\"btn btn-primary\">
+                    <input type=\"submit\" value=\"Submit\" class=\"btn btn-primary\" name=\"submitpost\">
                     </form>
                     <br/>
                 </body>
                 
             ";
-        // line 91
-        echo         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 91, $this->source); })()), 'form_end');
+        // line 108
+        echo         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 108, $this->source); })()), 'form_end');
         echo "   
         </div>
     </div>
@@ -270,7 +287,7 @@ class __TwigTemplate_8c40ccd0d555ca6e9c4e4b05ce7fba39a1ac2042f1bb79c05d952b96ae7
 
     public function getDebugInfo()
     {
-        return array (  248 => 91,  235 => 81,  229 => 78,  225 => 77,  219 => 74,  215 => 73,  209 => 70,  203 => 67,  196 => 62,  187 => 60,  183 => 59,  173 => 52,  166 => 48,  159 => 44,  152 => 40,  145 => 36,  133 => 27,  123 => 20,  117 => 19,  113 => 18,  108 => 15,  102 => 13,  96 => 11,  94 => 10,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
+        return array (  265 => 108,  235 => 81,  229 => 78,  225 => 77,  219 => 74,  215 => 73,  209 => 70,  203 => 67,  196 => 62,  187 => 60,  183 => 59,  173 => 52,  166 => 48,  159 => 44,  152 => 40,  145 => 36,  133 => 27,  123 => 20,  117 => 19,  113 => 18,  108 => 15,  102 => 13,  96 => 11,  94 => 10,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
     }
 
     public function getSourceContext()
@@ -356,11 +373,28 @@ class __TwigTemplate_8c40ccd0d555ca6e9c4e4b05ce7fba39a1ac2042f1bb79c05d952b96ae7
                 </div>
                 
             {{ form_rest(form) }}
+
+            <?php
+            if(isset(\$_POST['submitpost'])){
+                if(isset(\$_POST['g-recaptcha-response'])){
+                    \$recaptcha = new \\ReCaptcha\\ReCaptcha('6LfnmLYdAAAAAN8R-5HYQVoI8c9dlAZ2XEf84Oqf');
+                    \$resp = \$recaptcha->verify(\$_POST['g-recaptcha-response']);
+                    if (\$resp->isSuccess()) {
+                        // Verified!
+                    } else {
+                        \$errors = \$resp->getErrorCodes();
+                    }
+                } else {
+                    var_dump('Captcha non rempli');
+                }
+            }
+            ?>
+            
                 <body>
                     <form method=\"POST\">
-                    <div class=\"g-recaptcha\" data-sitekey=\"6LfnmLYdAAAAAK-hT48uVTshJvD0z-uFZJ1_gMoN\"></div>
+                    <div class=\"g-recaptcha\" data-sitekey=\"6LfnmLYdAAAAAK-hT48uVTshJvD0z-uFZJ1_gMoN\">test</div>
                     <br/>
-                    <input type=\"submit\" value=\"Submit\" class=\"btn btn-primary\">
+                    <input type=\"submit\" value=\"Submit\" class=\"btn btn-primary\" name=\"submitpost\">
                     </form>
                     <br/>
                 </body>
