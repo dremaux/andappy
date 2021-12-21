@@ -80,38 +80,6 @@
                 
             {{ form_rest(form) }}
 
-            <?php
-            if(isset($_POST['submitpost'])) {
-                if(isset($_POST['g-recaptcha-response'])) {
-                $recaptcha = new \ReCaptcha\ReCaptcha('6LfnmLYdAAAAAN8R-5HYQVoI8c9dlAZ2XEf84Oqf');
-                $resp = $recaptcha->verify($_POST['g-recaptcha-response']);
-                if ($resp->isSuccess()) {
-                    var_dump('Captcha Valide');
-                } else {
-                    $errors = $resp->getErrorCodes();
-                    var_dump('Captcha Invalide');
-                    var_dump($errors);
-                }
-                } else {
-                var_dump('Captcha non rempli');
-                }
-            }
-            ?>
-            
-                <body>
-                    <form method="POST">
-                    <div class="g-recaptcha" data-sitekey="6LfnmLYdAAAAAK-hT48uVTshJvD0z-uFZJ1_gMoN">test</div>
-                    <br/>
-                    <input type="submit" value="Submit" class="btn btn-primary" name="submitpost">
-                    </form>
-                    <br/>
-                </body>
-                
-            {{ form_end(form) }}   
-        </div>
-    
-
-
         <head>
         <title>reCAPTCHA demo: Explicit render after an onload callback</title>
         <script type="text/javascript">
@@ -123,7 +91,7 @@
         </script>
         </head>
         <body>
-            <form action="?" method="POST">
+            <form method="POST">
             <div id="html_element"></div>
             <br>
             <input type="submit" value="Submit" class="btn btn-primary">
@@ -133,5 +101,12 @@
             </script>
         </body>
     </div>
+                
+            {{ form_end(form) }}   
+        </div>
+    
+
+
+
 
 {% endblock %}
