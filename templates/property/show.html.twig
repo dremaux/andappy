@@ -80,27 +80,36 @@
                 
             {{ form_rest(form) }}
 
-        <head>
-        <title>reCAPTCHA demo: Explicit render after an onload callback</title>
-        <script type="text/javascript">
-        var onloadCallback = function() {
-            grecaptcha.render('html_element', {
-            'sitekey' : 'your_site_key'
-            });
-        };
-        </script>
-        </head>
-        <body>
-            <form method="POST">
-            <div id="html_element"></div>
-            <br>
-            <input type="submit" value="Submit" class="btn btn-primary">
-            </form>
-            <script src="https://www.google.com/recaptcha/api.js?onload=onloadCallback&render=explicit"
-                async defer>
-            </script>
-        </body>
-    </div>
+                    <head>
+                    <title>reCAPTCHA demo: Explicit render after an onload callback</title>
+                    <script type="text/javascript">
+                    var onloadCallback = function() {
+                        grecaptcha.render('html_element', {
+                        'sitekey' : 'your_site_key'
+                        });
+                    };
+                    </script>
+                    </head>
+                    <body>
+                        <form method="POST">
+                        <div id="html_element"></div>
+                        <br>
+                        <input type="submit" value="Submit" class="btn btn-primary">
+                        </form>
+                        <script src="https://www.google.com/recaptcha/api.js?onload=onloadCallback&render=explicit"
+                            async defer>
+                        </script>
+                    </body>
+                </div>
+            
+                <body>
+                    <form method="POST">
+                    <div class="g-recaptcha" data-sitekey="6LfnmLYdAAAAAK-hT48uVTshJvD0z-uFZJ1_gMoN"></div>
+                    <br/>
+                    <input type="submit" value="Submit" class="btn btn-primary" name="submitpost">
+                    </form>
+                    <br/>
+                </body>
                 
             {{ form_end(form) }}   
         </div>
