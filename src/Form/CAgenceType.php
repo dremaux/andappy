@@ -4,6 +4,7 @@ namespace App\Form;
 
 
 use App\Entity\Agence;
+use Grafikart\RecaptchaBundle\Type\RecaptchaSubmitType;
 use Symfony\Component\Console\Output\Output;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
@@ -31,7 +32,7 @@ class CAgenceType extends AbstractType
                 'choice_label' => 'name',
                 'multiple' => 'multiple'
             ])
-            ->add('recaptcha', RecaptchaSumitType::class, [
+            ->add('recaptcha', RecaptchaSubmitType::class, [
                 'labbel' => 'Envoyer'
             ])            
             ;
