@@ -117,20 +117,21 @@ class __TwigTemplate_0d1537a57c29f7af6c5aa086831fbde46fe4c6bd263526f8271f2e66e50
         <script src=\"https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.min.js\" integrity=\"sha384-skAcpIdS7UcVUC05LJ9Dxay8AXcDYfBJqt1CJ85S/CFujBsIzCIv+l9liuYLaMQ/\" crossorigin=\"anonymous\"></script>
         <script src=\"https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.13/js/select2.min.js\" integrity=\"sha512-2ImtlRlf2VVmiGZsjm9bEyhjGW4dU7B6TNwh/hx/iSByxNENtj3WVE6o/9Lj4TJeVXPi4bnOIMXFIJJAeufa0A==\" crossorigin=\"anonymous\" referrerpolicy=\"no-referrer\"></script>
         <script src=\"https://www.google.com/recaptcha/api.js\" async defer></script>
+        <script src=\"https://www.google.com/recaptcha/api.js?onload=onloadCallback&render=explicit\" async defer></script>
         <script> 
             \$('.form-select').select2({ width: '50%' }); 
         </script>
 
         <script>
-            function onSubmit(token) {
-                document.getElementById(\"demo-form\").submit();
+            var onloadCallback = function() {
+                altert(\"grecaptcha is ready!\");
             }
         </script>
         
         ";
-        // line 59
-        $this->displayBlock('javascripts', $context, $blocks);
         // line 60
+        $this->displayBlock('javascripts', $context, $blocks);
+        // line 61
         echo "    </body>
 </html>";
         
@@ -196,7 +197,7 @@ class __TwigTemplate_0d1537a57c29f7af6c5aa086831fbde46fe4c6bd263526f8271f2e66e50
 
     }
 
-    // line 59
+    // line 60
     public function block_javascripts($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -226,7 +227,7 @@ class __TwigTemplate_0d1537a57c29f7af6c5aa086831fbde46fe4c6bd263526f8271f2e66e50
 
     public function getDebugInfo()
     {
-        return array (  200 => 59,  182 => 42,  164 => 12,  145 => 7,  134 => 60,  132 => 59,  114 => 43,  112 => 42,  102 => 35,  96 => 32,  83 => 26,  71 => 17,  65 => 13,  63 => 12,  55 => 7,  47 => 1,);
+        return array (  201 => 60,  183 => 42,  165 => 12,  146 => 7,  135 => 61,  133 => 60,  114 => 43,  112 => 42,  102 => 35,  96 => 32,  83 => 26,  71 => 17,  65 => 13,  63 => 12,  55 => 7,  47 => 1,);
     }
 
     public function getSourceContext()
@@ -279,13 +280,14 @@ class __TwigTemplate_0d1537a57c29f7af6c5aa086831fbde46fe4c6bd263526f8271f2e66e50
         <script src=\"https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.min.js\" integrity=\"sha384-skAcpIdS7UcVUC05LJ9Dxay8AXcDYfBJqt1CJ85S/CFujBsIzCIv+l9liuYLaMQ/\" crossorigin=\"anonymous\"></script>
         <script src=\"https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.13/js/select2.min.js\" integrity=\"sha512-2ImtlRlf2VVmiGZsjm9bEyhjGW4dU7B6TNwh/hx/iSByxNENtj3WVE6o/9Lj4TJeVXPi4bnOIMXFIJJAeufa0A==\" crossorigin=\"anonymous\" referrerpolicy=\"no-referrer\"></script>
         <script src=\"https://www.google.com/recaptcha/api.js\" async defer></script>
+        <script src=\"https://www.google.com/recaptcha/api.js?onload=onloadCallback&render=explicit\" async defer></script>
         <script> 
             \$('.form-select').select2({ width: '50%' }); 
         </script>
 
         <script>
-            function onSubmit(token) {
-                document.getElementById(\"demo-form\").submit();
+            var onloadCallback = function() {
+                altert(\"grecaptcha is ready!\");
             }
         </script>
         

@@ -1607,6 +1607,7 @@ return array(
     'Faker\\Provider\\zh_TW\\PhoneNumber' => $vendorDir . '/fzaninotto/faker/src/Faker/Provider/zh_TW/PhoneNumber.php',
     'Faker\\Provider\\zh_TW\\Text' => $vendorDir . '/fzaninotto/faker/src/Faker/Provider/zh_TW/Text.php',
     'Faker\\UniqueGenerator' => $vendorDir . '/fzaninotto/faker/src/Faker/UniqueGenerator.php',
+    'Grafikart\\RecaptchaBundle\\RecaptchaBundle' => $baseDir . '/lib/RecaptchaBundle/RecaptchaBundle.php',
     'Imagine\\Draw\\DrawerInterface' => $vendorDir . '/imagine/imagine/src/Draw/DrawerInterface.php',
     'Imagine\\Effects\\EffectsInterface' => $vendorDir . '/imagine/imagine/src/Effects/EffectsInterface.php',
     'Imagine\\Exception\\Exception' => $vendorDir . '/imagine/imagine/src/Exception/Exception.php',

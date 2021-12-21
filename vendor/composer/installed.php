@@ -5,7 +5,7 @@
         'type' => 'project',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
-        'reference' => '2b34c68cd6d9fc2c87711f50213251fc8ff40f31',
+        'reference' => '81bb7137dd11a23dc4c23d5b9e4edd8f530e9553',
         'name' => '__root__',
         'dev' => true,
     ),
@@ -16,7 +16,7 @@
             'type' => 'project',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),
-            'reference' => '2b34c68cd6d9fc2c87711f50213251fc8ff40f31',
+            'reference' => '81bb7137dd11a23dc4c23d5b9e4edd8f530e9553',
             'dev_requirement' => false,
         ),
         'cocur/slugify' => array(
@@ -173,12 +173,12 @@
             'dev_requirement' => false,
         ),
         'doctrine/orm' => array(
-            'pretty_version' => '2.10.3',
-            'version' => '2.10.3.0',
+            'pretty_version' => '2.10.4',
+            'version' => '2.10.4.0',
             'type' => 'library',
             'install_path' => __DIR__ . '/../doctrine/orm',
             'aliases' => array(),
-            'reference' => '7b242753466508e1dd10f67c1baee95785f845c1',
+            'reference' => 'cccb2e2fdfed2969afb3d65c5ea82bafdefbe1a7',
             'dev_requirement' => false,
         ),
         'doctrine/persistence' => array(
