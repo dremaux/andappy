@@ -10,7 +10,7 @@ use Symfony\Component\OptionsResolver\OptionsResolver;
 
 class RecaptchaSubmitType extends AbstractType {
 
-    public function configurationOptions (OptionsResolver $resolver)
+    public function configurationOptions(OptionsResolver $resolver)
     {
         $resolver->setDefaults([
             'mapped' => false
