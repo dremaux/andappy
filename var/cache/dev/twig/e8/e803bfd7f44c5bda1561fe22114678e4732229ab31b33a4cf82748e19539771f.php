@@ -235,44 +235,11 @@ class __TwigTemplate_8c40ccd0d555ca6e9c4e4b05ce7fba39a1ac2042f1bb79c05d952b96ae7
         echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock((isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 81, $this->source); })()), 'rest');
         echo "
 
+                <input type=\"submit\" value=\"Submit\" class=\"btn btn-primary\">
 
-
-
-
-                    <head>
-                    <title>reCAPTCHA demo: Explicit render after an onload callback</title>
-                    <script type=\"text/javascript\">
-                    var onloadCallback = function() {
-                        grecaptcha.render('html_element', {
-                        'sitekey' : '6LfnmLYdAAAAAK-hT48uVTshJvD0z-uFZJ1_gMoN'
-                        });
-                    };
-                    </script>
-                    </head>
-                    
-
-
-                    <body>
-                        <form method=\"POST\">
-                        <div id=\"html_element\"></div>
-                        <div class=\"g-recaptcha\" data-sitekey=\"6LfnmLYdAAAAAK-hT48uVTshJvD0z-uFZJ1_gMoN\"></div>
-                        <br>
-                        <input type=\"submit\" value=\"Submit\" class=\"btn btn-primary\">
-                        <br><br><br>
-                        </form>
-                        <script src=\"https://www.google.com/recaptcha/api.js?onload=onloadCallback&render=explicit\"
-                            async defer>
-                        </script>
-                    </body>
-                </div>
-            
-
-
-                
-                
             ";
-        // line 118
-        echo         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 118, $this->source); })()), 'form_end');
+        // line 85
+        echo         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 85, $this->source); })()), 'form_end');
         echo "   
         </div>
     
@@ -301,7 +268,7 @@ class __TwigTemplate_8c40ccd0d555ca6e9c4e4b05ce7fba39a1ac2042f1bb79c05d952b96ae7
 
     public function getDebugInfo()
     {
-        return array (  275 => 118,  235 => 81,  229 => 78,  225 => 77,  219 => 74,  215 => 73,  209 => 70,  203 => 67,  196 => 62,  187 => 60,  183 => 59,  173 => 52,  166 => 48,  159 => 44,  152 => 40,  145 => 36,  133 => 27,  123 => 20,  117 => 19,  113 => 18,  108 => 15,  102 => 13,  96 => 11,  94 => 10,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
+        return array (  242 => 85,  235 => 81,  229 => 78,  225 => 77,  219 => 74,  215 => 73,  209 => 70,  203 => 67,  196 => 62,  187 => 60,  183 => 59,  173 => 52,  166 => 48,  159 => 44,  152 => 40,  145 => 36,  133 => 27,  123 => 20,  117 => 19,  113 => 18,  108 => 15,  102 => 13,  96 => 11,  94 => 10,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
     }
 
     public function getSourceContext()
@@ -388,41 +355,8 @@ class __TwigTemplate_8c40ccd0d555ca6e9c4e4b05ce7fba39a1ac2042f1bb79c05d952b96ae7
                 
             {{ form_rest(form) }}
 
+                <input type=\"submit\" value=\"Submit\" class=\"btn btn-primary\">
 
-
-
-
-                    <head>
-                    <title>reCAPTCHA demo: Explicit render after an onload callback</title>
-                    <script type=\"text/javascript\">
-                    var onloadCallback = function() {
-                        grecaptcha.render('html_element', {
-                        'sitekey' : '6LfnmLYdAAAAAK-hT48uVTshJvD0z-uFZJ1_gMoN'
-                        });
-                    };
-                    </script>
-                    </head>
-                    
-
-
-                    <body>
-                        <form method=\"POST\">
-                        <div id=\"html_element\"></div>
-                        <div class=\"g-recaptcha\" data-sitekey=\"6LfnmLYdAAAAAK-hT48uVTshJvD0z-uFZJ1_gMoN\"></div>
-                        <br>
-                        <input type=\"submit\" value=\"Submit\" class=\"btn btn-primary\">
-                        <br><br><br>
-                        </form>
-                        <script src=\"https://www.google.com/recaptcha/api.js?onload=onloadCallback&render=explicit\"
-                            async defer>
-                        </script>
-                    </body>
-                </div>
-            
-
-
-                
-                
             {{ form_end(form) }}   
         </div>
     
