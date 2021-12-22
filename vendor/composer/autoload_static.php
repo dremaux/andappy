@@ -2270,6 +2270,7 @@ class ComposerStaticInit09188a52ea82c9376593948a2fe9f982
         'Faker\\Provider\\zh_TW\\Text' => __DIR__ . '/..' . '/fzaninotto/faker/src/Faker/Provider/zh_TW/Text.php',
         'Faker\\UniqueGenerator' => __DIR__ . '/..' . '/fzaninotto/faker/src/Faker/UniqueGenerator.php',
         'Grafikart\\RecaptchaBundle\\RecaptchaBundle' => __DIR__ . '/../..' . '/lib/RecaptchaBundle/RecaptchaBundle.php',
+        'Grafikart\\RecaptchaBundle\\Type\\RecaptchaSubmitType' => __DIR__ . '/../..' . '/lib/RecaptchaBundle/Type/RecaptchaSubmitType.php',
         'Imagine\\Draw\\DrawerInterface' => __DIR__ . '/..' . '/imagine/imagine/src/Draw/DrawerInterface.php',
         'Imagine\\Effects\\EffectsInterface' => __DIR__ . '/..' . '/imagine/imagine/src/Effects/EffectsInterface.php',
         'Imagine\\Exception\\Exception' => __DIR__ . '/..' . '/imagine/imagine/src/Exception/Exception.php',
