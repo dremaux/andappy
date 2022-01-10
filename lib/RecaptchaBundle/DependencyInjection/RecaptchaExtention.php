@@ -1,12 +1,10 @@
 <?php
 namespace Grafikart\RecaptchaBundle\DependencyInjection;
 
-use ProxyManager\FileLocator\FileLocator as FileLocatorFileLocator;
 use Symfony\Component\Asset\Config\FileLocator;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
 use Symfony\Component\DependencyInjection\Extension\Extension;
 use Symfony\Component\DependencyInjection\Loader\YamlFileLoader;
-use Symfony\Component\DependencyInjection\Loader\YamlFilenameLoader;
 
 class RecaptchaExtension extends Extension {
 
@@ -20,12 +18,13 @@ class RecaptchaExtension extends Extension {
 
         $loader = new YamlFileLoader(
             $container,
-            new FileLocatorFileLocator(__DIR__ . '/../Ressources/config')
+            new FileLocator(__DIR__ . '/../Ressources/config')
         );
         $loader->load('services.yaml');
 
         $configuration = new Configuration();
         $config = $this->processConfiguration($configuration, $configs);
+        $container->setParameter('recaptcha.key', $config['key']);
         $container->setParameter('recaptcha.secret', $config['secret']);
     }
 
