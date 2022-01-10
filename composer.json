@@ -15,7 +15,6 @@
         "doctrine/doctrine-migrations-bundle": "^3.1",
         "doctrine/orm": "^2.9",
         "fzaninotto/faker": "^1.5",
-        "google/recaptcha": "^1.2",
         "knplabs/knp-paginator-bundle": "^5.7",
         "liip/imagine-bundle": "^2.7",
         "phpdocumentor/reflection-docblock": "^5.2",

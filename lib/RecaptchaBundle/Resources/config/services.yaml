@@ -1,6 +1,15 @@
 services:
-    racaptcha.type:
-        class: Grafikart\RecaptchaBundle\Type\RecaptchaSubmitType
-        tags: ['form.type']
-        arguments:
-            $key: '%recaptcha.key%'
+  racaptcha.type:
+    class: Grafikart\RecaptchaBundle\Type\RecaptchaSubmitType
+    tags: ['form.type']
+    arguments:
+      $key: '%recaptcha.key%'
+  recaptcha.validator:
+    class: Grafikart\RecaptchaBundle\Constraints\RecaptchaValidator
+    tag: ['validator.constraint_validator']
+    autowire: true
+  recaptcha.recaptcha:
+  class: Recaptcha\Recaptcha
+  arguments:
+
+

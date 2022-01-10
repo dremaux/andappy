@@ -1,6 +1,7 @@
 <?php
 namespace Grafikart\RecaptchaBundle\Type;
 
+use Grafikart\RecaptchaBundle\Contraints\Recaptcha;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\FormView;
@@ -23,7 +24,8 @@ class RecaptchaSubmitType extends AbstractType {
     public function configurationOptions(OptionsResolver $resolver)
     {
         $resolver->setDefaults([
-            'mapped' => false
+            'mapped' => false,
+            'constraints' => new Recaptcha()
         ]);
     }
 
