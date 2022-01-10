@@ -1,0 +1,6 @@
+services:
+    racaptcha.type:
+        class: Grafikart\RecaptchaBundle\Type\RecaptchaSubmitType
+        tags: ['form.type']
+        arguments:
+            $key: '%recaptcha.key%'
