@@ -46,3 +46,9 @@ e02ce8,::1,GET,https://localhost:8000/biens/maiores-molestiae-et-1,1640184952,,5
 734438,::1,GET,https://localhost:8000/biens/maiores-molestiae-et-1,1640184953,,500
 7e2bb3,::1,GET,https://localhost:8000/biens/maiores-molestiae-et-1,1640186699,5cc83f,500
 5cc83f,::1,GET,https://localhost:8000/biens/maiores-molestiae-et-1,1640186699,,500
+abfb6d,::1,GET,https://localhost:8000/,1641808565,,200
+35b707,::1,GET,https://localhost:8000/favicon.ico,1641808567,64692d,404
+64692d,::1,GET,https://localhost:8000/favicon.ico,1641808567,,404
+fcc47c,::1,GET,https://localhost:8000/biens,1641808569,a7803c,500
+a7803c,::1,GET,https://localhost:8000/biens,1641808569,,500
+f3a05b,::1,GET,https://localhost:8000/biens,1641808591,,200

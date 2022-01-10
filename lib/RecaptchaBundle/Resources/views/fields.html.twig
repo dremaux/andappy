@@ -1,5 +1,5 @@
 {% block recaptcha_submit_widget %}
     {% set label = button %}
-    {% ser attr = attr | merge({class: 'g-recaptcha'}) %}
+    {% set attr = attr | merge({class: 'g-recaptcha'}) %}
     {% block submit_widget %}{% endblock %}
 {% endblock %}

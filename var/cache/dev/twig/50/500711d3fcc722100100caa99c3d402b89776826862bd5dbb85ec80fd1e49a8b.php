@@ -65,6 +65,9 @@ class __TwigTemplate_ab622e393fbb8df267a25cc74b6865bd4e5ab0f9791dcb8a01242e18d84
         $context["label"] = (isset($context["button"]) || array_key_exists("button", $context) ? $context["button"] : (function () { throw new RuntimeError('Variable "button" does not exist.', 2, $this->source); })());
         // line 3
         echo "    ";
+        $context["attr"] = twig_array_merge((isset($context["attr"]) || array_key_exists("attr", $context) ? $context["attr"] : (function () { throw new RuntimeError('Variable "attr" does not exist.', 3, $this->source); })()), ["class" => "g-recaptcha"]);
+        // line 4
+        echo "    ";
         $this->displayBlock('submit_widget', $context, $blocks);
         
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->leave($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof);
@@ -98,13 +101,14 @@ class __TwigTemplate_ab622e393fbb8df267a25cc74b6865bd4e5ab0f9791dcb8a01242e18d84
 
     public function getDebugInfo()
     {
-        return array (  67 => 3,  64 => 2,  45 => 1,);
+        return array (  70 => 4,  67 => 3,  64 => 2,  45 => 1,);
     }
 
     public function getSourceContext()
     {
         return new Source("{% block recaptcha_submit_widget %}
     {% set label = button %}
+    {% set attr = attr | merge({class: 'g-recaptcha'}) %}
     {% block submit_widget %}{% endblock %}
 {% endblock %}", "@Recaptcha/fields.html.twig", "C:\\Users\\Lucas.DREMAUX\\Documents\\GitHub\\andappy\\lib\\RecaptchaBundle\\Resources\\views\\fields.html.twig");
     }

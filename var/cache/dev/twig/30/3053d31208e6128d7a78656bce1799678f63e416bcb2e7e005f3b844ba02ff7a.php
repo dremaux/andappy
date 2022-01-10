@@ -116,22 +116,17 @@ class __TwigTemplate_0d1537a57c29f7af6c5aa086831fbde46fe4c6bd263526f8271f2e66e50
         <script src=\"https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js\" integrity=\"sha384-W8fXfP3gkOKtndU4JGtKDvXbO53Wy8SZCQHczT5FMiiqmQfUpWbYdTil/SxwZgAN\" crossorigin=\"anonymous\"></script>
         <script src=\"https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.min.js\" integrity=\"sha384-skAcpIdS7UcVUC05LJ9Dxay8AXcDYfBJqt1CJ85S/CFujBsIzCIv+l9liuYLaMQ/\" crossorigin=\"anonymous\"></script>
         <script src=\"https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.13/js/select2.min.js\" integrity=\"sha512-2ImtlRlf2VVmiGZsjm9bEyhjGW4dU7B6TNwh/hx/iSByxNENtj3WVE6o/9Lj4TJeVXPi4bnOIMXFIJJAeufa0A==\" crossorigin=\"anonymous\" referrerpolicy=\"no-referrer\"></script>
-        <script src=\"https://www.google.com/recaptcha/api.js\" async defer></script>
-        <script src=\"https://www.google.com/recaptcha/api.js?onload=onloadCallback&render=explicit\" async defer></script>
+        
         <script> 
             \$('.form-select').select2({ width: '50%' }); 
         </script>
 
-        <script>
-            var onloadCallback = function() {
-                altert(\"grecaptcha is ready!\");
-            }
-        </script>
+        
         
         ";
-        // line 60
+        // line 55
         $this->displayBlock('javascripts', $context, $blocks);
-        // line 61
+        // line 56
         echo "    </body>
 </html>";
         
@@ -197,7 +192,7 @@ class __TwigTemplate_0d1537a57c29f7af6c5aa086831fbde46fe4c6bd263526f8271f2e66e50
 
     }
 
-    // line 60
+    // line 55
     public function block_javascripts($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -227,7 +222,7 @@ class __TwigTemplate_0d1537a57c29f7af6c5aa086831fbde46fe4c6bd263526f8271f2e66e50
 
     public function getDebugInfo()
     {
-        return array (  201 => 60,  183 => 42,  165 => 12,  146 => 7,  135 => 61,  133 => 60,  114 => 43,  112 => 42,  102 => 35,  96 => 32,  83 => 26,  71 => 17,  65 => 13,  63 => 12,  55 => 7,  47 => 1,);
+        return array (  196 => 55,  178 => 42,  160 => 12,  141 => 7,  130 => 56,  128 => 55,  114 => 43,  112 => 42,  102 => 35,  96 => 32,  83 => 26,  71 => 17,  65 => 13,  63 => 12,  55 => 7,  47 => 1,);
     }
 
     public function getSourceContext()
@@ -279,17 +274,12 @@ class __TwigTemplate_0d1537a57c29f7af6c5aa086831fbde46fe4c6bd263526f8271f2e66e50
         <script src=\"https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js\" integrity=\"sha384-W8fXfP3gkOKtndU4JGtKDvXbO53Wy8SZCQHczT5FMiiqmQfUpWbYdTil/SxwZgAN\" crossorigin=\"anonymous\"></script>
         <script src=\"https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.min.js\" integrity=\"sha384-skAcpIdS7UcVUC05LJ9Dxay8AXcDYfBJqt1CJ85S/CFujBsIzCIv+l9liuYLaMQ/\" crossorigin=\"anonymous\"></script>
         <script src=\"https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.13/js/select2.min.js\" integrity=\"sha512-2ImtlRlf2VVmiGZsjm9bEyhjGW4dU7B6TNwh/hx/iSByxNENtj3WVE6o/9Lj4TJeVXPi4bnOIMXFIJJAeufa0A==\" crossorigin=\"anonymous\" referrerpolicy=\"no-referrer\"></script>
-        <script src=\"https://www.google.com/recaptcha/api.js\" async defer></script>
-        <script src=\"https://www.google.com/recaptcha/api.js?onload=onloadCallback&render=explicit\" async defer></script>
+        
         <script> 
             \$('.form-select').select2({ width: '50%' }); 
         </script>
 
-        <script>
-            var onloadCallback = function() {
-                altert(\"grecaptcha is ready!\");
-            }
-        </script>
+        
         
         {% block javascripts %}{% endblock %}
     </body>
