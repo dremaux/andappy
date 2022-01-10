@@ -52,3 +52,5 @@ abfb6d,::1,GET,https://localhost:8000/,1641808565,,200
 fcc47c,::1,GET,https://localhost:8000/biens,1641808569,a7803c,500
 a7803c,::1,GET,https://localhost:8000/biens,1641808569,,500
 f3a05b,::1,GET,https://localhost:8000/biens,1641808591,,200
+b716c5,::1,GET,https://localhost:8000/biens,1641809053,,200
+4cab2a,::1,GET,https://localhost:8000/biens,1641809055,,200
