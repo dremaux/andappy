@@ -2,15 +2,21 @@
 
 namespace Vich\UploaderBundle\Mapping\Annotation;
 
+use Doctrine\Common\Annotations\Annotation\NamedArgumentConstructor;
+use Vich\UploaderBundle\Mapping\AnnotationInterface;
+
 /**
  * UploadableField.
  *
  * @Annotation
  * @Target({"PROPERTY"})
+ * @NamedArgumentConstructor
  *
  * @author Dustin Dobervich <ddobervich@gmail.com>
+ * @final
  */
-class UploadableField
+#[\Attribute(\Attribute::TARGET_PROPERTY)]
+class UploadableField implements AnnotationInterface
 {
     /**
      * @var string
@@ -40,30 +46,27 @@ class UploadableField
     protected $originalName;
 
     /**
-     * @var array
+     * @var string
      */
     protected $dimensions;
 
     /**
      * Constructs a new instance of UploadableField.
-     *
-     * @param array $options The options
-     *
-     * @throws \InvalidArgumentException
      */
-    public function __construct(array $options)
-    {
-        if (empty($options['mapping'])) {
-            throw new \InvalidArgumentException('The "mapping" attribute of UploadableField is required.');
-        }
-
-        foreach ($options as $property => $value) {
-            if (!\property_exists($this, $property)) {
-                throw new \RuntimeException(\sprintf('Unknown key "%s" for annotation "@%s".', $property, static::class));
-            }
-
-            $this->$property = $value;
-        }
+    public function __construct(
+        string $mapping,
+        string $fileNameProperty = null,
+        string $size = null,
+        string $mimeType = null,
+        string $originalName = null,
+        string $dimensions = null
+    ) {
+        $this->mapping = $mapping;
+        $this->fileNameProperty = $fileNameProperty;
+        $this->size = $size;
+        $this->mimeType = $mimeType;
+        $this->originalName = $originalName;
+        $this->dimensions = $dimensions;
     }
 
     /**
@@ -71,7 +74,7 @@ class UploadableField
      *
      * @return string The mapping name
      */
-    public function getMapping()
+    public function getMapping(): string
     {
         return $this->mapping;
     }
@@ -79,41 +82,29 @@ class UploadableField
     /**
      * Gets the file name property.
      *
-     * @return string The file name property
+     * @return string|null The file name property
      */
-    public function getFileNameProperty()
+    public function getFileNameProperty(): ?string
     {
         return $this->fileNameProperty;
     }
 
-    /**
-     * @return string
-     */
-    public function getSize()
+    public function getSize(): ?string
     {
         return $this->size;
     }
 
-    /**
-     * @return string
-     */
-    public function getMimeType()
+    public function getMimeType(): ?string
     {
         return $this->mimeType;
     }
 
-    /**
-     * @return string
-     */
-    public function getOriginalName()
+    public function getOriginalName(): ?string
     {
         return $this->originalName;
     }
 
-    /**
-     * @return array|null
-     */
-    public function getDimensions()
+    public function getDimensions(): ?string
     {
         return $this->dimensions;
     }

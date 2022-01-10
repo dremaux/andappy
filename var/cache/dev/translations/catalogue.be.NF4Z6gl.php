@@ -101,6 +101,10 @@ $catalogue = new MessageCatalogue('be', array (
     'This value should satisfy at least one of the following constraints:' => 'Значэнне павінна задавальняць як мінімум аднаму з наступных абмежаванняў:',
     'Each element of this collection should satisfy its own set of constraints.' => 'Кожны элемент гэтай калекцыі павінен задавальняць свайму ўласнаму набору абмежаванняў.',
     'This value is not a valid International Securities Identification Number (ISIN).' => 'Значэнне не з\'яўляецца карэктным міжнародным ідэнтыфікацыйным нумарам каштоўных папер (ISIN).',
+    'This value should be a valid expression.' => 'Значэнне не з\'яўляецца сапраўдным выразам.',
+    'This value is not a valid CSS color.' => 'Значэнне не з\'яўляецца дапушчальным колерам CSS.',
+    'This value is not a valid CIDR notation.' => 'Значэнне не з\'яўляецца сапраўднай натацыяй CIDR.',
+    'The value of the netmask should be between {{ min }} and {{ max }}.' => 'Значэнне сеткавай маскі павінна быць ад {{min}} да {{max}}.',
     'This form should not contain extra fields.' => 'Гэта форма не павінна мець дадатковых палей.',
     'The uploaded file was too large. Please try to upload a smaller file.' => 'Запампаваны файл быў занадта вялікім. Калі ласка, паспрабуйце запампаваць файл меншага памеру.',
     'The CSRF token is invalid. Please try to resubmit the form.' => 'CSRF-токен не сапраўдны. Калі ласка, паспрабуйце яшчэ раз адправіць форму.',
@@ -154,6 +158,8 @@ $catalogue = new MessageCatalogue('be', array (
     'Account is locked.' => 'Акаўнт заблакіраван.',
     'Too many failed login attempts, please try again later.' => 'Зашмат няўдалых спроб уваходу, калі ласка, паспрабуйце пазней.',
     'Invalid or expired login link.' => 'Спасылка для ўваходу несапраўдная або пратэрмінаваная.',
+    'Too many failed login attempts, please try again in %minutes% minute.' => 'Занадта шмат няўдалых спроб уваходу ў сістэму, паспрабуйце спробу праз %minutes% хвіліну.',
+    'Too many failed login attempts, please try again in %minutes% minutes.' => 'Занадта шмат няўдалых спроб уваходу ў сістэму, паспрабуйце спробу праз %minutes% хвілін.',
   ),
 ));
 

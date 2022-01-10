@@ -2,10 +2,12 @@
 
 namespace Vich\UploaderBundle\DependencyInjection;
 
+use Doctrine\Common\Annotations\AnnotationReader;
 use Symfony\Component\Config\FileLocator;
 use Symfony\Component\DependencyInjection\Alias;
 use Symfony\Component\DependencyInjection\ChildDefinition;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
+use Symfony\Component\DependencyInjection\Definition;
 use Symfony\Component\DependencyInjection\Extension\Extension;
 use Symfony\Component\DependencyInjection\Loader\XmlFileLoader;
 use Symfony\Component\DependencyInjection\Reference;
@@ -14,6 +16,8 @@ use Vich\UploaderBundle\Storage\StorageInterface;
 
 /**
  * @author Dustin Dobervich <ddobervich@gmail.com>
+ *
+ * @internal
  */
 final class VichUploaderExtension extends Extension
 {
@@ -47,6 +51,7 @@ final class VichUploaderExtension extends Extension
 
         $this->loadServicesFiles($container, $config);
         $this->registerMetadataDirectories($container, $config);
+        $this->registerAnnotationStrategy($container, $config);
         $this->registerCacheStrategy($container, $config);
 
         $this->registerListeners($container, $config);
@@ -86,6 +91,14 @@ final class VichUploaderExtension extends Extension
         // directories
         $directories = [];
         if ($config['metadata']['auto_detection']) {
+            $projectDir = $container->getParameter('kernel.project_dir');
+            if (\is_string($projectDir)) {
+                $appConfigDirectory = $projectDir.'/config/vich_uploader';
+                if (\is_dir($appConfigDirectory)) {
+                    $directories['App'] = $appConfigDirectory;
+                }
+            }
+
             foreach ($bundles as $class) {
                 $ref = new \ReflectionClass($class);
                 $directory = \dirname($ref->getFileName()).'/../config/vich_uploader';
@@ -126,6 +139,27 @@ final class VichUploaderExtension extends Extension
             ->getDefinition('vich_uploader.metadata.file_locator')
             ->replaceArgument(0, $directories)
         ;
+    }
+
+    protected function registerAnnotationStrategy(ContainerBuilder $container, array $config): void
+    {
+        if (!$container->has('vich_uploader.metadata_driver.annotation')) {
+            return;
+        }
+
+        switch ($config['metadata']['type']) {
+            case 'attribute':
+                $container->setDefinition(
+                    'vich_uploader.metadata.reader',
+                    $container->getDefinition('vich_uploader.metadata.attribute_reader')
+                );
+                break;
+            default:
+                $container->setDefinition(
+                    'vich_uploader.metadata.reader',
+                    new Definition(AnnotationReader::class)
+                );
+        }
     }
 
     protected function registerCacheStrategy(ContainerBuilder $container, array $config): void

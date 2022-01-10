@@ -45,7 +45,7 @@ abstract class AbstractStorage implements StorageInterface
         $mapping->writeProperty($obj, 'mimeType', $mimeType);
         $mapping->writeProperty($obj, 'originalName', $file->getClientOriginalName());
 
-        if (false !== \strpos($mimeType, 'image/') && 'image/svg+xml' !== $mimeType && false !== $dimensions = @\getimagesize($file)) {
+        if (null !== $mimeType && false !== \strpos($mimeType, 'image/') && 'image/svg+xml' !== $mimeType && false !== $dimensions = @\getimagesize($file)) {
             $mapping->writeProperty($obj, 'dimensions', \array_splice($dimensions, 0, 2));
         }
 
@@ -56,7 +56,7 @@ abstract class AbstractStorage implements StorageInterface
 
     abstract protected function doRemove(PropertyMapping $mapping, ?string $dir, string $name): ?bool;
 
-    public function remove($obj, PropertyMapping $mapping): ?bool
+    public function remove($obj, PropertyMapping $mapping, ?string $forcedFilename = null): ?bool
     {
         $name = $mapping->getFileName($obj);
 
@@ -64,7 +64,7 @@ abstract class AbstractStorage implements StorageInterface
             return false;
         }
 
-        return $this->doRemove($mapping, $mapping->getUploadDir($obj), $name);
+        return $this->doRemove($mapping, $mapping->getUploadDir($obj), $forcedFilename ?? $name);
     }
 
     /**

@@ -4467,7 +4467,7 @@
           </argument>
           <argument type="collection">
             <argument>Vich\UploaderBundle\Entity</argument>
-            <argument type="service" id="doctrine.orm.default_annotation_metadata_driver"/>
+            <argument type="service" id="doctrine.orm.default_xml_metadata_driver"/>
           </argument>
         </argument>
       </argument>
@@ -4907,6 +4907,12 @@
         <argument>doctrine:mapping:import</argument>
       </call>
     </service>
+    <service id="Doctrine\Bundle\DoctrineBundle\Controller\ProfilerController" class="Doctrine\Bundle\DoctrineBundle\Controller\ProfilerController" public="true">
+      <tag name="controller.service_arguments"/>
+      <argument type="service" id="twig"/>
+      <argument type="service" id="doctrine"/>
+      <argument type="service" id="profiler"/>
+    </service>
     <service id="doctrine.orm.default_configuration" class="Doctrine\ORM\Configuration">
       <tag name="doctrine.orm.configuration"/>
       <call method="setEntityNamespaces">
@@ -4959,8 +4965,15 @@
       <argument type="service" id="annotations.cached_reader"/>
       <argument type="collection">
         <argument>C:\Users\Lucas.DREMAUX\Documents\GitHub\andappy\src\Entity</argument>
-        <argument>C:\Users\Lucas.DREMAUX\Documents\GitHub\andappy\vendor\vich\uploader-bundle\src\Entity</argument>
       </argument>
+    </service>
+    <service id="doctrine.orm.default_xml_metadata_driver" class="Doctrine\ORM\Mapping\Driver\SimplifiedXmlDriver">
+      <argument type="collection">
+        <argument key="C:\Users\Lucas.DREMAUX\Documents\GitHub\andappy\vendor\vich\uploader-bundle\src\Resources\config\doctrine">Vich\UploaderBundle\Entity</argument>
+      </argument>
+      <call method="setGlobalBasename">
+        <argument>mapping</argument>
+      </call>
     </service>
     <service id="cache.doctrine.orm.default.metadata" class="Symfony\Component\Cache\Adapter\ArrayAdapter"/>
     <service id="cache.doctrine.orm.default.result" class="Symfony\Component\Cache\Adapter\TraceableAdapter">
@@ -6100,8 +6113,9 @@
     <service id="vich_uploader.metadata.file_locator" class="Metadata\Driver\FileLocator">
       <argument type="collection"/>
     </service>
+    <service id="vich_uploader.metadata.attribute_reader" class="Vich\UploaderBundle\Metadata\Driver\AttributeReader"/>
     <service id="vich_uploader.metadata_driver.annotation" class="Vich\UploaderBundle\Metadata\Driver\AnnotationDriver">
-      <argument type="service" id="annotations.cached_reader"/>
+      <argument type="service" id="vich_uploader.metadata.reader"/>
     </service>
     <service id="vich_uploader.metadata_driver.xml" class="Vich\UploaderBundle\Metadata\Driver\XmlDriver">
       <argument type="service" id="vich_uploader.metadata.file_locator"/>
@@ -6231,6 +6245,7 @@
       <tag name="twig.extension"/>
       <argument type="service" id="Vich\UploaderBundle\Templating\Helper\UploaderHelper"/>
     </service>
+    <service id="vich_uploader.metadata.reader" class="Doctrine\Common\Annotations\AnnotationReader"/>
     <service id="vich_uploader.listener.clean.property_image" class="Vich\UploaderBundle\EventListener\Doctrine\CleanListener">
       <tag name="doctrine.event_subscriber" priority="50"/>
       <argument>property_image</argument>
@@ -7707,7 +7722,7 @@
         <argument>App\Entity</argument>
       </call>
       <call method="addDriver">
-        <argument type="service" id="doctrine.orm.default_annotation_metadata_driver"/>
+        <argument type="service" id="doctrine.orm.default_xml_metadata_driver"/>
         <argument>Vich\UploaderBundle\Entity</argument>
       </call>
     </service>
