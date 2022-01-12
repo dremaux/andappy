@@ -11,5 +11,6 @@ services:
   recaptcha.recaptcha:
   class: Recaptcha\Recaptcha
   arguments:
+    $secret: '%recaptcha.secret%'
 
 
