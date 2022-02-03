@@ -73,8 +73,8 @@
     },
     "autoload": {
         "psr-4": {
-            "App\\": "src/",
-            "Grafikart\\RecaptchaBundle\\": "lib/RecaptchaBundle"
+            "App\\": "src/"
+        //    "Grafikart\\RecaptchaBundle\\": "lib/RecaptchaBundle"
         }
     },
     "autoload-dev": {

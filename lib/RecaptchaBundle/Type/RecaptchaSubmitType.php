@@ -25,7 +25,7 @@ class RecaptchaSubmitType extends AbstractType {
     {
         $resolver->setDefaults([
             'mapped' => false,
-            'constraints' => new Recaptcha()
+            'constraints' => new Recaptcha ()
         ]);
     }
 

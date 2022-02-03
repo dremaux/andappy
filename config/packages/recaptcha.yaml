@@ -5,6 +5,6 @@
 #    arguments:
 #      $key: ''
 
-recaptcha: 
+#recaptcha: 
 #  key: 6Lci4gIeAAAAAOCNPbFSQ19Lk1-vLwcp4uIOjqY1
-  secret: 6Lci4gIeAAAAABVpIv_iXPsm6OOd3Cb-gsT1Awph
+#  secret: 6Lci4gIeAAAAABVpIv_iXPsm6OOd3Cb-gsT1Awph

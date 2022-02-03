@@ -54,3 +54,15 @@ a7803c,::1,GET,https://localhost:8000/biens,1641808569,,500
 f3a05b,::1,GET,https://localhost:8000/biens,1641808591,,200
 b716c5,::1,GET,https://localhost:8000/biens,1641809053,,200
 4cab2a,::1,GET,https://localhost:8000/biens,1641809055,,200
+b6f7ca,::1,GET,https://localhost:8000/,1643719245,,200
+0c8e6f,::1,GET,https://localhost:8000/favicon.ico,1643719247,2a738a,404
+2a738a,::1,GET,https://localhost:8000/favicon.ico,1643719247,,404
+5aed86,::1,GET,https://localhost:8000/biens,1643719251,,200
+e87b5b,::1,GET,https://localhost:8000/biens/maiores-molestiae-et-1,1643719253,,200
+0f142a,::1,GET,https://localhost:8000/biens,1643719257,,200
+57741f,::1,GET,https://localhost:8000/biens,1643719262,,200
+72503c,::1,GET,https://localhost:8000/admin,1643719265,,302
+404cd1,::1,GET,https://localhost:8000/login,1643719266,,200
+7541a8,::1,POST,https://localhost:8000/login,1643719271,,302
+dcff58,::1,GET,https://localhost:8000/admin,1643719271,,200
+234bdd,::1,GET,https://localhost:8000/biens,1643719288,,200
