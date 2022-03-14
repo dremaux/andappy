@@ -17,6 +17,7 @@
         "fzaninotto/faker": "^1.5",
         "knplabs/knp-paginator-bundle": "^5.7",
         "liip/imagine-bundle": "^2.7",
+        "nelmio/cors-bundle": "^2.2",
         "phpdocumentor/reflection-docblock": "^5.2",
         "sensio/framework-extra-bundle": "^6.1",
         "symfony/apache-pack": "^1.0",

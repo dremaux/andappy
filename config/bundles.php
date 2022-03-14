@@ -16,5 +16,5 @@ return [
     Knp\Bundle\PaginatorBundle\KnpPaginatorBundle::class => ['all' => true],
     Vich\UploaderBundle\VichUploaderBundle::class => ['all' => true],
     Liip\ImagineBundle\LiipImagineBundle::class => ['all' => true],
-    //\Grafikart\RecaptchaBundle\RecaptchaBundle::class => ['all' => true]
+    Nelmio\CorsBundle\NelmioCorsBundle::class => ['all' => true],
 ];
