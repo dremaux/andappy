@@ -1,0 +1,143 @@
+parameters:
+    level: 8
+    paths:
+        - src
+    treatPhpDocTypesAsCertain: false
+    reportUnmatchedIgnoredErrors: false
+    checkMissingIterableValueType: false
+    checkGenericClassInNonGenericObjectType: false
+    ignoreErrors:
+        # https://github.com/doctrine/dbal/pull/3836
+        # TODO: remove in 4.0.0
+        - '~^Parameter #2 \$registeredAliases of static method Doctrine\\DBAL\\Query\\QueryException::nonUniqueAlias\(\) expects array<string>, array<int, int\|string> given\.\z~'
+
+        # some drivers actually do accept 2nd parameter...
+        - '~^Method Doctrine\\DBAL\\Platforms\\AbstractPlatform::getListTableForeignKeysSQL\(\) invoked with \d+ parameters, 1 required\.\z~'
+
+        # https://github.com/phpstan/phpstan/issues/3134
+        -
+            message: '~^Call to static method PHPUnit\\Framework\\Assert::assertSame\(\) with Doctrine\\DBAL\\Types\\Type and Doctrine\\DBAL\\Types\\Type will always evaluate to true\.$~'
+            path: tests/Types/TypeRegistryTest.php
+
+        # https://github.com/phpstan/phpstan-strict-rules/issues/103
+        -
+            message: '~^Construct empty\(\) is not allowed. Use more strict comparison\.~'
+            paths:
+                - src/Driver/*/Driver.php
+                - src/Driver/AbstractOracleDriver/EasyConnectString.php
+                - src/Platforms/*Platform.php
+                - src/Schema/*SchemaManager.php
+
+        # In some namespaces, we use array<string,mixed>, some elements of which are actually boolean
+        -
+            message: '~^Only booleans are allowed in .*, mixed given~'
+            paths:
+                - src/Driver/*/Driver.php
+                - src/Platforms/*Platform.php
+                - src/Query/QueryBuilder.php
+                - src/Schema/*SchemaManager.php
+
+        # Some APIs use variable method calls internally
+        -
+            message: '~^Variable method call on .*~'
+            paths:
+                - src/Schema/Column.php
+
+        -
+            message: '~^Instanceof between Doctrine\\DBAL\\Platforms\\Keywords\\KeywordList and Doctrine\\DBAL\\Platforms\\Keywords\\KeywordList will always evaluate to true\.~'
+            paths:
+                - src/Platforms/AbstractPlatform.php
+
+        # TODO: remove this once the support for PHP 7 is dropped
+        -
+            message: '~^Strict comparison using !== between int and false will always evaluate to true\.$~'
+            paths:
+                - src/Driver/OCI8/Result.php
+        -
+            message: '~^Unreachable statement - code above always terminates\.$~'
+            paths:
+                - src/Driver/OCI8/Result.php
+
+        -
+            message: '~Template type T of method Doctrine\\DBAL\\DriverManager::getConnection\(\) is not referenced in a parameter\.~'
+            paths:
+                - src/DriverManager.ph
+
+        -
+            message: '~Method Doctrine\\DBAL\\DriverManager::createDriver\(\) should return Doctrine\\DBAL\\Driver but returns object\.~'
+            paths:
+                - src/DriverManager.php
+
+        # TODO: remove in 4.0.0
+        -
+            message: '~^Parameter #2 \$table of class Doctrine\\DBAL\\Event\\SchemaIndexDefinitionEventArgs constructor expects string, string\|null given\.$~'
+            paths:
+                - src/Schema/AbstractSchemaManager.php
+
+        # https://github.com/phpstan/phpstan/issues/1901
+        -
+            message: '~^Method Doctrine\\DBAL\\Platforms\\AbstractPlatform::escapeStringForLike\(\) should return string but returns string\|null\.$~'
+            paths:
+                - src/Platforms/AbstractPlatform.php
+
+        # https://github.com/phpstan/phpstan/issues/4679
+        -
+            message: '~^Cannot call method writeTemporary\(\) on OCILob\|null\.$~'
+            paths:
+                - src/Driver/OCI8/Statement.php
+
+        # TODO: check for null after calling Connection::getDatabase()
+        -
+            message: '~Parameter.*\$database of method.*expects string, string\|null given\.~'
+            path: src/Schema/AbstractSchemaManager.php
+            count: 3
+
+        # TODO: prevent unsafe usage of operator - with null
+        -
+            message: '~Only numeric types are allowed in \-, float\|null given on the right side\.~'
+            path: src/Logging/DebugStack.php
+
+        -
+            message: '~Method Doctrine\\DBAL\\Driver\\Mysqli\\Result::rowCount\(\) should return int but returns int(:?<0, max>)?\|string\.~'
+            paths:
+                - src/Driver/Mysqli/Result.php
+
+        # Removing the (int) cast will make Psalm unhappy.
+        -
+            message: '~^Casting to int something that''s already int\.$~'
+            paths:
+                - src/Driver/Mysqli/Exception/ConnectionError.php
+                - src/Driver/Mysqli/Exception/ConnectionFailed.php
+                - src/Driver/Mysqli/Exception/InvalidCharset.php
+                - src/Driver/Mysqli/Exception/StatementError.php
+
+        -
+            message: '~^Unable to resolve the template type T in call to method Doctrine\\DBAL\\Portability\\Converter\:\:compose\(\)$~'
+            paths:
+                - src/Portability/Converter.php
+
+        # Type check for legacy implementations of the Connection interface
+        # TODO: remove in 4.0.0
+        - "~Call to function method_exists\\(\\) with Doctrine\\\\DBAL\\\\Driver\\\\Connection and 'getNativeConnection' will always evaluate to true\\.~"
+
+        # Fixing the issue would cause a BC break.
+        # TODO: fix in 4.0.0
+        -
+            message: '~^Method Doctrine\\DBAL\\Connection::executeUpdate\(\) should return int but returns int\|string\.$~'
+            paths:
+                - src/Connection.php
+        -
+            message: '~^Method Doctrine\\DBAL\\Connection::exec\(\) should return int but returns int\|string\.$~'
+            paths:
+                - src/Connection.php
+        -
+            message: '~^Method Doctrine\\DBAL\\Driver\\Mysqli\\Connection::exec\(\) should return int but returns int\|string\.$~'
+            paths:
+                - src/Driver/Mysqli/Connection.php
+        -
+            message: '~^Method Doctrine\\DBAL\\Query\\QueryBuilder::executeStatement\(\) should return int but returns int\|string\.$~'
+            paths:
+                - src/Query/QueryBuilder.php
+
+includes:
+    - vendor/phpstan/phpstan-strict-rules/rules.neon

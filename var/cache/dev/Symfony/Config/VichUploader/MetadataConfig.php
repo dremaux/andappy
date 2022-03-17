@@ -17,6 +17,7 @@ use Symfony\Component\Config\Definition\Exception\InvalidConfigurationException;
 class MetadataConfig 
 {
     private $cache;
+    private $type;
     private $fileCache;
     private $autoDetection;
     private $directories;
@@ -29,6 +30,18 @@ class MetadataConfig
     public function cache($value): self
     {
         $this->cache = $value;
+    
+        return $this;
+    }
+    
+    /**
+     * @default 'annotation'
+     * @param ParamConfigurator|mixed $value
+     * @return $this
+     */
+    public function type($value): self
+    {
+        $this->type = $value;
     
         return $this;
     }
@@ -69,6 +82,11 @@ class MetadataConfig
             unset($value['cache']);
         }
     
+        if (isset($value['type'])) {
+            $this->type = $value['type'];
+            unset($value['type']);
+        }
+    
         if (isset($value['file_cache'])) {
             $this->fileCache = new \Symfony\Config\VichUploader\Metadata\FileCacheConfig($value['file_cache']);
             unset($value['file_cache']);
@@ -95,6 +113,9 @@ class MetadataConfig
         $output = [];
         if (null !== $this->cache) {
             $output['cache'] = $this->cache;
+        }
+        if (null !== $this->type) {
+            $output['type'] = $this->type;
         }
         if (null !== $this->fileCache) {
             $output['file_cache'] = $this->fileCache->toArray();

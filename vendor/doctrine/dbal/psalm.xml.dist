@@ -1,0 +1,501 @@
+<?xml version="1.0"?>
+<psalm
+    errorLevel="2"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns="https://getpsalm.org/schema/config"
+    xsi:schemaLocation="https://getpsalm.org/schema/config vendor/vimeo/psalm/config.xsd"
+>
+    <projectFiles>
+        <directory name="src" />
+        <directory name="static-analysis" />
+        <directory name="tests" />
+        <ignoreFiles>
+            <directory name="vendor" />
+        </ignoreFiles>
+    </projectFiles>
+    <stubs>
+        <file name="vendor/jetbrains/phpstorm-stubs/PDO/PDO.php" />
+        <file name="vendor/jetbrains/phpstorm-stubs/ibm_db2/ibm_db2.php" />
+        <file name="vendor/jetbrains/phpstorm-stubs/mysqli/mysqli.php" />
+        <file name="vendor/jetbrains/phpstorm-stubs/oci8/oci8.php" />
+        <file name="vendor/jetbrains/phpstorm-stubs/pgsql/pgsql.php" />
+        <file name="vendor/jetbrains/phpstorm-stubs/sqlsrv/sqlsrv.php" />
+    </stubs>
+    <issueHandlers>
+        <ArgumentTypeCoercion>
+            <errorLevel type="suppress">
+                <!--
+                    See https://github.com/composer/package-versions-deprecated/pull/12
+                -->
+                <file name="src/Tools/Console/ConsoleRunner.php"/>
+            </errorLevel>
+        </ArgumentTypeCoercion>
+        <ConflictingReferenceConstraint>
+            <errorLevel type="suppress">
+                <!--
+                    This one is just too convoluted for Psalm to figure out, by
+                    its author's own admission
+                -->
+                <file name="src/Driver/OCI8/ConvertPositionalToNamedPlaceholders.php"/>
+            </errorLevel>
+        </ConflictingReferenceConstraint>
+        <DeprecatedClass>
+            <errorLevel type="suppress">
+                <!--
+                    This suppression should be removed in 4.0.0.
+                -->
+                <referencedClass name="Doctrine\DBAL\Id\TableGenerator"/>
+                <referencedClass name="Doctrine\DBAL\Id\TableGeneratorSchemaVisitor"/>
+                <!--
+                    TODO: remove in 4.0.0
+                -->
+                <referencedClass name="Doctrine\DBAL\Driver\ServerInfoAwareConnection"/>
+                <referencedClass name="Doctrine\DBAL\VersionAwarePlatformDriver"/>
+                <!--
+                    TODO: remove in 4.0.0
+                -->
+                <referencedClass name="Doctrine\DBAL\Platforms\Keywords\MariaDb102Keywords"/>
+                <referencedClass name="Doctrine\DBAL\Platforms\Keywords\MySQL57Keywords"/>
+                <referencedClass name="Doctrine\DBAL\Platforms\Keywords\PostgreSQL100Keywords"/>
+                <referencedClass name="Doctrine\DBAL\Platforms\Keywords\PostgreSQL94Keywords"/>
+                <referencedClass name="Doctrine\DBAL\Platforms\Keywords\SQLServer2012Keywords"/>
+                <referencedClass name="Doctrine\DBAL\Platforms\MariaDb1027Platform"/>
+                <referencedClass name="Doctrine\DBAL\Platforms\MySQL57Platform"/>
+                <referencedClass name="Doctrine\DBAL\Platforms\PostgreSQL100Platform"/>
+                <referencedClass name="Doctrine\DBAL\Platforms\PostgreSQL94Platform"/>
+                <referencedClass name="Doctrine\DBAL\Platforms\SQLServer2012Platform"/>
+                <!--
+                    TODO: remove in 4.0.0
+                -->
+                <referencedClass name="Doctrine\DBAL\Schema\Constraint"/>
+                <!--
+                    TODO: remove in 4.0.0
+                    See https://github.com/doctrine/dbal/pull/4967
+                -->
+                <referencedClass name="Doctrine\DBAL\Logging\DebugStack"/>
+                <referencedClass name="Doctrine\DBAL\Logging\SQLLogger"/>
+                <referencedClass name="Doctrine\DBAL\Logging\LoggerChain"/>
+            </errorLevel>
+        </DeprecatedClass>
+        <DeprecatedInterface>
+            <errorLevel type="suppress">
+                <!--
+                    TODO: remove in 4.0.0
+                -->
+                <referencedClass name="Doctrine\DBAL\Driver\ServerInfoAwareConnection"/>
+                <referencedClass name="Doctrine\DBAL\VersionAwarePlatformDriver"/>
+                <!--
+                    TODO: remove in 4.0.0
+                -->
+                <referencedClass name="Doctrine\DBAL\Schema\Constraint"/>
+                <!--
+                    TODO: remove in 4.0.0
+                    See https://github.com/doctrine/dbal/pull/4967
+                -->
+                <referencedClass name="Doctrine\DBAL\Logging\SQLLogger"/>
+            </errorLevel>
+        </DeprecatedInterface>
+        <DeprecatedMethod>
+            <errorLevel type="suppress">
+                <!--
+                    This suppression should be removed after 2022
+                    See https://github.com/doctrine/dbal/pull/4317
+                -->
+                <file name="tests/Functional/LegacyAPITest.php"/>
+                <!--
+                    This suppression should be removed in 4.0.0.
+                -->
+                <file name="src/Platforms/AbstractPlatform.php"/>
+                <!--
+                    This suppression should be removed in 4.0.x
+                    See https://github.com/doctrine/dbal/pull/3865
+                -->
+                <file name="src/Query/Expression/CompositeExpression.php"/>
+                <file name="tests/Query/Expression/CompositeExpressionTest.php"/>
+                <file name="tests/Query/Expression/ExpressionBuilderTest.php"/>
+                <!--
+                    This suppression should be removed in 4.0.x
+                    See https://github.com/doctrine/dbal/pull/4518
+                -->
+                <file name="src/Query/QueryBuilder.php"/>
+                <file name="src/Tools/Console/Command/ReservedWordsCommand.php"/>
+                <!--
+                    This suppression should be removed in 4.0.x
+                -->
+                <file name="src/Schema/AbstractSchemaManager.php" />
+                <file name="src/Schema/PostgreSQLSchemaManager.php" />
+                <!--
+                    See https://github.com/doctrine/dbal/pull/4518
+                    TODO: remove in 4.0.0
+                -->
+                <referencedMethod name="Doctrine\DBAL\Connection::getSchemaManager"/>
+                <!--
+                    See https://github.com/doctrine/dbal/issues/4503
+                    TODO: remove in 4.0.0
+                -->
+                <referencedMethod name="Doctrine\DBAL\Schema\AbstractSchemaManager::listNamespaceNames"/>
+                <referencedMethod name="Doctrine\DBAL\Schema\PostgreSQLSchemaManager::getSchemaNames"/>
+                <!--
+                    See https://github.com/doctrine/dbal/pull/4722
+                    TODO: remove in 4.0.0
+                -->
+                <referencedMethod name="Doctrine\DBAL\Schema\Comparator::compare" />
+                <!--
+                    See https://github.com/doctrine/dbal/pull/4578
+                    TODO: remove in 4.0.0
+                -->
+                <referencedMethod name="Doctrine\DBAL\Query\QueryBuilder::execute" />
+                <referencedMethod name="Doctrine\DBAL\Statement::execute"/>
+                <!--
+                    TODO: remove in 4.0.0
+                -->
+                <referencedMethod name="Doctrine\DBAL\Platforms\AbstractPlatform::getBinaryDefaultLength"/>
+                <referencedMethod name="Doctrine\DBAL\Platforms\AbstractPlatform::getBinaryMaxLength"/>
+                <referencedMethod name="Doctrine\DBAL\Platforms\AbstractPlatform::getIsNullExpression"/>
+                <referencedMethod name="Doctrine\DBAL\Platforms\AbstractPlatform::getUniqueFieldDeclarationSQL"/>
+                <!--
+                    See https://github.com/doctrine/dbal/pull/5058
+                    TODO: remove in 4.0.0
+                -->
+                <referencedMethod name="Doctrine\DBAL\Platforms\AbstractPlatform::isCommentedDoctrineType"/>
+                <referencedMethod name="Doctrine\DBAL\Platforms\AbstractPlatform::initializeCommentedDoctrineTypes"/>
+                <referencedMethod name="Doctrine\DBAL\Platforms\AbstractPlatform::markedDoctrineTypeCommented"/>
+                <referencedMethod name="Doctrine\DBAL\Platforms\AbstractPlatform::supportsAlterTable"/>
+                <referencedMethod name="Doctrine\DBAL\Platforms\AbstractPlatform::supportsViews"/>
+                <!--
+                    See https://github.com/doctrine/dbal/pull/4742
+                    TODO: remove in 4.0.0
+                -->
+                <referencedMethod name="Doctrine\DBAL\Schema\ForeignKeyConstraint::getLocalTable"/>
+                <referencedMethod name="Doctrine\DBAL\Schema\ForeignKeyConstraint::getLocalTableName"/>
+                <referencedMethod name="Doctrine\DBAL\Schema\ForeignKeyConstraint::setLocalTable"/>
+                <!--
+                    TODO: remove in 4.0.0
+                -->
+                <referencedMethod name="Doctrine\DBAL\Schema\Schema::getMigrateToSql"/>
+                <!--
+                    TODO: remove in 4.0.0
+                -->
+                <referencedMethod name="Doctrine\DBAL\Platforms\OraclePlatform::assertValidIdentifier"/>
+                <!--
+                    TODO: remove in 4.0.0
+                    See https://github.com/doctrine/dbal/pull/4822
+                -->
+                <referencedMethod name="Doctrine\DBAL\Schema\SchemaConfig::hasExplicitForeignKeyIndexes"/>
+                <!--
+                    TODO: remove in 4.0.0
+                    See https://github.com/doctrine/dbal/pull/4814
+                -->
+                <referencedMethod name="Doctrine\DBAL\Schema\AbstractAsset::getFullQualifiedName"/>
+                <!--
+                    TODO: remove in 4.0.0
+                    See https://github.com/doctrine/dbal/pull/4821
+                -->
+                <referencedMethod name="Doctrine\DBAL\Schema\AbstractSchemaManager::getSchemaSearchPaths"/>
+                <!--
+                    TODO: remove in 4.0.0
+                -->
+                <referencedMethod name="Doctrine\DBAL\Platforms\AbstractPlatform::getCreateConstraintSQL"/>
+                <referencedMethod name="Doctrine\DBAL\Schema\ForeignKeyConstraint::getColumns"/>
+                <!--
+                    TODO: remove in 4.0.0
+                    See https://github.com/doctrine/dbal/pull/4897
+                -->
+                <referencedMethod name="Doctrine\DBAL\Schema\AbstractSchemaManager::tryMethod"/>
+
+                <!-- TODO: remove in 4.0.0 -->
+                <referencedMethod name="Doctrine\DBAL\Driver\PDO\Connection::getWrappedConnection"/>
+                <!--
+                    TODO: remove in 4.0.0
+                    See https://github.com/doctrine/dbal/pull/4966
+                -->
+                <referencedMethod name="Doctrine\DBAL\Connection::getWrappedConnection"/>
+                <!--
+                    TODO: remove in 4.0.0
+                    See https://github.com/doctrine/dbal/pull/1519
+                -->
+                <referencedMethod name="Doctrine\DBAL\Platforms\AbstractMySQLPlatform::prefersIdentityColumns"/>
+                <referencedMethod name="Doctrine\DBAL\Platforms\AbstractPlatform::prefersIdentityColumns"/>
+                <referencedMethod name="Doctrine\DBAL\Platforms\DB2Platform::prefersIdentityColumns"/>
+                <referencedMethod name="Doctrine\DBAL\Platforms\SQLServerPlatform::prefersIdentityColumns"/>
+                <referencedMethod name="Doctrine\DBAL\Platforms\SqlitePlatform::prefersIdentityColumns"/>
+                <!--
+                    TODO: remove in 4.0.0
+                    See https://github.com/doctrine/dbal/pull/5136
+                -->
+                <referencedMethod name="Doctrine\DBAL\Types\Type::canRequireSQLConversion"/>
+            </errorLevel>
+        </DeprecatedMethod>
+        <DeprecatedProperty>
+            <errorLevel type="suppress">
+                <!--
+                    This suppression should be removed in 4.0.x
+                    See https://github.com/doctrine/dbal/pull/4518
+                -->
+                <file name="src/Connection.php"/>
+
+                <!--
+                    This suppression should be removed in 4.0.x
+                    See https://github.com/doctrine/dbal/pull/4620
+                -->
+                <file name="src/Configuration.php"/>
+                <!--
+                    This suppression should be removed in 4.0.x
+                    See https://github.com/doctrine/dbal/pull/4822
+                -->
+                <referencedProperty name="Doctrine\DBAL\Schema\SchemaConfig::$hasExplicitForeignKeyIndexes"/>
+                <!--
+                    See https://github.com/doctrine/dbal/pull/5058
+                    TODO: remove in 4.0.0
+                -->
+                <referencedProperty name="Doctrine\DBAL\Platforms\AbstractPlatform::$doctrineTypeComments"/>
+            </errorLevel>
+        </DeprecatedProperty>
+        <DocblockTypeContradiction>
+            <errorLevel type="suppress">
+                <!--
+                    Requires a release of https://github.com/JetBrains/phpstorm-stubs/pull/766
+                -->
+                <file name="src/Driver/Mysqli/Result.php"/>
+                <!--
+                    These issues can be mostly divided in the following categories:
+                      1. Union types not supported at the language level (require dropping PHP 7 support)
+                      2. Associative arrays with typed elements used instead of classes (require breaking API changes)
+                -->
+                <file name="src/Cache/QueryCacheProfile.php"/>
+                <file name="src/Connection.php"/>
+                <file name="src/Driver/IBMDB2/Statement.php"/>
+                <file name="src/DriverManager.php"/>
+                <file name="src/Platforms/AbstractMySQLPlatform.php"/>
+                <file name="src/Platforms/AbstractPlatform.php"/>
+                <file name="src/Platforms/SQLServerPlatform.php"/>
+                <file name="src/Platforms/SqlitePlatform.php"/>
+                <file name="src/Schema/Column.php"/>
+                <!--
+                    This issue is fixed in 4.0
+                -->
+                <file name="src/Schema/Index.php"/>
+                <!--
+                    See https://github.com/vimeo/psalm/issues/5325
+                -->
+                <file name="tests/Driver/OCI8/ExecutionModeTest.php"/>
+                <!-- See https://github.com/vimeo/psalm/issues/5472 -->
+                <file name="src/Portability/Converter.php"/>
+                <!-- See https://github.com/psalm/psalm-plugin-phpunit/issues/107 -->
+                <file name="tests/Functional/Schema/SchemaManagerFunctionalTestCase.php"/>
+            </errorLevel>
+        </DocblockTypeContradiction>
+        <FalsableReturnStatement>
+            <errorLevel type="suppress">
+                <!--
+                    Fixing these issues requires an API change
+                -->
+                <file name="src/Driver/PDO/SQLSrv/Connection.php"/>
+                <file name="src/Driver/SQLSrv/Connection.php"/>
+            </errorLevel>
+        </FalsableReturnStatement>
+        <ImplementedReturnTypeMismatch>
+            <errorLevel type="suppress">
+                <!-- Fixing this issue requires an API change -->
+                <file name="src/Driver/OCI8/Connection.php"/>
+            </errorLevel>
+        </ImplementedReturnTypeMismatch>
+        <InvalidArgument>
+            <errorLevel type="suppress">
+                <!-- We're testing with invalid input here. -->
+                <file name="tests/Platforms/AbstractPlatformTestCase.php"/>
+            </errorLevel>
+        </InvalidArgument>
+        <InvalidDocblock>
+            <errorLevel type="suppress">
+                <!-- See https://github.com/vimeo/psalm/issues/5472 -->
+                <file name="src/Portability/Converter.php"/>
+            </errorLevel>
+        </InvalidDocblock>
+        <InvalidNullableReturnType>
+            <errorLevel type="suppress">
+                <!-- See https://github.com/doctrine/dbal/issues/4503 -->
+                <file name="src/Schema/PostgreSQLSchemaManager.php"/>
+            </errorLevel>
+        </InvalidNullableReturnType>
+        <InvalidPropertyAssignmentValue>
+            <errorLevel type="suppress">
+                <!-- Fixing this issue requires an API change -->
+                <file name="src/Driver/PDO/Exception.php"/>
+            </errorLevel>
+        </InvalidPropertyAssignmentValue>
+        <MissingConstructor>
+            <errorLevel type="suppress">
+                <!--
+                    This suppression should be removed in 4.0.x
+                    See https://github.com/doctrine/dbal/pull/3712
+                -->
+                <file name="src/Schema/SchemaConfig.php"/>
+            </errorLevel>
+        </MissingConstructor>
+        <NullableReturnStatement>
+            <errorLevel type="suppress">
+                <!--
+                    Fixing this issue requires an API change
+                -->
+                <file name="src/Driver/AbstractSQLiteDriver.php"/>
+                <!-- See https://github.com/doctrine/dbal/issues/4503 -->
+                <file name="src/Schema/PostgreSQLSchemaManager.php"/>
+            </errorLevel>
+        </NullableReturnStatement>
+        <PossiblyNullArgument>
+            <errorLevel type="suppress">
+                <!-- See https://github.com/doctrine/dbal/pull/3488 -->
+                <file name="src/Schema/AbstractSchemaManager.php"/>
+            </errorLevel>
+        </PossiblyNullArgument>
+        <PossiblyUndefinedArrayOffset>
+            <errorLevel type="suppress">
+                <!-- See https://github.com/psalm/psalm-plugin-phpunit/pull/82 -->
+                <file name="tests/Functional/PrimaryReadReplicaConnectionTest.php"/>
+                <file name="tests/Functional/Schema/PostgreSQLSchemaManagerTest.php"/>
+            </errorLevel>
+        </PossiblyUndefinedArrayOffset>
+        <PossiblyNullIterator>
+            <errorLevel type="suppress">
+                <!--
+                    This suppression should be removed in 4.0.x
+                    See https://github.com/doctrine/dbal/pull/3712
+                -->
+                <file name="src/Driver/Mysqli/Statement.php"/>
+            </errorLevel>
+        </PossiblyNullIterator>
+        <PossiblyFalseReference>
+            <errorLevel type="suppress">
+                <!--
+                    oci_new_descriptor() returns OCI-Lob|false on PHP 7 and OCILob|null on PHP 8
+                -->
+                <file name="src/Driver/OCI8/Statement.php"/>
+            </errorLevel>
+        </PossiblyFalseReference>
+        <PropertyNotSetInConstructor>
+            <errorLevel type="suppress">
+                <!-- See https://github.com/psalm/psalm-plugin-phpunit/issues/107 -->
+                <!-- See https://github.com/sebastianbergmann/phpunit/pull/4610 -->
+                <directory name="tests"/>
+                <!-- See https://github.com/doctrine/dbal/issues/4506 -->
+                <file name="src/Schema/ForeignKeyConstraint.php"/>
+                <!--
+                    This suppression should be removed in 4.0.x
+                    See https://github.com/doctrine/dbal/pull/3712
+                -->
+                <file name="src/Schema/Column.php"/>
+                <file name="src/Schema/Identifier.php"/>
+                <file name="src/Schema/Index.php"/>
+                <file name="src/Schema/Schema.php"/>
+                <file name="src/Schema/Sequence.php"/>
+                <file name="src/Schema/Table.php"/>
+                <file name="src/Schema/UniqueConstraint.php"/>
+                <file name="src/Schema/View.php"/>
+            </errorLevel>
+        </PropertyNotSetInConstructor>
+        <!-- This is necessary pre 4.0  -->
+        <RedundantCastGivenDocblockType>
+            <errorLevel type="suppress">
+                <!--
+                    This suppression should be removed in 4.0.x
+                    where we have scalar argument types enforced
+                -->
+                <directory name="src"/>
+            </errorLevel>
+        </RedundantCastGivenDocblockType>
+        <RedundantConditionGivenDocblockType>
+            <errorLevel type="suppress">
+                <!--
+                    Fixing these issues requires support of union types at the language level
+                    or breaking API changes.
+                -->
+                <file name="src/Platforms/AbstractMySQLPlatform.php"/>
+                <file name="tests/Functional/Driver/AbstractDriverTest.php"/>
+            </errorLevel>
+        </RedundantConditionGivenDocblockType>
+        <ReferenceConstraintViolation>
+            <errorLevel type="suppress">
+                <!--
+                    This suppression should be removed in 4.0.x
+                    See https://github.com/doctrine/dbal/pull/3836
+                -->
+                <file name="src/Query/QueryBuilder.php"/>
+            </errorLevel>
+        </ReferenceConstraintViolation>
+        <!-- Workaround for https://github.com/vimeo/psalm/issues/7026 -->
+        <ReservedWord>
+            <errorLevel type="suppress">
+                <directory name="src"/>
+                <directory name="tests"/>
+            </errorLevel>
+        </ReservedWord>
+        <TooManyArguments>
+            <errorLevel type="suppress">
+                <!-- See https://github.com/doctrine/dbal/pull/3562 -->
+                <file name="src/Schema/AbstractSchemaManager.php"/>
+                <file name="src/Schema/SqliteSchemaManager.php"/>
+                <!-- See https://github.com/doctrine/dbal/pull/3498 -->
+                <file name="tests/Platforms/AbstractMySQLPlatformTestCase.php"/>
+            </errorLevel>
+        </TooManyArguments>
+        <UndefinedConstant>
+            <errorLevel type="suppress">
+                <!--
+                    Requires a release of
+                    https://github.com/JetBrains/phpstorm-stubs/pull/732
+                -->
+                <file name="tests/Driver/PDO/PgSQL/DriverTest.php" />
+            </errorLevel>
+        </UndefinedConstant>
+        <UndefinedDocblockClass>
+            <errorLevel type="suppress">
+                <!-- See https://github.com/vimeo/psalm/issues/5472 -->
+                <referencedClass name="Doctrine\DBAL\Portability\T"/>
+            </errorLevel>
+        </UndefinedDocblockClass>
+        <InvalidReturnStatement>
+            <errorLevel type="suppress">
+                <!-- lastInsertId has a return type that does not match the one defined in the interface-->
+                <file name="src/Driver/Mysqli/Connection.php"/>
+                <!--
+                    This issue should be fixed in 4.0
+                -->
+                <file name="src/Connection.php"/>
+                <file name="src/Statement.php"/>
+                <file name="src/Query/QueryBuilder.php"/>
+            </errorLevel>
+        </InvalidReturnStatement>
+        <InvalidReturnType>
+            <errorLevel type="suppress">
+                <!-- lastInsertId has a return type that does not match the one defined in the interface-->
+                <file name="src/Driver/Mysqli/Connection.php"/>
+                <!--
+                    This issue should be fixed in 4.0
+                -->
+                <file name="src/Connection.php"/>
+                <file name="src/Statement.php"/>
+                <file name="src/Query/QueryBuilder.php"/>
+            </errorLevel>
+        </InvalidReturnType>
+        <InvalidScalarArgument>
+            <errorLevel type="suppress">
+                <!-- See https://github.com/vimeo/psalm/issues/4295 -->
+                <file name="src/Exception/DriverException.php"/>
+
+                <!-- See https://github.com/doctrine/dbal/pull/3498 -->
+                <file name="tests/Functional/DataAccessTest.php"/>
+                <file name="tests/Platforms/AbstractPlatformTestCase.php"/>
+                <file name="tests/Platforms/DB2PlatformTest.php"/>
+                <file name="tests/Platforms/OraclePlatformTest.php"/>
+                <file name="tests/Platforms/SqlitePlatformTest.php"/>
+
+                <!-- See https://github.com/doctrine/dbal/pull/3574 -->
+                <file name="tests/Query/Expression/ExpressionBuilderTest.php"/>
+
+                <!-- See https://bugs.php.net/bug.php?id=77591 -->
+                <referencedFunction name="db2_autocommit"/>
+            </errorLevel>
+        </InvalidScalarArgument>
+    </issueHandlers>
+</psalm>

@@ -1,0 +1,10 @@
+vendor
+composer.phar
+composer.lock
+phpunit.xml
+phpmd.xml
+phpdox.xml
+clover.xml
+infectionlog.json
+infectionlog.txt
+.phpunit.result.cache
