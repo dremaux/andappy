@@ -13,6 +13,7 @@ use Throwable;
 use function array_merge;
 use function in_array;
 use function sprintf;
+use function trigger_deprecation;
 
 /**
  * Database tool allows you to easily create your configured databases.
@@ -21,10 +22,7 @@ use function sprintf;
  */
 class CreateDatabaseDoctrineCommand extends DoctrineCommand
 {
-    /**
-     * {@inheritDoc}
-     */
-    protected function configure()
+    protected function configure(): void
     {
         $this
             ->setName('doctrine:database:create')
@@ -55,22 +53,10 @@ EOT
 
         $ifNotExists = $input->getOption('if-not-exists');
 
-        $driverOptions = [];
-        $params        = $connection->getParams();
+        $params = $connection->getParams();
 
-        if (isset($params['driverOptions'])) {
-            $driverOptions = $params['driverOptions'];
-        }
-
-        // Since doctrine/dbal 2.11 master has been replaced by primary
         if (isset($params['primary'])) {
-            $params                  = $params['primary'];
-            $params['driverOptions'] = $driverOptions;
-        }
-
-        if (isset($params['master'])) {
-            $params                  = $params['master'];
-            $params['driverOptions'] = $driverOptions;
+            $params = $params['primary'];
         }
 
         // Cannot inject `shard` option in parent::getDoctrineConnection
@@ -81,6 +67,13 @@ EOT
             $params = array_merge($params, $params['global'] ?? []);
             unset($params['global']['dbname'], $params['global']['path'], $params['global']['url']);
             if ($input->getOption('shard')) {
+                trigger_deprecation(
+                    'doctrine/doctrine-bundle',
+                    '2.7',
+                    'Passing a "shard" option for "%s" is deprecated. DBAL 3 does not support shards anymore.',
+                    self::class
+                );
+
                 foreach ($shards as $i => $shard) {
                     if ($shard['id'] === (int) $input->getOption('shard')) {
                         // Select sharded database
@@ -104,6 +97,12 @@ EOT
         $tmpConnection = DriverManager::getConnection($params);
         if ($tmpConnection instanceof PoolingShardConnection) {
             $tmpConnection->connect($input->getOption('shard'));
+            trigger_deprecation(
+                'doctrine/doctrine-bundle',
+                '2.7',
+                'Using a DBAL connection of type "%s" is deprecated. DBAL 3 does not support shards anymore.',
+                PoolingShardConnection::class
+            );
         } else {
             $tmpConnection->connect();
         }

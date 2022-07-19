@@ -2,7 +2,10 @@
 
 namespace Doctrine\Bundle\DoctrineBundle\DependencyInjection;
 
+use Doctrine\Common\Proxy\AbstractProxyFactory;
 use Doctrine\ORM\EntityManager;
+use Doctrine\ORM\EntityRepository;
+use Doctrine\ORM\Mapping\ClassMetadataFactory;
 use ReflectionClass;
 use Symfony\Component\Config\Definition\BaseNode;
 use Symfony\Component\Config\Definition\Builder\ArrayNodeDefinition;
@@ -19,6 +22,7 @@ use function assert;
 use function class_exists;
 use function constant;
 use function count;
+use function defined;
 use function implode;
 use function in_array;
 use function is_array;
@@ -140,6 +144,10 @@ class Configuration implements ConfigurationInterface
 
         $this->configureDbalDriverNode($connectionNode);
 
+        $collationKey = defined('Doctrine\DBAL\Connection::PARAM_ASCII_STR_ARRAY')
+            ? 'collate'
+            : 'collation';
+
         $connectionNode
             ->fixXmlConfig('option')
             ->fixXmlConfig('mapping_type')
@@ -165,9 +173,21 @@ class Configuration implements ConfigurationInterface
                 ->scalarNode('server_version')->end()
                 ->scalarNode('driver_class')->end()
                 ->scalarNode('wrapper_class')->end()
-                ->scalarNode('shard_manager_class')->end()
-                ->scalarNode('shard_choser')->end()
-                ->scalarNode('shard_choser_service')->end()
+                ->scalarNode('shard_manager_class')
+                    ->setDeprecated(
+                        ...$this->getDeprecationMsg('The "shard_manager_class" configuration is deprecated and not supported anymore using DBAL 3.', '2.7')
+                    )
+                ->end()
+                ->scalarNode('shard_choser')
+                    ->setDeprecated(
+                        ...$this->getDeprecationMsg('The "shard_choser" configuration is deprecated and not supported anymore using DBAL 3.', '2.7')
+                    )
+                ->end()
+                ->scalarNode('shard_choser_service')
+                    ->setDeprecated(
+                        ...$this->getDeprecationMsg('The "shard_choser_service" configuration is deprecated and not supported anymore using DBAL 3.', '2.7')
+                    )
+                ->end()
                 ->booleanNode('keep_slave')
                     ->setDeprecated(
                         ...$this->getDeprecationMsg('The "keep_slave" configuration key is deprecated since doctrine-bundle 2.2. Use the "keep_replica" configuration key instead.', '2.2')
@@ -183,7 +203,10 @@ class Configuration implements ConfigurationInterface
                     ->prototype('scalar')->end()
                 ->end()
                 ->arrayNode('default_table_options')
-                    ->info("This option is used by the schema-tool and affects generated SQL. Possible keys include 'charset','collate', and 'engine'.")
+                ->info(sprintf(
+                    "This option is used by the schema-tool and affects generated SQL. Possible keys include 'charset','%s', and 'engine'.",
+                    $collationKey
+                ))
                     ->useAttributeAsKey('name')
                     ->prototype('scalar')->end()
                 ->end()
@@ -211,6 +234,9 @@ class Configuration implements ConfigurationInterface
         $shardNode = $connectionNode
             ->children()
                 ->arrayNode('shards')
+                    ->setDeprecated(
+                        ...$this->getDeprecationMsg('The "shards" configuration is deprecated and not supported anymore using DBAL 3.', '2.7')
+                    )
                     ->prototype('array');
 
         $shardNode
@@ -567,15 +593,19 @@ class Configuration implements ConfigurationInterface
                 ->append($this->getOrmCacheDriverNode('metadata_cache_driver'))
                 ->append($this->getOrmCacheDriverNode('result_cache_driver'))
                 ->append($this->getOrmEntityListenersNode())
+                ->fixXmlConfig('schema_ignore_class', 'schema_ignore_classes')
                 ->children()
                     ->scalarNode('connection')->end()
-                    ->scalarNode('class_metadata_factory_name')->defaultValue('Doctrine\ORM\Mapping\ClassMetadataFactory')->end()
-                    ->scalarNode('default_repository_class')->defaultValue('Doctrine\ORM\EntityRepository')->end()
+                    ->scalarNode('class_metadata_factory_name')->defaultValue(ClassMetadataFactory::class)->end()
+                    ->scalarNode('default_repository_class')->defaultValue(EntityRepository::class)->end()
                     ->scalarNode('auto_mapping')->defaultFalse()->end()
                     ->scalarNode('naming_strategy')->defaultValue('doctrine.orm.naming_strategy.default')->end()
                     ->scalarNode('quote_strategy')->defaultValue('doctrine.orm.quote_strategy.default')->end()
                     ->scalarNode('entity_listener_resolver')->defaultNull()->end()
                     ->scalarNode('repository_factory')->defaultValue('doctrine.orm.container_repository_factory')->end()
+                    ->arrayNode('schema_ignore_classes')
+                        ->prototype('scalar')->end()
+                    ->end()
                 ->end()
                 ->children()
                     ->arrayNode('second_level_cache')
@@ -747,7 +777,7 @@ class Configuration implements ConfigurationInterface
     {
         $constPrefix = 'AUTOGENERATE_';
         $prefixLen   = strlen($constPrefix);
-        $refClass    = new ReflectionClass('Doctrine\Common\Proxy\AbstractProxyFactory');
+        $refClass    = new ReflectionClass(AbstractProxyFactory::class);
         $constsArray = $refClass->getConstants();
         $namesArray  = [];
         $valuesArray = [];

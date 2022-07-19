@@ -4,11 +4,13 @@ declare(strict_types=1);
 
 namespace Doctrine\ORM;
 
+use BackedEnum;
 use Countable;
 use Doctrine\Common\Cache\Psr6\CacheAdapter;
 use Doctrine\Common\Cache\Psr6\DoctrineProvider;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
+use Doctrine\Common\Util\ClassUtils;
 use Doctrine\DBAL\Cache\QueryCacheProfile;
 use Doctrine\DBAL\Result;
 use Doctrine\Deprecations\Deprecation;
@@ -34,6 +36,7 @@ use function is_array;
 use function is_numeric;
 use function is_object;
 use function is_scalar;
+use function is_string;
 use function iterator_count;
 use function iterator_to_array;
 use function ksort;
@@ -280,7 +283,7 @@ abstract class AbstractQuery
      * The returned SQL syntax depends on the connection driver that is used
      * by this query object at the time of this method call.
      *
-     * @return string SQL query
+     * @return list<string>|string SQL query
      */
     abstract public function getSQL();
 
@@ -351,7 +354,6 @@ abstract class AbstractQuery
      */
     public function setParameters($parameters)
     {
-        // BC compatibility with 2.3-
         if (is_array($parameters)) {
             /** @psalm-var ArrayCollection<int, Parameter> $parameterCollection */
             $parameterCollection = new ArrayCollection();
@@ -399,8 +401,8 @@ abstract class AbstractQuery
      *
      * @param mixed $value
      *
-     * @return mixed[]|string|int|float|bool
-     * @psalm-return array|scalar
+     * @return mixed[]|string|int|float|bool|object|null
+     * @psalm-return array|scalar|object|null
      *
      * @throws ORMInvalidArgumentException
      */
@@ -424,15 +426,20 @@ abstract class AbstractQuery
             return $value->name;
         }
 
+        if ($value instanceof BackedEnum) {
+            return $value->value;
+        }
+
         if (! is_object($value)) {
             return $value;
         }
 
         try {
+            $class = ClassUtils::getClass($value);
             $value = $this->_em->getUnitOfWork()->getSingleIdentifierValue($value);
 
             if ($value === null) {
-                throw ORMInvalidArgumentException::invalidIdentifierBindingEntity();
+                throw ORMInvalidArgumentException::invalidIdentifierBindingEntity($class);
             }
         } catch (MappingException | ORMMappingException $e) {
             /* Silence any mapping exceptions. These can occur if the object in
@@ -1295,7 +1302,8 @@ abstract class AbstractQuery
             $parameters[$parameter->getName()] = $this->processParameterValue($parameter->getValue());
         }
 
-        $sql                    = $this->getSQL();
+        $sql = $this->getSQL();
+        assert(is_string($sql));
         $queryCacheProfile      = $this->getHydrationCacheProfile();
         $hints                  = $this->getHints();
         $hints['hydrationMode'] = $this->getHydrationMode();
@@ -1367,7 +1375,8 @@ abstract class AbstractQuery
      */
     protected function getHash()
     {
-        $query  = $this->getSQL();
+        $query = $this->getSQL();
+        assert(is_string($query));
         $hints  = $this->getHints();
         $params = array_map(function (Parameter $parameter) {
             $value = $parameter->getValue();

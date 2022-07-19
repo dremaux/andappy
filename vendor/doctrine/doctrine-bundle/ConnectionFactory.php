@@ -12,6 +12,7 @@ use Doctrine\DBAL\Platforms\AbstractMySQLPlatform;
 use Doctrine\DBAL\Platforms\AbstractPlatform;
 use Doctrine\DBAL\Platforms\MySqlPlatform;
 use Doctrine\DBAL\Types\Type;
+use Doctrine\Deprecations\Deprecation;
 
 use function array_merge;
 use function defined;
@@ -85,6 +86,11 @@ class ConnectionFactory
                        after dropping support for doctrine/dbal 2, since this
                        package requires doctrine/dbal 3.3.2 or higher. */
                     if (isset($params['defaultTableOptions']['collate']) && defined('Doctrine\DBAL\Connection::PARAM_ASCII_STR_ARRAY')) {
+                        Deprecation::trigger(
+                            'doctrine/doctrine-bundle',
+                            'https://github.com/doctrine/dbal/issues/5214',
+                            'The "collate" default table option is deprecated in favor of "collation" and will be removed in doctrine/doctrine-bundle 3.0. '
+                        );
                         $params['defaultTableOptions']['collation'] = $params['defaultTableOptions']['collate'];
                         unset($params['defaultTableOptions']['collate']);
                     }

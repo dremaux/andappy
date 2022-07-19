@@ -1,7 +1,10 @@
 # CHANGELOG
 
+### 1.3.2 (2022-04-01)
+* Workaround for a bug in PHP 7.3+opcache that causes segmentation faults (#826, #829, #828, @ausi, @mnocon, @mlocati)
+
 ### 1.3.1 (2022-03-15)
-* Fix Fix undefined variable $engineRawVersion in Imagick/Gmagick DriverInfo (#825, @fxbt)
+* Fix undefined variable $engineRawVersion in Imagick/Gmagick DriverInfo (#825, @fxbt)
 
 ### 1.3.0 (2022-03-15)
 * Minimum PHP supported version is now 5.5 (#820, @PowerKiKi)
