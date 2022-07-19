@@ -1014,6 +1014,12 @@ return [[
 '[C]Vich%5CUploaderBundle%5CEntity%5CFile%23getDimensions' => 1,
 'Vich%5CUploaderBundle%5CEntity%5CFile%23setDimensions' => 0,
 '[C]Vich%5CUploaderBundle%5CEntity%5CFile%23setDimensions' => 1,
+'Vich%5CUploaderBundle%5CEntity%5CFile%23getWidth' => 0,
+'[C]Vich%5CUploaderBundle%5CEntity%5CFile%23getWidth' => 1,
+'Vich%5CUploaderBundle%5CEntity%5CFile%23getHeight' => 0,
+'[C]Vich%5CUploaderBundle%5CEntity%5CFile%23getHeight' => 1,
+'Vich%5CUploaderBundle%5CEntity%5CFile%23getHtmlDimensions' => 0,
+'[C]Vich%5CUploaderBundle%5CEntity%5CFile%23getHtmlDimensions' => 1,
 'Vich%5CUploaderBundle%5CEntity%5CFile%24name' => 0,
 '[C]Vich%5CUploaderBundle%5CEntity%5CFile%24name' => 1,
 'Vich%5CUploaderBundle%5CEntity%5CFile%24originalName' => 0,
@@ -1028,7 +1034,7 @@ return [[
 ], [
 
 0 => [],
-1 => 1647509437,
+1 => 1658218492,
 2 => static function () {
     return \Symfony\Component\VarExporter\Internal\Hydrator::hydrate(
         $o = [
@@ -1474,13 +1480,13 @@ return [[
                 'repositoryClass' => [
                     'App\\Repository\\PropertyRepository',
                 ],
-                'fields' => [
-                    1 => 'title',
-                ],
                 'groups' => [
                     1 => [
                         'Default',
                     ],
+                ],
+                'fields' => [
+                    1 => 'title',
                 ],
             ],
         ],
@@ -1501,13 +1507,13 @@ return [[
         null,
         [
             'stdClass' => [
-                'mimeTypes' => [
-                    'image/jpeg',
-                ],
                 'groups' => [
                     [
                         'Default',
                     ],
+                ],
+                'mimeTypes' => [
+                    'image/jpeg',
                 ],
             ],
             'Vich\\UploaderBundle\\Mapping\\Annotation\\UploadableField' => [
@@ -1572,16 +1578,16 @@ return [[
                 'scale' => [
                     null,
                 ],
+                'groups' => [
+                    1 => [
+                        'Default',
+                    ],
+                ],
                 'min' => [
                     1 => 10,
                 ],
                 'max' => [
                     1 => 1000,
-                ],
-                'groups' => [
-                    1 => [
-                        'Default',
-                    ],
                 ],
             ],
         ],
@@ -1638,13 +1644,13 @@ return [[
                 'scale' => [
                     null,
                 ],
-                'pattern' => [
-                    1 => '/^[0-9]{5}$/',
-                ],
                 'groups' => [
                     1 => [
                         'Default',
                     ],
+                ],
+                'pattern' => [
+                    1 => '/^[0-9]{5}$/',
                 ],
             ],
         ],
@@ -1760,16 +1766,16 @@ return [[
         null,
         [
             'stdClass' => [
+                'groups' => [
+                    [
+                        'Default',
+                    ],
+                ],
                 'min' => [
                     10,
                 ],
                 'max' => [
                     400,
-                ],
-                'groups' => [
-                    [
-                        'Default',
-                    ],
                 ],
             ],
         ],
