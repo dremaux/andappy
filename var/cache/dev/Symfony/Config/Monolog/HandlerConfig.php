@@ -2,6 +2,7 @@
 
 namespace Symfony\Config\Monolog;
 
+require_once __DIR__.\DIRECTORY_SEPARATOR.'HandlerConfig'.\DIRECTORY_SEPARATOR.'ProcessPsr3MessagesConfig.php';
 require_once __DIR__.\DIRECTORY_SEPARATOR.'HandlerConfig'.\DIRECTORY_SEPARATOR.'ExcludedHttpCodeConfig.php';
 require_once __DIR__.\DIRECTORY_SEPARATOR.'HandlerConfig'.\DIRECTORY_SEPARATOR.'PublisherConfig.php';
 require_once __DIR__.\DIRECTORY_SEPARATOR.'HandlerConfig'.\DIRECTORY_SEPARATOR.'MongoConfig.php';
@@ -29,6 +30,7 @@ class HandlerConfig
     private $level;
     private $bubble;
     private $appName;
+    private $fillExtraContext;
     private $includeStacktraces;
     private $processPsr3Messages;
     private $path;
@@ -76,24 +78,8 @@ class HandlerConfig
     private $title;
     private $host;
     private $port;
-    private $publisher;
-    private $mongo;
-    private $elasticsearch;
-    private $index;
-    private $documentType;
-    private $ignoreError;
-    private $redis;
-    private $predis;
     private $config;
     private $members;
-    private $fromEmail;
-    private $toEmail;
-    private $subject;
-    private $contentType;
-    private $headers;
-    private $mailer;
-    private $emailPrototype;
-    private $lazy;
     private $connectionString;
     private $timeout;
     private $time;
@@ -108,13 +94,34 @@ class HandlerConfig
     private $release;
     private $environment;
     private $messageType;
+    private $parseMode;
+    private $disableWebpagePreview;
+    private $disableNotification;
+    private $splitLongMessages;
+    private $delayBetweenMessages;
     private $tags;
     private $consoleFormaterOptions;
     private $consoleFormatterOptions;
-    private $verbosityLevels;
-    private $channels;
     private $formatter;
     private $nested;
+    private $publisher;
+    private $mongo;
+    private $elasticsearch;
+    private $index;
+    private $documentType;
+    private $ignoreError;
+    private $redis;
+    private $predis;
+    private $fromEmail;
+    private $toEmail;
+    private $subject;
+    private $contentType;
+    private $headers;
+    private $mailer;
+    private $emailPrototype;
+    private $lazy;
+    private $verbosityLevels;
+    private $channels;
     
     /**
      * @default null
@@ -193,6 +200,18 @@ class HandlerConfig
      * @param ParamConfigurator|bool $value
      * @return $this
      */
+    public function fillExtraContext($value): self
+    {
+        $this->fillExtraContext = $value;
+    
+        return $this;
+    }
+    
+    /**
+     * @default false
+     * @param ParamConfigurator|bool $value
+     * @return $this
+     */
     public function includeStacktraces($value): self
     {
         $this->includeStacktraces = $value;
@@ -200,16 +219,15 @@ class HandlerConfig
         return $this;
     }
     
-    /**
-     * @default null
-     * @param ParamConfigurator|bool $value
-     * @return $this
-     */
-    public function processPsr3Messages($value): self
+    public function processPsr3Messages(array $value = []): \Symfony\Config\Monolog\HandlerConfig\ProcessPsr3MessagesConfig
     {
-        $this->processPsr3Messages = $value;
+        if (null === $this->processPsr3Messages) {
+            $this->processPsr3Messages = new \Symfony\Config\Monolog\HandlerConfig\ProcessPsr3MessagesConfig($value);
+        } elseif ([] !== $value) {
+            throw new InvalidConfigurationException('The node created by "processPsr3Messages()" has already been initialized. You cannot pass values the second time you call processPsr3Messages().');
+        }
     
-        return $this;
+        return $this->processPsr3Messages;
     }
     
     /**
@@ -743,97 +761,6 @@ class HandlerConfig
         return $this;
     }
     
-    public function publisher(array $value = []): \Symfony\Config\Monolog\HandlerConfig\PublisherConfig
-    {
-        if (null === $this->publisher) {
-            $this->publisher = new \Symfony\Config\Monolog\HandlerConfig\PublisherConfig($value);
-        } elseif ([] !== $value) {
-            throw new InvalidConfigurationException('The node created by "publisher()" has already been initialized. You cannot pass values the second time you call publisher().');
-        }
-    
-        return $this->publisher;
-    }
-    
-    public function mongo(array $value = []): \Symfony\Config\Monolog\HandlerConfig\MongoConfig
-    {
-        if (null === $this->mongo) {
-            $this->mongo = new \Symfony\Config\Monolog\HandlerConfig\MongoConfig($value);
-        } elseif ([] !== $value) {
-            throw new InvalidConfigurationException('The node created by "mongo()" has already been initialized. You cannot pass values the second time you call mongo().');
-        }
-    
-        return $this->mongo;
-    }
-    
-    public function elasticsearch(array $value = []): \Symfony\Config\Monolog\HandlerConfig\ElasticsearchConfig
-    {
-        if (null === $this->elasticsearch) {
-            $this->elasticsearch = new \Symfony\Config\Monolog\HandlerConfig\ElasticsearchConfig($value);
-        } elseif ([] !== $value) {
-            throw new InvalidConfigurationException('The node created by "elasticsearch()" has already been initialized. You cannot pass values the second time you call elasticsearch().');
-        }
-    
-        return $this->elasticsearch;
-    }
-    
-    /**
-     * @default 'monolog'
-     * @param ParamConfigurator|mixed $value
-     * @return $this
-     */
-    public function index($value): self
-    {
-        $this->index = $value;
-    
-        return $this;
-    }
-    
-    /**
-     * @default 'logs'
-     * @param ParamConfigurator|mixed $value
-     * @return $this
-     */
-    public function documentType($value): self
-    {
-        $this->documentType = $value;
-    
-        return $this;
-    }
-    
-    /**
-     * @default false
-     * @param ParamConfigurator|mixed $value
-     * @return $this
-     */
-    public function ignoreError($value): self
-    {
-        $this->ignoreError = $value;
-    
-        return $this;
-    }
-    
-    public function redis(array $value = []): \Symfony\Config\Monolog\HandlerConfig\RedisConfig
-    {
-        if (null === $this->redis) {
-            $this->redis = new \Symfony\Config\Monolog\HandlerConfig\RedisConfig($value);
-        } elseif ([] !== $value) {
-            throw new InvalidConfigurationException('The node created by "redis()" has already been initialized. You cannot pass values the second time you call redis().');
-        }
-    
-        return $this->redis;
-    }
-    
-    public function predis(array $value = []): \Symfony\Config\Monolog\HandlerConfig\PredisConfig
-    {
-        if (null === $this->predis) {
-            $this->predis = new \Symfony\Config\Monolog\HandlerConfig\PredisConfig($value);
-        } elseif ([] !== $value) {
-            throw new InvalidConfigurationException('The node created by "predis()" has already been initialized. You cannot pass values the second time you call predis().');
-        }
-    
-        return $this->predis;
-    }
-    
     /**
      * @param ParamConfigurator|list<mixed|ParamConfigurator> $value
      * @return $this
@@ -852,99 +779,6 @@ class HandlerConfig
     public function members($value): self
     {
         $this->members = $value;
-    
-        return $this;
-    }
-    
-    /**
-     * @default null
-     * @param ParamConfigurator|mixed $value
-     * @return $this
-     */
-    public function fromEmail($value): self
-    {
-        $this->fromEmail = $value;
-    
-        return $this;
-    }
-    
-    /**
-     * @param ParamConfigurator|list<mixed|ParamConfigurator> $value
-     * @return $this
-     */
-    public function toEmail($value): self
-    {
-        $this->toEmail = $value;
-    
-        return $this;
-    }
-    
-    /**
-     * @default null
-     * @param ParamConfigurator|mixed $value
-     * @return $this
-     */
-    public function subject($value): self
-    {
-        $this->subject = $value;
-    
-        return $this;
-    }
-    
-    /**
-     * @default null
-     * @param ParamConfigurator|mixed $value
-     * @return $this
-     */
-    public function contentType($value): self
-    {
-        $this->contentType = $value;
-    
-        return $this;
-    }
-    
-    /**
-     * @param ParamConfigurator|list<mixed|ParamConfigurator> $value
-     * @return $this
-     */
-    public function headers($value): self
-    {
-        $this->headers = $value;
-    
-        return $this;
-    }
-    
-    /**
-     * @default null
-     * @param ParamConfigurator|mixed $value
-     * @return $this
-     */
-    public function mailer($value): self
-    {
-        $this->mailer = $value;
-    
-        return $this;
-    }
-    
-    public function emailPrototype(array $value = []): \Symfony\Config\Monolog\HandlerConfig\EmailPrototypeConfig
-    {
-        if (null === $this->emailPrototype) {
-            $this->emailPrototype = new \Symfony\Config\Monolog\HandlerConfig\EmailPrototypeConfig($value);
-        } elseif ([] !== $value) {
-            throw new InvalidConfigurationException('The node created by "emailPrototype()" has already been initialized. You cannot pass values the second time you call emailPrototype().');
-        }
-    
-        return $this->emailPrototype;
-    }
-    
-    /**
-     * @default true
-     * @param ParamConfigurator|bool $value
-     * @return $this
-     */
-    public function lazy($value): self
-    {
-        $this->lazy = $value;
     
         return $this;
     }
@@ -1118,6 +952,66 @@ class HandlerConfig
     }
     
     /**
+     * @default null
+     * @param ParamConfigurator|mixed $value
+     * @return $this
+     */
+    public function parseMode($value): self
+    {
+        $this->parseMode = $value;
+    
+        return $this;
+    }
+    
+    /**
+     * @default null
+     * @param ParamConfigurator|bool $value
+     * @return $this
+     */
+    public function disableWebpagePreview($value): self
+    {
+        $this->disableWebpagePreview = $value;
+    
+        return $this;
+    }
+    
+    /**
+     * @default null
+     * @param ParamConfigurator|bool $value
+     * @return $this
+     */
+    public function disableNotification($value): self
+    {
+        $this->disableNotification = $value;
+    
+        return $this;
+    }
+    
+    /**
+     * @default false
+     * @param ParamConfigurator|bool $value
+     * @return $this
+     */
+    public function splitLongMessages($value): self
+    {
+        $this->splitLongMessages = $value;
+    
+        return $this;
+    }
+    
+    /**
+     * @default false
+     * @param ParamConfigurator|bool $value
+     * @return $this
+     */
+    public function delayBetweenMessages($value): self
+    {
+        $this->delayBetweenMessages = $value;
+    
+        return $this;
+    }
+    
+    /**
      * @param ParamConfigurator|list<mixed|ParamConfigurator> $value
      * @return $this
      */
@@ -1155,28 +1049,6 @@ class HandlerConfig
         return $this;
     }
     
-    public function verbosityLevels(array $value = []): \Symfony\Config\Monolog\HandlerConfig\VerbosityLevelsConfig
-    {
-        if (null === $this->verbosityLevels) {
-            $this->verbosityLevels = new \Symfony\Config\Monolog\HandlerConfig\VerbosityLevelsConfig($value);
-        } elseif ([] !== $value) {
-            throw new InvalidConfigurationException('The node created by "verbosityLevels()" has already been initialized. You cannot pass values the second time you call verbosityLevels().');
-        }
-    
-        return $this->verbosityLevels;
-    }
-    
-    public function channels(array $value = []): \Symfony\Config\Monolog\HandlerConfig\ChannelsConfig
-    {
-        if (null === $this->channels) {
-            $this->channels = new \Symfony\Config\Monolog\HandlerConfig\ChannelsConfig($value);
-        } elseif ([] !== $value) {
-            throw new InvalidConfigurationException('The node created by "channels()" has already been initialized. You cannot pass values the second time you call channels().');
-        }
-    
-        return $this->channels;
-    }
-    
     /**
      * @default null
      * @param ParamConfigurator|mixed $value
@@ -1199,6 +1071,212 @@ class HandlerConfig
         $this->nested = $value;
     
         return $this;
+    }
+    
+    public function publisher(array $value = []): \Symfony\Config\Monolog\HandlerConfig\PublisherConfig
+    {
+        if (null === $this->publisher) {
+            $this->publisher = new \Symfony\Config\Monolog\HandlerConfig\PublisherConfig($value);
+        } elseif ([] !== $value) {
+            throw new InvalidConfigurationException('The node created by "publisher()" has already been initialized. You cannot pass values the second time you call publisher().');
+        }
+    
+        return $this->publisher;
+    }
+    
+    public function mongo(array $value = []): \Symfony\Config\Monolog\HandlerConfig\MongoConfig
+    {
+        if (null === $this->mongo) {
+            $this->mongo = new \Symfony\Config\Monolog\HandlerConfig\MongoConfig($value);
+        } elseif ([] !== $value) {
+            throw new InvalidConfigurationException('The node created by "mongo()" has already been initialized. You cannot pass values the second time you call mongo().');
+        }
+    
+        return $this->mongo;
+    }
+    
+    public function elasticsearch(array $value = []): \Symfony\Config\Monolog\HandlerConfig\ElasticsearchConfig
+    {
+        if (null === $this->elasticsearch) {
+            $this->elasticsearch = new \Symfony\Config\Monolog\HandlerConfig\ElasticsearchConfig($value);
+        } elseif ([] !== $value) {
+            throw new InvalidConfigurationException('The node created by "elasticsearch()" has already been initialized. You cannot pass values the second time you call elasticsearch().');
+        }
+    
+        return $this->elasticsearch;
+    }
+    
+    /**
+     * @default 'monolog'
+     * @param ParamConfigurator|mixed $value
+     * @return $this
+     */
+    public function index($value): self
+    {
+        $this->index = $value;
+    
+        return $this;
+    }
+    
+    /**
+     * @default 'logs'
+     * @param ParamConfigurator|mixed $value
+     * @return $this
+     */
+    public function documentType($value): self
+    {
+        $this->documentType = $value;
+    
+        return $this;
+    }
+    
+    /**
+     * @default false
+     * @param ParamConfigurator|mixed $value
+     * @return $this
+     */
+    public function ignoreError($value): self
+    {
+        $this->ignoreError = $value;
+    
+        return $this;
+    }
+    
+    public function redis(array $value = []): \Symfony\Config\Monolog\HandlerConfig\RedisConfig
+    {
+        if (null === $this->redis) {
+            $this->redis = new \Symfony\Config\Monolog\HandlerConfig\RedisConfig($value);
+        } elseif ([] !== $value) {
+            throw new InvalidConfigurationException('The node created by "redis()" has already been initialized. You cannot pass values the second time you call redis().');
+        }
+    
+        return $this->redis;
+    }
+    
+    public function predis(array $value = []): \Symfony\Config\Monolog\HandlerConfig\PredisConfig
+    {
+        if (null === $this->predis) {
+            $this->predis = new \Symfony\Config\Monolog\HandlerConfig\PredisConfig($value);
+        } elseif ([] !== $value) {
+            throw new InvalidConfigurationException('The node created by "predis()" has already been initialized. You cannot pass values the second time you call predis().');
+        }
+    
+        return $this->predis;
+    }
+    
+    /**
+     * @default null
+     * @param ParamConfigurator|mixed $value
+     * @return $this
+     */
+    public function fromEmail($value): self
+    {
+        $this->fromEmail = $value;
+    
+        return $this;
+    }
+    
+    /**
+     * @param ParamConfigurator|list<mixed|ParamConfigurator> $value
+     * @return $this
+     */
+    public function toEmail($value): self
+    {
+        $this->toEmail = $value;
+    
+        return $this;
+    }
+    
+    /**
+     * @default null
+     * @param ParamConfigurator|mixed $value
+     * @return $this
+     */
+    public function subject($value): self
+    {
+        $this->subject = $value;
+    
+        return $this;
+    }
+    
+    /**
+     * @default null
+     * @param ParamConfigurator|mixed $value
+     * @return $this
+     */
+    public function contentType($value): self
+    {
+        $this->contentType = $value;
+    
+        return $this;
+    }
+    
+    /**
+     * @param ParamConfigurator|list<mixed|ParamConfigurator> $value
+     * @return $this
+     */
+    public function headers($value): self
+    {
+        $this->headers = $value;
+    
+        return $this;
+    }
+    
+    /**
+     * @default null
+     * @param ParamConfigurator|mixed $value
+     * @return $this
+     */
+    public function mailer($value): self
+    {
+        $this->mailer = $value;
+    
+        return $this;
+    }
+    
+    public function emailPrototype(array $value = []): \Symfony\Config\Monolog\HandlerConfig\EmailPrototypeConfig
+    {
+        if (null === $this->emailPrototype) {
+            $this->emailPrototype = new \Symfony\Config\Monolog\HandlerConfig\EmailPrototypeConfig($value);
+        } elseif ([] !== $value) {
+            throw new InvalidConfigurationException('The node created by "emailPrototype()" has already been initialized. You cannot pass values the second time you call emailPrototype().');
+        }
+    
+        return $this->emailPrototype;
+    }
+    
+    /**
+     * @default true
+     * @param ParamConfigurator|bool $value
+     * @return $this
+     */
+    public function lazy($value): self
+    {
+        $this->lazy = $value;
+    
+        return $this;
+    }
+    
+    public function verbosityLevels(array $value = []): \Symfony\Config\Monolog\HandlerConfig\VerbosityLevelsConfig
+    {
+        if (null === $this->verbosityLevels) {
+            $this->verbosityLevels = new \Symfony\Config\Monolog\HandlerConfig\VerbosityLevelsConfig($value);
+        } elseif ([] !== $value) {
+            throw new InvalidConfigurationException('The node created by "verbosityLevels()" has already been initialized. You cannot pass values the second time you call verbosityLevels().');
+        }
+    
+        return $this->verbosityLevels;
+    }
+    
+    public function channels(array $value = []): \Symfony\Config\Monolog\HandlerConfig\ChannelsConfig
+    {
+        if (null === $this->channels) {
+            $this->channels = new \Symfony\Config\Monolog\HandlerConfig\ChannelsConfig($value);
+        } elseif ([] !== $value) {
+            throw new InvalidConfigurationException('The node created by "channels()" has already been initialized. You cannot pass values the second time you call channels().');
+        }
+    
+        return $this->channels;
     }
     
     public function __construct(array $value = [])
@@ -1234,13 +1312,18 @@ class HandlerConfig
             unset($value['app_name']);
         }
     
+        if (isset($value['fill_extra_context'])) {
+            $this->fillExtraContext = $value['fill_extra_context'];
+            unset($value['fill_extra_context']);
+        }
+    
         if (isset($value['include_stacktraces'])) {
             $this->includeStacktraces = $value['include_stacktraces'];
             unset($value['include_stacktraces']);
         }
     
         if (isset($value['process_psr_3_messages'])) {
-            $this->processPsr3Messages = $value['process_psr_3_messages'];
+            $this->processPsr3Messages = new \Symfony\Config\Monolog\HandlerConfig\ProcessPsr3MessagesConfig($value['process_psr_3_messages']);
             unset($value['process_psr_3_messages']);
         }
     
@@ -1469,46 +1552,6 @@ class HandlerConfig
             unset($value['port']);
         }
     
-        if (isset($value['publisher'])) {
-            $this->publisher = new \Symfony\Config\Monolog\HandlerConfig\PublisherConfig($value['publisher']);
-            unset($value['publisher']);
-        }
-    
-        if (isset($value['mongo'])) {
-            $this->mongo = new \Symfony\Config\Monolog\HandlerConfig\MongoConfig($value['mongo']);
-            unset($value['mongo']);
-        }
-    
-        if (isset($value['elasticsearch'])) {
-            $this->elasticsearch = new \Symfony\Config\Monolog\HandlerConfig\ElasticsearchConfig($value['elasticsearch']);
-            unset($value['elasticsearch']);
-        }
-    
-        if (isset($value['index'])) {
-            $this->index = $value['index'];
-            unset($value['index']);
-        }
-    
-        if (isset($value['document_type'])) {
-            $this->documentType = $value['document_type'];
-            unset($value['document_type']);
-        }
-    
-        if (isset($value['ignore_error'])) {
-            $this->ignoreError = $value['ignore_error'];
-            unset($value['ignore_error']);
-        }
-    
-        if (isset($value['redis'])) {
-            $this->redis = new \Symfony\Config\Monolog\HandlerConfig\RedisConfig($value['redis']);
-            unset($value['redis']);
-        }
-    
-        if (isset($value['predis'])) {
-            $this->predis = new \Symfony\Config\Monolog\HandlerConfig\PredisConfig($value['predis']);
-            unset($value['predis']);
-        }
-    
         if (isset($value['config'])) {
             $this->config = $value['config'];
             unset($value['config']);
@@ -1517,46 +1560,6 @@ class HandlerConfig
         if (isset($value['members'])) {
             $this->members = $value['members'];
             unset($value['members']);
-        }
-    
-        if (isset($value['from_email'])) {
-            $this->fromEmail = $value['from_email'];
-            unset($value['from_email']);
-        }
-    
-        if (isset($value['to_email'])) {
-            $this->toEmail = $value['to_email'];
-            unset($value['to_email']);
-        }
-    
-        if (isset($value['subject'])) {
-            $this->subject = $value['subject'];
-            unset($value['subject']);
-        }
-    
-        if (isset($value['content_type'])) {
-            $this->contentType = $value['content_type'];
-            unset($value['content_type']);
-        }
-    
-        if (isset($value['headers'])) {
-            $this->headers = $value['headers'];
-            unset($value['headers']);
-        }
-    
-        if (isset($value['mailer'])) {
-            $this->mailer = $value['mailer'];
-            unset($value['mailer']);
-        }
-    
-        if (isset($value['email_prototype'])) {
-            $this->emailPrototype = new \Symfony\Config\Monolog\HandlerConfig\EmailPrototypeConfig($value['email_prototype']);
-            unset($value['email_prototype']);
-        }
-    
-        if (isset($value['lazy'])) {
-            $this->lazy = $value['lazy'];
-            unset($value['lazy']);
         }
     
         if (isset($value['connection_string'])) {
@@ -1629,6 +1632,31 @@ class HandlerConfig
             unset($value['message_type']);
         }
     
+        if (isset($value['parse_mode'])) {
+            $this->parseMode = $value['parse_mode'];
+            unset($value['parse_mode']);
+        }
+    
+        if (isset($value['disable_webpage_preview'])) {
+            $this->disableWebpagePreview = $value['disable_webpage_preview'];
+            unset($value['disable_webpage_preview']);
+        }
+    
+        if (isset($value['disable_notification'])) {
+            $this->disableNotification = $value['disable_notification'];
+            unset($value['disable_notification']);
+        }
+    
+        if (isset($value['split_long_messages'])) {
+            $this->splitLongMessages = $value['split_long_messages'];
+            unset($value['split_long_messages']);
+        }
+    
+        if (isset($value['delay_between_messages'])) {
+            $this->delayBetweenMessages = $value['delay_between_messages'];
+            unset($value['delay_between_messages']);
+        }
+    
         if (isset($value['tags'])) {
             $this->tags = $value['tags'];
             unset($value['tags']);
@@ -1644,16 +1672,6 @@ class HandlerConfig
             unset($value['console_formatter_options']);
         }
     
-        if (isset($value['verbosity_levels'])) {
-            $this->verbosityLevels = new \Symfony\Config\Monolog\HandlerConfig\VerbosityLevelsConfig($value['verbosity_levels']);
-            unset($value['verbosity_levels']);
-        }
-    
-        if (isset($value['channels'])) {
-            $this->channels = new \Symfony\Config\Monolog\HandlerConfig\ChannelsConfig($value['channels']);
-            unset($value['channels']);
-        }
-    
         if (isset($value['formatter'])) {
             $this->formatter = $value['formatter'];
             unset($value['formatter']);
@@ -1662,6 +1680,96 @@ class HandlerConfig
         if (isset($value['nested'])) {
             $this->nested = $value['nested'];
             unset($value['nested']);
+        }
+    
+        if (isset($value['publisher'])) {
+            $this->publisher = new \Symfony\Config\Monolog\HandlerConfig\PublisherConfig($value['publisher']);
+            unset($value['publisher']);
+        }
+    
+        if (isset($value['mongo'])) {
+            $this->mongo = new \Symfony\Config\Monolog\HandlerConfig\MongoConfig($value['mongo']);
+            unset($value['mongo']);
+        }
+    
+        if (isset($value['elasticsearch'])) {
+            $this->elasticsearch = new \Symfony\Config\Monolog\HandlerConfig\ElasticsearchConfig($value['elasticsearch']);
+            unset($value['elasticsearch']);
+        }
+    
+        if (isset($value['index'])) {
+            $this->index = $value['index'];
+            unset($value['index']);
+        }
+    
+        if (isset($value['document_type'])) {
+            $this->documentType = $value['document_type'];
+            unset($value['document_type']);
+        }
+    
+        if (isset($value['ignore_error'])) {
+            $this->ignoreError = $value['ignore_error'];
+            unset($value['ignore_error']);
+        }
+    
+        if (isset($value['redis'])) {
+            $this->redis = new \Symfony\Config\Monolog\HandlerConfig\RedisConfig($value['redis']);
+            unset($value['redis']);
+        }
+    
+        if (isset($value['predis'])) {
+            $this->predis = new \Symfony\Config\Monolog\HandlerConfig\PredisConfig($value['predis']);
+            unset($value['predis']);
+        }
+    
+        if (isset($value['from_email'])) {
+            $this->fromEmail = $value['from_email'];
+            unset($value['from_email']);
+        }
+    
+        if (isset($value['to_email'])) {
+            $this->toEmail = $value['to_email'];
+            unset($value['to_email']);
+        }
+    
+        if (isset($value['subject'])) {
+            $this->subject = $value['subject'];
+            unset($value['subject']);
+        }
+    
+        if (isset($value['content_type'])) {
+            $this->contentType = $value['content_type'];
+            unset($value['content_type']);
+        }
+    
+        if (isset($value['headers'])) {
+            $this->headers = $value['headers'];
+            unset($value['headers']);
+        }
+    
+        if (isset($value['mailer'])) {
+            $this->mailer = $value['mailer'];
+            unset($value['mailer']);
+        }
+    
+        if (isset($value['email_prototype'])) {
+            $this->emailPrototype = new \Symfony\Config\Monolog\HandlerConfig\EmailPrototypeConfig($value['email_prototype']);
+            unset($value['email_prototype']);
+        }
+    
+        if (isset($value['lazy'])) {
+            $this->lazy = $value['lazy'];
+            unset($value['lazy']);
+        }
+    
+        if (isset($value['verbosity_levels'])) {
+            $this->verbosityLevels = new \Symfony\Config\Monolog\HandlerConfig\VerbosityLevelsConfig($value['verbosity_levels']);
+            unset($value['verbosity_levels']);
+        }
+    
+        if (isset($value['channels'])) {
+            $this->channels = new \Symfony\Config\Monolog\HandlerConfig\ChannelsConfig($value['channels']);
+            unset($value['channels']);
         }
     
         if ([] !== $value) {
@@ -1691,11 +1799,14 @@ class HandlerConfig
         if (null !== $this->appName) {
             $output['app_name'] = $this->appName;
         }
+        if (null !== $this->fillExtraContext) {
+            $output['fill_extra_context'] = $this->fillExtraContext;
+        }
         if (null !== $this->includeStacktraces) {
             $output['include_stacktraces'] = $this->includeStacktraces;
         }
         if (null !== $this->processPsr3Messages) {
-            $output['process_psr_3_messages'] = $this->processPsr3Messages;
+            $output['process_psr_3_messages'] = $this->processPsr3Messages->toArray();
         }
         if (null !== $this->path) {
             $output['path'] = $this->path;
@@ -1832,59 +1943,11 @@ class HandlerConfig
         if (null !== $this->port) {
             $output['port'] = $this->port;
         }
-        if (null !== $this->publisher) {
-            $output['publisher'] = $this->publisher->toArray();
-        }
-        if (null !== $this->mongo) {
-            $output['mongo'] = $this->mongo->toArray();
-        }
-        if (null !== $this->elasticsearch) {
-            $output['elasticsearch'] = $this->elasticsearch->toArray();
-        }
-        if (null !== $this->index) {
-            $output['index'] = $this->index;
-        }
-        if (null !== $this->documentType) {
-            $output['document_type'] = $this->documentType;
-        }
-        if (null !== $this->ignoreError) {
-            $output['ignore_error'] = $this->ignoreError;
-        }
-        if (null !== $this->redis) {
-            $output['redis'] = $this->redis->toArray();
-        }
-        if (null !== $this->predis) {
-            $output['predis'] = $this->predis->toArray();
-        }
         if (null !== $this->config) {
             $output['config'] = $this->config;
         }
         if (null !== $this->members) {
             $output['members'] = $this->members;
-        }
-        if (null !== $this->fromEmail) {
-            $output['from_email'] = $this->fromEmail;
-        }
-        if (null !== $this->toEmail) {
-            $output['to_email'] = $this->toEmail;
-        }
-        if (null !== $this->subject) {
-            $output['subject'] = $this->subject;
-        }
-        if (null !== $this->contentType) {
-            $output['content_type'] = $this->contentType;
-        }
-        if (null !== $this->headers) {
-            $output['headers'] = $this->headers;
-        }
-        if (null !== $this->mailer) {
-            $output['mailer'] = $this->mailer;
-        }
-        if (null !== $this->emailPrototype) {
-            $output['email_prototype'] = $this->emailPrototype->toArray();
-        }
-        if (null !== $this->lazy) {
-            $output['lazy'] = $this->lazy;
         }
         if (null !== $this->connectionString) {
             $output['connection_string'] = $this->connectionString;
@@ -1928,6 +1991,21 @@ class HandlerConfig
         if (null !== $this->messageType) {
             $output['message_type'] = $this->messageType;
         }
+        if (null !== $this->parseMode) {
+            $output['parse_mode'] = $this->parseMode;
+        }
+        if (null !== $this->disableWebpagePreview) {
+            $output['disable_webpage_preview'] = $this->disableWebpagePreview;
+        }
+        if (null !== $this->disableNotification) {
+            $output['disable_notification'] = $this->disableNotification;
+        }
+        if (null !== $this->splitLongMessages) {
+            $output['split_long_messages'] = $this->splitLongMessages;
+        }
+        if (null !== $this->delayBetweenMessages) {
+            $output['delay_between_messages'] = $this->delayBetweenMessages;
+        }
         if (null !== $this->tags) {
             $output['tags'] = $this->tags;
         }
@@ -1937,17 +2015,65 @@ class HandlerConfig
         if (null !== $this->consoleFormatterOptions) {
             $output['console_formatter_options'] = $this->consoleFormatterOptions;
         }
-        if (null !== $this->verbosityLevels) {
-            $output['verbosity_levels'] = $this->verbosityLevels->toArray();
-        }
-        if (null !== $this->channels) {
-            $output['channels'] = $this->channels->toArray();
-        }
         if (null !== $this->formatter) {
             $output['formatter'] = $this->formatter;
         }
         if (null !== $this->nested) {
             $output['nested'] = $this->nested;
+        }
+        if (null !== $this->publisher) {
+            $output['publisher'] = $this->publisher->toArray();
+        }
+        if (null !== $this->mongo) {
+            $output['mongo'] = $this->mongo->toArray();
+        }
+        if (null !== $this->elasticsearch) {
+            $output['elasticsearch'] = $this->elasticsearch->toArray();
+        }
+        if (null !== $this->index) {
+            $output['index'] = $this->index;
+        }
+        if (null !== $this->documentType) {
+            $output['document_type'] = $this->documentType;
+        }
+        if (null !== $this->ignoreError) {
+            $output['ignore_error'] = $this->ignoreError;
+        }
+        if (null !== $this->redis) {
+            $output['redis'] = $this->redis->toArray();
+        }
+        if (null !== $this->predis) {
+            $output['predis'] = $this->predis->toArray();
+        }
+        if (null !== $this->fromEmail) {
+            $output['from_email'] = $this->fromEmail;
+        }
+        if (null !== $this->toEmail) {
+            $output['to_email'] = $this->toEmail;
+        }
+        if (null !== $this->subject) {
+            $output['subject'] = $this->subject;
+        }
+        if (null !== $this->contentType) {
+            $output['content_type'] = $this->contentType;
+        }
+        if (null !== $this->headers) {
+            $output['headers'] = $this->headers;
+        }
+        if (null !== $this->mailer) {
+            $output['mailer'] = $this->mailer;
+        }
+        if (null !== $this->emailPrototype) {
+            $output['email_prototype'] = $this->emailPrototype->toArray();
+        }
+        if (null !== $this->lazy) {
+            $output['lazy'] = $this->lazy;
+        }
+        if (null !== $this->verbosityLevels) {
+            $output['verbosity_levels'] = $this->verbosityLevels->toArray();
+        }
+        if (null !== $this->channels) {
+            $output['channels'] = $this->channels->toArray();
         }
     
         return $output;

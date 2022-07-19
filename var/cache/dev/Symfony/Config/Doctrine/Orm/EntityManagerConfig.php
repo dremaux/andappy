@@ -34,6 +34,7 @@ class EntityManagerConfig
     private $quoteStrategy;
     private $entityListenerResolver;
     private $repositoryFactory;
+    private $schemaIgnoreClasses;
     private $secondLevelCache;
     private $hydrators;
     private $mappings;
@@ -180,6 +181,17 @@ class EntityManagerConfig
         return $this;
     }
     
+    /**
+     * @param ParamConfigurator|list<mixed|ParamConfigurator> $value
+     * @return $this
+     */
+    public function schemaIgnoreClasses($value): self
+    {
+        $this->schemaIgnoreClasses = $value;
+    
+        return $this;
+    }
+    
     public function secondLevelCache(array $value = []): \Symfony\Config\Doctrine\Orm\EntityManagerConfig\SecondLevelCacheConfig
     {
         if (null === $this->secondLevelCache) {
@@ -300,6 +312,11 @@ class EntityManagerConfig
             unset($value['repository_factory']);
         }
     
+        if (isset($value['schema_ignore_classes'])) {
+            $this->schemaIgnoreClasses = $value['schema_ignore_classes'];
+            unset($value['schema_ignore_classes']);
+        }
+    
         if (isset($value['second_level_cache'])) {
             $this->secondLevelCache = new \Symfony\Config\Doctrine\Orm\EntityManagerConfig\SecondLevelCacheConfig($value['second_level_cache']);
             unset($value['second_level_cache']);
@@ -369,6 +386,9 @@ class EntityManagerConfig
         }
         if (null !== $this->repositoryFactory) {
             $output['repository_factory'] = $this->repositoryFactory;
+        }
+        if (null !== $this->schemaIgnoreClasses) {
+            $output['schema_ignore_classes'] = $this->schemaIgnoreClasses;
         }
         if (null !== $this->secondLevelCache) {
             $output['second_level_cache'] = $this->secondLevelCache->toArray();

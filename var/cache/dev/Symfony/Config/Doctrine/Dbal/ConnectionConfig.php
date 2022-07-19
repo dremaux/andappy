@@ -591,6 +591,7 @@ class ConnectionConfig
     /**
      * @default null
      * @param ParamConfigurator|mixed $value
+     * @deprecated The "shard_manager_class" configuration is deprecated and not supported anymore using DBAL 3.
      * @return $this
      */
     public function shardManagerClass($value): self
@@ -603,6 +604,7 @@ class ConnectionConfig
     /**
      * @default null
      * @param ParamConfigurator|mixed $value
+     * @deprecated The "shard_choser" configuration is deprecated and not supported anymore using DBAL 3.
      * @return $this
      */
     public function shardChoser($value): self
@@ -615,6 +617,7 @@ class ConnectionConfig
     /**
      * @default null
      * @param ParamConfigurator|mixed $value
+     * @deprecated The "shard_choser_service" configuration is deprecated and not supported anymore using DBAL 3.
      * @return $this
      */
     public function shardChoserService($value): self
