@@ -32,7 +32,11 @@
                             <a href="{{ path('property.index') }}" class="nav-link"><img src="images\properties\parametre_logo.png" weidht="40" height="40"</a>
                         </li>
                         <li class="nav-item">
+<<<<<<< HEAD
                             <a href="{{ path('logout') }}" style="color:white; text-decoration: none;">DECONNEXION</a>
+=======
+                            <a class="nav-link {% if current_menu is defined and current_menu == 'properties' %}active{% endif %}" href="{{ path('logout') }}" >DECONNEXION</a>
+>>>>>>> parent of 6465c754 (couleur sans nav)
                         </li>
                     </ul>
                 </div>
