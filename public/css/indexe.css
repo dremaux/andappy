@@ -1,0 +1,85 @@
+/*----------------------- scripte des cercles -------------------*/
+
+  #circle {
+   
+    width: 400px;
+    height:400px;
+    position: absolute;
+    border-radius:50%;
+    text-align: center;
+    top:550px;
+    left:30vw;
+    transform:translateX(0%);
+    background-color:rgb(221, 171, 34);
+    opacity:100%;
+    transition: width 2s ease-out;
+    transition: height 0s ease-out;
+  }
+
+  #circle2 {
+   
+    width: 400px;
+    height: 400px;
+    position: absolute;
+    border-radius:50%;
+    text-align: center;
+    top:550px;
+    left:30vw;
+    
+    background-color: #E7E3EB;
+    /*animation: colorchange 30s infinite;*/
+  }
+
+  #circle3 {
+   
+    width: 400px;
+    height: 400px;
+    position: absolute;
+    border-radius:50%;
+    text-align: center;
+    top:550px;
+    left:30vw;
+    transform:translateX(0%);
+    background-color:rgb(231, 38, 38);
+    opacity:100%;
+    transition: width 0s ease-out;
+    transition: height 0s ease-out;
+  }
+  
+  @keyframes colorchange
+      {
+        0%   {background: violet;}
+        25%  {background: yellow;}
+        50%  {background: blue;}
+        75%  {background: lightgreen;}
+        100% {background: violet;}
+      }
+
+/*----------------------- couleur et police du texte -------------------*/
+
+body {
+  font-family: 'Trebuchet MS', Arial, sans-serif;
+  color: #1E99EB;
+  background: #fff;
+    margin: 0;
+    text-align: center;
+}
+ header {
+   background-color: #E7E3EB;
+   padding-bottom: 40px;
+ }
+.image1 {
+  float: left;
+  padding-top: 315px;
+  padding-left: 317px;
+  position: fixed;
+  z-index: 2;
+}
+
+.image2 {
+  float: top;
+  padding-top: 40px;
+}
+
+/*---------------------------- curseur range ------------------------------*/
+
