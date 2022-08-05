@@ -87,5 +87,6 @@ body {
 
 
 .piece-milieu{
-  padding-left: 33%;
+  padding-left: 30px;
+  text-decoration: none;
 }
