@@ -2,8 +2,8 @@
 
   #circle {
    
-    width: 12%;
-    height:12%;
+    width: 30%;
+    height:30%;
     position: absolute;
     border-radius:50%;
     text-align: center;
@@ -18,8 +18,8 @@
 
   #circle2 {
    
-    width: 12%;
-    height:12%;
+    width: 30%;
+    height:30%;
     position: absolute;
     border-radius:50%;
     text-align: center;
@@ -32,8 +32,8 @@
 
   #circle3 {
    
-    width: 12%;
-    height:12%;
+    width: 30%;
+    height:30%;
     position: absolute;
     border-radius:50%;
     text-align: center;
