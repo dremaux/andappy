@@ -7,7 +7,7 @@
     position: absolute;
     border-radius:50%;
     text-align: center;
-    top:550px;
+    top:200px;
     left:30vw;
     transform:translateX(0%);
     background-color:rgb(221, 171, 34);
@@ -23,7 +23,7 @@
     position: absolute;
     border-radius:50%;
     text-align: center;
-    top:550px;
+    top:200px;
     left:30vw;
     
     background-color: #E7E3EB;
@@ -37,7 +37,7 @@
     position: absolute;
     border-radius:50%;
     text-align: center;
-    top:550px;
+    top:200px;
     left:30vw;
     transform:translateX(0%);
     background-color:rgb(231, 38, 38);
