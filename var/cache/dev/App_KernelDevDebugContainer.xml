@@ -574,8 +574,7 @@
         <argument type="service" id=".service_locator.0ghLsew.App\Controller\SecurityController"/>
       </call>
     </service>
-    <service id="App\Controller\ShopController" class="App\Controller\ShopController" public="true" autowire="true" autoconfigure="true">
-      <tag name="controller.service_arguments"/>
+    <service id="App\Controller\ShopController" class="App\Controller\ShopController" autowire="true" autoconfigure="true">
       <argument type="service" id="twig"/>
     </service>
     <service id="App\DataFixtures\PropertyFixture" class="App\DataFixtures\PropertyFixture" autowire="true" autoconfigure="true">

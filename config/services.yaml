@@ -28,10 +28,4 @@ services:
         tags: ['controller.service_arguments']
         arguments:
             $twig: '@twig'
-
-    App\Controller\ShopController:
-        tags: ['controller.service_arguments']
-        arguments:
-            $twig: '@twig'
-
     
