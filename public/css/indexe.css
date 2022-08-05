@@ -7,8 +7,8 @@
     position: absolute;
     border-radius:50%;
     text-align: center;
-    top:200px;
-    left:30vw;
+    top:25%;
+    left:50%;
     transform:translateX(0%);
     background-color:rgb(221, 171, 34);
     opacity:100%;
@@ -23,8 +23,8 @@
     position: absolute;
     border-radius:50%;
     text-align: center;
-    top:200px;
-    left:30vw;
+    top:25%;
+    left:50%;
     
     background-color: #E7E3EB;
     /*animation: colorchange 30s infinite;*/
@@ -37,8 +37,8 @@
     position: absolute;
     border-radius:50%;
     text-align: center;
-    top:200px;
-    left:30vw;
+    top:25%;
+    left:50%;
     transform:translateX(0%);
     background-color:rgb(231, 38, 38);
     opacity:100%;
