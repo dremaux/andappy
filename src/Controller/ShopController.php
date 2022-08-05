@@ -6,18 +6,13 @@ use Twig\Environment;
 
 class ShopController
 {
+
+
     /**
-     * @var Environment
+     * @Route("/shop", name="shop")
      */
-    private $twig;
-
-    public function __construct(Environment $twig)
+    public function index()
     {
-        $this->twig = $twig;
-    }
-
-    public function index(): Response
-    {
-        return new Response($this->twig->render('shop/home.html.twig'));
+        return $this->render('shop/home.html.twig');
     }
 }
