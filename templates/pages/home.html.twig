@@ -1,13 +1,19 @@
 {% extends 'base.html.twig' %}
 
+{% block javascripts %}
+        <!-- partial -->
+        <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+        <script src="{{ asset('script/script.js') }}"></script>
+        <script src="{{ asset('script/script3.js') }}"></script>
+{% endblock %}
+
 {% block body %}
 <div class="jumbotron text-center">
 <h1>Bienvenue sur mon Agence</h1>
 <p>ce text est un test pour voir si je ne fait pas n'importe quoi, j'écrit ce qui me passe pare la tête pour la présentation de mon site</p>
 </div>
 
-<?php  
-    
+<?php   
     <body>
     
     <h2>Sensibilité</h2>
@@ -29,12 +35,9 @@
         <div id="circle"></div>
         <div id="circle2"></div>
 
-        <!-- partial -->
-        <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
-        <script src="{{ asset('script/script.js') }}"></script>
-        <script src="{{ asset('script/script3.js') }}"></script>
+        
     
     </body>  
-?>
+
 
 {% endblock %}
