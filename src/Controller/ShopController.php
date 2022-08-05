@@ -18,7 +18,7 @@ Class ShopController
     }
 
     /**
-     * @Route("/shop", name="shop.shop")
+     * @Route("/shop", name="shop.index")
      * @return Response
      */
     public function index(): Response
