@@ -1,7 +1,7 @@
 <?php
 namespace App\Controller;
 
-use Symfony\Component\Httpfoundation\Response;
+use Symfony\Component\HttpFoundation\Response;
 use Twig\Environment;
 
 Class ShopController
@@ -16,9 +16,6 @@ Class ShopController
         $this->twig = $twig;        
     }
 
-    /**
-     * @Route("/shop", name="shop")
-     */
     public function index(): Response
     {
         return new Response($this->twig->render('shop/shop.html.twig'));
@@ -26,4 +23,3 @@ Class ShopController
 
 }
 
-?>
