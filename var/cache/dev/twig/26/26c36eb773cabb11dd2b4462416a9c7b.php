@@ -99,7 +99,7 @@ class __TwigTemplate_e84fc2d11049c4bd6c32844f1962d443 extends Template
                              <a href=\"";
         // line 34
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("property.index");
-        echo "\" class=\"nav-link\"><img src=\"images\\properties\\parametre_logo.png\" weidht=\"40\" height=\"40\"</a>
+        echo "\" class=\"nav-link\"><img src=\"images\\properties\\parametre_logo.png\" weidht=\"40\" height=\"40\"></a>
                          </li>
                          <li class=\"nav-item\">
                              <a href=\"";
@@ -263,7 +263,7 @@ class __TwigTemplate_e84fc2d11049c4bd6c32844f1962d443 extends Template
                      </ul>
                      <ul  class=\"navbar-nav\">
                          <li class=\"nav-item\">
-                             <a href=\"{{ path('property.index') }}\" class=\"nav-link\"><img src=\"images\\properties\\parametre_logo.png\" weidht=\"40\" height=\"40\"</a>
+                             <a href=\"{{ path('property.index') }}\" class=\"nav-link\"><img src=\"images\\properties\\parametre_logo.png\" weidht=\"40\" height=\"40\"></a>
                          </li>
                          <li class=\"nav-item\">
                              <a href=\"{{ path('logout') }}\" style=\"color:white; text-decoration: none;\">DECONNEXION</a>
