@@ -16,6 +16,9 @@ Class ShopController
         $this->twig = $twig;        
     }
 
+    /**
+     * @Route("/shop", name="shop")
+     */
     public function index(): Response
     {
         return new Response($this->twig->render('shop/shop.html.twig'));
