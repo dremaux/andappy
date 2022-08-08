@@ -27,9 +27,6 @@
   }
 
   #circle3 {
-    width: 400px;
-    height:400px;
-    position: absolute;
     border-radius:50%;
     text-align: center;
     top:33%;
