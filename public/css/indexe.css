@@ -29,7 +29,7 @@
   #circle3 {
     border-radius:50%;
     text-align: center;
-    top:33%;
+    top:34%;
     transform:translateX(0%);
     opacity:100%;
     transition: width 0s ease-out;
