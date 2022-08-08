@@ -25,6 +25,7 @@ class __TwigTemplate_9b63401a5837bea3431103c8134f45a8 extends Template
         $this->source = $this->getSourceContext();
 
         $this->blocks = [
+            'javascripts' => [$this, 'block_javascripts'],
             'body' => [$this, 'block_body'],
         ];
     }
@@ -55,6 +56,35 @@ class __TwigTemplate_9b63401a5837bea3431103c8134f45a8 extends Template
     }
 
     // line 3
+    public function block_javascripts($context, array $blocks = [])
+    {
+        $macros = $this->macros;
+        $__internal_5a27a8ba21ca79b61932376b2fa922d2 = $this->extensions["Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension"];
+        $__internal_5a27a8ba21ca79b61932376b2fa922d2->enter($__internal_5a27a8ba21ca79b61932376b2fa922d2_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "javascripts"));
+
+        $__internal_6f47bbe9983af81f1e7450e9a3e3768f = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
+        $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "javascripts"));
+
+        // line 4
+        echo "        <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+        <script src=\"";
+        // line 5
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("script/script.js"), "html", null, true);
+        echo "\"></script>
+        <script src=\"";
+        // line 6
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("script/script3.js"), "html", null, true);
+        echo "\"></script>
+";
+        
+        $__internal_6f47bbe9983af81f1e7450e9a3e3768f->leave($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof);
+
+        
+        $__internal_5a27a8ba21ca79b61932376b2fa922d2->leave($__internal_5a27a8ba21ca79b61932376b2fa922d2_prof);
+
+    }
+
+    // line 10
     public function block_body($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -64,53 +94,30 @@ class __TwigTemplate_9b63401a5837bea3431103c8134f45a8 extends Template
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "body"));
 
-        // line 4
-        echo "<div class=\"jumbotron text-center\">
-<h1>Bienvenue sur mon Agence</h1>
-<p>ce text est un test pour voir si je ne fait pas n'importe quoi, j'écrit ce qui me passe pare la tête pour la présentation de mon site</p>
+        // line 11
+        echo "<div class=\"sensi\">
+<h2>Sensibilité</h2>
+        <input name=\"range-left\" id=\"range-left\" list=\"tickmarks\" />
+        
+        <datalist id=\"tickmarks\">
+        <option value=\"512\"  >
+        <option value=\"1024\" >
+        <option value=\"2048\" >
+        <option value=\"4096\" >
+        <option value=\"8192\" >
+        </datalist>
 </div>
 
-<div class=\"container\">
-    <h2>Les derniers biens</h2>
-    <div class=\"row flex\">
-        ";
-        // line 12
-        $context['_parent'] = $context;
-        $context['_seq'] = twig_ensure_traversable((isset($context["properties"]) || array_key_exists("properties", $context) ? $context["properties"] : (function () { throw new RuntimeError('Variable "properties" does not exist.', 12, $this->source); })()));
-        foreach ($context['_seq'] as $context["_key"] => $context["property"]) {
-            // line 13
-            echo "            <div class=\"col-3\">
-                <div class=\"card\">
-                    <div class=\"card-body\">
-                        <h5 class=\"card-title\">
-                            <a href=\"";
-            // line 17
-            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("property.show", ["id" => twig_get_attribute($this->env, $this->source, $context["property"], "id", [], "any", false, false, false, 17), "slug" => twig_get_attribute($this->env, $this->source, $context["property"], "slug", [], "any", false, false, false, 17)]), "html", null, true);
-            echo "\">";
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["property"], "title", [], "any", false, false, false, 17), "html", null, true);
-            echo "</a>
-                        </h5>
-                        <p class=\"card-text\">";
-            // line 19
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["property"], "city", [], "any", false, false, false, 19), "html", null, true);
-            echo " (";
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["property"], "postalCode", [], "any", false, false, false, 19), "html", null, true);
-            echo ")</p>
-                        <div class=\"text-primary\" style=\"font-weight: bold;font-size: 2rem;\">";
-            // line 20
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["property"], "formatedPrice", [], "any", false, false, false, 20), "html", null, true);
-            echo " €</div>
-                    </div>
-                </div>
-            </div>    
-        ";
-        }
-        $_parent = $context['_parent'];
-        unset($context['_seq'], $context['_iterated'], $context['_key'], $context['property'], $context['_parent'], $context['loop']);
-        $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 25
-        echo "    </div>
-</div>        
+    <body>
+        <div class=\"image1\">
+            <img src=\"images\\image_apli\\log_handi.png\" alt=\"logo\" width=\"350\" height=\"210\" />
+        </div>
+        <!-- partial:index.partial.html -->
+        <div id=\"circle3\"></div>
+        <div id=\"circle\"></div>
+        <div id=\"circle2\"></div>
+
+    </body>  
 
 ";
         
@@ -133,37 +140,44 @@ class __TwigTemplate_9b63401a5837bea3431103c8134f45a8 extends Template
 
     public function getDebugInfo()
     {
-        return array (  112 => 25,  101 => 20,  95 => 19,  88 => 17,  82 => 13,  78 => 12,  68 => 4,  58 => 3,  35 => 1,);
+        return array (  98 => 11,  88 => 10,  76 => 6,  72 => 5,  69 => 4,  59 => 3,  36 => 1,);
     }
 
     public function getSourceContext()
     {
         return new Source("{% extends 'base.html.twig' %}
 
+{% block javascripts %}
+        <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+        <script src=\"{{ asset('script/script.js') }}\"></script>
+        <script src=\"{{ asset('script/script3.js') }}\"></script>
+{% endblock %}
+
+
 {% block body %}
-<div class=\"jumbotron text-center\">
-<h1>Bienvenue sur mon Agence</h1>
-<p>ce text est un test pour voir si je ne fait pas n'importe quoi, j'écrit ce qui me passe pare la tête pour la présentation de mon site</p>
+<div class=\"sensi\">
+<h2>Sensibilité</h2>
+        <input name=\"range-left\" id=\"range-left\" list=\"tickmarks\" />
+        
+        <datalist id=\"tickmarks\">
+        <option value=\"512\"  >
+        <option value=\"1024\" >
+        <option value=\"2048\" >
+        <option value=\"4096\" >
+        <option value=\"8192\" >
+        </datalist>
 </div>
 
-<div class=\"container\">
-    <h2>Les derniers biens</h2>
-    <div class=\"row flex\">
-        {% for property in properties %}
-            <div class=\"col-3\">
-                <div class=\"card\">
-                    <div class=\"card-body\">
-                        <h5 class=\"card-title\">
-                            <a href=\"{{ path('property.show', {id: property.id, slug: property.slug}) }}\">{{property.title}}</a>
-                        </h5>
-                        <p class=\"card-text\">{{ property.city}} ({{ property.postalCode }})</p>
-                        <div class=\"text-primary\" style=\"font-weight: bold;font-size: 2rem;\">{{ property.formatedPrice }} €</div>
-                    </div>
-                </div>
-            </div>    
-        {% endfor %}
-    </div>
-</div>        
+    <body>
+        <div class=\"image1\">
+            <img src=\"images\\image_apli\\log_handi.png\" alt=\"logo\" width=\"350\" height=\"210\" />
+        </div>
+        <!-- partial:index.partial.html -->
+        <div id=\"circle3\"></div>
+        <div id=\"circle\"></div>
+        <div id=\"circle2\"></div>
+
+    </body>  
 
 {% endblock %}", "pages/home.html.twig", "C:\\Users\\lucas\\Documents\\GitHub\\andappy\\templates\\pages\\home.html.twig");
     }

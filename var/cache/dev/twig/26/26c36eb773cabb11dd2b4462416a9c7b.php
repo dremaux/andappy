@@ -57,26 +57,26 @@ class __TwigTemplate_e84fc2d11049c4bd6c32844f1962d443 extends Template
         $this->displayBlock('title', $context, $blocks);
         echo "</title>
          
+         <link rel=\"stylesheet\" href=\"";
+        // line 11
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("css/indexe.css"), "html", null, true);
+        echo "\">
          <link href=\"https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css\" rel=\"stylesheet\" integrity=\"sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3\" crossorigin=\"anonymous\">
          <link rel=\"stylesheet\" href=\"https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.13/css/select2.min.css\" integrity=\"sha512-nMNlpuaDPrqlEls3IX/Q56H36qvBASwb3ipuo3MxeWbsQB1881ox0cRv7UPTgBlriqoynt35KjEwgGUeUXIPnw==\" crossorigin=\"anonymous\" referrerpolicy=\"no-referrer\" />
  
          ";
-        // line 14
-        $this->displayBlock('stylesheets', $context, $blocks);
         // line 15
+        $this->displayBlock('stylesheets', $context, $blocks);
+        // line 16
         echo "     </head>   
      
     <body>
          <nav class=\"navbar navbar-expand-lg navbar-dark bg-primary\">
              <div class=\"container-fluid\">
                  <a class=\"navbar-brand\" href=\"";
-        // line 20
-        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("home");
-        echo "\">Mon Agence</a>
-                 <a class=\"navbar-brand\" href=\"";
         // line 21
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("home");
-        echo "\">Shop</a>
+        echo "\"><img src=\"images\\properties\\acceuil.png\" weidht=\"40\" height=\"40\"></a>
                  <button class=\"navbar-toggler\" type=\"button\" data-bs-toggle=\"collapse\" data-bs-target=\"#navbarSupportedContent\" aria-controls=\"navbarSupportedContent\" aria-expanded=\"false\" aria-label=\"Toggle navigation\">
                      <span class=\"navbar-toggler-icon\"></span>
                  </button>
@@ -84,28 +84,33 @@ class __TwigTemplate_e84fc2d11049c4bd6c32844f1962d443 extends Template
                  <div class=\"collapse navbar-collapse\" id=\"navbarSupportedContent\">
                      <ul class=\"navbar-nav me-auto mb-2 mb-lg-0\">
                          <li class=\"nav-item\">    
-                             <a class=\"nav-link ";
+                             <a class=\"navbar-brand\" href=\"";
         // line 29
-        if ((array_key_exists("current_menu", $context) && ((isset($context["current_menu"]) || array_key_exists("current_menu", $context) ? $context["current_menu"] : (function () { throw new RuntimeError('Variable "current_menu" does not exist.', 29, $this->source); })()) == "properties"))) {
-            echo "active";
-        }
-        echo "\" href=\"";
-        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("property.index");
-        echo "\"></a>
+        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("shop");
+        echo "\"><img src=\"images\\properties\\logo_shop.png\" weidht=\"40\" height=\"40\"></a>
                          </li>
                      </ul>
+
+                     <ul class=\"navbar-nav me-auto mb-2 mb-lg-0\">
+                         <li class=\"nav-item\">    
+                             <a>1200<img src=\"images\\properties\\piece.png\" weidht=\"40\" height=\"40\"></a>
+                         </li>
+                     </ul>
+
                      <ul  class=\"navbar-nav\">
                          <li class=\"nav-item\">
                              <a href=\"";
-        // line 34
+        // line 41
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("property.index");
         echo "\" class=\"nav-link\"><img src=\"images\\properties\\parametre_logo.png\" weidht=\"40\" height=\"40\"></a>
                          </li>
+                    </ul>
+                     <ul  class=\"navbar-nav\">
                          <li class=\"nav-item\">
                              <a href=\"";
-        // line 37
+        // line 46
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("logout");
-        echo "\" style=\"color:white; text-decoration: none;\">DECONNEXION</a>
+        echo "\" style=\"color:white; text-decoration: none;\"><img src=\"images\\properties\\deconnexion.png\" weidht=\"40\" height=\"40\"></a>
                          </li>
                      </ul>
                  </div>
@@ -113,9 +118,9 @@ class __TwigTemplate_e84fc2d11049c4bd6c32844f1962d443 extends Template
          </nav>
     
          ";
-        // line 44
+        // line 53
         $this->displayBlock('body', $context, $blocks);
-        // line 45
+        // line 54
         echo " 
          <script src=\"https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js\" integrity=\"sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==\" crossorigin=\"anonymous\" referrerpolicy=\"no-referrer\"></script>
          <script src=\"https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js\" integrity=\"sha384-W8fXfP3gkOKtndU4JGtKDvXbO53Wy8SZCQHczT5FMiiqmQfUpWbYdTil/SxwZgAN\" crossorigin=\"anonymous\"></script>
@@ -127,9 +132,9 @@ class __TwigTemplate_e84fc2d11049c4bd6c32844f1962d443 extends Template
          </script>
  
          ";
-        // line 55
+        // line 64
         $this->displayBlock('javascripts', $context, $blocks);
-        // line 56
+        // line 65
         echo "    </body>
  </html>";
         
@@ -159,7 +164,7 @@ class __TwigTemplate_e84fc2d11049c4bd6c32844f1962d443 extends Template
 
     }
 
-    // line 14
+    // line 15
     public function block_stylesheets($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -177,7 +182,7 @@ class __TwigTemplate_e84fc2d11049c4bd6c32844f1962d443 extends Template
 
     }
 
-    // line 44
+    // line 53
     public function block_body($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -195,7 +200,7 @@ class __TwigTemplate_e84fc2d11049c4bd6c32844f1962d443 extends Template
 
     }
 
-    // line 55
+    // line 64
     public function block_javascripts($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -225,7 +230,7 @@ class __TwigTemplate_e84fc2d11049c4bd6c32844f1962d443 extends Template
 
     public function getDebugInfo()
     {
-        return array (  199 => 55,  181 => 44,  163 => 14,  144 => 9,  133 => 56,  131 => 55,  119 => 45,  117 => 44,  107 => 37,  101 => 34,  89 => 29,  78 => 21,  74 => 20,  67 => 15,  65 => 14,  57 => 9,  47 => 1,);
+        return array (  204 => 64,  186 => 53,  168 => 15,  149 => 9,  138 => 65,  136 => 64,  124 => 54,  122 => 53,  112 => 46,  104 => 41,  89 => 29,  78 => 21,  71 => 16,  69 => 15,  62 => 11,  57 => 9,  47 => 1,);
     }
 
     public function getSourceContext()
@@ -240,6 +245,7 @@ class __TwigTemplate_e84fc2d11049c4bd6c32844f1962d443 extends Template
          <meta http-equiv=\"X-UA-Compatible\" content=\"ie=edge\">
          <title>{% block title %}Agence lucas{% endblock %}</title>
          
+         <link rel=\"stylesheet\" href=\"{{ asset('css/indexe.css') }}\">
          <link href=\"https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css\" rel=\"stylesheet\" integrity=\"sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3\" crossorigin=\"anonymous\">
          <link rel=\"stylesheet\" href=\"https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.13/css/select2.min.css\" integrity=\"sha512-nMNlpuaDPrqlEls3IX/Q56H36qvBASwb3ipuo3MxeWbsQB1881ox0cRv7UPTgBlriqoynt35KjEwgGUeUXIPnw==\" crossorigin=\"anonymous\" referrerpolicy=\"no-referrer\" />
  
@@ -249,8 +255,7 @@ class __TwigTemplate_e84fc2d11049c4bd6c32844f1962d443 extends Template
     <body>
          <nav class=\"navbar navbar-expand-lg navbar-dark bg-primary\">
              <div class=\"container-fluid\">
-                 <a class=\"navbar-brand\" href=\"{{ path('home') }}\">Mon Agence</a>
-                 <a class=\"navbar-brand\" href=\"{{ path('home') }}\">Shop</a>
+                 <a class=\"navbar-brand\" href=\"{{ path('home') }}\"><img src=\"images\\properties\\acceuil.png\" weidht=\"40\" height=\"40\"></a>
                  <button class=\"navbar-toggler\" type=\"button\" data-bs-toggle=\"collapse\" data-bs-target=\"#navbarSupportedContent\" aria-controls=\"navbarSupportedContent\" aria-expanded=\"false\" aria-label=\"Toggle navigation\">
                      <span class=\"navbar-toggler-icon\"></span>
                  </button>
@@ -258,15 +263,24 @@ class __TwigTemplate_e84fc2d11049c4bd6c32844f1962d443 extends Template
                  <div class=\"collapse navbar-collapse\" id=\"navbarSupportedContent\">
                      <ul class=\"navbar-nav me-auto mb-2 mb-lg-0\">
                          <li class=\"nav-item\">    
-                             <a class=\"nav-link {% if current_menu is defined and current_menu == 'properties' %}active{% endif %}\" href=\"{{ path('property.index') }}\"></a>
+                             <a class=\"navbar-brand\" href=\"{{ path('shop') }}\"><img src=\"images\\properties\\logo_shop.png\" weidht=\"40\" height=\"40\"></a>
                          </li>
                      </ul>
+
+                     <ul class=\"navbar-nav me-auto mb-2 mb-lg-0\">
+                         <li class=\"nav-item\">    
+                             <a>1200<img src=\"images\\properties\\piece.png\" weidht=\"40\" height=\"40\"></a>
+                         </li>
+                     </ul>
+
                      <ul  class=\"navbar-nav\">
                          <li class=\"nav-item\">
                              <a href=\"{{ path('property.index') }}\" class=\"nav-link\"><img src=\"images\\properties\\parametre_logo.png\" weidht=\"40\" height=\"40\"></a>
                          </li>
+                    </ul>
+                     <ul  class=\"navbar-nav\">
                          <li class=\"nav-item\">
-                             <a href=\"{{ path('logout') }}\" style=\"color:white; text-decoration: none;\">DECONNEXION</a>
+                             <a href=\"{{ path('logout') }}\" style=\"color:white; text-decoration: none;\"><img src=\"images\\properties\\deconnexion.png\" weidht=\"40\" height=\"40\"></a>
                          </li>
                      </ul>
                  </div>
