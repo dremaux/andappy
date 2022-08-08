@@ -2,13 +2,12 @@
 
   #circle {
    
-    width: 40%;
-    height:50%;
+    width: 400px;
+    height:400px;
     position: absolute;
     border-radius:50%;
     text-align: center;
     top:33%;
-    left:30%;
     transform:translateX(0%);
     background-color:rgb(221, 171, 34);
     opacity:100%;
@@ -18,13 +17,12 @@
 
   #circle2 {
    
-    width: 40%;
-    height:50%;
+    width: 400px;
+    height:400px;
     position: absolute;
     border-radius:50%;
     text-align: center;
     top:33%;
-    left:30%;
     
     background-color: #E7E3EB;
     /*animation: colorchange 30s infinite;*/
@@ -32,13 +30,12 @@
 
   #circle3 {
    
-    width: 40%;
-    height:50%;
+    width: 400px;
+    height:400px;
     position: absolute;
     border-radius:50%;
     text-align: center;
     top:33%;
-    left:30%;
     transform:translateX(0%);
     background-color:rgb(231, 38, 38);
     opacity:100%;
@@ -61,8 +58,11 @@ body {
   font-family: 'Trebuchet MS', Arial, sans-serif;
   color: #1E99EB;
   background: #fff;
-    margin: 0;
     text-align: center;
+    height: 100%;
+    display: flex;
+  align-items: center;
+  justify-content: center;
 }
  header {
    background-color: #E7E3EB;
