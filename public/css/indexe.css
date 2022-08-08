@@ -2,13 +2,13 @@
 
   #circle {
    
-    width: 400px;
-    height:400px;
+    width: 40%;
+    height:50%;
     position: absolute;
     border-radius:50%;
     text-align: center;
     top:33%;
-    left:35%;
+    left:30%;
     transform:translateX(0%);
     background-color:rgb(221, 171, 34);
     opacity:100%;
@@ -18,13 +18,13 @@
 
   #circle2 {
    
-    width: 400px;
-    height:400px;
+    width: 40%;
+    height:50%;
     position: absolute;
     border-radius:50%;
     text-align: center;
     top:33%;
-    left:35%;
+    left:30%;
     
     background-color: #E7E3EB;
     /*animation: colorchange 30s infinite;*/
@@ -32,13 +32,13 @@
 
   #circle3 {
    
-    width: 400px;
-    height:400px;
+    width: 40%;
+    height:50%;
     position: absolute;
     border-radius:50%;
     text-align: center;
     top:33%;
-    left:35%;
+    left:30%;
     transform:translateX(0%);
     background-color:rgb(231, 38, 38);
     opacity:100%;
