@@ -574,7 +574,14 @@
         <argument type="service" id=".service_locator.0ghLsew.App\Controller\SecurityController"/>
       </call>
     </service>
-    <service id="App\Controller\ShopController" class="App\Controller\ShopController" autowire="true" autoconfigure="true"/>
+    <service id="App\Controller\ShopController" class="App\Controller\ShopController" public="true" autowire="true" autoconfigure="true">
+      <tag name="controller.service_arguments"/>
+      <tag name="container.service_subscriber"/>
+      <argument type="service" id="twig"/>
+      <call method="setContainer">
+        <argument type="service" id=".service_locator.0ghLsew.App\Controller\ShopController"/>
+      </call>
+    </service>
     <service id="App\DataFixtures\PropertyFixture" class="App\DataFixtures\PropertyFixture" autowire="true" autoconfigure="true">
       <tag name="doctrine.fixture.orm"/>
     </service>
@@ -6860,6 +6867,9 @@
     <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\SecurityController" class="App\Controller\SecurityController" autowire="true" abstract="true"/>
     <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\SecurityController" class="App\Controller\SecurityController" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Controller\SecurityController" class="App\Controller\SecurityController" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\ShopController" class="App\Controller\ShopController" autowire="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\ShopController" class="App\Controller\ShopController" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Controller\ShopController" class="App\Controller\ShopController" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Doctrine\Bundle\FixturesBundle\ORMFixtureInterface.0.App\DataFixtures\PropertyFixture" class="App\DataFixtures\PropertyFixture" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\DataFixtures\PropertyFixture" class="App\DataFixtures\PropertyFixture" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Doctrine\Bundle\FixturesBundle\ORMFixtureInterface.0.App\DataFixtures\UserFixtures" class="App\DataFixtures\UserFixtures" autowire="true" abstract="true"/>
@@ -7650,6 +7660,12 @@
     <service id=".service_locator.0ghLsew.App\Controller\SecurityController" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator_context" id="App\Controller\SecurityController"/>
       <argument>App\Controller\SecurityController</argument>
+      <argument type="service" id="service_container"/>
+      <factory service=".service_locator.0ghLsew" method="withContext"/>
+    </service>
+    <service id=".service_locator.0ghLsew.App\Controller\ShopController" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator_context" id="App\Controller\ShopController"/>
+      <argument>App\Controller\ShopController</argument>
       <argument type="service" id="service_container"/>
       <factory service=".service_locator.0ghLsew" method="withContext"/>
     </service>
