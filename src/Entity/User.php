@@ -3,13 +3,15 @@
 namespace App\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
 use Symfony\Component\Security\Core\User\UserInterface;
 use Symfony\Component\Security\Core\Role\Role;
 
 /**
  * @ORM\Entity(repositoryClass="App\Repository\UserRepository")
  */
-class User implements UserInterface,\Serializable 
+#[UniqueEntity(fields: ['username'], message: 'There is already an account with this username')]
+class User implements UserInterface, \Serializable
 {
     /**
      * @ORM\Id
@@ -17,48 +19,38 @@ class User implements UserInterface,\Serializable
      * @ORM\Column(type="integer")
      */
     private $id;
-
     /**
      * @ORM\Column(type="string", length=255)
      */
     private $username;
-
     /**
      * @ORM\Column(type="string", length=255)
      */
     private $password;
-
     public function getId(): ?int
     {
         return $this->id;
     }
-
     public function getUsername(): ?string
     {
         return $this->username;
     }
-
     public function setUsername(string $username): self
     {
         $this->username = $username;
 
         return $this;
     }
-
     public function getPassword(): ?string
     {
         return $this->password;
     }
-
     public function setPassword(string $password): self
     {
         $this->password = $password;
 
         return $this;
     }
-
-
-
     /**
      * @return (Role|string)[] The user roles
      */
@@ -66,7 +58,6 @@ class User implements UserInterface,\Serializable
     {
         return ['ROLE_ADMIN'];
     }
-
     /**
      * @return string|null The salt
      */
@@ -74,11 +65,9 @@ class User implements UserInterface,\Serializable
     {
         return null;
     }
-
     public function eraseCredentials()
     {
     }
-
     /**
      * String representation of object
      * @link https://php.net/manual/en/serializable.serialize.php
@@ -93,7 +82,6 @@ class User implements UserInterface,\Serializable
             $this->password
         ]);
     }
-
     /**
      * Constructs the object
      * @link https://php.net/manual/en/serializable.unserialize.php
