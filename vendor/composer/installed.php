@@ -5,7 +5,7 @@
         'type' => 'project',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
-        'reference' => '79908e77f136643c17ad2538069ed510b4f42ebc',
+        'reference' => '6f913de08db70930f864ce9d32c2f6aff1e0801c',
         'name' => '__root__',
         'dev' => true,
     ),
@@ -16,7 +16,7 @@
             'type' => 'project',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),
-            'reference' => '79908e77f136643c17ad2538069ed510b4f42ebc',
+            'reference' => '6f913de08db70930f864ce9d32c2f6aff1e0801c',
             'dev_requirement' => false,
         ),
         'cocur/slugify' => array(
@@ -80,7 +80,7 @@
             'install_path' => __DIR__ . '/../doctrine/data-fixtures',
             'aliases' => array(),
             'reference' => 'ba37bfb776de763c5bf04a36d074cd5f5a083c42',
-            'dev_requirement' => false,
+            'dev_requirement' => true,
         ),
         'doctrine/dbal' => array(
             'pretty_version' => '3.4.0',
@@ -116,7 +116,7 @@
             'install_path' => __DIR__ . '/../doctrine/doctrine-fixtures-bundle',
             'aliases' => array(),
             'reference' => '601988c5b46dbd20a0f886f967210aba378a6fd5',
-            'dev_requirement' => false,
+            'dev_requirement' => true,
         ),
         'doctrine/doctrine-migrations-bundle' => array(
             'pretty_version' => '3.2.2',
