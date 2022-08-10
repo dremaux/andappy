@@ -151,46 +151,65 @@ class __TwigTemplate_d85c8d5062864933821b2271b31f318c extends Template
 
         // line 30
         echo "    <h2>VichUploaderBundle Mappings</h2>
-    <p class=\"help\"><strong>Note</strong>: Only classes configured using XML or YAML are displayed.</p>
     <table>
         <thead>
             <tr>
                 <th scope=\"col\">Field</th>
                 <th scope=\"col\">Mapping</th>
                 <th scope=\"col\">Filename property</th>
+                <th scope=\"col\">Size property</th>
+                <th scope=\"col\">Mime Type property</th>
+                <th scope=\"col\">Original Name property</th>
+                <th scope=\"col\">Dimensions property</th>
             </tr>
         </thead>
         <tbody>
             ";
-        // line 41
+        // line 44
         $context['_parent'] = $context;
-        $context['_seq'] = twig_ensure_traversable(twig_get_attribute($this->env, $this->source, (isset($context["collector"]) || array_key_exists("collector", $context) ? $context["collector"] : (function () { throw new RuntimeError('Variable "collector" does not exist.', 41, $this->source); })()), "mappings", [], "any", false, false, false, 41));
+        $context['_seq'] = twig_ensure_traversable(twig_get_attribute($this->env, $this->source, (isset($context["collector"]) || array_key_exists("collector", $context) ? $context["collector"] : (function () { throw new RuntimeError('Variable "collector" does not exist.', 44, $this->source); })()), "mappings", [], "any", false, false, false, 44));
         foreach ($context['_seq'] as $context["class"] => $context["data"]) {
-            // line 42
+            // line 45
             echo "                <tr>
                     <th scope=\"row\" colspan=\"4\">";
-            // line 43
+            // line 46
             echo twig_escape_filter($this->env, $context["class"], "html", null, true);
             echo "</th>
                 </tr>
                 ";
-            // line 45
+            // line 48
             $context['_parent'] = $context;
             $context['_seq'] = twig_ensure_traversable($context["data"]);
             foreach ($context['_seq'] as $context["_key"] => $context["mdata"]) {
-                // line 46
+                // line 49
                 echo "                    <tr>
                         <td>";
-                // line 47
-                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["mdata"], "propertyName", [], "any", false, false, false, 47), "html", null, true);
+                // line 50
+                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["mdata"], "propertyName", [], "any", false, false, false, 50), "html", null, true);
                 echo "</td>
                         <td>";
-                // line 48
-                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["mdata"], "mapping", [], "any", false, false, false, 48), "html", null, true);
+                // line 51
+                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["mdata"], "mapping", [], "any", false, false, false, 51), "html", null, true);
                 echo "</td>
                         <td>";
-                // line 49
-                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["mdata"], "fileNameProperty", [], "any", false, false, false, 49), "html", null, true);
+                // line 52
+                echo ((twig_get_attribute($this->env, $this->source, $context["mdata"], "fileNameProperty", [], "any", true, true, false, 52)) ? (_twig_default_filter(twig_get_attribute($this->env, $this->source, $context["mdata"], "fileNameProperty", [], "any", false, false, false, 52), "<span class=\"text-danger\">Not Set</span>")) : ("<span class=\"text-danger\">Not Set</span>"));
+                echo "</td>
+                        <td>";
+                // line 53
+                echo ((twig_get_attribute($this->env, $this->source, $context["mdata"], "size", [], "any", true, true, false, 53)) ? (_twig_default_filter(twig_get_attribute($this->env, $this->source, $context["mdata"], "size", [], "any", false, false, false, 53), "<span class=\"text-danger\">Not Set</span>")) : ("<span class=\"text-danger\">Not Set</span>"));
+                echo "</td>
+                        <td>";
+                // line 54
+                echo ((twig_get_attribute($this->env, $this->source, $context["mdata"], "mimeType", [], "any", true, true, false, 54)) ? (_twig_default_filter(twig_get_attribute($this->env, $this->source, $context["mdata"], "mimeType", [], "any", false, false, false, 54), "<span class=\"text-danger\">Not Set</span>")) : ("<span class=\"text-danger\">Not Set</span>"));
+                echo "</td>
+                        <td>";
+                // line 55
+                echo ((twig_get_attribute($this->env, $this->source, $context["mdata"], "originalName", [], "any", true, true, false, 55)) ? (_twig_default_filter(twig_get_attribute($this->env, $this->source, $context["mdata"], "originalName", [], "any", false, false, false, 55), "<span class=\"text-danger\">Not Set</span>")) : ("<span class=\"text-danger\">Not Set</span>"));
+                echo "</td>
+                        <td>";
+                // line 56
+                echo ((twig_get_attribute($this->env, $this->source, $context["mdata"], "dimensions", [], "any", true, true, false, 56)) ? (_twig_default_filter(twig_get_attribute($this->env, $this->source, $context["mdata"], "dimensions", [], "any", false, false, false, 56), "<span class=\"text-danger\">Not Set</span>")) : ("<span class=\"text-danger\">Not Set</span>"));
                 echo "</td>
                     </tr>
                 ";
@@ -198,15 +217,13 @@ class __TwigTemplate_d85c8d5062864933821b2271b31f318c extends Template
             $_parent = $context['_parent'];
             unset($context['_seq'], $context['_iterated'], $context['_key'], $context['mdata'], $context['_parent'], $context['loop']);
             $context = array_intersect_key($context, $_parent) + $_parent;
-            // line 52
-            echo "                ";
-            // line 53
+            // line 59
             echo "            ";
         }
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['class'], $context['data'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 54
+        // line 60
         echo "        </tbody>
     </table>
 ";
@@ -230,7 +247,7 @@ class __TwigTemplate_d85c8d5062864933821b2271b31f318c extends Template
 
     public function getDebugInfo()
     {
-        return array (  210 => 54,  204 => 53,  202 => 52,  193 => 49,  189 => 48,  185 => 47,  182 => 46,  178 => 45,  173 => 43,  170 => 42,  166 => 41,  153 => 30,  143 => 29,  130 => 24,  128 => 23,  124 => 21,  122 => 20,  112 => 19,  100 => 16,  97 => 15,  91 => 12,  87 => 10,  85 => 9,  82 => 8,  76 => 6,  73 => 5,  70 => 4,  60 => 3,  37 => 1,);
+        return array (  227 => 60,  221 => 59,  212 => 56,  208 => 55,  204 => 54,  200 => 53,  196 => 52,  192 => 51,  188 => 50,  185 => 49,  181 => 48,  176 => 46,  173 => 45,  169 => 44,  153 => 30,  143 => 29,  130 => 24,  128 => 23,  124 => 21,  122 => 20,  112 => 19,  100 => 16,  97 => 15,  91 => 12,  87 => 10,  85 => 9,  82 => 8,  76 => 6,  73 => 5,  70 => 4,  60 => 3,  37 => 1,);
     }
 
     public function getSourceContext()
@@ -265,13 +282,16 @@ class __TwigTemplate_d85c8d5062864933821b2271b31f318c extends Template
 
 {% block panel %}
     <h2>VichUploaderBundle Mappings</h2>
-    <p class=\"help\"><strong>Note</strong>: Only classes configured using XML or YAML are displayed.</p>
     <table>
         <thead>
             <tr>
                 <th scope=\"col\">Field</th>
                 <th scope=\"col\">Mapping</th>
                 <th scope=\"col\">Filename property</th>
+                <th scope=\"col\">Size property</th>
+                <th scope=\"col\">Mime Type property</th>
+                <th scope=\"col\">Original Name property</th>
+                <th scope=\"col\">Dimensions property</th>
             </tr>
         </thead>
         <tbody>
@@ -283,10 +303,13 @@ class __TwigTemplate_d85c8d5062864933821b2271b31f318c extends Template
                     <tr>
                         <td>{{ mdata.propertyName }}</td>
                         <td>{{ mdata.mapping }}</td>
-                        <td>{{ mdata.fileNameProperty }}</td>
+                        <td>{{ mdata.fileNameProperty|default('<span class=\"text-danger\">Not Set</span>')|raw }}</td>
+                        <td>{{ mdata.size|default('<span class=\"text-danger\">Not Set</span>')|raw }}</td>
+                        <td>{{ mdata.mimeType|default('<span class=\"text-danger\">Not Set</span>')|raw }}</td>
+                        <td>{{ mdata.originalName|default('<span class=\"text-danger\">Not Set</span>')|raw }}</td>
+                        <td>{{ mdata.dimensions|default('<span class=\"text-danger\">Not Set</span>')|raw }}</td>
                     </tr>
                 {% endfor %}
-                {# TODO size, mimeType, originalName,dimesions? #}
             {% endfor %}
         </tbody>
     </table>

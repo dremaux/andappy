@@ -109,14 +109,12 @@ class __TwigTemplate_9b63401a5837bea3431103c8134f45a8 extends Template
 </div>
 
     <body>
-        <div class=\"image1\">
-            <img src=\"images\\image_apli\\log_handi.png\" alt=\"logo\" width=\"350\" height=\"210\" />
-        </div>
+        <div class=\"cercle\">
         <!-- partial:index.partial.html -->
-        <div id=\"circle3\"></div>
-        <div id=\"circle\"></div>
-        <div id=\"circle2\"></div>
-
+            <div id=\"circle3\"><img src=\"images\\properties\\cercle-style.png\"></div>
+            <div id=\"circle\"></div>
+            <div id=\"circle2\"></div>
+        </div>
     </body>  
 
 ";
@@ -169,14 +167,12 @@ class __TwigTemplate_9b63401a5837bea3431103c8134f45a8 extends Template
 </div>
 
     <body>
-        <div class=\"image1\">
-            <img src=\"images\\image_apli\\log_handi.png\" alt=\"logo\" width=\"350\" height=\"210\" />
-        </div>
+        <div class=\"cercle\">
         <!-- partial:index.partial.html -->
-        <div id=\"circle3\"></div>
-        <div id=\"circle\"></div>
-        <div id=\"circle2\"></div>
-
+            <div id=\"circle3\"><img src=\"images\\properties\\cercle-style.png\"></div>
+            <div id=\"circle\"></div>
+            <div id=\"circle2\"></div>
+        </div>
     </body>  
 
 {% endblock %}", "pages/home.html.twig", "C:\\Users\\lucas\\Documents\\GitHub\\andappy\\templates\\pages\\home.html.twig");

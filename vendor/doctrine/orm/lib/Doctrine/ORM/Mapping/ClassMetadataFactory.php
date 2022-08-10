@@ -33,6 +33,7 @@ use function class_exists;
 use function count;
 use function end;
 use function explode;
+use function get_class;
 use function in_array;
 use function is_subclass_of;
 use function str_contains;
@@ -225,7 +226,7 @@ class ClassMetadataFactory extends AbstractClassMetadataFactory
             $this->evm->dispatchEvent(Events::loadClassMetadata, $eventArgs);
         }
 
-        if ($class->changeTrackingPolicy === ClassMetadataInfo::CHANGETRACKING_NOTIFY) {
+        if ($class->changeTrackingPolicy === ClassMetadata::CHANGETRACKING_NOTIFY) {
             Deprecation::trigger(
                 'doctrine/orm',
                 'https://github.com/doctrine/orm/issues/8383',
@@ -558,6 +559,18 @@ class ClassMetadataFactory extends AbstractClassMetadataFactory
 
                 // Platforms that do not have native IDENTITY support need a sequence to emulate this behaviour.
                 if ($this->getTargetPlatform()->usesSequenceEmulatedIdentityColumns()) {
+                    Deprecation::trigger(
+                        'doctrine/orm',
+                        'https://github.com/doctrine/orm/issues/8850',
+                        <<<'DEPRECATION'
+Context: Loading metadata for class %s
+Problem: Using the IDENTITY generator strategy with platform "%s" is deprecated and will not be possible in Doctrine ORM 3.0.
+Solution: Use the SEQUENCE generator strategy instead.
+DEPRECATION
+                            ,
+                        $class->name,
+                        get_class($this->getTargetPlatform())
+                    );
                     $columnName     = $class->getSingleIdentifierColumnName();
                     $quoted         = isset($class->fieldMappings[$fieldName]['quoted']) || isset($class->table['quoted']);
                     $sequencePrefix = $class->getSequencePrefix($this->getTargetPlatform());

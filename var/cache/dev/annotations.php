@@ -118,6 +118,10 @@ return [[
 '[C]App%5CController%5CPropertyController%24repository' => 1,
 'App%5CController%5CPropertyController%24em' => 0,
 '[C]App%5CController%5CPropertyController%24em' => 1,
+'App%5CController%5CRegistrationController' => 0,
+'[C]App%5CController%5CRegistrationController' => 1,
+'App%5CController%5CRegistrationController%23register' => 0,
+'[C]App%5CController%5CRegistrationController%23register' => 1,
 'App%5CController%5CSecurityController' => 0,
 '[C]App%5CController%5CSecurityController' => 1,
 'App%5CController%5CSecurityController%23login' => 11,
@@ -1040,7 +1044,7 @@ return [[
 ], [
 
 0 => [],
-1 => 1659946849,
+1 => 1660169590,
 2 => static function () {
     return \Symfony\Component\VarExporter\Internal\Hydrator::hydrate(
         $o = [

@@ -121,6 +121,9 @@ class __TwigTemplate_a317f9068c5381ed508219c99e1c2023 extends Template
         <button type=\"submit\" class=\"btn btn-primary\">Se connecter</button>
         
     </form>
+
+    <button class=\"btn btn-primary\"> créer un nouveau compte</button>
+
 </div>
 ";
         
@@ -173,6 +176,9 @@ class __TwigTemplate_a317f9068c5381ed508219c99e1c2023 extends Template
         <button type=\"submit\" class=\"btn btn-primary\">Se connecter</button>
         
     </form>
+
+    <button class=\"btn btn-primary\"> créer un nouveau compte</button>
+
 </div>
 {% endblock %}", "security/login.html.twig", "C:\\Users\\lucas\\Documents\\GitHub\\andappy\\templates\\security\\login.html.twig");
     }
