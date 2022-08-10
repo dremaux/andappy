@@ -10,7 +10,7 @@ use Symfony\Component\Security\Core\Role\Role;
 /**
  * @ORM\Entity(repositoryClass="App\Repository\UserRepository")
  */
-#[UniqueEntity(fields: ['username'], message: 'There is already an account with this username')]
+#[UniqueEntity(fields: ['username'], message: 'nom deja utilise')]
 class User implements UserInterface, \Serializable
 {
     /**
