@@ -13,9 +13,6 @@ shop:
 logout:
   path: /logout
 
-login:
-  path: /login
-
 register:
   path: /register
   controller: App\Controller\RegistrationController.php
