@@ -11288,8 +11288,6 @@
     ],
     "dev": true,
     "dev-package-names": [
-        "doctrine/data-fixtures",
-        "doctrine/doctrine-fixtures-bundle",
         "myclabs/deep-copy",
         "nikic/php-parser",
         "phar-io/manifest",
