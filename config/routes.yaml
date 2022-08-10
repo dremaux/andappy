@@ -12,6 +12,3 @@ shop:
 
 logout:
   path: /logout
-
-login:
-  path: /login
