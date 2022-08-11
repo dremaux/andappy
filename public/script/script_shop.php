@@ -1,6 +1,6 @@
 <?php
 $answer = $_POST['circle'];  
-if ($answer == "contactChoice1") {          
+if ($answer == "ans1") {          
     echo 'Correct';      
 }
 else {
