@@ -29,7 +29,7 @@
   #circle3 {
     border-radius:50%;
     text-align: center;
-    top:34%;
+    top:33%;
     transform:translateX(0%);
     opacity:100%;
     transition: width 0s ease-out;
@@ -55,6 +55,13 @@ body {
     text-align: center;
 }
 .cercle {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.cercle img{
   height: 100%;
   display: flex;
   align-items: center;
