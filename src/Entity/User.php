@@ -33,10 +33,6 @@ class User implements UserInterface, \Serializable
      */
     private $coins;
 
-    public function __construct()
-    {
-       $coins = 0; 
-    }
 
     public function getId(): ?int
     {
