@@ -5477,7 +5477,7 @@
     </service>
     <service id="security.access_map" class="Symfony\Component\Security\Http\AccessMap">
       <call method="add">
-        <argument type="service" id=".security.request_matcher.5dJADCx"/>
+        <argument type="service" id=".security.request_matcher.Tw6yjCG"/>
         <argument type="collection">
           <argument>ROLE_ADMIN</argument>
         </argument>
@@ -6021,8 +6021,8 @@
         <argument key="security.firewall.map.context.main" type="service_closure" id="security.firewall.map.context.main"/>
       </argument>
     </service>
-    <service id=".security.request_matcher.5dJADCx" class="Symfony\Component\HttpFoundation\RequestMatcher">
-      <argument>^/admin</argument>
+    <service id=".security.request_matcher.Tw6yjCG" class="Symfony\Component\HttpFoundation\RequestMatcher">
+      <argument>^/shop</argument>
     </service>
     <service id="security.command.user_password_encoder" class="Symfony\Bundle\SecurityBundle\Command\UserPasswordEncoderCommand">
       <tag name="console.command" command="security:encode-password"/>
