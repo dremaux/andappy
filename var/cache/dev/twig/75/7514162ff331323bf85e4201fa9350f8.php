@@ -25,7 +25,6 @@ class __TwigTemplate_a317f9068c5381ed508219c99e1c2023 extends Template
         $this->source = $this->getSourceContext();
 
         $this->blocks = [
-            'title' => [$this, 'block_title'],
             'body' => [$this, 'block_body'],
         ];
     }
@@ -56,25 +55,6 @@ class __TwigTemplate_a317f9068c5381ed508219c99e1c2023 extends Template
     }
 
     // line 2
-    public function block_title($context, array $blocks = [])
-    {
-        $macros = $this->macros;
-        $__internal_5a27a8ba21ca79b61932376b2fa922d2 = $this->extensions["Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension"];
-        $__internal_5a27a8ba21ca79b61932376b2fa922d2->enter($__internal_5a27a8ba21ca79b61932376b2fa922d2_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "title"));
-
-        $__internal_6f47bbe9983af81f1e7450e9a3e3768f = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
-        $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "title"));
-
-        echo "Se connecter";
-        
-        $__internal_6f47bbe9983af81f1e7450e9a3e3768f->leave($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof);
-
-        
-        $__internal_5a27a8ba21ca79b61932376b2fa922d2->leave($__internal_5a27a8ba21ca79b61932376b2fa922d2_prof);
-
-    }
-
-    // line 3
     public function block_body($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -84,33 +64,33 @@ class __TwigTemplate_a317f9068c5381ed508219c99e1c2023 extends Template
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "body"));
 
-        // line 4
+        // line 3
         echo "<div class=\"container mt-4\">
 
     ";
-        // line 6
-        if ((isset($context["error"]) || array_key_exists("error", $context) ? $context["error"] : (function () { throw new RuntimeError('Variable "error" does not exist.', 6, $this->source); })())) {
-            // line 7
+        // line 5
+        if ((isset($context["error"]) || array_key_exists("error", $context) ? $context["error"] : (function () { throw new RuntimeError('Variable "error" does not exist.', 5, $this->source); })())) {
+            // line 6
             echo "        <div class=\"alert alert-danger\">
             ";
-            // line 8
-            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\TranslationExtension']->trans(twig_get_attribute($this->env, $this->source, (isset($context["error"]) || array_key_exists("error", $context) ? $context["error"] : (function () { throw new RuntimeError('Variable "error" does not exist.', 8, $this->source); })()), "messageKey", [], "any", false, false, false, 8), twig_get_attribute($this->env, $this->source, (isset($context["error"]) || array_key_exists("error", $context) ? $context["error"] : (function () { throw new RuntimeError('Variable "error" does not exist.', 8, $this->source); })()), "messagedata", [], "any", false, false, false, 8), "security"), "html", null, true);
+            // line 7
+            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\TranslationExtension']->trans(twig_get_attribute($this->env, $this->source, (isset($context["error"]) || array_key_exists("error", $context) ? $context["error"] : (function () { throw new RuntimeError('Variable "error" does not exist.', 7, $this->source); })()), "messageKey", [], "any", false, false, false, 7), twig_get_attribute($this->env, $this->source, (isset($context["error"]) || array_key_exists("error", $context) ? $context["error"] : (function () { throw new RuntimeError('Variable "error" does not exist.', 7, $this->source); })()), "messagedata", [], "any", false, false, false, 7), "security"), "html", null, true);
             echo "
         </div>
     ";
         }
-        // line 11
-        echo "
+        // line 10
+        echo "    <h1>Connexion</h1>
     <form action=\"";
-        // line 12
+        // line 11
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("login");
         echo "\" method=\"post\">
 
         <div class=\"form-group\">
             <label for=\"username\">Nom d'utilisateur</label>
             <input type=\"text\" id=\"username\" name=\"_username\" class=\"form-control\" value=\"";
-        // line 16
-        echo twig_escape_filter($this->env, (isset($context["last_username"]) || array_key_exists("last_username", $context) ? $context["last_username"] : (function () { throw new RuntimeError('Variable "last_username" does not exist.', 16, $this->source); })()), "html", null, true);
+        // line 15
+        echo twig_escape_filter($this->env, (isset($context["last_username"]) || array_key_exists("last_username", $context) ? $context["last_username"] : (function () { throw new RuntimeError('Variable "last_username" does not exist.', 15, $this->source); })()), "html", null, true);
         echo "\">
         </div>
         <div class=\"form-group\">
@@ -121,8 +101,10 @@ class __TwigTemplate_a317f9068c5381ed508219c99e1c2023 extends Template
         <button type=\"submit\" class=\"btn btn-primary\">Se connecter</button>
         
     </form>
-
-    <button class=\"btn btn-primary\"> créer un nouveau compte</button>
+    <a class=\"btn btn-primary my-3\" href=\"";
+        // line 25
+        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("register");
+        echo "\">je n'ai pas de compte</a>
 
 </div>
 ";
@@ -146,13 +128,12 @@ class __TwigTemplate_a317f9068c5381ed508219c99e1c2023 extends Template
 
     public function getDebugInfo()
     {
-        return array (  113 => 16,  106 => 12,  103 => 11,  97 => 8,  94 => 7,  92 => 6,  88 => 4,  78 => 3,  59 => 2,  36 => 1,);
+        return array (  106 => 25,  93 => 15,  86 => 11,  83 => 10,  77 => 7,  74 => 6,  72 => 5,  68 => 3,  58 => 2,  35 => 1,);
     }
 
     public function getSourceContext()
     {
         return new Source("{% extends 'base.html.twig' %}
-{% block title 'Se connecter' %}
 {% block body %}
 <div class=\"container mt-4\">
 
@@ -161,7 +142,7 @@ class __TwigTemplate_a317f9068c5381ed508219c99e1c2023 extends Template
             {{ error.messageKey | trans(error.messagedata, 'security') }}
         </div>
     {% endif %}
-
+    <h1>Connexion</h1>
     <form action=\"{{ path('login') }}\" method=\"post\">
 
         <div class=\"form-group\">
@@ -176,8 +157,7 @@ class __TwigTemplate_a317f9068c5381ed508219c99e1c2023 extends Template
         <button type=\"submit\" class=\"btn btn-primary\">Se connecter</button>
         
     </form>
-
-    <button class=\"btn btn-primary\"> créer un nouveau compte</button>
+    <a class=\"btn btn-primary my-3\" href=\"{{ path('register') }}\">je n'ai pas de compte</a>
 
 </div>
 {% endblock %}", "security/login.html.twig", "C:\\Users\\lucas\\Documents\\GitHub\\andappy\\templates\\security\\login.html.twig");

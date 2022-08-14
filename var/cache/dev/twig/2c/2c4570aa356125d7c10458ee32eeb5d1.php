@@ -109,9 +109,18 @@ class __TwigTemplate_9b63401a5837bea3431103c8134f45a8 extends Template
 </div>
 
     <body>
+
+    <form action=\"script\\script_shop.php\" method=\"post\">
+   Answer 1 <input type=\"radio\" name=\"circle\" value=\"ans1\" /><br />
+  Answer 2 <input type=\"radio\" name=\"circle\" value=\"ans2\"  /><br />
+  Answer 3 <input type=\"radio\" name=\"circle\" value=\"ans3\"  /><br />
+  Answer 4 <input type=\"radio\" name=\"circle\" value=\"ans4\"  /><br />
+  <input type=\"submit\" value=\"submit\" />
+</form>
         <div class=\"cercle\">
         <!-- partial:index.partial.html -->
-            <div id=\"circle3\"><img src=\"images\\properties\\cercle-style.png\"></div>
+        <?php \$_VAR=\"images\\properties\\cercle-style.png\"; ?>
+            <div id=\"circle3\"><img src=\"<?php echo \$_VAR ;?>\" /></div>
             <div id=\"circle\"></div>
             <div id=\"circle2\"></div>
         </div>
@@ -167,9 +176,18 @@ class __TwigTemplate_9b63401a5837bea3431103c8134f45a8 extends Template
 </div>
 
     <body>
+
+    <form action=\"script\\script_shop.php\" method=\"post\">
+   Answer 1 <input type=\"radio\" name=\"circle\" value=\"ans1\" /><br />
+  Answer 2 <input type=\"radio\" name=\"circle\" value=\"ans2\"  /><br />
+  Answer 3 <input type=\"radio\" name=\"circle\" value=\"ans3\"  /><br />
+  Answer 4 <input type=\"radio\" name=\"circle\" value=\"ans4\"  /><br />
+  <input type=\"submit\" value=\"submit\" />
+</form>
         <div class=\"cercle\">
         <!-- partial:index.partial.html -->
-            <div id=\"circle3\"><img src=\"images\\properties\\cercle-style.png\"></div>
+        <?php \$_VAR=\"images\\properties\\cercle-style.png\"; ?>
+            <div id=\"circle3\"><img src=\"<?php echo \$_VAR ;?>\" /></div>
             <div id=\"circle\"></div>
             <div id=\"circle2\"></div>
         </div>

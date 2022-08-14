@@ -110,11 +110,16 @@ class __TwigTemplate_bb08a2cbe2cf8808f457f288ef81df6e extends Template
         echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["registrationForm"]) || array_key_exists("registrationForm", $context) ? $context["registrationForm"] : (function () { throw new RuntimeError('Variable "registrationForm" does not exist.', 18, $this->source); })()), "RGPDConsent", [], "any", false, false, false, 18), 'row');
         echo "
 
-                        <button type=\"submit\" class=\"btn btn-primary btn-lg my-3\">M'inscrire</button>
+                        <button type=\"submit\" class=\"btn btn-primary my-3\">M'inscrire</button>
                     ";
         // line 21
         echo         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["registrationForm"]) || array_key_exists("registrationForm", $context) ? $context["registrationForm"] : (function () { throw new RuntimeError('Variable "registrationForm" does not exist.', 21, $this->source); })()), 'form_end');
         echo "
+
+                    <a class=\"btn btn-primary my-3\" href=\"";
+        // line 23
+        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("login");
+        echo "\">j'ai déjà un compte</a>
                 </fieldset>
 
             </div>
@@ -142,7 +147,7 @@ class __TwigTemplate_bb08a2cbe2cf8808f457f288ef81df6e extends Template
 
     public function getDebugInfo()
     {
-        return array (  116 => 21,  110 => 18,  107 => 17,  105 => 15,  101 => 14,  97 => 13,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
+        return array (  121 => 23,  116 => 21,  110 => 18,  107 => 17,  105 => 15,  101 => 14,  97 => 13,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
     }
 
     public function getSourceContext()
@@ -166,8 +171,10 @@ class __TwigTemplate_bb08a2cbe2cf8808f457f288ef81df6e extends Template
                         }) }}
                         {{ form_row(registrationForm.RGPDConsent) }}
 
-                        <button type=\"submit\" class=\"btn btn-primary btn-lg my-3\">M'inscrire</button>
+                        <button type=\"submit\" class=\"btn btn-primary my-3\">M'inscrire</button>
                     {{ form_end(registrationForm) }}
+
+                    <a class=\"btn btn-primary my-3\" href=\"{{ path('login') }}\">j'ai déjà un compte</a>
                 </fieldset>
 
             </div>

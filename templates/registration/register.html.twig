@@ -17,8 +17,10 @@
                         }) }}
                         {{ form_row(registrationForm.RGPDConsent) }}
 
-                        <button type="submit" class="btn btn-primary btn-lg my-3">M'inscrire</button>
+                        <button type="submit" class="btn btn-primary my-3">M'inscrire</button>
                     {{ form_end(registrationForm) }}
+
+                    <a class="btn btn-primary my-3" href="{{ path('login') }}">j'ai déjà un compte</a>
                 </fieldset>
 
             </div>
