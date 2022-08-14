@@ -119,8 +119,7 @@ class __TwigTemplate_9b63401a5837bea3431103c8134f45a8 extends Template
 </form>
         <div class=\"cercle\">
         <!-- partial:index.partial.html -->
-        <?php \$_VAR=\"images\\properties\\cercle-style.png\"; ?>
-            <div id=\"circle3\"><img src=\"<?php echo \$_VAR ;?>\" /></div>
+            <div id=\"circle3\"><?php echo \$_VAR; ?></div>
             <div id=\"circle\"></div>
             <div id=\"circle2\"></div>
         </div>
@@ -186,8 +185,7 @@ class __TwigTemplate_9b63401a5837bea3431103c8134f45a8 extends Template
 </form>
         <div class=\"cercle\">
         <!-- partial:index.partial.html -->
-        <?php \$_VAR=\"images\\properties\\cercle-style.png\"; ?>
-            <div id=\"circle3\"><img src=\"<?php echo \$_VAR ;?>\" /></div>
+            <div id=\"circle3\"><?php echo \$_VAR; ?></div>
             <div id=\"circle\"></div>
             <div id=\"circle2\"></div>
         </div>

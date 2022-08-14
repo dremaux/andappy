@@ -43,3 +43,11 @@ c5b41e,::1,GET,https://localhost:8000/register,1660487857,,200
 ff6534,::1,GET,https://localhost:8000/,1660490152,,200
 0f57b5,::1,GET,https://localhost:8000/%3C?php%20echo%20%24_VAR%20%3B%3F%3E=,1660490152,8ac087,404
 8ac087,::1,GET,https://localhost:8000/%3C?php%20echo%20%24_VAR%20%3B%3F%3E=,1660490152,,404
+80a798,::1,GET,https://localhost:8000/register,1660491755,,200
+f92cb4,::1,GET,https://localhost:8000/register,1660491762,cb3752,500
+cb3752,::1,POST,https://localhost:8000/register,1660491762,,500
+be3401,::1,POST,https://localhost:8000/register,1660491860,,302
+a32d90,::1,GET,https://localhost:8000/,1660491860,,200
+e5a008,::1,GET,https://localhost:8000/login,1660491863,,200
+cee76b,::1,POST,https://localhost:8000/login,1660491868,,302
+13a6cf,::1,GET,https://localhost:8000/,1660491868,,200
