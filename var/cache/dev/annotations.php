@@ -422,12 +422,18 @@ return [[
 '[C]App%5CEntity%5CUser%23serialize' => 1,
 'App%5CEntity%5CUser%23unserialize' => 0,
 '[C]App%5CEntity%5CUser%23unserialize' => 1,
+'App%5CEntity%5CUser%23getCoins' => 0,
+'[C]App%5CEntity%5CUser%23getCoins' => 1,
+'App%5CEntity%5CUser%23setCoins' => 0,
+'[C]App%5CEntity%5CUser%23setCoins' => 1,
 'App%5CEntity%5CUser%24id' => 14,
 '[C]App%5CEntity%5CUser%24id' => 1,
 'App%5CEntity%5CUser%24username' => 15,
 '[C]App%5CEntity%5CUser%24username' => 1,
 'App%5CEntity%5CUser%24password' => 15,
 '[C]App%5CEntity%5CUser%24password' => 1,
+'App%5CEntity%5CUser%24coins' => 15,
+'[C]App%5CEntity%5CUser%24coins' => 1,
 'Doctrine%5CBundle%5CDoctrineBundle%5CController%5CProfilerController' => 0,
 '[C]Doctrine%5CBundle%5CDoctrineBundle%5CController%5CProfilerController' => 1,
 'Doctrine%5CBundle%5CDoctrineBundle%5CController%5CProfilerController%23__construct' => 0,
@@ -1044,7 +1050,7 @@ return [[
 ], [
 
 0 => [],
-1 => 1660170205,
+1 => 1660498751,
 2 => static function () {
     return \Symfony\Component\VarExporter\Internal\Hydrator::hydrate(
         $o = [

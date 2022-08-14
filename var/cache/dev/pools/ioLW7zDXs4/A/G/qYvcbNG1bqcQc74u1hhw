@@ -1,0 +1,34 @@
+<?php //App%255CEntity%255CProperty%2524imageFile
+
+return [PHP_INT_MAX, static function () { return \Symfony\Component\VarExporter\Internal\Hydrator::hydrate(
+    $o = [
+        clone (($p = &\Symfony\Component\VarExporter\Internal\Registry::$prototypes)['Symfony\\Component\\Validator\\Constraints\\Image'] ?? \Symfony\Component\VarExporter\Internal\Registry::p('Symfony\\Component\\Validator\\Constraints\\Image')),
+        clone ($p['Vich\\UploaderBundle\\Mapping\\Annotation\\UploadableField'] ?? \Symfony\Component\VarExporter\Internal\Registry::p('Vich\\UploaderBundle\\Mapping\\Annotation\\UploadableField')),
+    ],
+    null,
+    [
+        'stdClass' => [
+            'groups' => [
+                [
+                    'Default',
+                ],
+            ],
+            'mimeTypes' => [
+                'image/jpeg',
+            ],
+        ],
+        'Vich\\UploaderBundle\\Mapping\\Annotation\\UploadableField' => [
+            'mapping' => [
+                1 => 'property_image',
+            ],
+            'fileNameProperty' => [
+                1 => 'filename',
+            ],
+        ],
+    ],
+    [
+        $o[0],
+        $o[1],
+    ],
+    []
+); }];
