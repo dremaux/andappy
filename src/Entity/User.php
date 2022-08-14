@@ -27,6 +27,13 @@ class User implements UserInterface, \Serializable
      * @ORM\Column(type="string", length=255)
      */
     private $password;
+
+    /**
+     * @ORM\Column(type="string", length=255)
+     */
+    private $coins;
+
+
     public function getId(): ?int
     {
         return $this->id;
@@ -98,6 +105,18 @@ class User implements UserInterface, \Serializable
             $this->username,
             $this->password
         ) = unserialize($serialized, ['allowed_classes' => false]); 
+    }
+
+    public function getCoins(): ?string
+    {
+        return $this->coins;
+    }
+
+    public function setCoins(string $coins): self
+    {
+        $this->coins = $coins;
+
+        return $this;
     }
 }
 ?>
