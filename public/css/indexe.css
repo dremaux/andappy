@@ -99,3 +99,8 @@ body {
   text-align: center;
   padding-top: 50px;
 }
+
+.cercle-style {
+  width: 500px;
+  height: 500px;
+}
