@@ -10,74 +10,56 @@
 
 <div class="sensi">
 <h2>Sensibilité</h2>
-        <input name="range-left" id="range-left" list="tickmarks" />
-        
-        <datalist id="tickmarks">
-        <option value="512"  >
-        <option value="1024" >
-        <option value="2048" >
-        <option value="4096" >
-        <option value="8192" >
-        </datalist>
+    <input name="range-left" id="range-left" list="tickmarks" />
+    
+    <datalist id="tickmarks">
+    <option value="512"  >
+    <option value="1024" >
+    <option value="2048" >
+    <option value="4096" >
+    <option value="8192" >
+    </datalist>
 </div>
 
-    <body>
-
- 
-
-        <!-- compte à rebours -->
-
-<div id="compte_a_rebours"></div>
-<script type="text/javascript">
-    var compte_a_rebours = document.getElementById("compte_a_rebours");
-</script>
-
-
+<body>
     <div class="container mt-4">
         <div class="jumbotron"> 
             <div class="container">
             {% if app.user %}
                 <button id="togg2" class="btn btn-primary">test</button>
             {% endif %}
-                <br><br>
-                
-                    <div class="form_row">
-                        <div id="d2">
-                            <div id="circle3"><img src="\images\properties\cercle-style.png" alt="" /></div>    
-                        </div>
+                <div class="form_row">
+                    <div id="d2">
+                        <div id="circle3"><img src="\images\properties\cercle-style.png" alt="" /></div>    
                     </div>
-                
+                </div>
             </div>
         </div>
     </div>
-
         <div class="cercle">
-        <!-- partial:index.partial.html -->
-        <!--    <div id="circle3"></div> -->
             <div id="circle"></div>
             <div id="circle2"></div>
         </div>
     </body> 
    
 
-    <style>
-    .pagination {
-        justify-content: center;
-    }
+<style>
+.pagination {
+    justify-content: center;
+}
+</style>
 
-    </style>
-
-    <script>
-        d2.style.display = "none";
-        function togg(){
-            if(getComputedStyle(d2).display != "none"){
-                d2.style.display = "none";
-            } else {
-                d2.style.display = "block";
-            }
-        };
-        togg2.onclick = togg;
-    </script>
+<script>
+    d2.style.display = "none";
+    function togg(){
+        if(getComputedStyle(d2).display != "none"){
+            d2.style.display = "none";
+        } else {
+            d2.style.display = "block";
+        }
+    };
+    togg2.onclick = togg;
+</script>
 
 
 
