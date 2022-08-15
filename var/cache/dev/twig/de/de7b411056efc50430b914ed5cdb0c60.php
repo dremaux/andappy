@@ -149,8 +149,7 @@ class __TwigTemplate_e8aa4d165802b2417b7e82f250827b48 extends Template
          ";
         // line 67
         $this->displayBlock('body', $context, $blocks);
-        // line 68
-        echo " 
+        echo "         
          <script src=\"https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js\" integrity=\"sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==\" crossorigin=\"anonymous\" referrerpolicy=\"no-referrer\"></script>
          <script src=\"https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js\" integrity=\"sha384-W8fXfP3gkOKtndU4JGtKDvXbO53Wy8SZCQHczT5FMiiqmQfUpWbYdTil/SxwZgAN\" crossorigin=\"anonymous\"></script>
          <script src=\"https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.min.js\" integrity=\"sha384-skAcpIdS7UcVUC05LJ9Dxay8AXcDYfBJqt1CJ85S/CFujBsIzCIv+l9liuYLaMQ/\" crossorigin=\"anonymous\"></script>
@@ -161,9 +160,9 @@ class __TwigTemplate_e8aa4d165802b2417b7e82f250827b48 extends Template
          </script>
  
          ";
-        // line 78
+        // line 77
         $this->displayBlock('javascripts', $context, $blocks);
-        // line 79
+        // line 78
         echo "    </body>
  </html>";
         
@@ -229,7 +228,7 @@ class __TwigTemplate_e8aa4d165802b2417b7e82f250827b48 extends Template
 
     }
 
-    // line 78
+    // line 77
     public function block_javascripts($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -259,7 +258,7 @@ class __TwigTemplate_e8aa4d165802b2417b7e82f250827b48 extends Template
 
     public function getDebugInfo()
     {
-        return array (  233 => 78,  215 => 67,  197 => 15,  178 => 9,  167 => 79,  165 => 78,  153 => 68,  151 => 67,  141 => 60,  133 => 55,  123 => 48,  115 => 43,  110 => 40,  99 => 33,  92 => 29,  87 => 26,  85 => 25,  78 => 21,  71 => 16,  69 => 15,  62 => 11,  57 => 9,  47 => 1,);
+        return array (  232 => 77,  214 => 67,  196 => 15,  177 => 9,  166 => 78,  164 => 77,  151 => 67,  141 => 60,  133 => 55,  123 => 48,  115 => 43,  110 => 40,  99 => 33,  92 => 29,  87 => 26,  85 => 25,  78 => 21,  71 => 16,  69 => 15,  62 => 11,  57 => 9,  47 => 1,);
     }
 
     public function getSourceContext()
@@ -330,8 +329,7 @@ class __TwigTemplate_e8aa4d165802b2417b7e82f250827b48 extends Template
              </div>
          </nav>
     
-         {% block body %}{% endblock %}
- 
+         {% block body %}{% endblock %}         
          <script src=\"https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js\" integrity=\"sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==\" crossorigin=\"anonymous\" referrerpolicy=\"no-referrer\"></script>
          <script src=\"https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js\" integrity=\"sha384-W8fXfP3gkOKtndU4JGtKDvXbO53Wy8SZCQHczT5FMiiqmQfUpWbYdTil/SxwZgAN\" crossorigin=\"anonymous\"></script>
          <script src=\"https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.min.js\" integrity=\"sha384-skAcpIdS7UcVUC05LJ9Dxay8AXcDYfBJqt1CJ85S/CFujBsIzCIv+l9liuYLaMQ/\" crossorigin=\"anonymous\"></script>

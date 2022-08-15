@@ -2,11 +2,9 @@
 {% extends 'base.html.twig' %}
 
 {% block javascripts %}
-        <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
         <script src="{{ asset('script/script.js') }}"></script>
         <script src="{{ asset('script/script3.js') }}"></script>
 {% endblock %}
-
 
 {% block body %}
 
@@ -25,26 +23,69 @@
 
     <body>
 
-<form  method="post">
-   Answer 1 <input type="radio" name="circle" value="ans1" /><br />
-  Answer 2 <input type="radio" name="circle" value="ans2"  /><br />
-  Answer 3 <input type="radio" name="circle" value="ans3"  /><br />
-  Answer 4 <input type="radio" name="circle" value="ans4"  /><br />
-  <input type="submit" value="submit" />
-</form>
-<?php
-$answer = $_POST['circle'];  
-if ($answer == "ans1") {          
-    $_VAR="<img src='\images\properties\cercle-style.png'/>";
-    exit; 
-}         
-?>
+ 
+
+        <!-- compte à rebours -->
+
+<div id="compte_a_rebours"></div>
+<script type="text/javascript">
+    var compte_a_rebours = document.getElementById("compte_a_rebours");
+</script>
+
+
+    <div class="container mt-4">
+        <div class="jumbotron"> 
+            <div class="container">
+            {% if app.user %}
+                <button id="togg2" class="btn btn-primary">test</button>
+            {% endif %}
+                <br><br>
+                
+                    <div class="form_row">
+                        <div id="d2">
+                            <div id="circle3"><img src="\images\properties\cercle-style.png" alt="" /></div>    
+                        </div>
+                    </div>
+                
+            </div>
+        </div>
+    </div>
+
         <div class="cercle">
         <!-- partial:index.partial.html -->
-            <div id="circle3"><?php echo $_VAR; ?></div>
+        <!--    <div id="circle3"></div> -->
             <div id="circle"></div>
             <div id="circle2"></div>
         </div>
-    </body>  
+    </body> 
+   
+
+    <style>
+    .pagination {
+        justify-content: center;
+    }
+
+    </style>
+
+    <script>
+        d2.style.display = "none";
+        function togg(){
+            if(getComputedStyle(d2).display != "none"){
+                d2.style.display = "none";
+            } else {
+                d2.style.display = "block";
+            }
+        };
+        togg2.onclick = togg;
+    </script>
+
+
+
+
+
+
+
+
+
 
 {% endblock %}

@@ -32,7 +32,7 @@ class __TwigTemplate_e7cd75a0358b16c289726a2a4b1c15d9 extends Template
 
     protected function doGetParent(array $context)
     {
-        // line 1
+        // line 2
         return "base.html.twig";
     }
 
@@ -45,7 +45,7 @@ class __TwigTemplate_e7cd75a0358b16c289726a2a4b1c15d9 extends Template
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "template", "pages/home.html.twig"));
 
-        $this->parent = $this->loadTemplate("base.html.twig", "pages/home.html.twig", 1);
+        $this->parent = $this->loadTemplate("base.html.twig", "pages/home.html.twig", 2);
         $this->parent->display($context, array_merge($this->blocks, $blocks));
         
         $__internal_5a27a8ba21ca79b61932376b2fa922d2->leave($__internal_5a27a8ba21ca79b61932376b2fa922d2_prof);
@@ -55,7 +55,7 @@ class __TwigTemplate_e7cd75a0358b16c289726a2a4b1c15d9 extends Template
 
     }
 
-    // line 3
+    // line 4
     public function block_javascripts($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -65,10 +65,8 @@ class __TwigTemplate_e7cd75a0358b16c289726a2a4b1c15d9 extends Template
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "javascripts"));
 
-        // line 4
-        echo "        <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
-        <script src=\"";
         // line 5
+        echo "        <script src=\"";
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("script/script.js"), "html", null, true);
         echo "\"></script>
         <script src=\"";
@@ -84,7 +82,7 @@ class __TwigTemplate_e7cd75a0358b16c289726a2a4b1c15d9 extends Template
 
     }
 
-    // line 10
+    // line 9
     public function block_body($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -94,8 +92,9 @@ class __TwigTemplate_e7cd75a0358b16c289726a2a4b1c15d9 extends Template
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "body"));
 
-        // line 11
-        echo "<div class=\"sensi\">
+        // line 10
+        echo "
+<div class=\"sensi\">
 <h2>Sensibilité</h2>
         <input name=\"range-left\" id=\"range-left\" list=\"tickmarks\" />
         
@@ -110,20 +109,80 @@ class __TwigTemplate_e7cd75a0358b16c289726a2a4b1c15d9 extends Template
 
     <body>
 
-    <form action=\"script\\script_shop.php\" method=\"post\">
-   Answer 1 <input type=\"radio\" name=\"circle\" value=\"ans1\" /><br />
-  Answer 2 <input type=\"radio\" name=\"circle\" value=\"ans2\"  /><br />
-  Answer 3 <input type=\"radio\" name=\"circle\" value=\"ans3\"  /><br />
-  Answer 4 <input type=\"radio\" name=\"circle\" value=\"ans4\"  /><br />
-  <input type=\"submit\" value=\"submit\" />
-</form>
+ 
+
+        <!-- compte à rebours -->
+
+<div id=\"compte_a_rebours\"></div>
+<script type=\"text/javascript\">
+    var compte_a_rebours = document.getElementById(\"compte_a_rebours\");
+</script>
+
+
+
+
+
+
+
+    <div class=\"container mt-4\">
+        <div class=\"jumbotron\"> 
+            <div class=\"container\">
+            ";
+        // line 44
+        if (twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 44, $this->source); })()), "user", [], "any", false, false, false, 44)) {
+            // line 45
+            echo "                <button id=\"togg2\" class=\"btn btn-primary\">test</button>
+            ";
+        }
+        // line 47
+        echo "                <br><br>
+                
+                    <div class=\"form_row\">
+                        <div id=\"d2\">
+                            <div id=\"circle3\"><img src=\"\\images\\properties\\cercle-style.png\" alt=\"\" /></div>    
+                        </div>
+                    </div>
+                
+            </div>
+        </div>
+    </div>
+
         <div class=\"cercle\">
         <!-- partial:index.partial.html -->
-            <div id=\"circle3\"><?php echo \$_VAR; ?></div>
+        <!--    <div id=\"circle3\"></div> -->
             <div id=\"circle\"></div>
             <div id=\"circle2\"></div>
         </div>
-    </body>  
+    </body> 
+   
+
+    <style>
+    .pagination {
+        justify-content: center;
+    }
+
+    </style>
+
+    <script>
+        d2.style.display = \"none\";
+        function togg(){
+            if(getComputedStyle(d2).display != \"none\"){
+                d2.style.display = \"none\";
+            } else {
+                d2.style.display = \"block\";
+            }
+        };
+        togg2.onclick = togg;
+    </script>
+
+
+
+
+
+
+
+
+
 
 ";
         
@@ -146,21 +205,21 @@ class __TwigTemplate_e7cd75a0358b16c289726a2a4b1c15d9 extends Template
 
     public function getDebugInfo()
     {
-        return array (  98 => 11,  88 => 10,  76 => 6,  72 => 5,  69 => 4,  59 => 3,  36 => 1,);
+        return array (  138 => 47,  134 => 45,  132 => 44,  96 => 10,  86 => 9,  74 => 6,  69 => 5,  59 => 4,  36 => 2,);
     }
 
     public function getSourceContext()
     {
-        return new Source("{% extends 'base.html.twig' %}
+        return new Source("
+{% extends 'base.html.twig' %}
 
 {% block javascripts %}
-        <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
         <script src=\"{{ asset('script/script.js') }}\"></script>
         <script src=\"{{ asset('script/script3.js') }}\"></script>
 {% endblock %}
 
-
 {% block body %}
+
 <div class=\"sensi\">
 <h2>Sensibilité</h2>
         <input name=\"range-left\" id=\"range-left\" list=\"tickmarks\" />
@@ -176,20 +235,75 @@ class __TwigTemplate_e7cd75a0358b16c289726a2a4b1c15d9 extends Template
 
     <body>
 
-    <form action=\"script\\script_shop.php\" method=\"post\">
-   Answer 1 <input type=\"radio\" name=\"circle\" value=\"ans1\" /><br />
-  Answer 2 <input type=\"radio\" name=\"circle\" value=\"ans2\"  /><br />
-  Answer 3 <input type=\"radio\" name=\"circle\" value=\"ans3\"  /><br />
-  Answer 4 <input type=\"radio\" name=\"circle\" value=\"ans4\"  /><br />
-  <input type=\"submit\" value=\"submit\" />
-</form>
+ 
+
+        <!-- compte à rebours -->
+
+<div id=\"compte_a_rebours\"></div>
+<script type=\"text/javascript\">
+    var compte_a_rebours = document.getElementById(\"compte_a_rebours\");
+</script>
+
+
+
+
+
+
+
+    <div class=\"container mt-4\">
+        <div class=\"jumbotron\"> 
+            <div class=\"container\">
+            {% if app.user %}
+                <button id=\"togg2\" class=\"btn btn-primary\">test</button>
+            {% endif %}
+                <br><br>
+                
+                    <div class=\"form_row\">
+                        <div id=\"d2\">
+                            <div id=\"circle3\"><img src=\"\\images\\properties\\cercle-style.png\" alt=\"\" /></div>    
+                        </div>
+                    </div>
+                
+            </div>
+        </div>
+    </div>
+
         <div class=\"cercle\">
         <!-- partial:index.partial.html -->
-            <div id=\"circle3\"><?php echo \$_VAR; ?></div>
+        <!--    <div id=\"circle3\"></div> -->
             <div id=\"circle\"></div>
             <div id=\"circle2\"></div>
         </div>
-    </body>  
+    </body> 
+   
+
+    <style>
+    .pagination {
+        justify-content: center;
+    }
+
+    </style>
+
+    <script>
+        d2.style.display = \"none\";
+        function togg(){
+            if(getComputedStyle(d2).display != \"none\"){
+                d2.style.display = \"none\";
+            } else {
+                d2.style.display = \"block\";
+            }
+        };
+        togg2.onclick = togg;
+    </script>
+
+
+
+
+
+
+
+
+
 
 {% endblock %}", "pages/home.html.twig", "C:\\Users\\lucas\\Documents\\GitHub\\andappy\\templates\\pages\\home.html.twig");
     }
