@@ -1,4 +1,4 @@
-<?php session_start(); ?>
+
 {% extends 'base.html.twig' %}
 
 {% block javascripts %}
@@ -9,6 +9,7 @@
 
 
 {% block body %}
+<?php session_start(); ?>
 <div class="sensi">
 <h2>Sensibilité</h2>
         <input name="range-left" id="range-left" list="tickmarks" />
