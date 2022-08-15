@@ -1,5 +1,6 @@
 
 {% extends 'base.html.twig' %}
+<?php session_start(); ?>
 
 {% block javascripts %}
         <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
@@ -9,7 +10,7 @@
 
 
 {% block body %}
-<?php session_start(); ?>
+
 <div class="sensi">
 <h2>Sensibilité</h2>
         <input name="range-left" id="range-left" list="tickmarks" />
