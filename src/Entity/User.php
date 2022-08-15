@@ -31,12 +31,7 @@ class User implements UserInterface, \Serializable
     /**
      * @ORM\Column(type="string", length=255)
      */
-    private $coins;
-
-    public function __construct()
-    {
-       $coins = 0; 
-    }
+    private $coins=0;
 
     public function getId(): ?int
     {

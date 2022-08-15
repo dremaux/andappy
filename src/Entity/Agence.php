@@ -34,6 +34,11 @@ class Agence
      */
     private $cAgences;
 
+    /**
+     * @ORM\Column(type="string", length=255, nullable=true)
+     */
+    private $siret;
+
     public function __construct()
     {
         $this->properties = new ArrayCollection();
@@ -104,6 +109,18 @@ class Agence
         if ($this->cAgences->removeElement($cAgence)) {
             $cAgence->removeProperty($this);
         }
+
+        return $this;
+    }
+
+    public function getSiret(): ?string
+    {
+        return $this->siret;
+    }
+
+    public function setSiret(?string $siret): self
+    {
+        $this->siret = $siret;
 
         return $this;
     }
