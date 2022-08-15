@@ -1,3 +1,4 @@
+<?php session_start(); ?>
 {% extends 'base.html.twig' %}
 
 {% block javascripts %}
@@ -8,7 +9,6 @@
 
 
 {% block body %}
-<?php session_start(); ?>
 <div class="sensi">
 <h2>Sensibilité</h2>
         <input name="range-left" id="range-left" list="tickmarks" />
@@ -33,7 +33,7 @@
 </form>
         <div class="cercle">
         <!-- partial:index.partial.html -->
-            <div id="circle3"><?php echo $_VAR; ?></div>
+            <div id="circle3"><?php echo $_SESSION; ?></div>
             <div id="circle"></div>
             <div id="circle2"></div>
         </div>
