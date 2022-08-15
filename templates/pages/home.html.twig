@@ -33,13 +33,15 @@
   <?php
 $answer = $_POST['circle'];  
 if ($answer == "ans1") {          
-    $_VAR="images\properties\cercle-style.png"; 
-    exit;
+    $_VAR="\images\properties\cercle-style.png"; 
+}
+else {
+    echo 'Incorrect';
 }          
 ?>
         <div class="cercle">
         <!-- partial:index.partial.html -->
-            <div id="circle3"><img src="<?php echo $_VAR; ?>"/></div>
+            <div id="circle3"><?php echo '<img src="' .$_VAR . '" alt="alt">';?></div>
             <div id="circle"></div>
             <div id="circle2"></div>
         </div>
