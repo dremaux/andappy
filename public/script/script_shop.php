@@ -1,7 +1,7 @@
 <?php
 $answer = $_POST['circle'];  
 if ($answer == "ans1") {          
-    echo id;
+    $_VAR="<img src='\images\properties\cercle-style.png'/>"; 
 }
 else {
     echo 'Incorrect';

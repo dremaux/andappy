@@ -1,3 +1,4 @@
+
 {% extends 'base.html.twig' %}
 
 {% block javascripts %}
@@ -24,22 +25,13 @@
 
     <body>
 
-<form   method="post">
-   Answer 1 <input type="radio" name="circle" value="ans1" id="<img src='\images\properties\cercle-style.png'/>"/><br />
+<form  action="script\script_shop.php" method="post">
+   Answer 1 <input type="radio" name="circle" value="ans1" /><br />
   Answer 2 <input type="radio" name="circle" value="ans2"  /><br />
   Answer 3 <input type="radio" name="circle" value="ans3"  /><br />
   Answer 4 <input type="radio" name="circle" value="ans4"  /><br />
   <input type="submit" value="submit" />
 </form>
-<?php
-$answer = $_POST['circle'];  
-if ($answer == "ans1") {          
-    $_VAR = id;
-}
-else {
-    echo 'Incorrect';
-}          
-?>
         <div class="cercle">
         <!-- partial:index.partial.html -->
             <div id="circle3"><?php echo $_VAR; ?></div>
