@@ -31,6 +31,15 @@
   Answer 4 <input type="radio" name="circle" value="ans4"  /><br />
   <input type="submit" value="submit" />
 </form>
+<?php
+$answer = $_POST['circle'];  
+if ($answer == "ans1") {          
+    $_VAR = id;
+}
+else {
+    echo 'Incorrect';
+}          
+?>
         <div class="cercle">
         <!-- partial:index.partial.html -->
             <div id="circle3"><?php echo $_VAR; ?></div>
