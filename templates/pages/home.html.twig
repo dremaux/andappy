@@ -35,6 +35,7 @@ $answer = $_POST['circle'];
 if ($answer == "ans1") {          
     $pathx = "\images\properties\";
     $file = $row["cercle-style.png"];
+    echo '<img src="'.$pathx.$file.'">';
 }
 else {
     echo 'Incorrect';
@@ -42,7 +43,7 @@ else {
 ?>
         <div class="cercle">
         <!-- partial:index.partial.html -->
-            <div id="circle3"><?php echo '<img src="'.$pathx.$file.'">';?></div>
+            <div id="circle3"></div>
             <div id="circle"></div>
             <div id="circle2"></div>
         </div>
