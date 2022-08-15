@@ -5,6 +5,7 @@
         <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
         <script src="{{ asset('script/script.js') }}"></script>
         <script src="{{ asset('script/script3.js') }}"></script>
+        <script src="{{ asset('script/script_cercle.js') }}"></script>
 {% endblock %}
 
 
@@ -25,17 +26,13 @@
 
     <body>
 
-<form action="" method="post">
-   Answer 1 <input type="radio" name="circle" value="ans1" /><br />
-  Answer 2 <input type="radio" name="circle" value="ans2"  /><br />
-  Answer 3 <input type="radio" name="circle" value="ans3"  /><br />
-  Answer 4 <input type="radio" name="circle" value="ans4"  /><br />
-  <input type="submit" value="submit" />
-</form>
+<button>Afficher Image </button>
+<img src="\images\properties\cercle-style.png" alt=""/>
+
         <div class="cercle">
         <!-- partial:index.partial.html -->
         
-            <div id="circle3"><?php include 'script_shop.php'; echo '<img src="' . $var ">';?></div>
+            <div id="circle3"></div>
             <div id="circle"></div>
             <div id="circle2"></div>
         </div>
