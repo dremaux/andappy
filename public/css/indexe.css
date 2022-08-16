@@ -108,12 +108,12 @@ body {
   text-align: center 
 }
 
-#corps {
+.corps {
   width: 100%;
 
 }
 
-#corps .img {
+.corps img {
   float: left;
   width : 15%;
   height : 15%;
