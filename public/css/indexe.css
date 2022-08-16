@@ -111,6 +111,7 @@ body {
 .corpsG {
   width: 50%;
   float:left;
+  padding-top: 50px;
 }
 
 .corpsG img {
@@ -124,10 +125,11 @@ body {
 .corpsD {
   width: 50%;
   float: right;
-
+  padding-top: 50px;
 }
 
 .corpsD img {
+
   width : 40%;
   height : 40%;
   display: block;
