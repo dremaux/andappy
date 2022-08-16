@@ -103,3 +103,16 @@ body {
 .img{
   display: none;
 }
+
+#head {
+  text-align: center 
+}
+
+#corps {
+  width: 100%;
+
+}
+
+#corps .img {
+  float: left;
+}
