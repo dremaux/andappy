@@ -26,20 +26,11 @@
         <div class="jumbotron"> 
             <div class="container">
             {% if app.user %}
-                <input type="radio" id="contactChoice1"name="contact">
-                <label for="contactChoice1">roue</label>
-
-                <input type="radio" id="contactChoice2" name="contact">
-                <label for="contactChoice2">piquant</label>
-
-                <button id="togg2" class="btn btn-primary" type="submit">OK</button>
+                <button id="togg2" class="btn btn-primary">test</button>
             {% endif %}
                 <div class="form_row">
                     <div id="d2">
                         <div id="circle3"><img src="\images\properties\cercle-style.png" alt="" /></div>    
-                    </div>
-                    <div id="d3">
-                        <div id="circle3"><img src="\images\properties\roue.png" alt="" /></div>    
                     </div>
                 </div>
             </div>
@@ -61,26 +52,13 @@
 <script>
     d2.style.display = "none";
     function togg(){
-        if (document.getElementById('contactChoice1').checked) {
-            if(getComputedStyle(d2).display != "none"){
-                d2.style.display = "none";
-            } else {
-            d2.style.display = "block";
-            }
-        togg2.onclick = togg;
+        if(getComputedStyle(d2).display != "none"){
+            d2.style.display = "none";
         } else {
-            d3.style.display = "none";
-            function togg(){
-            if(getComputedStyle(d3).display != "none"){
-                d3.style.display = "none";
-            } else {
-                d3.style.display = "block";
-            }
-            togg2.onclick = togg;
-            }
+            d2.style.display = "block";
         }
     };
-    
+    togg2.onclick = togg;
 </script>
 
 
