@@ -125,19 +125,26 @@ class __TwigTemplate_e8aa4d165802b2417b7e82f250827b48 extends Template
                         </li>
                     </ul>
                 
-
-                    <ul  class=\"navbar-nav\">
+                ";
+        // line 52
+        if (twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 52, $this->source); })()), "user", [], "any", false, false, false, 52)) {
+            // line 53
+            echo "                    <ul  class=\"navbar-nav\">
                         <li class=\"nav-item\">
                             <a href=\"";
-        // line 55
-        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("property.index");
-        echo "\" class=\"nav-link\"><img src=\"images\\properties\\parametre_logo.png\" weidht=\"40\" height=\"40\"></a>
+            // line 55
+            echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("property.index");
+            echo "\" class=\"nav-link\"><img src=\"images\\properties\\parametre_logo.png\" weidht=\"40\" height=\"40\"></a>
                         </li>
-                    </ul>      
+                    </ul>   
+                ";
+        }
+        // line 58
+        echo "   
                      <ul  class=\"navbar-nav\">
                          <li class=\"nav-item\">
                              <a href=\"";
-        // line 60
+        // line 61
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("logout");
         echo "\" style=\"color:white; text-decoration: none;\"><img src=\"images\\properties\\deconnexion.png\" weidht=\"40\" height=\"40\"></a>
                          </li>
@@ -147,7 +154,7 @@ class __TwigTemplate_e8aa4d165802b2417b7e82f250827b48 extends Template
          </nav>
     
          ";
-        // line 67
+        // line 68
         $this->displayBlock('body', $context, $blocks);
         echo "         
          <script src=\"https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js\" integrity=\"sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==\" crossorigin=\"anonymous\" referrerpolicy=\"no-referrer\"></script>
@@ -160,9 +167,9 @@ class __TwigTemplate_e8aa4d165802b2417b7e82f250827b48 extends Template
          </script>
  
          ";
-        // line 77
-        $this->displayBlock('javascripts', $context, $blocks);
         // line 78
+        $this->displayBlock('javascripts', $context, $blocks);
+        // line 79
         echo "    </body>
  </html>";
         
@@ -210,7 +217,7 @@ class __TwigTemplate_e8aa4d165802b2417b7e82f250827b48 extends Template
 
     }
 
-    // line 67
+    // line 68
     public function block_body($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -228,7 +235,7 @@ class __TwigTemplate_e8aa4d165802b2417b7e82f250827b48 extends Template
 
     }
 
-    // line 77
+    // line 78
     public function block_javascripts($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -258,7 +265,7 @@ class __TwigTemplate_e8aa4d165802b2417b7e82f250827b48 extends Template
 
     public function getDebugInfo()
     {
-        return array (  232 => 77,  214 => 67,  196 => 15,  177 => 9,  166 => 78,  164 => 77,  151 => 67,  141 => 60,  133 => 55,  123 => 48,  115 => 43,  110 => 40,  99 => 33,  92 => 29,  87 => 26,  85 => 25,  78 => 21,  71 => 16,  69 => 15,  62 => 11,  57 => 9,  47 => 1,);
+        return array (  239 => 78,  221 => 68,  203 => 15,  184 => 9,  173 => 79,  171 => 78,  158 => 68,  148 => 61,  143 => 58,  136 => 55,  132 => 53,  130 => 52,  123 => 48,  115 => 43,  110 => 40,  99 => 33,  92 => 29,  87 => 26,  85 => 25,  78 => 21,  71 => 16,  69 => 15,  62 => 11,  57 => 9,  47 => 1,);
     }
 
     public function getSourceContext()
@@ -314,12 +321,13 @@ class __TwigTemplate_e8aa4d165802b2417b7e82f250827b48 extends Template
                         </li>
                     </ul>
                 
-
+                {% if app.user %}
                     <ul  class=\"navbar-nav\">
                         <li class=\"nav-item\">
                             <a href=\"{{ path('property.index') }}\" class=\"nav-link\"><img src=\"images\\properties\\parametre_logo.png\" weidht=\"40\" height=\"40\"></a>
                         </li>
-                    </ul>      
+                    </ul>   
+                {% endif %}   
                      <ul  class=\"navbar-nav\">
                          <li class=\"nav-item\">
                              <a href=\"{{ path('logout') }}\" style=\"color:white; text-decoration: none;\"><img src=\"images\\properties\\deconnexion.png\" weidht=\"40\" height=\"40\"></a>

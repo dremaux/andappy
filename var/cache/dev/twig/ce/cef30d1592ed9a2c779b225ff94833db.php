@@ -96,84 +96,61 @@ class __TwigTemplate_e7cd75a0358b16c289726a2a4b1c15d9 extends Template
         echo "
 <div class=\"sensi\">
 <h2>Sensibilité</h2>
-        <input name=\"range-left\" id=\"range-left\" list=\"tickmarks\" />
-        
-        <datalist id=\"tickmarks\">
-        <option value=\"512\"  >
-        <option value=\"1024\" >
-        <option value=\"2048\" >
-        <option value=\"4096\" >
-        <option value=\"8192\" >
-        </datalist>
+    <input name=\"range-left\" id=\"range-left\" list=\"tickmarks\" />
+    
+    <datalist id=\"tickmarks\">
+    <option value=\"512\"  >
+    <option value=\"1024\" >
+    <option value=\"2048\" >
+    <option value=\"4096\" >
+    <option value=\"8192\" >
+    </datalist>
 </div>
 
-    <body>
-
- 
-
-        <!-- compte à rebours -->
-
-<div id=\"compte_a_rebours\"></div>
-<script type=\"text/javascript\">
-    var compte_a_rebours = document.getElementById(\"compte_a_rebours\");
-</script>
-
-
-
-
-
-
-
+<body>
     <div class=\"container mt-4\">
         <div class=\"jumbotron\"> 
             <div class=\"container\">
             ";
-        // line 44
-        if (twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 44, $this->source); })()), "user", [], "any", false, false, false, 44)) {
-            // line 45
+        // line 28
+        if (twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 28, $this->source); })()), "user", [], "any", false, false, false, 28)) {
+            // line 29
             echo "                <button id=\"togg2\" class=\"btn btn-primary\">test</button>
             ";
         }
-        // line 47
-        echo "                <br><br>
-                
-                    <div class=\"form_row\">
-                        <div id=\"d2\">
-                            <div id=\"circle3\"><img src=\"\\images\\properties\\cercle-style.png\" alt=\"\" /></div>    
-                        </div>
+        // line 31
+        echo "                <div class=\"form_row\">
+                    <div id=\"d2\">
+                        <div id=\"circle3\"><img src=\"\\images\\properties\\cercle-style.png\" alt=\"\" /></div>    
                     </div>
-                
+                </div>
             </div>
         </div>
     </div>
-
         <div class=\"cercle\">
-        <!-- partial:index.partial.html -->
-        <!--    <div id=\"circle3\"></div> -->
             <div id=\"circle\"></div>
             <div id=\"circle2\"></div>
         </div>
     </body> 
    
 
-    <style>
-    .pagination {
-        justify-content: center;
-    }
+<style>
+.pagination {
+    justify-content: center;
+}
+</style>
 
-    </style>
-
-    <script>
-        d2.style.display = \"none\";
-        function togg(){
-            if(getComputedStyle(d2).display != \"none\"){
-                d2.style.display = \"none\";
-            } else {
-                d2.style.display = \"block\";
-            }
-        };
-        togg2.onclick = togg;
-    </script>
+<script>
+    d2.style.display = \"none\";
+    function togg(){
+        if(getComputedStyle(d2).display != \"none\"){
+            d2.style.display = \"none\";
+        } else {
+            d2.style.display = \"block\";
+        }
+    };
+    togg2.onclick = togg;
+</script>
 
 
 
@@ -205,7 +182,7 @@ class __TwigTemplate_e7cd75a0358b16c289726a2a4b1c15d9 extends Template
 
     public function getDebugInfo()
     {
-        return array (  138 => 47,  134 => 45,  132 => 44,  96 => 10,  86 => 9,  74 => 6,  69 => 5,  59 => 4,  36 => 2,);
+        return array (  122 => 31,  118 => 29,  116 => 28,  96 => 10,  86 => 9,  74 => 6,  69 => 5,  59 => 4,  36 => 2,);
     }
 
     public function getSourceContext()
@@ -222,79 +199,56 @@ class __TwigTemplate_e7cd75a0358b16c289726a2a4b1c15d9 extends Template
 
 <div class=\"sensi\">
 <h2>Sensibilité</h2>
-        <input name=\"range-left\" id=\"range-left\" list=\"tickmarks\" />
-        
-        <datalist id=\"tickmarks\">
-        <option value=\"512\"  >
-        <option value=\"1024\" >
-        <option value=\"2048\" >
-        <option value=\"4096\" >
-        <option value=\"8192\" >
-        </datalist>
+    <input name=\"range-left\" id=\"range-left\" list=\"tickmarks\" />
+    
+    <datalist id=\"tickmarks\">
+    <option value=\"512\"  >
+    <option value=\"1024\" >
+    <option value=\"2048\" >
+    <option value=\"4096\" >
+    <option value=\"8192\" >
+    </datalist>
 </div>
 
-    <body>
-
- 
-
-        <!-- compte à rebours -->
-
-<div id=\"compte_a_rebours\"></div>
-<script type=\"text/javascript\">
-    var compte_a_rebours = document.getElementById(\"compte_a_rebours\");
-</script>
-
-
-
-
-
-
-
+<body>
     <div class=\"container mt-4\">
         <div class=\"jumbotron\"> 
             <div class=\"container\">
             {% if app.user %}
                 <button id=\"togg2\" class=\"btn btn-primary\">test</button>
             {% endif %}
-                <br><br>
-                
-                    <div class=\"form_row\">
-                        <div id=\"d2\">
-                            <div id=\"circle3\"><img src=\"\\images\\properties\\cercle-style.png\" alt=\"\" /></div>    
-                        </div>
+                <div class=\"form_row\">
+                    <div id=\"d2\">
+                        <div id=\"circle3\"><img src=\"\\images\\properties\\cercle-style.png\" alt=\"\" /></div>    
                     </div>
-                
+                </div>
             </div>
         </div>
     </div>
-
         <div class=\"cercle\">
-        <!-- partial:index.partial.html -->
-        <!--    <div id=\"circle3\"></div> -->
             <div id=\"circle\"></div>
             <div id=\"circle2\"></div>
         </div>
     </body> 
    
 
-    <style>
-    .pagination {
-        justify-content: center;
-    }
+<style>
+.pagination {
+    justify-content: center;
+}
+</style>
 
-    </style>
-
-    <script>
-        d2.style.display = \"none\";
-        function togg(){
-            if(getComputedStyle(d2).display != \"none\"){
-                d2.style.display = \"none\";
-            } else {
-                d2.style.display = \"block\";
-            }
-        };
-        togg2.onclick = togg;
-    </script>
+<script>
+    d2.style.display = \"none\";
+    function togg(){
+        if(getComputedStyle(d2).display != \"none\"){
+            d2.style.display = \"none\";
+        } else {
+            d2.style.display = \"block\";
+        }
+    };
+    togg2.onclick = togg;
+</script>
 
 
 

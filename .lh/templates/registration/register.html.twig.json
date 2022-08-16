@@ -1,0 +1,22 @@
+{
+    "sourceFile": "templates/registration/register.html.twig",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 1,
+            "patches": [
+                {
+                    "date": 1660648092217,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1660651546442,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -26,6 +26,5 @@\n             </div>\r\n         </div>\r\n     </section>\r\n \r\n-\r\n {% endblock %}\r\n"
+                }
+            ],
+            "date": 1660648092217,
+            "name": "Commit-0",
+            "content": "{% extends 'base.html.twig' %}\r\n\r\n{% block title %}Inscription{% endblock %}\r\n\r\n{% block body %}\r\n    <section class=\"container\">\r\n        <div class=\"rom\">\r\n            <div class=\"col\">\r\n\r\n                <fieldset class=\"mb-3\">\r\n                    <h1>Inscription</h1>\r\n\r\n                    {{ form_start(registrationForm) }}\r\n                        {{ form_row(registrationForm.username) }}\r\n                        {{ form_row(registrationForm.plainPassword, {\r\n                            label: 'Password'\r\n                        }) }}\r\n                        {{ form_row(registrationForm.RGPDConsent) }}\r\n\r\n                        <button type=\"submit\" class=\"btn btn-primary my-3\">M'inscrire</button>\r\n                    {{ form_end(registrationForm) }}\r\n\r\n                    <a class=\"btn btn-primary my-3\" href=\"{{ path('login') }}\">j'ai déjà un compte</a>\r\n                </fieldset>\r\n\r\n            </div>\r\n        </div>\r\n    </section>\r\n\r\n\r\n{% endblock %}\r\n"
+        }
+    ]
+}
