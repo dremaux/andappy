@@ -119,6 +119,8 @@ class __TwigTemplate_e7cd75a0358b16c289726a2a4b1c15d9 extends Template
                 <button id=\"togg1\" class=\"btn btn-primary\">pic</button>
                 <button id=\"togg2\" class=\"btn btn-primary\">roue</button>
 
+
+
                 <div class=\"form_row\">
                     <div id=\"d1\">
                         <div id=\"circle3\"><img src=\"\\images\\properties\\cercle-style.png\" alt=\"\" /></div>   
@@ -221,6 +223,8 @@ class __TwigTemplate_e7cd75a0358b16c289726a2a4b1c15d9 extends Template
             <div class=\"container\">
                 <button id=\"togg1\" class=\"btn btn-primary\">pic</button>
                 <button id=\"togg2\" class=\"btn btn-primary\">roue</button>
+
+
 
                 <div class=\"form_row\">
                     <div id=\"d1\">
