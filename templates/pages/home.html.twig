@@ -59,28 +59,27 @@
 </style>
 
 <script>
-if (document.getElementById('contactChoice1').checked) {
     d2.style.display = "none";
     function togg(){
-        if(getComputedStyle(d2).display != "none"){
-            d2.style.display = "none";
-        } else {
+        if (document.getElementById('contactChoice1').checked) {
+            if(getComputedStyle(d2).display != "none"){
+                d2.style.display = "none";
+            } else {
             d2.style.display = "block";
-        }
-    };
-    togg2.onclick = togg;
-} else {
-    d3.style.display = "none";
-    function togg(){
-        if(getComputedStyle(d3).display != "none"){
-            d3.style.display = "none";
+            }
+        togg2.onclick = togg;
         } else {
-            d3.style.display = "block";
+            d3.style.display = "none";
+            function togg(){
+            if(getComputedStyle(d3).display != "none"){
+                d3.style.display = "none";
+            } else {
+                d3.style.display = "block";
+            }
+            togg2.onclick = togg;
+            }
         }
     };
-    togg2.onclick = togg;
-
-}
     
 </script>
 
