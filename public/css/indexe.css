@@ -109,13 +109,29 @@ body {
 }
 
 .corps {
-  width: 100%;
+  width: 50%;
 
 }
 
 .corps img {
   float: left;
-  width : 15%;
-  height : 15%;
-  padding-left: 3%
+  width : 25%;
+  height : 25%;
+  display: block;
+    margin-left: auto;
+    margin-right: auto 
+}
+
+.corps2 {
+  width: 50%;
+
+}
+
+.corps img {
+  float: left;
+  width : 25%;
+  height : 25%;
+  display: block;
+    margin-left: auto;
+    margin-right: auto 
 }
