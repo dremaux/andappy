@@ -36,6 +36,15 @@
     transition: height 0s ease-out;
   }
   
+  #circle4 {
+    border-radius:50%;
+    text-align: center;
+    top:33%;
+    transform:translateX(0%);
+    opacity:100%;
+    transition: width 0s ease-out;
+    transition: height 0s ease-out;
+  }
   @keyframes colorchange
       {
         0%   {background: violet;}
