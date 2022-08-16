@@ -65,7 +65,29 @@ class __TwigTemplate_26b33a9920fdde4c5ab1bcb4e1affc0e extends Template
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "body"));
 
         // line 4
-        echo "<h1>test</h1>
+        echo "<div id=\"head\">
+<h1>Choisis ton cercle!</h1>
+</div>
+
+<div class=\"corpsG\">
+<img src=\"\\images\\properties\\cercle-style.png\" alt=\"\" />
+    <button name=\"button\" class=\"btn btn-primary\">Acheter </button>
+</div>
+<div class=\"corpsD\">
+<img src=\"\\images\\properties\\roue.png\" alt=\"\" />
+    <button name=\"button\" class=\"btn btn-primary\">Acheter </button>
+</div>
+
+
+
+<div class=\"corpsG\">
+<img src=\"\\images\\properties\\ballon.png\" alt=\"\" />
+    <button name=\"button\" class=\"btn btn-primary\">Acheter</button>
+</div>
+<div class=\"corpsD\">
+<img src=\"\\images\\properties\\piece_cercle.png\" alt=\"\" />
+    <button name=\"button\" class=\"btn btn-primary\">Acheter </button>
+</div>
 ";
         
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->leave($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof);
@@ -95,7 +117,29 @@ class __TwigTemplate_26b33a9920fdde4c5ab1bcb4e1affc0e extends Template
         return new Source("{% extends 'base.html.twig' %}
 
 {% block body %}
-<h1>test</h1>
+<div id=\"head\">
+<h1>Choisis ton cercle!</h1>
+</div>
+
+<div class=\"corpsG\">
+<img src=\"\\images\\properties\\cercle-style.png\" alt=\"\" />
+    <button name=\"button\" class=\"btn btn-primary\">Acheter </button>
+</div>
+<div class=\"corpsD\">
+<img src=\"\\images\\properties\\roue.png\" alt=\"\" />
+    <button name=\"button\" class=\"btn btn-primary\">Acheter </button>
+</div>
+
+
+
+<div class=\"corpsG\">
+<img src=\"\\images\\properties\\ballon.png\" alt=\"\" />
+    <button name=\"button\" class=\"btn btn-primary\">Acheter</button>
+</div>
+<div class=\"corpsD\">
+<img src=\"\\images\\properties\\piece_cercle.png\" alt=\"\" />
+    <button name=\"button\" class=\"btn btn-primary\">Acheter </button>
+</div>
 {% endblock %}", "shop/home.html.twig", "C:\\Users\\lucas\\Documents\\GitHub\\andappy\\templates\\shop\\home.html.twig");
     }
 }

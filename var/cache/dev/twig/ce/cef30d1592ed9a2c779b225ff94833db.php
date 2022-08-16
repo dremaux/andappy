@@ -73,6 +73,10 @@ class __TwigTemplate_e7cd75a0358b16c289726a2a4b1c15d9 extends Template
         // line 6
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("script/script3.js"), "html", null, true);
         echo "\"></script>
+        <script src=\"";
+        // line 7
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("script/script4.js"), "html", null, true);
+        echo "\"></script>
 ";
         
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->leave($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof);
@@ -82,7 +86,7 @@ class __TwigTemplate_e7cd75a0358b16c289726a2a4b1c15d9 extends Template
 
     }
 
-    // line 9
+    // line 10
     public function block_body($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -92,7 +96,7 @@ class __TwigTemplate_e7cd75a0358b16c289726a2a4b1c15d9 extends Template
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "body"));
 
-        // line 10
+        // line 11
         echo "
 <div class=\"sensi\">
 <h2>Sensibilité</h2>
@@ -107,59 +111,58 @@ class __TwigTemplate_e7cd75a0358b16c289726a2a4b1c15d9 extends Template
     </datalist>
 </div>
 
+
 <body>
     <div class=\"container mt-4\">
         <div class=\"jumbotron\"> 
             <div class=\"container\">
-            ";
-        // line 28
-        if (twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 28, $this->source); })()), "user", [], "any", false, false, false, 28)) {
-            // line 29
-            echo "                <button id=\"togg2\" class=\"btn btn-primary\">test</button>
-            ";
-        }
-        // line 31
-        echo "                <div class=\"form_row\">
+                <button id=\"togg1\" class=\"btn btn-primary\">pic</button>
+                <button id=\"togg2\" class=\"btn btn-primary\">roue</button>
+
+                <div class=\"form_row\">
+                    <div id=\"d1\">
+                        <div id=\"circle3\"><img src=\"\\images\\properties\\cercle-style.png\" alt=\"\" /></div>   
+                    </div>
+                </div>
+                <div class=\"form_row\">
                     <div id=\"d2\">
-                        <div id=\"circle3\"><img src=\"\\images\\properties\\cercle-style.png\" alt=\"\" /></div>    
+                        <div id=\"circle4\"><img src=\"\\images\\properties\\roue.png\" alt=\"\" /></div>    
                     </div>
                 </div>
             </div>
         </div>
     </div>
-        <div class=\"cercle\">
-            <div id=\"circle\"></div>
-            <div id=\"circle2\"></div>
-        </div>
-    </body> 
+    <div class=\"cercle\">
+        <div id=\"circle\"></div>
+        <div id=\"circle2\"></div>
+    </div>
+</body> 
    
-
 <style>
-.pagination {
-    justify-content: center;
-}
 </style>
 
 <script>
-    d2.style.display = \"none\";
+    let togg1 = document.getElementById(\"togg1\");
+    let togg2 = document.getElementById(\"togg2\");
+    let d1 = document.getElementById(\"d1\");
+    let d2 = document.getElementById(\"d2\");
+    togg1.addEventListener(\"click\", () => {
+    if(getComputedStyle(d1).display != \"none\"){
+        d1.style.display = \"none\";
+    } else {
+        d1.style.display = \"block\";
+    }
+    })
+
     function togg(){
-        if(getComputedStyle(d2).display != \"none\"){
-            d2.style.display = \"none\";
-        } else {
-            d2.style.display = \"block\";
-        }
+    if(getComputedStyle(d2).display != \"none\"){
+        d2.style.display = \"none\";
+    } else {
+        d2.style.display = \"block\";
+    }
     };
     togg2.onclick = togg;
 </script>
-
-
-
-
-
-
-
-
-
 
 ";
         
@@ -182,7 +185,7 @@ class __TwigTemplate_e7cd75a0358b16c289726a2a4b1c15d9 extends Template
 
     public function getDebugInfo()
     {
-        return array (  122 => 31,  118 => 29,  116 => 28,  96 => 10,  86 => 9,  74 => 6,  69 => 5,  59 => 4,  36 => 2,);
+        return array (  100 => 11,  90 => 10,  78 => 7,  74 => 6,  69 => 5,  59 => 4,  36 => 2,);
     }
 
     public function getSourceContext()
@@ -193,6 +196,7 @@ class __TwigTemplate_e7cd75a0358b16c289726a2a4b1c15d9 extends Template
 {% block javascripts %}
         <script src=\"{{ asset('script/script.js') }}\"></script>
         <script src=\"{{ asset('script/script3.js') }}\"></script>
+        <script src=\"{{ asset('script/script4.js') }}\"></script>
 {% endblock %}
 
 {% block body %}
@@ -210,54 +214,58 @@ class __TwigTemplate_e7cd75a0358b16c289726a2a4b1c15d9 extends Template
     </datalist>
 </div>
 
+
 <body>
     <div class=\"container mt-4\">
         <div class=\"jumbotron\"> 
             <div class=\"container\">
-            {% if app.user %}
-                <button id=\"togg2\" class=\"btn btn-primary\">test</button>
-            {% endif %}
+                <button id=\"togg1\" class=\"btn btn-primary\">pic</button>
+                <button id=\"togg2\" class=\"btn btn-primary\">roue</button>
+
+                <div class=\"form_row\">
+                    <div id=\"d1\">
+                        <div id=\"circle3\"><img src=\"\\images\\properties\\cercle-style.png\" alt=\"\" /></div>   
+                    </div>
+                </div>
                 <div class=\"form_row\">
                     <div id=\"d2\">
-                        <div id=\"circle3\"><img src=\"\\images\\properties\\cercle-style.png\" alt=\"\" /></div>    
+                        <div id=\"circle4\"><img src=\"\\images\\properties\\roue.png\" alt=\"\" /></div>    
                     </div>
                 </div>
             </div>
         </div>
     </div>
-        <div class=\"cercle\">
-            <div id=\"circle\"></div>
-            <div id=\"circle2\"></div>
-        </div>
-    </body> 
+    <div class=\"cercle\">
+        <div id=\"circle\"></div>
+        <div id=\"circle2\"></div>
+    </div>
+</body> 
    
-
 <style>
-.pagination {
-    justify-content: center;
-}
 </style>
 
 <script>
-    d2.style.display = \"none\";
+    let togg1 = document.getElementById(\"togg1\");
+    let togg2 = document.getElementById(\"togg2\");
+    let d1 = document.getElementById(\"d1\");
+    let d2 = document.getElementById(\"d2\");
+    togg1.addEventListener(\"click\", () => {
+    if(getComputedStyle(d1).display != \"none\"){
+        d1.style.display = \"none\";
+    } else {
+        d1.style.display = \"block\";
+    }
+    })
+
     function togg(){
-        if(getComputedStyle(d2).display != \"none\"){
-            d2.style.display = \"none\";
-        } else {
-            d2.style.display = \"block\";
-        }
+    if(getComputedStyle(d2).display != \"none\"){
+        d2.style.display = \"none\";
+    } else {
+        d2.style.display = \"block\";
+    }
     };
     togg2.onclick = togg;
 </script>
-
-
-
-
-
-
-
-
-
 
 {% endblock %}", "pages/home.html.twig", "C:\\Users\\lucas\\Documents\\GitHub\\andappy\\templates\\pages\\home.html.twig");
     }
