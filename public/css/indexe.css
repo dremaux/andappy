@@ -108,12 +108,12 @@ body {
   text-align: center 
 }
 
-.corps {
+.corpsG {
   width: 50%;
-
+  float:left;
 }
 
-.corps img {
+.corpsG img {
   width : 25%;
   height : 25%;
   display: block;
@@ -121,12 +121,13 @@ body {
   margin-right: auto 
 }
 
-.corps2 {
+.corpsD {
   width: 50%;
+  float: right;
 
 }
 
-.corps2 img {
+.corpsD img {
   width : 25%;
   height : 25%;
   display: block;
