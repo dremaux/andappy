@@ -116,9 +116,16 @@ class __TwigTemplate_e7cd75a0358b16c289726a2a4b1c15d9 extends Template
     <div class=\"container mt-4\">
         <div class=\"jumbotron\"> 
             <div class=\"container\">
-                <button id=\"togg1\" class=\"btn btn-primary\">pic</button>
-                <button id=\"togg2\" class=\"btn btn-primary\">roue</button>
-
+            ";
+        // line 30
+        if (twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 30, $this->source); })()), "user", [], "any", false, false, false, 30)) {
+            // line 31
+            echo "                <button id=\"togg1\" class=\"btn btn-primary\"><img src=\"\\images\\properties\\cercle-style.png\" height=\"50\" width=\"50\"></button>
+                <button id=\"togg2\" class=\"btn btn-primary\"><img src=\"\\images\\properties\\roue.png\" height=\"50\" width=\"50\"></button>
+            ";
+        }
+        // line 33
+        echo "  
                 <div class=\"form_row\">
                     <div id=\"d1\">
                         <div id=\"circle3\"><img src=\"\\images\\properties\\cercle-style.png\" alt=\"\" /></div>   
@@ -150,10 +157,11 @@ class __TwigTemplate_e7cd75a0358b16c289726a2a4b1c15d9 extends Template
     let d1 = document.getElementById(\"d1\");
     let d2 = document.getElementById(\"d2\");
 
+    //on cache tout les cercles
     d2.style.display = \"none\";
     d1.style.display = \"none\";
 
-
+    //si le cercle id=d1 est appeller alors l'affiche en cachant tout les autre cercle
     togg1.addEventListener(\"click\", () => {
     if(getComputedStyle(d1).display != \"none\"){
         d1.style.display = \"none\";
@@ -195,7 +203,7 @@ class __TwigTemplate_e7cd75a0358b16c289726a2a4b1c15d9 extends Template
 
     public function getDebugInfo()
     {
-        return array (  100 => 11,  90 => 10,  78 => 7,  74 => 6,  69 => 5,  59 => 4,  36 => 2,);
+        return array (  128 => 33,  123 => 31,  121 => 30,  100 => 11,  90 => 10,  78 => 7,  74 => 6,  69 => 5,  59 => 4,  36 => 2,);
     }
 
     public function getSourceContext()
@@ -229,9 +237,10 @@ class __TwigTemplate_e7cd75a0358b16c289726a2a4b1c15d9 extends Template
     <div class=\"container mt-4\">
         <div class=\"jumbotron\"> 
             <div class=\"container\">
-                <button id=\"togg1\" class=\"btn btn-primary\">pic</button>
-                <button id=\"togg2\" class=\"btn btn-primary\">roue</button>
-
+            {% if app.user %}
+                <button id=\"togg1\" class=\"btn btn-primary\"><img src=\"\\images\\properties\\cercle-style.png\" height=\"50\" width=\"50\"></button>
+                <button id=\"togg2\" class=\"btn btn-primary\"><img src=\"\\images\\properties\\roue.png\" height=\"50\" width=\"50\"></button>
+            {% endif %}  
                 <div class=\"form_row\">
                     <div id=\"d1\">
                         <div id=\"circle3\"><img src=\"\\images\\properties\\cercle-style.png\" alt=\"\" /></div>   
@@ -263,10 +272,11 @@ class __TwigTemplate_e7cd75a0358b16c289726a2a4b1c15d9 extends Template
     let d1 = document.getElementById(\"d1\");
     let d2 = document.getElementById(\"d2\");
 
+    //on cache tout les cercles
     d2.style.display = \"none\";
     d1.style.display = \"none\";
 
-
+    //si le cercle id=d1 est appeller alors l'affiche en cachant tout les autre cercle
     togg1.addEventListener(\"click\", () => {
     if(getComputedStyle(d1).display != \"none\"){
         d1.style.display = \"none\";

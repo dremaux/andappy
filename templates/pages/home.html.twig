@@ -27,9 +27,10 @@
     <div class="container mt-4">
         <div class="jumbotron"> 
             <div class="container">
-                <button id="togg1" class="btn btn-primary">pic</button>
-                <button id="togg2" class="btn btn-primary">roue</button>
-
+            {% if app.user %}
+                <button id="togg1" class="btn btn-primary"><img src="\images\properties\cercle-style.png" height="50" width="50"></button>
+                <button id="togg2" class="btn btn-primary"><img src="\images\properties\roue.png" height="50" width="50"></button>
+            {% endif %}  
                 <div class="form_row">
                     <div id="d1">
                         <div id="circle3"><img src="\images\properties\cercle-style.png" alt="" /></div>   
