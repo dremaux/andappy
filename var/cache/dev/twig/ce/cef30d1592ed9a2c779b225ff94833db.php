@@ -119,8 +119,6 @@ class __TwigTemplate_e7cd75a0358b16c289726a2a4b1c15d9 extends Template
                 <button id=\"togg1\" class=\"btn btn-primary\">pic</button>
                 <button id=\"togg2\" class=\"btn btn-primary\">roue</button>
 
-
-
                 <div class=\"form_row\">
                     <div id=\"d1\">
                         <div id=\"circle3\"><img src=\"\\images\\properties\\cercle-style.png\" alt=\"\" /></div>   
@@ -141,6 +139,9 @@ class __TwigTemplate_e7cd75a0358b16c289726a2a4b1c15d9 extends Template
 </body> 
    
 <style>
+.pagination {
+    justify-content: center;
+}
 </style>
 
 <script>
@@ -148,11 +149,17 @@ class __TwigTemplate_e7cd75a0358b16c289726a2a4b1c15d9 extends Template
     let togg2 = document.getElementById(\"togg2\");
     let d1 = document.getElementById(\"d1\");
     let d2 = document.getElementById(\"d2\");
+
+    d2.style.display = \"none\";
+    d1.style.display = \"none\";
+
+
     togg1.addEventListener(\"click\", () => {
     if(getComputedStyle(d1).display != \"none\"){
         d1.style.display = \"none\";
     } else {
         d1.style.display = \"block\";
+        d2.style.display = \"none\";
     }
     })
 
@@ -161,6 +168,7 @@ class __TwigTemplate_e7cd75a0358b16c289726a2a4b1c15d9 extends Template
         d2.style.display = \"none\";
     } else {
         d2.style.display = \"block\";
+        d1.style.display = \"none\";
     }
     };
     togg2.onclick = togg;
@@ -224,8 +232,6 @@ class __TwigTemplate_e7cd75a0358b16c289726a2a4b1c15d9 extends Template
                 <button id=\"togg1\" class=\"btn btn-primary\">pic</button>
                 <button id=\"togg2\" class=\"btn btn-primary\">roue</button>
 
-
-
                 <div class=\"form_row\">
                     <div id=\"d1\">
                         <div id=\"circle3\"><img src=\"\\images\\properties\\cercle-style.png\" alt=\"\" /></div>   
@@ -246,6 +252,9 @@ class __TwigTemplate_e7cd75a0358b16c289726a2a4b1c15d9 extends Template
 </body> 
    
 <style>
+.pagination {
+    justify-content: center;
+}
 </style>
 
 <script>
@@ -253,11 +262,17 @@ class __TwigTemplate_e7cd75a0358b16c289726a2a4b1c15d9 extends Template
     let togg2 = document.getElementById(\"togg2\");
     let d1 = document.getElementById(\"d1\");
     let d2 = document.getElementById(\"d2\");
+
+    d2.style.display = \"none\";
+    d1.style.display = \"none\";
+
+
     togg1.addEventListener(\"click\", () => {
     if(getComputedStyle(d1).display != \"none\"){
         d1.style.display = \"none\";
     } else {
         d1.style.display = \"block\";
+        d2.style.display = \"none\";
     }
     })
 
@@ -266,6 +281,7 @@ class __TwigTemplate_e7cd75a0358b16c289726a2a4b1c15d9 extends Template
         d2.style.display = \"none\";
     } else {
         d2.style.display = \"block\";
+        d1.style.display = \"none\";
     }
     };
     togg2.onclick = togg;
