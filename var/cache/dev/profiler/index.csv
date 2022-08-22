@@ -1,0 +1,16 @@
+c04b1d,::1,GET,https://localhost:8000/,1661161674,,200
+55c646,::1,GET,https://localhost:8000/logout,1661161678,,302
+e1f599,::1,GET,https://localhost:8000/,1661161679,,200
+dd8026,::1,GET,https://localhost:8000/login,1661161681,,200
+de0976,::1,POST,https://localhost:8000/login,1661161688,,302
+cd38fd,::1,GET,https://localhost:8000/,1661161688,,200
+9530f0,::1,GET,https://localhost:8000/logout,1661161752,,302
+c09d1b,::1,GET,https://localhost:8000/,1661161753,,200
+a801dd,::1,GET,https://localhost:8000/login,1661161756,,200
+cd6be7,::1,POST,https://localhost:8000/login,1661161758,,302
+6d0c8b,::1,GET,https://localhost:8000/,1661161758,,200
+5daffe,::1,GET,https://localhost:8000/,1661161761,,200
+6fde0a,::1,GET,https://localhost:8000/shop,1661161762,,200
+085afa,::1,GET,https://localhost:8000/,1661161764,,200
+2e63a9,::1,GET,https://localhost:8000/,1661161769,,200
+0c8cf2,::1,GET,https://localhost:8000/,1661161771,,200
