@@ -160,6 +160,9 @@ body {
   margin-right: auto 
 }
 
-.navbar-nav-1 {
+.nav-link-1 {
   color: #fff;
+  text-decoration: none;
+  display: block;
+  padding: .5rem 1rem;
 }
