@@ -32,6 +32,7 @@ if (navigator.getUserMedia) {
       var array = new Uint8Array(analyser.frequencyBinCount);
       analyser.getByteFrequencyData(array);
       var values = 0;
+      var values_coins = 0;
 
       var length = array.length;
       for (var i = 0; i < 180; i++) {
@@ -49,6 +50,8 @@ if (navigator.getUserMedia) {
         navigator.vibrate(1000);
         bool = true;
       }
+
+      
     }
   },
   function (err) {

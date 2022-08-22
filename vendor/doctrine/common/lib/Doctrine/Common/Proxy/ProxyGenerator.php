@@ -22,6 +22,7 @@ use function array_map;
 use function array_slice;
 use function array_unique;
 use function assert;
+use function bin2hex;
 use function call_user_func;
 use function chmod;
 use function class_exists;
@@ -43,6 +44,7 @@ use function method_exists;
 use function mkdir;
 use function preg_match;
 use function preg_match_all;
+use function random_bytes;
 use function rename;
 use function rtrim;
 use function sprintf;
@@ -52,7 +54,6 @@ use function strtolower;
 use function strtr;
 use function substr;
 use function trim;
-use function uniqid;
 use function var_export;
 
 use const DIRECTORY_SEPARATOR;
@@ -338,7 +339,7 @@ class <proxyShortClassName> extends \<className> implements \<baseProxyInterface
             throw UnexpectedValueException::proxyDirectoryNotWritable($this->proxyDirectory);
         }
 
-        $tmpFileName = $fileName . '.' . uniqid('', true);
+        $tmpFileName = $fileName . '.' . bin2hex(random_bytes(12));
 
         file_put_contents($tmpFileName, $proxyCode);
         @chmod($tmpFileName, 0664);
@@ -859,7 +860,9 @@ EOT;
      */
     private function generateCloneImpl(ClassMetadata $class)
     {
-        $hasParentClone  = $class->getReflectionClass()->hasMethod('__clone');
+        $reflectionClass = $class->getReflectionClass();
+        $hasParentClone  = $reflectionClass->hasMethod('__clone');
+        $returnTypeHint  = $hasParentClone ? $this->getMethodReturnType($reflectionClass->getMethod('__clone')) : '';
         $inheritDoc      = $hasParentClone ? '{@inheritDoc}' : '';
         $callParentClone = $hasParentClone ? "\n        parent::__clone();\n" : '';
 
@@ -867,7 +870,7 @@ EOT;
     /**
      * $inheritDoc
      */
-    public function __clone()
+    public function __clone()$returnTypeHint
     {
         \$this->__cloner__ && \$this->__cloner__->__invoke(\$this, '__clone', []);
 $callParentClone    }
