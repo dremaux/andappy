@@ -59,7 +59,7 @@
 body {
   font-family: 'Trebuchet MS', Arial, sans-serif;
   color: #1E99EB;
-  background: #fff;
+  background: 	#87CEEB;
     margin: 0;
     text-align: center;
 }
@@ -158,11 +158,4 @@ body {
   display: block;
   margin-left: auto;
   margin-right: auto 
-}
-
-.nav-link-1 {
-  color: #fff;
-  text-decoration: none;
-  display: block;
-  padding: .5rem 1rem;
 }
