@@ -6,6 +6,7 @@ use Doctrine\ORM\Mapping as ORM;
 use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
 use Symfony\Component\Security\Core\User\UserInterface;
 use Symfony\Component\Security\Core\Role\Role;
+use Doctrine\Persistence\ObjectManager;
 
 /**
  * @ORM\Entity(repositoryClass="App\Repository\UserRepository")
@@ -117,5 +118,31 @@ class User implements UserInterface, \Serializable
 
         return $this;
     }
+/*
+    public function upCoins(ObjectManager $manager)
+    {    
+        $user = $this->getUsername();
+
+
+
+        $manager->persist($user);
+        $manager->flush();
+    }
+
+    public function buy(ObjectManager $manager, ?UserInterface $user)
+    {
+        $coins = $this ->getCoins;
+        if($coins>=50){
+        $newcoins = $coins-50;
+        $user = $this->getUsername();
+        $user->setCoins($newcoins);
+
+        $manager->persist($user);
+        $manager->flush();
+        } else {
+            printf('tu n\'a pas asser de coins');
+        }
+    }
+*/    
 }
 ?>

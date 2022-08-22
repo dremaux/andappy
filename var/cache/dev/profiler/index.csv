@@ -202,3 +202,12 @@ bc0aef,::1,GET,https://localhost:8000/,1661005130,,200
 040100,::1,GET,https://localhost:8000/login,1661005160,,200
 44f726,::1,POST,https://localhost:8000/login,1661005161,,302
 b24e47,::1,GET,https://localhost:8000/,1661005162,,200
+1a25e7,::1,GET,https://localhost:8000/,1661155297,,200
+09768a,::1,GET,https://localhost:8000/,1661155298,,200
+58ed5f,::1,GET,https://localhost:8000/favicon.ico,1661155300,bbdcc1,404
+bbdcc1,::1,GET,https://localhost:8000/favicon.ico,1661155300,,404
+7ba0f7,::1,GET,https://localhost:8000/login,1661155302,,200
+63d556,::1,POST,https://localhost:8000/login,1661155304,,302
+e32cef,::1,GET,https://localhost:8000/,1661155304,,200
+411b9b,::1,GET,https://localhost:8000/shop,1661155447,,200
+435c97,::1,GET,https://localhost:8000/,1661159911,,200
