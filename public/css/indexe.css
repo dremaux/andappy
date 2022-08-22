@@ -159,8 +159,3 @@ body {
   margin-left: auto;
   margin-right: auto 
 }
-
-.bg-primary {
-  --bs-bg-opacity: 1;
-  background-color:black!important;
-}
