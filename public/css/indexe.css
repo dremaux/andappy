@@ -161,5 +161,6 @@ body {
 }
 
 .bg-primary {
-  background-color: black;
+  --bs-bg-opacity: 1;
+  background-color:black!important;
 }
