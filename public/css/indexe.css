@@ -160,6 +160,6 @@ body {
   margin-right: auto 
 }
 
-.navbar navbar-expand-lg navbar-dark bg-primary {
+.bg-primary {
   background-color: black;
 }
