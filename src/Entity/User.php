@@ -121,11 +121,14 @@ class User implements UserInterface, \Serializable
 /*
     public function upCoins(ObjectManager $manager)
     {    
-        $user = $this->getUsername();
+        $user = $this->User->getUsername();
+        $nombre_coins = $this->User->getCoins();
+        
+        $nombre_coins = $nombre_coins + 50;
+        $
 
 
-
-        $manager->persist($user);
+        $manager->persist($modif);
         $manager->flush();
     }
 

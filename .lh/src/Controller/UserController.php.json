@@ -1,0 +1,38 @@
+{
+    "sourceFile": "src/Controller/UserController.php",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 5,
+            "patches": [
+                {
+                    "date": 1661346082544,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1661346091879,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -44,6 +44,6 @@\n             'form'=> $form->createView(),\r\n         ]);\r\n     }\r\n }\r\n-\r\n+*/\r\n ?>\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1661346103762,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -7,8 +7,9 @@\n use Symfony\\Component\\Routing\\Annotation\\Route;\r\n \r\n class UserController extends AbstractController\r\n {\r\n+    /*\r\n     /**\r\n      * @param User $user\r\n      * @param Request $request\r\n      * @param EntityManagerInterface $manager\r\n@@ -41,9 +42,9 @@\n         }\r\n \r\n         return $this->render('pages/user/edit.html.twig', [\r\n             'form'=> $form->createView(),\r\n-        ]);\r\n+        ])\r\n     }\r\n }\r\n */\r\n ?>\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1661346110403,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -7,15 +7,16 @@\n use Symfony\\Component\\Routing\\Annotation\\Route;\r\n \r\n class UserController extends AbstractController\r\n {\r\n-    /*\r\n+    \r\n     /**\r\n      * @param User $user\r\n      * @param Request $request\r\n      * @param EntityManagerInterface $manager\r\n      * @return Response\r\n      */\r\n+/*    \r\n     #[Route('/utilisateur/edition/{id}', name: 'user.edit', methodes:['GET', 'POST'])]\r\n     public function edit(User $user): Response\r\n     {\r\n         if(!$this->getUser()) {\r\n"
+                },
+                {
+                    "date": 1661346123267,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -46,6 +46,4 @@\n             'form'=> $form->createView(),\r\n         ])\r\n     }\r\n }\r\n-*/\r\n-?>\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1661346129209,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -45,5 +45,7 @@\n         return $this->render('pages/user/edit.html.twig', [\r\n             'form'=> $form->createView(),\r\n         ])\r\n     }\r\n+    */\r\n }\r\n+?>\n\\ No newline at end of file\n"
+                }
+            ],
+            "date": 1661346082544,
+            "name": "Commit-0",
+            "content": "<?php\r\nnamespace App\\Controller;\r\n\r\nuse App\\Entity\\User;\r\nuse Symfony\\Bundle\\FrameworkBundle\\Controller\\AbstractController;\r\nuse Symfony\\Component\\HttpFoundation\\Response;\r\nuse Symfony\\Component\\Routing\\Annotation\\Route;\r\n\r\nclass UserController extends AbstractController\r\n{\r\n    /**\r\n     * @param User $user\r\n     * @param Request $request\r\n     * @param EntityManagerInterface $manager\r\n     * @return Response\r\n     */\r\n    #[Route('/utilisateur/edition/{id}', name: 'user.edit', methodes:['GET', 'POST'])]\r\n    public function edit(User $user): Response\r\n    {\r\n        if(!$this->getUser()) {\r\n            return $this->redirectToRoute('security.login');\r\n        }\r\n\r\n        if($this->getUser() === $user) {\r\n            return $this->redirectToRoute('recipe.index');\r\n        }\r\n\r\n        $form = $this->createForm(UserType::class, $user);\r\n\r\n        $form->handleRequest($request);\r\n        if($form->isSubmitted() && $form->isValid()) {\r\n            $user = $form->getData();\r\n            $manager->persist($user);\r\n            $manager->flush();\r\n\r\n            $this->addFlash(\r\n                'success',\r\n                'Les informations de votre compte ont bien été modifiées.'\r\n            );\r\n            return $this->redirect('pages.home');\r\n        }\r\n\r\n        return $this->render('pages/user/edit.html.twig', [\r\n            'form'=> $form->createView(),\r\n        ]);\r\n    }\r\n}\r\n\r\n?>"
+        }
+    ]
+}

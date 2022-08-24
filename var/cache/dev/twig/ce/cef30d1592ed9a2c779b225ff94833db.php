@@ -116,16 +116,10 @@ class __TwigTemplate_e7cd75a0358b16c289726a2a4b1c15d9 extends Template
     <div class=\"container mt-4\">
         <div class=\"jumbotron\"> 
             <div class=\"container\">
-            ";
-        // line 30
-        if (twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 30, $this->source); })()), "user", [], "any", false, false, false, 30)) {
-            // line 31
-            echo "                <button id=\"togg1\" class=\"btn btn-primary\"><img src=\"\\images\\properties\\cercle-style.png\" height=\"50\" width=\"50\"></button>
+
+                <button id=\"togg1\" class=\"btn btn-primary\"><img src=\"\\images\\properties\\cercle-style.png\" height=\"50\" width=\"50\"></button>
                 <button id=\"togg2\" class=\"btn btn-primary\"><img src=\"\\images\\properties\\roue.png\" height=\"50\" width=\"50\"></button>
-            ";
-        }
-        // line 33
-        echo "  
+             
                 <div class=\"form_row\">
                     <div id=\"d1\">
                         <div id=\"circle3\"><img src=\"\\images\\properties\\cercle-style.png\" alt=\"\" /></div>   
@@ -140,11 +134,29 @@ class __TwigTemplate_e7cd75a0358b16c289726a2a4b1c15d9 extends Template
         </div>
     </div>
     <div class=\"cercle\">
-        <div id=\"circle\"></div>
+        <div class=\"cercleP\" id=\"circle\"></div>
         <div id=\"circle2\"></div>
     </div>
+
+    <div class=\"element\" style=\"font-size: 2em;\">my div</div>
+
 </body> 
-   
+
+
+<script>
+const element = document.querySelector('.element')
+
+const fontSize = element.style.fontSize
+console.log(fontSize) 
+
+const cercleP = document.querySelector('cercleP')
+
+const transform = element.style.transform
+console.log(transform)
+
+</script>
+
+
 <style>
 .pagination {
     justify-content: center;
@@ -203,7 +215,7 @@ class __TwigTemplate_e7cd75a0358b16c289726a2a4b1c15d9 extends Template
 
     public function getDebugInfo()
     {
-        return array (  128 => 33,  123 => 31,  121 => 30,  100 => 11,  90 => 10,  78 => 7,  74 => 6,  69 => 5,  59 => 4,  36 => 2,);
+        return array (  100 => 11,  90 => 10,  78 => 7,  74 => 6,  69 => 5,  59 => 4,  36 => 2,);
     }
 
     public function getSourceContext()
@@ -237,10 +249,10 @@ class __TwigTemplate_e7cd75a0358b16c289726a2a4b1c15d9 extends Template
     <div class=\"container mt-4\">
         <div class=\"jumbotron\"> 
             <div class=\"container\">
-            {% if app.user %}
+
                 <button id=\"togg1\" class=\"btn btn-primary\"><img src=\"\\images\\properties\\cercle-style.png\" height=\"50\" width=\"50\"></button>
                 <button id=\"togg2\" class=\"btn btn-primary\"><img src=\"\\images\\properties\\roue.png\" height=\"50\" width=\"50\"></button>
-            {% endif %}  
+             
                 <div class=\"form_row\">
                     <div id=\"d1\">
                         <div id=\"circle3\"><img src=\"\\images\\properties\\cercle-style.png\" alt=\"\" /></div>   
@@ -255,11 +267,29 @@ class __TwigTemplate_e7cd75a0358b16c289726a2a4b1c15d9 extends Template
         </div>
     </div>
     <div class=\"cercle\">
-        <div id=\"circle\"></div>
+        <div class=\"cercleP\" id=\"circle\"></div>
         <div id=\"circle2\"></div>
     </div>
+
+    <div class=\"element\" style=\"font-size: 2em;\">my div</div>
+
 </body> 
-   
+
+
+<script>
+const element = document.querySelector('.element')
+
+const fontSize = element.style.fontSize
+console.log(fontSize) 
+
+const cercleP = document.querySelector('cercleP')
+
+const transform = element.style.transform
+console.log(transform)
+
+</script>
+
+
 <style>
 .pagination {
     justify-content: center;
@@ -297,6 +327,6 @@ class __TwigTemplate_e7cd75a0358b16c289726a2a4b1c15d9 extends Template
     togg2.onclick = togg;
 </script>
 
-{% endblock %}", "pages/home.html.twig", "C:\\Users\\lucas\\Documents\\GitHub\\andappy\\templates\\pages\\home.html.twig");
+{% endblock %}", "pages/home.html.twig", "C:\\Users\\Lucas.DREMAUX\\Documents\\GitHub\\andappy\\templates\\pages\\home.html.twig");
     }
 }
