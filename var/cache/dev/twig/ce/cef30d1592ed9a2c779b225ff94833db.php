@@ -134,27 +134,20 @@ class __TwigTemplate_e7cd75a0358b16c289726a2a4b1c15d9 extends Template
         </div>
     </div>
     <div class=\"cercle\">
-        <div class=\"cercleP\" id=\"circle\"></div>
+        <div id=\"circle\"></div>
         <div id=\"circle2\"></div>
     </div>
-
-    <div class=\"element\" style=\"font-size: 2em;\">my div</div>
 
 </body> 
 
 
+
 <script>
-const element = document.querySelector('.element')
 
-const fontSize = element.style.fontSize
-console.log(fontSize) 
 
-const cercleP = document.querySelector('cercleP')
-
-const transform = element.style.transform
-console.log(transform)
 
 </script>
+
 
 
 <style>
@@ -267,27 +260,20 @@ console.log(transform)
         </div>
     </div>
     <div class=\"cercle\">
-        <div class=\"cercleP\" id=\"circle\"></div>
+        <div id=\"circle\"></div>
         <div id=\"circle2\"></div>
     </div>
-
-    <div class=\"element\" style=\"font-size: 2em;\">my div</div>
 
 </body> 
 
 
+
 <script>
-const element = document.querySelector('.element')
 
-const fontSize = element.style.fontSize
-console.log(fontSize) 
 
-const cercleP = document.querySelector('cercleP')
-
-const transform = element.style.transform
-console.log(transform)
 
 </script>
+
 
 
 <style>
@@ -327,6 +313,6 @@ console.log(transform)
     togg2.onclick = togg;
 </script>
 
-{% endblock %}", "pages/home.html.twig", "C:\\Users\\Lucas.DREMAUX\\Documents\\GitHub\\andappy\\templates\\pages\\home.html.twig");
+{% endblock %}", "pages/home.html.twig", "C:\\Users\\lucas\\Documents\\GitHub\\andappy\\templates\\pages\\home.html.twig");
     }
 }

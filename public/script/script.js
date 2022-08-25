@@ -31,9 +31,17 @@ if (navigator.getUserMedia) {
 
           var average = values / length;
         document.getElementById("circle").style.transform="scale("+(average+30)/40+")";
+        scale = document.getElementById("circle").style.transform="scale("+(average+30)/40+")";
+        console.log(scale);
         
-        
+        if (scale < 1.65) {
+          bool = false;
         }
+        else if (scale >= 1.65 && !bool) {
+          //+10 en coins
+          bool = true;
+        }
+  
     },
 
     function(err) {
@@ -43,5 +51,6 @@ if (navigator.getUserMedia) {
   console.log("getUserMedia not supported");
 }
 
+gettransform()
 
 
