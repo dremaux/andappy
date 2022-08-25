@@ -33,7 +33,7 @@ if (navigator.getUserMedia) {
         document.getElementById("circle").style.transform="scale("+(average+30)/40+")";
         scale = document.getElementById("circle").style.transform="scale("+(average+30)/40+")";
         console.log(scale);
-        
+/*        
         if (scale < 1.65) {
           bool = false;
         }
@@ -41,7 +41,8 @@ if (navigator.getUserMedia) {
           //+10 en coins
           bool = true;
         }
-  
+*/  
+        }
     },
 
     function(err) {
