@@ -31,8 +31,11 @@ if (navigator.getUserMedia) {
 
           var average = values / length;
         document.getElementById("circle").style.transform="scale("+(average+30)/40+")";
-        scale = document.getElementById("circle").style.transform="scale("+(average+30)/40+")";
-        console.log(scale);
+
+
+        scale = document.getElementById("circle").style.transform=(average+30)/40;
+        document.getElementById('test').innerHTML = scale;
+        //console.log(scale);
 /*        
         if (scale < 1.65) {
           bool = false;

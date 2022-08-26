@@ -7,6 +7,7 @@ use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
 use Symfony\Component\Security\Core\User\UserInterface;
 use Symfony\Component\Security\Core\Role\Role;
 use Doctrine\Persistence\ObjectManager;
+use Doctrine\ORM\Query\ResultSetMappingBuilder;
 
 /**
  * @ORM\Entity(repositoryClass="App\Repository\UserRepository")
@@ -118,19 +119,84 @@ class User implements UserInterface, \Serializable
 
         return $this;
     }
-/*
-    public function upCoins(ObjectManager $manager)
-    {    
-        $user = $this->User->getUsername();
-        $nombre_coins = $this->User->getCoins();
-        
-        $nombre_coins = $nombre_coins + 50;
-        $
 
+    public function upCoins(User $user)
+    { 
+            // la table en base de données correspondant à l'entité liée au repository en cours
+    $table = $this->getClassMetadata()->table["coins"];
 
-        $manager->persist($modif);
-        $manager->flush();
+    // Dans mon cas je voulais trier mes résultats avec un ordre bien particulier
+    $sql =  "UPDATE user "
+            ."SET ".$table.""
+            ."WHERE  "
+            ."ORDER BY m.status = :status_available DESC, m.status = :status_unknown DESC, m.status = :status_unavailable DESC, m.priority ASC";
+
+    $rsm = new ResultSetMappingBuilder($this->getEntityManager());
+    $rsm->addEntityResult(MyClass::class, "m");
+
+    // On mappe le nom de chaque colonne en base de données sur les attributs de nos entités
+    foreach ($this->getClassMetadata()->fieldMappings as $obj) {
+        $rsm->addFieldResult("m", $obj["columnName"], $obj["fieldName"]);
     }
+
+    $stmt = $this->getEntityManager()->createNativeQuery($sql, $rsm);
+
+    $stmt->setParameter(":current_time", new \DateTime("now"));
+    $stmt->setParameter(":status_available", MyClass::STATUS_AVAILABLE);
+    $stmt->setParameter(":status_unknown", MyClass::STATUS_UNKNOWN);
+    $stmt->setParameter(":status_unavailable", MyClass::STATUS_UNAVAILABLE);
+
+    $stmt->execute();
+
+    return $stmt->getResult();
+}
+    }
+
+/*
+    public function upCoins(User $user)
+    { 
+        $span = 1;//a modifier
+
+        if( $span >= 1.65 ){
+            
+            $coins = $this->getCoins();
+            $coins = $coins + 10;
+            $requet_sql = "UPDATE user SET coins = ".$coins" WHERE username=".$user;
+
+            $stmt = $this->getEntityManager()->getConnection()->prepare($rawSql);
+            $stmt->execute([]);
+
+            return $stmt->fetchAll();
+        }
+    }
+*/
+/*
+     public function findAllNull()//:array
+    {
+    $entityManager = $this->getEntityManager();
+    $query = $entityManager->createQuery(
+        "SELECT COUNT (p) AS retenu
+         FROM App\Entity\Proposition p
+         LEFT JOIN App\Entity\Reponse r 
+         WITH p.id=r.idProposition   
+         WHERE p.vrai = '1' AND  r.idProposition IS NULL");
+
+  
+    $result= $query->execute();
+    
+    return $result[0]['retenu'];
+
+
+
+
+
+
+
+
+
+
+
+
 
     public function buy(ObjectManager $manager, ?UserInterface $user)
     {

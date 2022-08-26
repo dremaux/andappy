@@ -138,13 +138,12 @@ class __TwigTemplate_e7cd75a0358b16c289726a2a4b1c15d9 extends Template
         <div id=\"circle2\"></div>
     </div>
 
+    <p> valeur:<span id=\"test\"></span></p>
+
 </body> 
 
 
-
 <script>
-
-
 
 </script>
 
@@ -264,13 +263,12 @@ class __TwigTemplate_e7cd75a0358b16c289726a2a4b1c15d9 extends Template
         <div id=\"circle2\"></div>
     </div>
 
+    <p> valeur:<span id=\"test\"></span></p>
+
 </body> 
 
 
-
 <script>
-
-
 
 </script>
 
