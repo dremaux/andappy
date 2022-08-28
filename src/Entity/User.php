@@ -122,54 +122,18 @@ class User implements UserInterface, \Serializable
 
     public function upCoins(User $user)
     { 
-            // la table en base de données correspondant à l'entité liée au repository en cours
-    $table = $this->getClassMetadata()->table["coins"];
-
-    // Dans mon cas je voulais trier mes résultats avec un ordre bien particulier
-    $sql =  "UPDATE user "
-            ."SET ".$table.""
-            ."WHERE  "
-            ."ORDER BY m.status = :status_available DESC, m.status = :status_unknown DESC, m.status = :status_unavailable DESC, m.priority ASC";
-
-    $rsm = new ResultSetMappingBuilder($this->getEntityManager());
-    $rsm->addEntityResult(MyClass::class, "m");
-
-    // On mappe le nom de chaque colonne en base de données sur les attributs de nos entités
-    foreach ($this->getClassMetadata()->fieldMappings as $obj) {
-        $rsm->addFieldResult("m", $obj["columnName"], $obj["fieldName"]);
+        $users = $this->getUsername();
+        $coins=$this->getCoins();
+        $coins = $coins + 50;
+        $qb = $this->getEntityManager()->createQueryBuilder();
+        $qb ->update('user')
+                ->set('coins=' + $coins)
+                ->where('users=' + $user)
+                ->getQuery()
+                ->execute();
     }
-
-    $stmt = $this->getEntityManager()->createNativeQuery($sql, $rsm);
-
-    $stmt->setParameter(":current_time", new \DateTime("now"));
-    $stmt->setParameter(":status_available", MyClass::STATUS_AVAILABLE);
-    $stmt->setParameter(":status_unknown", MyClass::STATUS_UNKNOWN);
-    $stmt->setParameter(":status_unavailable", MyClass::STATUS_UNAVAILABLE);
-
-    $stmt->execute();
-
-    return $stmt->getResult();
 }
-    }
 
-/*
-    public function upCoins(User $user)
-    { 
-        $span = 1;//a modifier
-
-        if( $span >= 1.65 ){
-            
-            $coins = $this->getCoins();
-            $coins = $coins + 10;
-            $requet_sql = "UPDATE user SET coins = ".$coins" WHERE username=".$user;
-
-            $stmt = $this->getEntityManager()->getConnection()->prepare($rawSql);
-            $stmt->execute([]);
-
-            return $stmt->fetchAll();
-        }
-    }
-*/
 /*
      public function findAllNull()//:array
     {
