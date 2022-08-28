@@ -122,7 +122,6 @@ class User implements UserInterface, \Serializable
 
     public function upCoins(User $user)
     { 
-        $users = $this->getUsername();
         $coins=$this->getCoins();
         $coins = $coins + 50;
         $qb = $this->getEntityManager()->createQueryBuilder();
@@ -150,18 +149,6 @@ class User implements UserInterface, \Serializable
     
     return $result[0]['retenu'];
 
-
-
-
-
-
-
-
-
-
-
-
-
     public function buy(ObjectManager $manager, ?UserInterface $user)
     {
         $coins = $this ->getCoins;
@@ -177,5 +164,4 @@ class User implements UserInterface, \Serializable
         }
     }
 */    
-}
 ?>
