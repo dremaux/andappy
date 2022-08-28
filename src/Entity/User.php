@@ -8,12 +8,13 @@ use Symfony\Component\Security\Core\User\UserInterface;
 use Symfony\Component\Security\Core\Role\Role;
 use Doctrine\Persistence\ObjectManager;
 use Doctrine\ORM\Query\ResultSetMappingBuilder;
+use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 
 /**
  * @ORM\Entity(repositoryClass="App\Repository\UserRepository")
  */
-#[UniqueEntity(fields: ['username'], message: 'nom deja utilise')]
-class User implements UserInterface, \Serializable
+#[UniqueEntity(fields: ['username'], message: 'nom déjà utilisé')]
+class User extends AbstractController implements UserInterface, \Serializable
 {
     /**
      * @ORM\Id
@@ -119,49 +120,6 @@ class User implements UserInterface, \Serializable
 
         return $this;
     }
-
-    public function upCoins(User $user)
-    { 
-        $coins=$this->getCoins();
-        $coins = $coins + 50;
-        $qb = $this->getEntityManager()->createQueryBuilder();
-        $qb ->update('user')
-                ->set('coins=' + $coins)
-                ->where('users=' + $user)
-                ->getQuery()
-                ->execute();
-    }
 }
-
-/*
-     public function findAllNull()//:array
-    {
-    $entityManager = $this->getEntityManager();
-    $query = $entityManager->createQuery(
-        "SELECT COUNT (p) AS retenu
-         FROM App\Entity\Proposition p
-         LEFT JOIN App\Entity\Reponse r 
-         WITH p.id=r.idProposition   
-         WHERE p.vrai = '1' AND  r.idProposition IS NULL");
-
-  
-    $result= $query->execute();
     
-    return $result[0]['retenu'];
-
-    public function buy(ObjectManager $manager, ?UserInterface $user)
-    {
-        $coins = $this ->getCoins;
-        if($coins>=50){
-        $newcoins = $coins-50;
-        $user = $this->getUsername();
-        $user->setCoins($newcoins);
-
-        $manager->persist($user);
-        $manager->flush();
-        } else {
-            printf('tu n\'a pas asser de coins');
-        }
-    }
-*/    
 ?>
