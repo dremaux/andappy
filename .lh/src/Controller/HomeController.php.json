@@ -1,0 +1,18 @@
+{
+    "sourceFile": "src/Controller/HomeController.php",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 0,
+            "patches": [
+                {
+                    "date": 1661757049679,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                }
+            ],
+            "date": 1661757049679,
+            "name": "Commit-0",
+            "content": "<?php\r\nnamespace App\\Controller;\r\n\r\nuse App\\Repository\\PropertyRepository;\r\nuse Symfony\\Bundle\\FrameworkBundle\\Controller\\AbstractController;\r\nuse Symfony\\Component\\HttpFoundation\\Response;\r\nuse Symfony\\Component\\Routing\\Annotation\\Route;\r\nuse Twig\\Environment;\r\n\r\n\r\nclass HomeController extends AbstractController\r\n{\r\n\r\n    public function __construct(Environment $twig)\r\n    {\r\n        $this->twig = $twig;\r\n    }\r\n\r\n    /**\r\n     * @Route(\"/\", name=\"home\")\r\n     * @param PropertyRepository $repository\r\n     * @return Response\r\n     */\r\n\r\n    public function index(PropertyRepository $repository): Response \r\n    {\r\n        $properties = $repository->findLastest();\r\n        return $this->render('pages/home.html.twig',['properties' => $properties]);\r\n    }\r\n\r\n    \r\n}\r\n?>"
+        }
+    ]
+}

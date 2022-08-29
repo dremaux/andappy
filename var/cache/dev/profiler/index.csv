@@ -110,3 +110,8 @@ e9c0fd,::1,GET,https://localhost:8000/,1661522613,230735,500
 3e9a82,::1,GET,https://localhost:8000/,1661524129,,200
 51f254,::1,GET,https://localhost:8000/,1661524170,,200
 738932,::1,GET,https://localhost:8000/,1661524262,,200
+d16e08,::1,GET,https://localhost:8000/,1661759786,,200
+7c1f36,::1,GET,https://localhost:8000/favicon.ico,1661759794,573782,404
+573782,::1,GET,https://localhost:8000/favicon.ico,1661759795,,404
+9e2d6d,::1,GET,https://localhost:8000/login,1661759974,,200
+ea874e,::1,GET,https://localhost:8000/,1661759979,,200

@@ -1,0 +1,110 @@
+{
+    "sourceFile": "src/Repository/UserRepository.php",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 23,
+            "patches": [
+                {
+                    "date": 1661756777671,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1661756800507,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -18,9 +18,9 @@\n     {\n         parent::__construct($registry, User::class);\n     }\n \n-    \n+    public function\n \n     // /**\n     //  * @return User[] Returns an array of User objects\n     //  */\n"
+                },
+                {
+                    "date": 1661756805800,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -18,9 +18,9 @@\n     {\n         parent::__construct($registry, User::class);\n     }\n \n-    public function\n+    public function \n \n     // /**\n     //  * @return User[] Returns an array of User objects\n     //  */\n"
+                },
+                {
+                    "date": 1661756811723,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -18,9 +18,9 @@\n     {\n         parent::__construct($registry, User::class);\n     }\n \n-    public function \n+    public function upcoins\n \n     // /**\n     //  * @return User[] Returns an array of User objects\n     //  */\n"
+                },
+                {
+                    "date": 1661756819161,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -18,10 +18,13 @@\n     {\n         parent::__construct($registry, User::class);\n     }\n \n-    public function upcoins\n+    public function upcoins()\n+    {\n \n+    }\n+\n     // /**\n     //  * @return User[] Returns an array of User objects\n     //  */\n     /*\n"
+                },
+                {
+                    "date": 1661757034254,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -18,13 +18,8 @@\n     {\n         parent::__construct($registry, User::class);\n     }\n \n-    public function upcoins()\n-    {\n-\n-    }\n-\n     // /**\n     //  * @return User[] Returns an array of User objects\n     //  */\n     /*\n"
+                },
+                {
+                    "date": 1661757422349,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -18,8 +18,10 @@\n     {\n         parent::__construct($registry, User::class);\n     }\n \n+    \n+\n     // /**\n     //  * @return User[] Returns an array of User objects\n     //  */\n     /*\n"
+                },
+                {
+                    "date": 1661757431996,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -18,9 +18,9 @@\n     {\n         parent::__construct($registry, User::class);\n     }\n \n-    \n+    public function upcoins\n \n     // /**\n     //  * @return User[] Returns an array of User objects\n     //  */\n"
+                },
+                {
+                    "date": 1661757439363,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -18,9 +18,9 @@\n     {\n         parent::__construct($registry, User::class);\n     }\n \n-    public function upcoins\n+    public function upcoins($)\n \n     // /**\n     //  * @return User[] Returns an array of User objects\n     //  */\n"
+                },
+                {
+                    "date": 1661757445469,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -18,9 +18,9 @@\n     {\n         parent::__construct($registry, User::class);\n     }\n \n-    public function upcoins($)\n+    public function upcoins(user $user)\n \n     // /**\n     //  * @return User[] Returns an array of User objects\n     //  */\n"
+                },
+                {
+                    "date": 1661757451000,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -18,9 +18,9 @@\n     {\n         parent::__construct($registry, User::class);\n     }\n \n-    public function upcoins(user $user)\n+    public function upcoins(User $user, )\n \n     // /**\n     //  * @return User[] Returns an array of User objects\n     //  */\n"
+                },
+                {
+                    "date": 1661757458224,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -18,9 +18,12 @@\n     {\n         parent::__construct($registry, User::class);\n     }\n \n-    public function upcoins(User $user, )\n+    public function upcoins(User $user)\n+    {\n+        \n+    }\n \n     // /**\n     //  * @return User[] Returns an array of User objects\n     //  */\n"
+                },
+                {
+                    "date": 1661757468736,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -20,9 +20,9 @@\n     }\n \n     public function upcoins(User $user)\n     {\n-        \n+        $conn = $this\n     }\n \n     // /**\n     //  * @return User[] Returns an array of User objects\n"
+                },
+                {
+                    "date": 1661757476393,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -20,9 +20,9 @@\n     }\n \n     public function upcoins(User $user)\n     {\n-        $conn = $this\n+        $conn = $this->getEn\n     }\n \n     // /**\n     //  * @return User[] Returns an array of User objects\n"
+                },
+                {
+                    "date": 1661757484228,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -20,9 +20,9 @@\n     }\n \n     public function upcoins(User $user)\n     {\n-        $conn = $this->getEn\n+        $conn = $this->getEntityManager()->getC\n     }\n \n     // /**\n     //  * @return User[] Returns an array of User objects\n"
+                },
+                {
+                    "date": 1661757491084,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -20,9 +20,10 @@\n     }\n \n     public function upcoins(User $user)\n     {\n-        $conn = $this->getEntityManager()->getC\n+        $conn = $this->getEntityManager()->getConnection();\n+        \n     }\n \n     // /**\n     //  * @return User[] Returns an array of User objects\n"
+                },
+                {
+                    "date": 1661757500160,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -21,9 +21,9 @@\n \n     public function upcoins(User $user)\n     {\n         $conn = $this->getEntityManager()->getConnection();\n-        \n+        $user\n     }\n \n     // /**\n     //  * @return User[] Returns an array of User objects\n"
+                },
+                {
+                    "date": 1661757508393,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -21,9 +21,9 @@\n \n     public function upcoins(User $user)\n     {\n         $conn = $this->getEntityManager()->getConnection();\n-        $user\n+        $coins = $this->\n     }\n \n     // /**\n     //  * @return User[] Returns an array of User objects\n"
+                },
+                {
+                    "date": 1661757517146,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -21,9 +21,9 @@\n \n     public function upcoins(User $user)\n     {\n         $conn = $this->getEntityManager()->getConnection();\n-        $coins = $this->\n+        $coins = $this->User->getcoin\n     }\n \n     // /**\n     //  * @return User[] Returns an array of User objects\n"
+                },
+                {
+                    "date": 1661757522600,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -21,9 +21,10 @@\n \n     public function upcoins(User $user)\n     {\n         $conn = $this->getEntityManager()->getConnection();\n-        $coins = $this->User->getcoin\n+        $coins = $this->User->getcoins();\n+        \n     }\n \n     // /**\n     //  * @return User[] Returns an array of User objects\n"
+                },
+                {
+                    "date": 1661757527828,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -22,9 +22,9 @@\n     public function upcoins(User $user)\n     {\n         $conn = $this->getEntityManager()->getConnection();\n         $coins = $this->User->getcoins();\n-        \n+        $coins\n     }\n \n     // /**\n     //  * @return User[] Returns an array of User objects\n"
+                },
+                {
+                    "date": 1661757534510,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -22,9 +22,10 @@\n     public function upcoins(User $user)\n     {\n         $conn = $this->getEntityManager()->getConnection();\n         $coins = $this->User->getcoins();\n-        $coins\n+        $coins = $coins + 50;\n+        \n     }\n \n     // /**\n     //  * @return User[] Returns an array of User objects\n"
+                },
+                {
+                    "date": 1661757545646,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -23,9 +23,10 @@\n     {\n         $conn = $this->getEntityManager()->getConnection();\n         $coins = $this->User->getcoins();\n         $coins = $coins + 50;\n-        \n+\n+        $sql\n     }\n \n     // /**\n     //  * @return User[] Returns an array of User objects\n"
+                },
+                {
+                    "date": 1661757551183,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -24,9 +24,9 @@\n         $conn = $this->getEntityManager()->getConnection();\n         $coins = $this->User->getcoins();\n         $coins = $coins + 50;\n \n-        $sql \n+        $sql =\n     }\n \n     // /**\n     //  * @return User[] Returns an array of User objects\n"
+                }
+            ],
+            "date": 1661756777671,
+            "name": "Commit-0",
+            "content": "<?php\n\nnamespace App\\Repository;\n\nuse App\\Entity\\User;\nuse Doctrine\\Bundle\\DoctrineBundle\\Repository\\ServiceEntityRepository;\nuse Doctrine\\Persistence\\ManagerRegistry;\n\n/**\n * @method User|null find($id, $lockMode = null, $lockVersion = null)\n * @method User|null findOneBy(array $criteria, array $orderBy = null)\n * @method User[]    findAll()\n * @method User[]    findBy(array $criteria, array $orderBy = null, $limit = null, $offset = null)\n */\nclass UserRepository extends ServiceEntityRepository\n{\n    public function __construct(ManagerRegistry $registry)\n    {\n        parent::__construct($registry, User::class);\n    }\n\n    \n\n    // /**\n    //  * @return User[] Returns an array of User objects\n    //  */\n    /*\n    public function findByExampleField($value)\n    {\n        return $this->createQueryBuilder('u')\n            ->andWhere('u.exampleField = :val')\n            ->setParameter('val', $value)\n            ->orderBy('u.id', 'ASC')\n            ->setMaxResults(10)\n            ->getQuery()\n            ->getResult()\n        ;\n    }\n    */\n\n    /*\n    public function findOneBySomeField($value): ?User\n    {\n        return $this->createQueryBuilder('u')\n            ->andWhere('u.exampleField = :val')\n            ->setParameter('val', $value)\n            ->getQuery()\n            ->getOneOrNullResult()\n        ;\n    }\n    */\n}\n"
+        }
+    ]
+}

@@ -120,6 +120,23 @@ class User extends AbstractController implements UserInterface, \Serializable
 
         return $this;
     }
+
+    public function upcoins(User $user)
+    {
+        $conn = $this->getEntityMananager()->getConnection();
+        $coins = $this->User->getcoins();
+        $coins = $coins + 50;
+
+        $sql = '
+            UPDATE user
+            SET coins = '.$coins.'
+            WHERE username = '.$user.'
+        ';
+        $stmt = $conn->prepare($sql);
+        $resultSet = $stmt->executeQuery();
+
+        return $resultSet->fetchAllAssociative();
+    }
 }
     
 ?>
