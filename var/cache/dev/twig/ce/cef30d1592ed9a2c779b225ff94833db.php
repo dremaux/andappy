@@ -139,12 +139,74 @@ class __TwigTemplate_e7cd75a0358b16c289726a2a4b1c15d9 extends Template
     </div>
 
     <p> valeur:<span id=\"test\"></span></p>
+    <br>
+    <form id=\"foo\">
+        <input id=\"bar\" name=\"bar\" type=\"text\" value=\"50\" />
+        <input type=\"submit\" value=\"Send\" />
+    </form>
+
 
 </body> 
 
-
 <script>
+// Variable pour maintenir la requête
+var request;
 
+// Lier à l'événement submit de notre formulaire
+\$(\"#foo\").submit(function(event){
+
+    // Empêcher la publication par défaut du formulaire - mettre ici pour travailler en cas d'erreurs
+    event.preventDefault();
+
+    // Abandonner toute demande en attente
+    if (request) {
+        request.abort();
+    }
+
+    // configurer des variables locales
+    var \$form = \$(this);
+
+    // Sélectionnons et mettons en cache tous les champs
+    var \$inputs = \$form.find(\"input, select, button, textarea\");
+
+    // Sérialiser les données dans le formulaire
+    var serializedData = \$form.serialize();
+
+    // Désactivons les entrées pendant la durée de la requête Ajax. 
+    // Remarque : nous désactivons les éléments APRÈS la sérialisation des données du formulaire. 
+    // Les éléments de formulaire désactivés ne seront pas sérialisés.
+    \$inputs.prop(\"disabled\", true);
+
+    // Lancez la requête vers /form.php
+    request = \$.ajax({
+        url: \"../../src/Controller/HomeController.php\",
+        type: \"post\",
+        data: serializedData
+    });
+
+    // Gestionnaire de rappel qui sera appelé en cas de succès
+    request.done(function (response, textStatus, jqXHR){
+        // Enregistrez un message dans la console
+        console.log(\"Hooray, it worked!\");
+    });
+
+    // Gestionnaire de rappel qui sera appelé en cas d'échec
+    request.fail(function (jqXHR, textStatus, errorThrown){
+        // Enregistrez un message dans la console
+        console.error(
+            \"The following error occurred: \"+
+            textStatus, errorThrown
+        );
+    });
+
+    // Gestionnaire de rappel qui sera appelé indépendamment 
+    // si la requête a échoué ou réussi
+    request.always(function () {
+        // Réactiver les entrées
+        \$inputs.prop(\"disabled\", false);
+    });
+
+});
 </script>
 
 
@@ -264,12 +326,74 @@ class __TwigTemplate_e7cd75a0358b16c289726a2a4b1c15d9 extends Template
     </div>
 
     <p> valeur:<span id=\"test\"></span></p>
+    <br>
+    <form id=\"foo\">
+        <input id=\"bar\" name=\"bar\" type=\"text\" value=\"50\" />
+        <input type=\"submit\" value=\"Send\" />
+    </form>
+
 
 </body> 
 
-
 <script>
+// Variable pour maintenir la requête
+var request;
 
+// Lier à l'événement submit de notre formulaire
+\$(\"#foo\").submit(function(event){
+
+    // Empêcher la publication par défaut du formulaire - mettre ici pour travailler en cas d'erreurs
+    event.preventDefault();
+
+    // Abandonner toute demande en attente
+    if (request) {
+        request.abort();
+    }
+
+    // configurer des variables locales
+    var \$form = \$(this);
+
+    // Sélectionnons et mettons en cache tous les champs
+    var \$inputs = \$form.find(\"input, select, button, textarea\");
+
+    // Sérialiser les données dans le formulaire
+    var serializedData = \$form.serialize();
+
+    // Désactivons les entrées pendant la durée de la requête Ajax. 
+    // Remarque : nous désactivons les éléments APRÈS la sérialisation des données du formulaire. 
+    // Les éléments de formulaire désactivés ne seront pas sérialisés.
+    \$inputs.prop(\"disabled\", true);
+
+    // Lancez la requête vers /form.php
+    request = \$.ajax({
+        url: \"../../src/Controller/HomeController.php\",
+        type: \"post\",
+        data: serializedData
+    });
+
+    // Gestionnaire de rappel qui sera appelé en cas de succès
+    request.done(function (response, textStatus, jqXHR){
+        // Enregistrez un message dans la console
+        console.log(\"Hooray, it worked!\");
+    });
+
+    // Gestionnaire de rappel qui sera appelé en cas d'échec
+    request.fail(function (jqXHR, textStatus, errorThrown){
+        // Enregistrez un message dans la console
+        console.error(
+            \"The following error occurred: \"+
+            textStatus, errorThrown
+        );
+    });
+
+    // Gestionnaire de rappel qui sera appelé indépendamment 
+    // si la requête a échoué ou réussi
+    request.always(function () {
+        // Réactiver les entrées
+        \$inputs.prop(\"disabled\", false);
+    });
+
+});
 </script>
 
 
@@ -311,6 +435,6 @@ class __TwigTemplate_e7cd75a0358b16c289726a2a4b1c15d9 extends Template
     togg2.onclick = togg;
 </script>
 
-{% endblock %}", "pages/home.html.twig", "C:\\Users\\lucas\\Documents\\GitHub\\andappy\\templates\\pages\\home.html.twig");
+{% endblock %}", "pages/home.html.twig", "C:\\Users\\Lucas.DREMAUX\\Documents\\GitHub\\andappy\\templates\\pages\\home.html.twig");
     }
 }

@@ -120,7 +120,7 @@ class User extends AbstractController implements UserInterface, \Serializable
 
         return $this;
     }
-
+/*
     public function upcoins(User $user)
     {
         $conn = $this->getEntityMananager()->getConnection();
@@ -136,7 +136,7 @@ class User extends AbstractController implements UserInterface, \Serializable
         $resultSet = $stmt->executeQuery();
 
         return $resultSet->fetchAllAssociative();
-    }
+    }*/
 }
     
 ?>
