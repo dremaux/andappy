@@ -15,12 +15,14 @@ use Doctrine\DBAL\ParameterType;
 use Doctrine\ORM\EntityManagerInterface;
 use Doctrine\ORM\Query\ResultSetMapping;
 use Doctrine\Persistence\ObjectManager;
-
+use Psr\Log\LoggerInterface;
+use SebastianBergmann\Environment\Console;
+use Symfony\Component\HttpFoundation\Request;
 
 class HomeController extends AbstractController
 {
 
-    public function __construct(Environment $twig)
+    public function __construct(Environment $twig, LoggerInterface $logger)
     {
         $this->twig = $twig;
     }
@@ -30,11 +32,15 @@ class HomeController extends AbstractController
      * @param PropertyRepository $repository
      * @return Response
      */
-    public function index(PropertyRepository $repository, UserRepository $userRepo): Response 
+    public function index(PropertyRepository $repository, UserRepository $userRepo, Request $request): Response 
     {
         // on va cherche toutes les infos
         $coins = $userRepo->findAll();
 
+
+        if ($request->get('ajax')){
+            $this->logger->info('test');
+        }
 
         $properties = $repository->findLastest();
         return $this->render('pages/home.html.twig',compact('coins'));

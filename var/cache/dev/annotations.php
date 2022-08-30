@@ -432,8 +432,6 @@ return [[
 '[C]App%5CEntity%5CUser%23getCoins' => 1,
 'App%5CEntity%5CUser%23setCoins' => 0,
 '[C]App%5CEntity%5CUser%23setCoins' => 1,
-'App%5CEntity%5CUser%23upCoins' => 0,
-'[C]App%5CEntity%5CUser%23upCoins' => 1,
 'App%5CEntity%5CUser%24id' => 14,
 '[C]App%5CEntity%5CUser%24id' => 1,
 'App%5CEntity%5CUser%24username' => 15,
@@ -1058,7 +1056,7 @@ return [[
 ], [
 
 0 => [],
-1 => 1661673812,
+1 => 1661875227,
 2 => static function () {
     return \Symfony\Component\VarExporter\Internal\Hydrator::hydrate(
         $o = [
