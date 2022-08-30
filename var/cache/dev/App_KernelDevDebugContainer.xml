@@ -7268,16 +7268,11 @@
         <argument key="property" type="service_closure" id=".errored..service_locator.45deAGo.App\Entity\Property"/>
       </argument>
     </service>
-    <service id=".service_locator.UVeYiox" class="Symfony\Component\DependencyInjection\ServiceLocator">
+    <service id=".service_locator.nBEpF4n" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator"/>
       <argument type="collection">
         <argument key="repository" type="service_closure" id="App\Repository\PropertyRepository"/>
-      </argument>
-    </service>
-    <service id=".service_locator.E.Ottw7" class="Symfony\Component\DependencyInjection\ServiceLocator">
-      <tag name="container.service_locator"/>
-      <argument type="collection">
-        <argument key="manager" type="service_closure" id=".errored..service_locator.E.Ottw7.Doctrine\Persistence\ObjectManager"/>
+        <argument key="userRepo" type="service_closure" id="App\Repository\UserRepository"/>
       </argument>
     </service>
     <service id=".service_locator..eHqkeB" class="Symfony\Component\DependencyInjection\ServiceLocator">
@@ -7299,7 +7294,7 @@
         <argument key="authenticationUtils" type="service_closure" id="security.authentication_utils"/>
       </argument>
     </service>
-    <service id=".service_locator.rvraMBh" class="Symfony\Component\DependencyInjection\ServiceLocator">
+    <service id=".service_locator.qMKw22h" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator"/>
       <argument type="collection">
         <argument key="App\Controller\Admin\AdminAgenceController::delete" type="service_closure" id=".service_locator.YbcZo0s"/>
@@ -7310,8 +7305,7 @@
         <argument key="App\Controller\Admin\AdminOptionController::index" type="service_closure" id=".service_locator.1piRqeR"/>
         <argument key="App\Controller\Admin\AdminPropertyController::delete" type="service_closure" id=".service_locator.45deAGo"/>
         <argument key="App\Controller\Admin\AdminPropertyController::edit" type="service_closure" id=".service_locator.45deAGo"/>
-        <argument key="App\Controller\HomeController::index" type="service_closure" id=".service_locator.UVeYiox"/>
-        <argument key="App\Controller\HomeController::upcoins" type="service_closure" id=".service_locator.E.Ottw7"/>
+        <argument key="App\Controller\HomeController::index" type="service_closure" id=".service_locator.nBEpF4n"/>
         <argument key="App\Controller\PropertyController::index" type="service_closure" id=".service_locator..eHqkeB"/>
         <argument key="App\Controller\PropertyController::show" type="service_closure" id=".service_locator.45deAGo"/>
         <argument key="App\Controller\RegistrationController::register" type="service_closure" id=".service_locator.riGN6sa"/>
@@ -7330,8 +7324,7 @@
         <argument key="App\Controller\Admin\AdminOptionController:index" type="service_closure" id=".service_locator.1piRqeR"/>
         <argument key="App\Controller\Admin\AdminPropertyController:delete" type="service_closure" id=".service_locator.45deAGo"/>
         <argument key="App\Controller\Admin\AdminPropertyController:edit" type="service_closure" id=".service_locator.45deAGo"/>
-        <argument key="App\Controller\HomeController:index" type="service_closure" id=".service_locator.UVeYiox"/>
-        <argument key="App\Controller\HomeController:upcoins" type="service_closure" id=".service_locator.E.Ottw7"/>
+        <argument key="App\Controller\HomeController:index" type="service_closure" id=".service_locator.nBEpF4n"/>
         <argument key="App\Controller\PropertyController:index" type="service_closure" id=".service_locator..eHqkeB"/>
         <argument key="App\Controller\PropertyController:show" type="service_closure" id=".service_locator.45deAGo"/>
         <argument key="App\Controller\RegistrationController:register" type="service_closure" id=".service_locator.riGN6sa"/>
@@ -7889,12 +7882,12 @@
       <argument type="service" id="security.token_storage"/>
     </service>
     <service id="debug.argument_resolver.service.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\ServiceValueResolver">
-      <argument type="service" id=".service_locator.rvraMBh"/>
+      <argument type="service" id=".service_locator.qMKw22h"/>
     </service>
     <service id="debug.argument_resolver.default.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\DefaultValueResolver"/>
     <service id="debug.argument_resolver.variadic.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\VariadicValueResolver"/>
     <service id="debug.argument_resolver.not_tagged_controller.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\NotTaggedControllerValueResolver">
-      <argument type="service" id=".service_locator.rvraMBh"/>
+      <argument type="service" id=".service_locator.qMKw22h"/>
     </service>
     <service id=".debug.http_client.inner" class="Symfony\Contracts\HttpClient\HttpClientInterface">
       <argument type="collection"/>
@@ -7919,7 +7912,6 @@
     <service id=".errored..service_locator.YbcZo0s.App\Entity\Agence" class="App\Entity\Agence"/>
     <service id=".errored..service_locator.3N8ysha.App\Entity\Option" class="App\Entity\Option"/>
     <service id=".errored..service_locator.45deAGo.App\Entity\Property" class="App\Entity\Property"/>
-    <service id=".errored..service_locator.E.Ottw7.Doctrine\Persistence\ObjectManager" class="Doctrine\Persistence\ObjectManager"/>
     <service id=".console.command.about.lazy" class="Symfony\Component\Console\Command\LazyCommand">
       <argument>about</argument>
       <argument type="collection"/>
@@ -8794,7 +8786,7 @@
     <service id="Liip\ImagineBundle\Imagine\Filter\FilterManager" alias="liip_imagine.filter.manager"/>
     <service id="container.env_var_processors_locator" alias=".service_locator.0GV1BZZ" public="true"/>
     <service id="twig.loader.filesystem" alias="twig.loader.native_filesystem"/>
-    <service id="argument_resolver.controller_locator" alias=".service_locator.rvraMBh"/>
+    <service id="argument_resolver.controller_locator" alias=".service_locator.qMKw22h"/>
     <service id="session" alias=".session.do-not-use" public="true">
       <deprecated package="symfony/framework-bundle" version="5.3">The "%alias_id%" service and "SessionInterface" alias are deprecated, use "$requestStack-&gt;getSession()" instead.</deprecated>
     </service>
@@ -8842,8 +8834,7 @@
     <service id=".service_locator.kdibaVZ" alias=".service_locator.1piRqeR"/>
     <service id=".service_locator.M09CdTg" alias=".service_locator.3N8ysha"/>
     <service id=".service_locator.C7OGTf3" alias=".service_locator.45deAGo"/>
-    <service id=".service_locator.Fg7PxwI" alias=".service_locator.UVeYiox"/>
-    <service id=".service_locator.snCGWs3" alias=".service_locator.E.Ottw7"/>
+    <service id=".service_locator..bpfpTg" alias=".service_locator.nBEpF4n"/>
     <service id=".service_locator.g4lI9Zm" alias=".service_locator..eHqkeB"/>
     <service id=".service_locator.DoCD.2o" alias=".service_locator.riGN6sa"/>
     <service id=".service_locator.URfgn8g" alias=".service_locator.zFcJjKU"/>

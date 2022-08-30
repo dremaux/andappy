@@ -3,6 +3,7 @@ namespace App\Controller;
 
 use App\Entity\User;
 use App\Repository\PropertyRepository;
+use App\Repository\UserRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
@@ -29,28 +30,16 @@ class HomeController extends AbstractController
      * @param PropertyRepository $repository
      * @return Response
      */
-    public function index(PropertyRepository $repository): Response 
+    public function index(PropertyRepository $repository, UserRepository $userRepo): Response 
     {
+        // on va cherche toutes les infos
+        $coins = $userRepo->findAll();
+
+
         $properties = $repository->findLastest();
-        return $this->render('pages/home.html.twig',['properties' => $properties]);
+        return $this->render('pages/home.html.twig',compact('coins'));
     }
 
-    public function upcoins(ObjectManager $manager):void
-    {
-        if($_SERVER['REQUEST_METHOD'] == "POST" and isset($_POST['someAction']))
-        {    
-            $user = $this->User->getUsername();
-            $coins = $this->User->getCoins();
-            $coins = $coins + 50;
-
-            //$sql ='UPDATE user SET coins='.$coins.' WHERE username ='.$user;
-            //$manager->persist($sql);
-            
-            $user->setCoins($coins);
-            $manager->persist($user);
-
-            $manager->flush();
-        }
-    }  
+  
 }
 ?>

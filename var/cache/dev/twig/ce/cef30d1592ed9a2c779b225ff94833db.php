@@ -77,6 +77,10 @@ class __TwigTemplate_e7cd75a0358b16c289726a2a4b1c15d9 extends Template
         // line 7
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("script/script4.js"), "html", null, true);
         echo "\"></script>
+        <script src=\"";
+        // line 8
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("script/upCoins.js"), "html", null, true);
+        echo "\"></script>
 ";
         
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->leave($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof);
@@ -86,7 +90,7 @@ class __TwigTemplate_e7cd75a0358b16c289726a2a4b1c15d9 extends Template
 
     }
 
-    // line 10
+    // line 11
     public function block_body($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -96,7 +100,7 @@ class __TwigTemplate_e7cd75a0358b16c289726a2a4b1c15d9 extends Template
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "body"));
 
-        // line 11
+        // line 12
         echo "
 <div class=\"sensi\">
 <h2>Sensibilité</h2>
@@ -110,6 +114,7 @@ class __TwigTemplate_e7cd75a0358b16c289726a2a4b1c15d9 extends Template
     <option value=\"8192\" >
     </datalist>
 </div>
+
 
 
 <body>
@@ -140,76 +145,15 @@ class __TwigTemplate_e7cd75a0358b16c289726a2a4b1c15d9 extends Template
 
     <p> valeur:<span id=\"test\"></span></p>
     <br>
-    <form id=\"foo\">
-        <input id=\"bar\" name=\"bar\" type=\"text\" value=\"50\" />
-        <input type=\"submit\" value=\"Send\" />
+    <form id=\"filters\">
+        <input type=\"submit\" value=\"Envoyer le formulaire\">
     </form>
-
+";
+        // line 59
+        echo $this->extensions['Symfony\Bridge\Twig\Extension\DumpExtension']->dump($this->env, $context, (isset($context["coins"]) || array_key_exists("coins", $context) ? $context["coins"] : (function () { throw new RuntimeError('Variable "coins" does not exist.', 59, $this->source); })()));
+        echo "
 
 </body> 
-
-<script>
-// Variable pour maintenir la requête
-var request;
-
-// Lier à l'événement submit de notre formulaire
-\$(\"#foo\").submit(function(event){
-
-    // Empêcher la publication par défaut du formulaire - mettre ici pour travailler en cas d'erreurs
-    event.preventDefault();
-
-    // Abandonner toute demande en attente
-    if (request) {
-        request.abort();
-    }
-
-    // configurer des variables locales
-    var \$form = \$(this);
-
-    // Sélectionnons et mettons en cache tous les champs
-    var \$inputs = \$form.find(\"input, select, button, textarea\");
-
-    // Sérialiser les données dans le formulaire
-    var serializedData = \$form.serialize();
-
-    // Désactivons les entrées pendant la durée de la requête Ajax. 
-    // Remarque : nous désactivons les éléments APRÈS la sérialisation des données du formulaire. 
-    // Les éléments de formulaire désactivés ne seront pas sérialisés.
-    \$inputs.prop(\"disabled\", true);
-
-    // Lancez la requête vers /form.php
-    request = \$.ajax({
-        url: \"../../src/Controller/HomeController.php\",
-        type: \"post\",
-        data: serializedData
-    });
-
-    // Gestionnaire de rappel qui sera appelé en cas de succès
-    request.done(function (response, textStatus, jqXHR){
-        // Enregistrez un message dans la console
-        console.log(\"Hooray, it worked!\");
-    });
-
-    // Gestionnaire de rappel qui sera appelé en cas d'échec
-    request.fail(function (jqXHR, textStatus, errorThrown){
-        // Enregistrez un message dans la console
-        console.error(
-            \"The following error occurred: \"+
-            textStatus, errorThrown
-        );
-    });
-
-    // Gestionnaire de rappel qui sera appelé indépendamment 
-    // si la requête a échoué ou réussi
-    request.always(function () {
-        // Réactiver les entrées
-        \$inputs.prop(\"disabled\", false);
-    });
-
-});
-</script>
-
-
 
 <style>
 .pagination {
@@ -269,7 +213,7 @@ var request;
 
     public function getDebugInfo()
     {
-        return array (  100 => 11,  90 => 10,  78 => 7,  74 => 6,  69 => 5,  59 => 4,  36 => 2,);
+        return array (  153 => 59,  104 => 12,  94 => 11,  82 => 8,  78 => 7,  74 => 6,  69 => 5,  59 => 4,  36 => 2,);
     }
 
     public function getSourceContext()
@@ -281,6 +225,7 @@ var request;
         <script src=\"{{ asset('script/script.js') }}\"></script>
         <script src=\"{{ asset('script/script3.js') }}\"></script>
         <script src=\"{{ asset('script/script4.js') }}\"></script>
+        <script src=\"{{ asset('script/upCoins.js') }}\"></script>
 {% endblock %}
 
 {% block body %}
@@ -297,6 +242,7 @@ var request;
     <option value=\"8192\" >
     </datalist>
 </div>
+
 
 
 <body>
@@ -327,76 +273,12 @@ var request;
 
     <p> valeur:<span id=\"test\"></span></p>
     <br>
-    <form id=\"foo\">
-        <input id=\"bar\" name=\"bar\" type=\"text\" value=\"50\" />
-        <input type=\"submit\" value=\"Send\" />
+    <form id=\"filters\">
+        <input type=\"submit\" value=\"Envoyer le formulaire\">
     </form>
-
+{{dump(coins)}}
 
 </body> 
-
-<script>
-// Variable pour maintenir la requête
-var request;
-
-// Lier à l'événement submit de notre formulaire
-\$(\"#foo\").submit(function(event){
-
-    // Empêcher la publication par défaut du formulaire - mettre ici pour travailler en cas d'erreurs
-    event.preventDefault();
-
-    // Abandonner toute demande en attente
-    if (request) {
-        request.abort();
-    }
-
-    // configurer des variables locales
-    var \$form = \$(this);
-
-    // Sélectionnons et mettons en cache tous les champs
-    var \$inputs = \$form.find(\"input, select, button, textarea\");
-
-    // Sérialiser les données dans le formulaire
-    var serializedData = \$form.serialize();
-
-    // Désactivons les entrées pendant la durée de la requête Ajax. 
-    // Remarque : nous désactivons les éléments APRÈS la sérialisation des données du formulaire. 
-    // Les éléments de formulaire désactivés ne seront pas sérialisés.
-    \$inputs.prop(\"disabled\", true);
-
-    // Lancez la requête vers /form.php
-    request = \$.ajax({
-        url: \"../../src/Controller/HomeController.php\",
-        type: \"post\",
-        data: serializedData
-    });
-
-    // Gestionnaire de rappel qui sera appelé en cas de succès
-    request.done(function (response, textStatus, jqXHR){
-        // Enregistrez un message dans la console
-        console.log(\"Hooray, it worked!\");
-    });
-
-    // Gestionnaire de rappel qui sera appelé en cas d'échec
-    request.fail(function (jqXHR, textStatus, errorThrown){
-        // Enregistrez un message dans la console
-        console.error(
-            \"The following error occurred: \"+
-            textStatus, errorThrown
-        );
-    });
-
-    // Gestionnaire de rappel qui sera appelé indépendamment 
-    // si la requête a échoué ou réussi
-    request.always(function () {
-        // Réactiver les entrées
-        \$inputs.prop(\"disabled\", false);
-    });
-
-});
-</script>
-
-
 
 <style>
 .pagination {

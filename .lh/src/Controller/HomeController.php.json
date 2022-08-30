@@ -3,11 +3,111 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 0,
+            "activePatchIndex": 25,
             "patches": [
                 {
                     "date": 1661757049679,
                     "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1661848935030,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,14 +1,22 @@\n <?php\r\n namespace App\\Controller;\r\n \r\n+use App\\Entity\\User;\r\n use App\\Repository\\PropertyRepository;\r\n use Symfony\\Bundle\\FrameworkBundle\\Controller\\AbstractController;\r\n use Symfony\\Component\\HttpFoundation\\Response;\r\n use Symfony\\Component\\Routing\\Annotation\\Route;\r\n use Twig\\Environment;\r\n \r\n+use Doctrine\\DBAL\\Connection;\r\n+use Doctrine\\DBAL\\Exception;\r\n+use Doctrine\\DBAL\\ParameterType;\r\n+use Doctrine\\ORM\\EntityManagerInterface;\r\n+use Doctrine\\ORM\\Query\\ResultSetMapping;\r\n+use Doctrine\\Persistence\\ObjectManager;\r\n \r\n+\r\n class HomeController extends AbstractController\r\n {\r\n \r\n     public function __construct(Environment $twig)\r\n@@ -20,14 +28,13 @@\n      * @Route(\"/\", name=\"home\")\r\n      * @param PropertyRepository $repository\r\n      * @return Response\r\n      */\r\n-\r\n     public function index(PropertyRepository $repository): Response \r\n     {\r\n         $properties = $repository->findLastest();\r\n         return $this->render('pages/home.html.twig',['properties' => $properties]);\r\n     }\r\n \r\n-    \r\n+  \r\n }\r\n ?>\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1661848948564,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -28,9 +28,9 @@\n      * @Route(\"/\", name=\"home\")\r\n      * @param PropertyRepository $repository\r\n      * @return Response\r\n      */\r\n-    public function index(PropertyRepository $repository): Response \r\n+    public function index(PropertyRepository $repository ): Response \r\n     {\r\n         $properties = $repository->findLastest();\r\n         return $this->render('pages/home.html.twig',['properties' => $properties]);\r\n     }\r\n"
+                },
+                {
+                    "date": 1661848953998,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -28,9 +28,9 @@\n      * @Route(\"/\", name=\"home\")\r\n      * @param PropertyRepository $repository\r\n      * @return Response\r\n      */\r\n-    public function index(PropertyRepository $repository ): Response \r\n+    public function index(PropertyRepository $repository Categ): Response \r\n     {\r\n         $properties = $repository->findLastest();\r\n         return $this->render('pages/home.html.twig',['properties' => $properties]);\r\n     }\r\n"
+                },
+                {
+                    "date": 1661848975942,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -28,9 +28,9 @@\n      * @Route(\"/\", name=\"home\")\r\n      * @param PropertyRepository $repository\r\n      * @return Response\r\n      */\r\n-    public function index(PropertyRepository $repository Categ): Response \r\n+    public function index(PropertyRepository $repository User): Response \r\n     {\r\n         $properties = $repository->findLastest();\r\n         return $this->render('pages/home.html.twig',['properties' => $properties]);\r\n     }\r\n"
+                },
+                {
+                    "date": 1661848981754,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,8 +2,9 @@\n namespace App\\Controller;\r\n \r\n use App\\Entity\\User;\r\n use App\\Repository\\PropertyRepository;\r\n+use App\\Repository\\UserRepository;\r\n use Symfony\\Bundle\\FrameworkBundle\\Controller\\AbstractController;\r\n use Symfony\\Component\\HttpFoundation\\Response;\r\n use Symfony\\Component\\Routing\\Annotation\\Route;\r\n use Twig\\Environment;\r\n@@ -28,9 +29,9 @@\n      * @Route(\"/\", name=\"home\")\r\n      * @param PropertyRepository $repository\r\n      * @return Response\r\n      */\r\n-    public function index(PropertyRepository $repository User): Response \r\n+    public function index(PropertyRepository $repository UserRepository $): Response \r\n     {\r\n         $properties = $repository->findLastest();\r\n         return $this->render('pages/home.html.twig',['properties' => $properties]);\r\n     }\r\n"
+                },
+                {
+                    "date": 1661848991791,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -29,9 +29,9 @@\n      * @Route(\"/\", name=\"home\")\r\n      * @param PropertyRepository $repository\r\n      * @return Response\r\n      */\r\n-    public function index(PropertyRepository $repository UserRepository $): Response \r\n+    public function index(PropertyRepository $repository, UserRepository $): Response \r\n     {\r\n         $properties = $repository->findLastest();\r\n         return $this->render('pages/home.html.twig',['properties' => $properties]);\r\n     }\r\n"
+                },
+                {
+                    "date": 1661848998920,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -29,9 +29,9 @@\n      * @Route(\"/\", name=\"home\")\r\n      * @param PropertyRepository $repository\r\n      * @return Response\r\n      */\r\n-    public function index(PropertyRepository $repository, UserRepository $): Response \r\n+    public function index(PropertyRepository $repository, UserRepository $userRepo): Response \r\n     {\r\n         $properties = $repository->findLastest();\r\n         return $this->render('pages/home.html.twig',['properties' => $properties]);\r\n     }\r\n"
+                },
+                {
+                    "date": 1661849051688,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -31,8 +31,11 @@\n      * @return Response\r\n      */\r\n     public function index(PropertyRepository $repository, UserRepository $userRepo): Response \r\n     {\r\n+\r\n+\r\n+        \r\n         $properties = $repository->findLastest();\r\n         return $this->render('pages/home.html.twig',['properties' => $properties]);\r\n     }\r\n \r\n"
+                },
+                {
+                    "date": 1661849057820,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -32,10 +32,11 @@\n      */\r\n     public function index(PropertyRepository $repository, UserRepository $userRepo): Response \r\n     {\r\n \r\n+        $cat\r\n \r\n-        \r\n+\r\n         $properties = $repository->findLastest();\r\n         return $this->render('pages/home.html.twig',['properties' => $properties]);\r\n     }\r\n \r\n"
+                },
+                {
+                    "date": 1661849063817,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -32,9 +32,9 @@\n      */\r\n     public function index(PropertyRepository $repository, UserRepository $userRepo): Response \r\n     {\r\n \r\n-        $cat\r\n+        $userRepo\r\n \r\n \r\n         $properties = $repository->findLastest();\r\n         return $this->render('pages/home.html.twig',['properties' => $properties]);\r\n"
+                },
+                {
+                    "date": 1661849073473,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -32,9 +32,9 @@\n      */\r\n     public function index(PropertyRepository $repository, UserRepository $userRepo): Response \r\n     {\r\n \r\n-        $userRepo\r\n+        $ca\r\n \r\n \r\n         $properties = $repository->findLastest();\r\n         return $this->render('pages/home.html.twig',['properties' => $properties]);\r\n"
+                },
+                {
+                    "date": 1661849079745,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -32,9 +32,9 @@\n      */\r\n     public function index(PropertyRepository $repository, UserRepository $userRepo): Response \r\n     {\r\n \r\n-        $ca\r\n+        $coins = \r\n \r\n \r\n         $properties = $repository->findLastest();\r\n         return $this->render('pages/home.html.twig',['properties' => $properties]);\r\n"
+                },
+                {
+                    "date": 1661849085581,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -32,9 +32,9 @@\n      */\r\n     public function index(PropertyRepository $repository, UserRepository $userRepo): Response \r\n     {\r\n \r\n-        $coins = \r\n+        $coins = $userRepo->\r\n \r\n \r\n         $properties = $repository->findLastest();\r\n         return $this->render('pages/home.html.twig',['properties' => $properties]);\r\n"
+                },
+                {
+                    "date": 1661849099171,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -32,9 +32,9 @@\n      */\r\n     public function index(PropertyRepository $repository, UserRepository $userRepo): Response \r\n     {\r\n \r\n-        $coins = $userRepo->\r\n+        $coins = $userRepo->find\r\n \r\n \r\n         $properties = $repository->findLastest();\r\n         return $this->render('pages/home.html.twig',['properties' => $properties]);\r\n"
+                },
+                {
+                    "date": 1661849117258,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -31,12 +31,12 @@\n      * @return Response\r\n      */\r\n     public function index(PropertyRepository $repository, UserRepository $userRepo): Response \r\n     {\r\n+        \r\n+        $coins = $userRepo->findAll();\r\n \r\n-        $coins = $userRepo->find\r\n \r\n-\r\n         $properties = $repository->findLastest();\r\n         return $this->render('pages/home.html.twig',['properties' => $properties]);\r\n     }\r\n \r\n"
+                },
+                {
+                    "date": 1661849124244,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -31,9 +31,9 @@\n      * @return Response\r\n      */\r\n     public function index(PropertyRepository $repository, UserRepository $userRepo): Response \r\n     {\r\n-        \r\n+        // on va cherche\r\n         $coins = $userRepo->findAll();\r\n \r\n \r\n         $properties = $repository->findLastest();\r\n"
+                },
+                {
+                    "date": 1661849154959,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -36,9 +36,9 @@\n         $coins = $userRepo->findAll();\r\n \r\n \r\n         $properties = $repository->findLastest();\r\n-        return $this->render('pages/home.html.twig',['properties' => $properties]);\r\n+        return $this->render('pages/home.html.twig',['properties' => $properties],);\r\n     }\r\n \r\n   \r\n }\r\n"
+                },
+                {
+                    "date": 1661849160360,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -36,9 +36,9 @@\n         $coins = $userRepo->findAll();\r\n \r\n \r\n         $properties = $repository->findLastest();\r\n-        return $this->render('pages/home.html.twig',['properties' => $properties],);\r\n+        return $this->render('pages/home.html.twig',['properties' => $properties], compact());\r\n     }\r\n \r\n   \r\n }\r\n"
+                },
+                {
+                    "date": 1661849169218,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -36,9 +36,9 @@\n         $coins = $userRepo->findAll();\r\n \r\n \r\n         $properties = $repository->findLastest();\r\n-        return $this->render('pages/home.html.twig',['properties' => $properties], compact());\r\n+        return $this->render('pages/home.html.twig',['properties' => $properties], compact('coins'));\r\n     }\r\n \r\n   \r\n }\r\n"
+                },
+                {
+                    "date": 1661849177403,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -36,9 +36,9 @@\n         $coins = $userRepo->findAll();\r\n \r\n \r\n         $properties = $repository->findLastest();\r\n-        return $this->render('pages/home.html.twig',['properties' => $properties], compact('coins'));\r\n+        return $this->render('pages/home.html.twig', compact('coins'));\r\n     }\r\n \r\n   \r\n }\r\n"
+                },
+                {
+                    "date": 1661849192809,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -36,9 +36,9 @@\n         $coins = $userRepo->findAll();\r\n \r\n \r\n         $properties = $repository->findLastest();\r\n-        return $this->render('pages/home.html.twig', compact('coins'));\r\n+        return $this->render('pages/home.html.twig',['properties' => $properties], compact('coins'));\r\n     }\r\n \r\n   \r\n }\r\n"
+                },
+                {
+                    "date": 1661849200720,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -31,14 +31,14 @@\n      * @return Response\r\n      */\r\n     public function index(PropertyRepository $repository, UserRepository $userRepo): Response \r\n     {\r\n-        // on va cherche\r\n+        // on va cherche \r\n         $coins = $userRepo->findAll();\r\n \r\n \r\n         $properties = $repository->findLastest();\r\n-        return $this->render('pages/home.html.twig',['properties' => $properties], compact('coins'));\r\n+        return $this->render('pages/home.html.twig',['properties' => $properties]);\r\n     }\r\n \r\n   \r\n }\r\n"
+                },
+                {
+                    "date": 1661849208523,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -31,9 +31,9 @@\n      * @return Response\r\n      */\r\n     public function index(PropertyRepository $repository, UserRepository $userRepo): Response \r\n     {\r\n-        // on va cherche \r\n+        // on va cherche toutes les info\r\n         $coins = $userRepo->findAll();\r\n \r\n \r\n         $properties = $repository->findLastest();\r\n"
+                },
+                {
+                    "date": 1661849712983,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -31,14 +31,14 @@\n      * @return Response\r\n      */\r\n     public function index(PropertyRepository $repository, UserRepository $userRepo): Response \r\n     {\r\n-        // on va cherche toutes les info\r\n+        // on va cherche toutes les infos\r\n         $coins = $userRepo->findAll();\r\n \r\n \r\n         $properties = $repository->findLastest();\r\n-        return $this->render('pages/home.html.twig',['properties' => $properties]);\r\n+        return $this->render('pages/home.html.twig',compact());\r\n     }\r\n \r\n   \r\n }\r\n"
+                },
+                {
+                    "date": 1661849723540,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -36,9 +36,9 @@\n         $coins = $userRepo->findAll();\r\n \r\n \r\n         $properties = $repository->findLastest();\r\n-        return $this->render('pages/home.html.twig',compact());\r\n+        return $this->render('pages/home.html.twig',compact('coins'));\r\n     }\r\n \r\n   \r\n }\r\n"
                 }
             ],
             "date": 1661757049679,
