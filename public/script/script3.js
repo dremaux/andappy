@@ -6,11 +6,7 @@ if (navigator.getUserMedia) {
   navigator.getUserMedia({
     audio: true
   },
-
-    
-
   function (stream) {
-
     audioContext = new AudioContext();
     analyser = audioContext.createAnalyser();
     microphone = audioContext.createMediaStreamSource(stream);
@@ -25,9 +21,6 @@ if (navigator.getUserMedia) {
     analyser.connect(javascriptNode);
     javascriptNode.connect(audioContext.destination);
     ;
-
-    
-
     javascriptNode.onaudioprocess = function () {
       var array = new Uint8Array(analyser.frequencyBinCount);
       analyser.getByteFrequencyData(array);
@@ -48,9 +41,7 @@ if (navigator.getUserMedia) {
       else if (!bool) {
         navigator.vibrate(1000);
         bool = true;
-      }
-
-      
+      } 
     }
   },
   function (err) {

@@ -21,8 +21,10 @@ window.onload = () => {
                 headers:{
                     "X-requested-With":"XMLHTTPRequest"
                 }
-            }).then(response => {
-                console.log(response)
+            }).then(response => 
+                response.json()
+            ).then(data => {
+                console.log(data)
             }).catch(e => alert(e));
 
         });

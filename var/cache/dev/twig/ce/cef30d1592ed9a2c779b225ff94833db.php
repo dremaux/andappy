@@ -148,12 +148,16 @@ class __TwigTemplate_e7cd75a0358b16c289726a2a4b1c15d9 extends Template
     <form id=\"filters\">
         <input type=\"checkbox\" value=\"Envoyer le formulaire\"/>
     </form>
-";
-        // line 59
-        echo $this->extensions['Symfony\Bridge\Twig\Extension\DumpExtension']->dump($this->env, $context, (isset($context["coins"]) || array_key_exists("coins", $context) ? $context["coins"] : (function () { throw new RuntimeError('Variable "coins" does not exist.', 59, $this->source); })()));
-        echo "
 
 </body> 
+
+
+
+
+
+
+
+
 
 <style>
 .pagination {
@@ -213,7 +217,7 @@ class __TwigTemplate_e7cd75a0358b16c289726a2a4b1c15d9 extends Template
 
     public function getDebugInfo()
     {
-        return array (  153 => 59,  104 => 12,  94 => 11,  82 => 8,  78 => 7,  74 => 6,  69 => 5,  59 => 4,  36 => 2,);
+        return array (  104 => 12,  94 => 11,  82 => 8,  78 => 7,  74 => 6,  69 => 5,  59 => 4,  36 => 2,);
     }
 
     public function getSourceContext()
@@ -276,9 +280,16 @@ class __TwigTemplate_e7cd75a0358b16c289726a2a4b1c15d9 extends Template
     <form id=\"filters\">
         <input type=\"checkbox\" value=\"Envoyer le formulaire\"/>
     </form>
-{{dump(coins)}}
 
 </body> 
+
+
+
+
+
+
+
+
 
 <style>
 .pagination {

@@ -5,10 +5,12 @@ use App\Entity\User;
 use App\Repository\PropertyRepository;
 use App\Repository\UserRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 use Twig\Environment;
 
+use Symfony\Component\Security\Core\Security;
 use Doctrine\DBAL\Connection;
 use Doctrine\DBAL\Exception;
 use Doctrine\DBAL\ParameterType;
@@ -18,13 +20,26 @@ use Doctrine\Persistence\ObjectManager;
 use Psr\Log\LoggerInterface;
 use SebastianBergmann\Environment\Console;
 use Symfony\Component\HttpFoundation\Request;
+use Doctrine\Persistence\ManagerRegistry;
 
 class HomeController extends AbstractController
 {
 
-    public function __construct(Environment $twig, LoggerInterface $logger)
+    /**
+     * @var Security
+     */
+    private $security;
+
+    public function __construct(Environment $twig, LoggerInterface $logger, Security $security)
     {
         $this->twig = $twig;
+        $this->security = $security;
+    }
+
+    public function privatePage()
+    {
+        $user = $this->security->getUser(); // null or UserInterface, if logged in
+        // ... do whatever you want with $user
     }
 
     /**
@@ -36,10 +51,10 @@ class HomeController extends AbstractController
     {
         // on va cherche toutes les infos
         $coins = $userRepo->findAll();
-
+        
 
         if ($request->get('ajax')){
-            $this->logger->info('test');
+            
         }
 
         $properties = $repository->findLastest();

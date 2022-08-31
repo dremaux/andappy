@@ -555,6 +555,7 @@
       <tag name="container.service_subscriber"/>
       <argument type="service" id="twig"/>
       <argument type="service" id="monolog.logger"/>
+      <argument type="service" id="security.helper"/>
       <call method="setContainer">
         <argument type="service" id=".service_locator.0ghLsew.App\Controller\HomeController"/>
       </call>
