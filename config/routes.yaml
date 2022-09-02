@@ -2,10 +2,6 @@ home:
   path: /
   controller: App\Controller\HomeController::index
 
-home2:
-  path: /
-  controller: App\Controller\HomeController::upcoins
-
 shop:
   path: /shop
   controller: App\Controller\ShopController::index

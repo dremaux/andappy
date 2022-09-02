@@ -30,11 +30,10 @@ class RegistrationFormType extends AbstractType
                         'message' => 'You should agree to our terms.',
                     ]),
                 ],
-                'label' => 'en m\'inscrivant à ce site j\'accepte...'
+                'label' => 'en m\'inscrivant à ce site j\'accepte les termes de confidentialité'
             ])
             ->add('plainPassword', PasswordType::class, [
-                // instead of being set onto the object directly,
-                // this is read and encoded in the controller
+                
                 'mapped' => false,
                 'attr' => [
                     'autocomplete' => 'new-password',
@@ -42,12 +41,11 @@ class RegistrationFormType extends AbstractType
                 ],
                 'constraints' => [
                     new NotBlank([
-                        'message' => 'Please enter a password',
+                        'message' => 'Veuillez entrer un mot de passe',
                     ]),
                     new Length([
                         'min' => 6,
-                        'minMessage' => 'Your password should be at least {{ limit }} characters',
-                        // max length allowed by Symfony for security reasons
+                        'minMessage' => 'Votre mot de passe doit être au moins de {{ limit }} caractères',
                         'max' => 4096,
                     ]),
                 ],

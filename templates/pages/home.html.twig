@@ -53,19 +53,16 @@
 
     <p> valeur:<span id="test"></span></p>
     <br>
-    <form id="filters">
-        <input type="checkbox" value="Envoyer le formulaire"/>
-    </form>
+    
+
+    
+   {{ form_start(form) }}
+    {{ form_row(form.coins) }}
+    <button class="btn btn-primary mt-4" id="myCheck" onmouseover="test()">{{ button_label|default('Save') }}</button>
+    {{ form_end(form, {'render_rest': false}) }}
+
 
 </body> 
-
-
-
-
-
-
-
-
 
 <style>
 .pagination {

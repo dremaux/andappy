@@ -2,63 +2,43 @@
 namespace App\Controller;
 
 use App\Entity\User;
-use App\Repository\PropertyRepository;
-use App\Repository\UserRepository;
+use App\Form\CoinsType;
+use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
-use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
+use Doctrine\Persistence\ManagerRegistry;
+use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 use Twig\Environment;
 
-use Symfony\Component\Security\Core\Security;
-use Doctrine\DBAL\Connection;
-use Doctrine\DBAL\Exception;
-use Doctrine\DBAL\ParameterType;
-use Doctrine\ORM\EntityManagerInterface;
-use Doctrine\ORM\Query\ResultSetMapping;
-use Doctrine\Persistence\ObjectManager;
-use Psr\Log\LoggerInterface;
-use SebastianBergmann\Environment\Console;
-use Symfony\Component\HttpFoundation\Request;
-use Doctrine\Persistence\ManagerRegistry;
-
 class HomeController extends AbstractController
 {
 
-    /**
-     * @var Security
-     */
-    private $security;
-
-    public function __construct(Environment $twig, LoggerInterface $logger, Security $security)
+    public function __construct(Environment $twig)
     {
         $this->twig = $twig;
-        $this->security = $security;
-    }
-
-    public function privatePage()
-    {
-        $user = $this->security->getUser(); // null or UserInterface, if logged in
-        // ... do whatever you want with $user
     }
 
     /**
      * @Route("/", name="home")
-     * @param PropertyRepository $repository
      * @return Response
      */
-    public function index(PropertyRepository $repository, UserRepository $userRepo, Request $request): Response 
+    public function index(Request $request, EntityManagerInterface $manager): Response 
     {
-        // on va cherche toutes les infos
-        $coins = $userRepo->findAll();
+        $user = $this->getUser();
         
-
-        if ($request->get('ajax')){
-            
+        $form = $this->createForm(CoinsType::class, $user);
+        
+        $form->handleRequest($request);
+        if($form->isSubmitted()) {
+            $user = $form->getData();
+            $manager->persist($user);
+            $manager->flush();
         }
 
-        $properties = $repository->findLastest();
-        return $this->render('pages/home.html.twig',compact('coins'));
+        return $this->render('pages/home.html.twig', [
+            'form' => $form->createView(),
+        ]);
     }
 
   
