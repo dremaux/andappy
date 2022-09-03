@@ -43,11 +43,11 @@ if (navigator.getUserMedia) {
 
       if (((average + 20) / 40) < 1.65) {
         navigator.vibrate(0);
-        
+        bool = false;
       }
-      else{
+      else if (!bool) {
         navigator.vibrate(1000);
-        
+        bool = true;
       }
     }
   },
