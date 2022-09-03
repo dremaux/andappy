@@ -49,5 +49,5 @@ if (navigator.getUserMedia) {
       console.log("L'erreur suivante s'est produite : " + err.name)
     });
 } else {
-  console.log("Media non pris en charge");
+  console.log("getUserMedia non pris en charge");
 }

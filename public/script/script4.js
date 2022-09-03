@@ -52,9 +52,9 @@ if (navigator.getUserMedia) {
     }
   },
   function (err) {
-    console.log("The following error occured: " + err.name)
+    console.log("L'erreur suivante s'est produite: " + err.name)
   });
 } else {
-  console.log("getUserMedia not supported");
+  console.log("getUserMedia non pris en charge");
 }
 
