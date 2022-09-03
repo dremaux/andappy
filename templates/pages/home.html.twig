@@ -55,13 +55,14 @@
     <br>
     
 
-    
-   {{ form_start(form) }}
-    
-    <div class="col-md-2">{{ form_row(form.coins) }}</div>
-        <button class="btn btn-primary mt-4" id="myCheck" onmouseover="test()">{{ button_label|default('Save') }}</button>
-    </div>
-    {{ form_end(form, {'render_rest': false}) }}
+    {% if app.user %}    
+        {{ form_start(form) }}
+        
+        <div class="col-md-2">{{ form_row(form.coins) }}</div>
+            <button class="btn btn-primary mt-4" id="myCheck" onmouseover="test()">{{ button_label|default('Save') }}</button>
+        </div>
+        {{ form_end(form, {'render_rest': false}) }}
+    {% endif %}
 
 
 </body> 
