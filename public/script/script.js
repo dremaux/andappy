@@ -1,4 +1,4 @@
-bool=false;
+
 navigator.getUserMedia = navigator.getUserMedia ||
   navigator.webkitGetUserMedia ||
   navigator.mozGetUserMedia;
@@ -19,7 +19,7 @@ if (navigator.getUserMedia) {
       analyser.connect(javascriptNode);
       javascriptNode.connect(audioContext.destination);
 ;     
-
+      bool=false;
       javascriptNode.onaudioprocess = function() {
           var array = new Uint8Array(analyser.frequencyBinCount);
           analyser.getByteFrequencyData(array);
@@ -37,7 +37,7 @@ if (navigator.getUserMedia) {
         document.getElementById('test').innerHTML = scale;
 
         console.log(bool);
-
+        
         if(scale >= 1.4 && !bool){
           document.getElementById("myCheck").click();
           bool =true;
