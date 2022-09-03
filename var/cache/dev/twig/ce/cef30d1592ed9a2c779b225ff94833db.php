@@ -77,10 +77,6 @@ class __TwigTemplate_e7cd75a0358b16c289726a2a4b1c15d9 extends Template
         // line 7
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("script/script4.js"), "html", null, true);
         echo "\"></script>
-        <script src=\"";
-        // line 8
-        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("script/upCoins.js"), "html", null, true);
-        echo "\"></script>
 ";
         
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->leave($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof);
@@ -90,7 +86,7 @@ class __TwigTemplate_e7cd75a0358b16c289726a2a4b1c15d9 extends Template
 
     }
 
-    // line 11
+    // line 10
     public function block_body($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -100,7 +96,7 @@ class __TwigTemplate_e7cd75a0358b16c289726a2a4b1c15d9 extends Template
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "body"));
 
-        // line 12
+        // line 11
         echo "
 <div class=\"sensi\">
 <h2>Sensibilité</h2>
@@ -148,30 +144,30 @@ class __TwigTemplate_e7cd75a0358b16c289726a2a4b1c15d9 extends Template
     
 
     ";
-        // line 58
-        if (twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 58, $this->source); })()), "user", [], "any", false, false, false, 58)) {
+        // line 57
+        if (twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 57, $this->source); })()), "user", [], "any", false, false, false, 57)) {
             echo "    
         ";
-            // line 59
-            echo             $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 59, $this->source); })()), 'form_start');
+            // line 58
+            echo             $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 58, $this->source); })()), 'form_start');
             echo "
         
         <div class=\"col-md-2\">";
-            // line 61
-            echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 61, $this->source); })()), "coins", [], "any", false, false, false, 61), 'row');
+            // line 60
+            echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 60, $this->source); })()), "coins", [], "any", false, false, false, 60), 'row');
             echo "</div>
             <button class=\"btn btn-primary mt-4\" id=\"myCheck\" onmouseover=\"test()\">";
-            // line 62
-            echo twig_escape_filter($this->env, ((array_key_exists("button_label", $context)) ? (_twig_default_filter((isset($context["button_label"]) || array_key_exists("button_label", $context) ? $context["button_label"] : (function () { throw new RuntimeError('Variable "button_label" does not exist.', 62, $this->source); })()), "Save")) : ("Save")), "html", null, true);
+            // line 61
+            echo twig_escape_filter($this->env, ((array_key_exists("button_label", $context)) ? (_twig_default_filter((isset($context["button_label"]) || array_key_exists("button_label", $context) ? $context["button_label"] : (function () { throw new RuntimeError('Variable "button_label" does not exist.', 61, $this->source); })()), "Save")) : ("Save")), "html", null, true);
             echo "</button>
         </div>
         ";
-            // line 64
-            echo             $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 64, $this->source); })()), 'form_end', ["render_rest" => false]);
+            // line 63
+            echo             $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 63, $this->source); })()), 'form_end', ["render_rest" => false]);
             echo "
     ";
         }
-        // line 66
+        // line 65
         echo "
 
 </body> 
@@ -234,7 +230,7 @@ class __TwigTemplate_e7cd75a0358b16c289726a2a4b1c15d9 extends Template
 
     public function getDebugInfo()
     {
-        return array (  175 => 66,  170 => 64,  165 => 62,  161 => 61,  156 => 59,  152 => 58,  104 => 12,  94 => 11,  82 => 8,  78 => 7,  74 => 6,  69 => 5,  59 => 4,  36 => 2,);
+        return array (  171 => 65,  166 => 63,  161 => 61,  157 => 60,  152 => 58,  148 => 57,  100 => 11,  90 => 10,  78 => 7,  74 => 6,  69 => 5,  59 => 4,  36 => 2,);
     }
 
     public function getSourceContext()
@@ -246,7 +242,6 @@ class __TwigTemplate_e7cd75a0358b16c289726a2a4b1c15d9 extends Template
         <script src=\"{{ asset('script/script.js') }}\"></script>
         <script src=\"{{ asset('script/script3.js') }}\"></script>
         <script src=\"{{ asset('script/script4.js') }}\"></script>
-        <script src=\"{{ asset('script/upCoins.js') }}\"></script>
 {% endblock %}
 
 {% block body %}

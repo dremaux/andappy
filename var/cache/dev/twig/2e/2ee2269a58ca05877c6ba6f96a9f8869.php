@@ -98,12 +98,12 @@ class __TwigTemplate_88638759fa898b4aa29a6d51b0879a82 extends Template
         echo "
                         ";
         // line 14
-        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["registrationForm"]) || array_key_exists("registrationForm", $context) ? $context["registrationForm"] : (function () { throw new RuntimeError('Variable "registrationForm" does not exist.', 14, $this->source); })()), "username", [], "any", false, false, false, 14), 'row', ["label" => "nom d'utilisateur"]);
+        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["registrationForm"]) || array_key_exists("registrationForm", $context) ? $context["registrationForm"] : (function () { throw new RuntimeError('Variable "registrationForm" does not exist.', 14, $this->source); })()), "username", [], "any", false, false, false, 14), 'row', ["label" => "Nom d'utilisateur"]);
         // line 16
         echo "
                         ";
         // line 17
-        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["registrationForm"]) || array_key_exists("registrationForm", $context) ? $context["registrationForm"] : (function () { throw new RuntimeError('Variable "registrationForm" does not exist.', 17, $this->source); })()), "plainPassword", [], "any", false, false, false, 17), 'row', ["label" => "mot de passe"]);
+        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["registrationForm"]) || array_key_exists("registrationForm", $context) ? $context["registrationForm"] : (function () { throw new RuntimeError('Variable "registrationForm" does not exist.', 17, $this->source); })()), "plainPassword", [], "any", false, false, false, 17), 'row', ["label" => "Mot de passe"]);
         // line 19
         echo "
                         ";
@@ -167,10 +167,10 @@ class __TwigTemplate_88638759fa898b4aa29a6d51b0879a82 extends Template
 
                     {{ form_start(registrationForm) }}
                         {{ form_row(registrationForm.username, {
-                            label: 'nom d\\'utilisateur'
+                            label: 'Nom d\\'utilisateur'
                         }) }}
                         {{ form_row(registrationForm.plainPassword, {
-                            label: 'mot de passe'
+                            label: 'Mot de passe'
                         }) }}
                         {{ form_row(registrationForm.RGPDConsent) }}
 

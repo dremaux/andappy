@@ -1,3 +1,0 @@
-<?php //Symfony%255CContracts%255CService%255CServiceSubscriberInterface%2523getSubscribedServices
-
-return [PHP_INT_MAX, []];
