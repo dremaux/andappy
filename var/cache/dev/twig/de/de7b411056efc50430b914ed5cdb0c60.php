@@ -106,58 +106,51 @@ class __TwigTemplate_e8aa4d165802b2417b7e82f250827b48 extends Template
                          </li>
                      </ul>
                 ";
-        }
-        // line 38
-        echo "
-                    <ul  class=\"navbar-nav\">
-                        <li class=\"nav-item\">
-                            <a href=\"";
-        // line 41
-        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("login");
-        echo "\" class=\"nav-link\"> Se connecter</a>
-                        </li>
-                    </ul>
-                    <ul  class=\"navbar-nav\">
-                        <li class=\"nav-item\">
-                            <a href=\"";
-        // line 46
-        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("register");
-        echo "\" class=\"nav-link\">S'inscrire</a>
-                        </li>
-                    </ul>
-                
-                ";
-        // line 50
-        if (twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 50, $this->source); })()), "user", [], "any", false, false, false, 50)) {
-            // line 51
+        } else {
+            // line 38
             echo "                    <ul  class=\"navbar-nav\">
                         <li class=\"nav-item\">
                             <a href=\"";
-            // line 53
-            echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("property.index");
-            echo "\" class=\"nav-link\"><img src=\"images\\properties\\parametre_logo.png\" weidht=\"40\" height=\"40\"></a>
+            // line 40
+            echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("login");
+            echo "\" class=\"nav-link\"> Se connecter</a>
                         </li>
-                    </ul>   
+                    </ul>
+                    <ul  class=\"navbar-nav\">
+                        <li class=\"nav-item\">
+                            <a href=\"";
+            // line 45
+            echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("register");
+            echo "\" class=\"nav-link\">S'inscrire</a>
+                        </li>
+                    </ul>
                 ";
         }
-        // line 56
-        echo "   
+        // line 49
+        echo "                
+                ";
+        // line 50
+        if (twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 50, $this->source); })()), "user", [], "any", false, false, false, 50)) {
+            echo "   
                      <ul  class=\"navbar-nav\">
                          <li class=\"nav-item\">
                              <a href=\"";
-        // line 59
-        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("logout");
-        echo "\" style=\"color:white; text-decoration: none;\"><img src=\"images\\properties\\deconnexion.png\" weidht=\"40\" height=\"40\"></a>
+            // line 53
+            echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("logout");
+            echo "\" style=\"color:white; text-decoration: none;\"><img src=\"images\\properties\\deconnexion.png\" weidht=\"40\" height=\"40\"></a>
                          </li>
                      </ul>
-                 </div>
+                ";
+        }
+        // line 57
+        echo "                 </div>
              </div>
          </nav>
     
          ";
-        // line 66
+        // line 61
         $this->displayBlock('body', $context, $blocks);
-        // line 67
+        // line 62
         echo "         <script src=\"https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js\" integrity=\"sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==\" crossorigin=\"anonymous\" referrerpolicy=\"no-referrer\"></script>
          <script src=\"https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.min.js\" integrity=\"sha384-skAcpIdS7UcVUC05LJ9Dxay8AXcDYfBJqt1CJ85S/CFujBsIzCIv+l9liuYLaMQ/\" crossorigin=\"anonymous\"></script>
          <script src=\"https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.13/js/select2.min.js\" integrity=\"sha512-2ImtlRlf2VVmiGZsjm9bEyhjGW4dU7B6TNwh/hx/iSByxNENtj3WVE6o/9Lj4TJeVXPi4bnOIMXFIJJAeufa0A==\" crossorigin=\"anonymous\" referrerpolicy=\"no-referrer\"></script>
@@ -167,9 +160,9 @@ class __TwigTemplate_e8aa4d165802b2417b7e82f250827b48 extends Template
          </script>
  
          ";
-        // line 75
+        // line 70
         $this->displayBlock('javascripts', $context, $blocks);
-        // line 76
+        // line 71
         echo "    </body>
  </html>";
         
@@ -217,7 +210,7 @@ class __TwigTemplate_e8aa4d165802b2417b7e82f250827b48 extends Template
 
     }
 
-    // line 66
+    // line 61
     public function block_body($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -235,7 +228,7 @@ class __TwigTemplate_e8aa4d165802b2417b7e82f250827b48 extends Template
 
     }
 
-    // line 75
+    // line 70
     public function block_javascripts($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -265,7 +258,7 @@ class __TwigTemplate_e8aa4d165802b2417b7e82f250827b48 extends Template
 
     public function getDebugInfo()
     {
-        return array (  239 => 75,  221 => 66,  203 => 13,  184 => 7,  173 => 76,  171 => 75,  161 => 67,  159 => 66,  149 => 59,  144 => 56,  137 => 53,  133 => 51,  131 => 50,  124 => 46,  116 => 41,  111 => 38,  104 => 34,  97 => 31,  90 => 27,  85 => 24,  83 => 23,  76 => 19,  69 => 14,  67 => 13,  60 => 9,  55 => 7,  47 => 1,);
+        return array (  232 => 70,  214 => 61,  196 => 13,  177 => 7,  166 => 71,  164 => 70,  154 => 62,  152 => 61,  146 => 57,  139 => 53,  133 => 50,  130 => 49,  123 => 45,  115 => 40,  111 => 38,  104 => 34,  97 => 31,  90 => 27,  85 => 24,  83 => 23,  76 => 19,  69 => 14,  67 => 13,  60 => 9,  55 => 7,  47 => 1,);
     }
 
     public function getSourceContext()
@@ -306,8 +299,7 @@ class __TwigTemplate_e8aa4d165802b2417b7e82f250827b48 extends Template
                              <a>{{ app.user.coins }}<img src=\"images\\properties\\piece.png\" weidht=\"40\" height=\"40\"></a>
                          </li>
                      </ul>
-                {% endif %}
-
+                {% else %}
                     <ul  class=\"navbar-nav\">
                         <li class=\"nav-item\">
                             <a href=\"{{ path('login') }}\" class=\"nav-link\"> Se connecter</a>
@@ -318,19 +310,15 @@ class __TwigTemplate_e8aa4d165802b2417b7e82f250827b48 extends Template
                             <a href=\"{{ path('register') }}\" class=\"nav-link\">S'inscrire</a>
                         </li>
                     </ul>
+                {% endif %}
                 
-                {% if app.user %}
-                    <ul  class=\"navbar-nav\">
-                        <li class=\"nav-item\">
-                            <a href=\"{{ path('property.index') }}\" class=\"nav-link\"><img src=\"images\\properties\\parametre_logo.png\" weidht=\"40\" height=\"40\"></a>
-                        </li>
-                    </ul>   
-                {% endif %}   
+                {% if app.user %}   
                      <ul  class=\"navbar-nav\">
                          <li class=\"nav-item\">
                              <a href=\"{{ path('logout') }}\" style=\"color:white; text-decoration: none;\"><img src=\"images\\properties\\deconnexion.png\" weidht=\"40\" height=\"40\"></a>
                          </li>
                      </ul>
+                {% endif %}
                  </div>
              </div>
          </nav>

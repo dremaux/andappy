@@ -152,17 +152,19 @@ class __TwigTemplate_e7cd75a0358b16c289726a2a4b1c15d9 extends Template
         // line 59
         echo         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 59, $this->source); })()), 'form_start');
         echo "
-    ";
-        // line 60
-        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 60, $this->source); })()), "coins", [], "any", false, false, false, 60), 'row');
-        echo "
-    <button class=\"btn btn-primary mt-4\" id=\"myCheck\" onmouseover=\"test()\">";
+    
+    <div class=\"col-md-2\">";
         // line 61
-        echo twig_escape_filter($this->env, ((array_key_exists("button_label", $context)) ? (_twig_default_filter((isset($context["button_label"]) || array_key_exists("button_label", $context) ? $context["button_label"] : (function () { throw new RuntimeError('Variable "button_label" does not exist.', 61, $this->source); })()), "Save")) : ("Save")), "html", null, true);
-        echo "</button>
-    ";
+        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 61, $this->source); })()), "coins", [], "any", false, false, false, 61), 'row');
+        echo "</div>
+        <button class=\"btn btn-primary mt-4\" id=\"myCheck\" onmouseover=\"test()\">";
         // line 62
-        echo         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 62, $this->source); })()), 'form_end', ["render_rest" => false]);
+        echo twig_escape_filter($this->env, ((array_key_exists("button_label", $context)) ? (_twig_default_filter((isset($context["button_label"]) || array_key_exists("button_label", $context) ? $context["button_label"] : (function () { throw new RuntimeError('Variable "button_label" does not exist.', 62, $this->source); })()), "Save")) : ("Save")), "html", null, true);
+        echo "</button>
+    </div>
+    ";
+        // line 64
+        echo         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 64, $this->source); })()), 'form_end', ["render_rest" => false]);
         echo "
 
 
@@ -226,7 +228,7 @@ class __TwigTemplate_e7cd75a0358b16c289726a2a4b1c15d9 extends Template
 
     public function getDebugInfo()
     {
-        return array (  165 => 62,  161 => 61,  157 => 60,  153 => 59,  104 => 12,  94 => 11,  82 => 8,  78 => 7,  74 => 6,  69 => 5,  59 => 4,  36 => 2,);
+        return array (  167 => 64,  162 => 62,  158 => 61,  153 => 59,  104 => 12,  94 => 11,  82 => 8,  78 => 7,  74 => 6,  69 => 5,  59 => 4,  36 => 2,);
     }
 
     public function getSourceContext()
@@ -290,8 +292,10 @@ class __TwigTemplate_e7cd75a0358b16c289726a2a4b1c15d9 extends Template
 
     
    {{ form_start(form) }}
-    {{ form_row(form.coins) }}
-    <button class=\"btn btn-primary mt-4\" id=\"myCheck\" onmouseover=\"test()\">{{ button_label|default('Save') }}</button>
+    
+    <div class=\"col-md-2\">{{ form_row(form.coins) }}</div>
+        <button class=\"btn btn-primary mt-4\" id=\"myCheck\" onmouseover=\"test()\">{{ button_label|default('Save') }}</button>
+    </div>
     {{ form_end(form, {'render_rest': false}) }}
 
 
