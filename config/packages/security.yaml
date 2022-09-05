@@ -21,6 +21,7 @@ security:
             
     access_control:
         - { path: ^/shop, roles: ROLE_ADMIN }
+        - { path: ^/, roles: ROLE_ADMIN }
         # - { path: ^/profile, roles: ROLE_USER }
         
     encoders: # plaintext
