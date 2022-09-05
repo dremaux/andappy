@@ -3,7 +3,7 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 1,
+            "activePatchIndex": 2,
             "patches": [
                 {
                     "date": 1662367505249,
@@ -12,6 +12,10 @@
                 {
                     "date": 1662367510719,
                     "content": "Index: \n===================================================================\n--- \n+++ \n@@ -35,9 +35,13 @@\n \r\n         scale = document.getElementById(\"circle\").style.transform=(average+30)/40;\r\n         document.getElementById('test').innerHTML = scale;\r\n         \r\n-             }\r\n+        if(scale >= 1.4 && !bool){\r\n+          document.getElementById(\"myCheck\").click();\r\n+          bool =true;\r\n+        }\r\n+        }\r\n     },\r\n \r\n     function(err) {\r\n       console.log(\"L'erreur suivante s'est produite : \" + err.name)\r\n"
+                },
+                {
+                    "date": 1662367907785,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,9 +1,9 @@\n \r\n navigator.getUserMedia = navigator.getUserMedia ||\r\n   navigator.webkitGetUserMedia ||\r\n   navigator.mozGetUserMedia;\r\n-  \r\n+  AudioWorkletNode \r\n if (navigator.getUserMedia) {\r\n   navigator.getUserMedia({\r\n       audio: true\r\n     },\r\n@@ -35,13 +35,9 @@\n \r\n         scale = document.getElementById(\"circle\").style.transform=(average+30)/40;\r\n         document.getElementById('test').innerHTML = scale;\r\n         \r\n-        if(scale >= 1.4 && !bool){\r\n-          document.getElementById(\"myCheck\").click();\r\n-          bool =true;\r\n         }\r\n-        }\r\n     },\r\n \r\n     function(err) {\r\n       console.log(\"L'erreur suivante s'est produite : \" + err.name)\r\n"
                 }
             ],
             "date": 1662367505249,

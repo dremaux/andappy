@@ -1,0 +1,22 @@
+{
+    "sourceFile": "config/packages/security.yaml",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 1,
+            "patches": [
+                {
+                    "date": 1662368102614,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1662368110687,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -19,9 +19,9 @@\n             form_login: \r\n                 check_path: login\r\n             \r\n     access_control:\r\n-        - { path: ^/shop, roles: ROLE_ADMIN, requires_cha }\r\n+        - { path: ^/shop, roles: ROLE_ADMIN, requires_chan }\r\n         # - { path: ^/profile, roles: ROLE_USER }\r\n         \r\n     encoders: # plaintext\r\n         App\\Entity\\User: \r\n"
+                }
+            ],
+            "date": 1662368102614,
+            "name": "Commit-0",
+            "content": "# config/packages/security.yaml\r\nsecurity:\r\n    providers:\r\n        from_database:\r\n            entity:\r\n                class: App\\Entity\\User\r\n                property: username\r\n        \r\n    firewalls:\r\n        dev:\r\n            pattern: ^/(_(profiler|wdt)|css|images|js)/\r\n            security: false\r\n        main:\r\n            anonymous: true\r\n            logout:\r\n                path: /logout\r\n                target: /\r\n\r\n            form_login: \r\n                check_path: login\r\n            \r\n    access_control:\r\n        - { path: ^/shop, roles: ROLE_ADMIN,  }\r\n        # - { path: ^/profile, roles: ROLE_USER }\r\n        \r\n    encoders: # plaintext\r\n        App\\Entity\\User: \r\n            algorithm: bcrypt\r\n            cost: 12    "
+        }
+    ]
+}
