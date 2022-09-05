@@ -36,10 +36,6 @@ if (navigator.getUserMedia) {
         scale = document.getElementById("circle").style.transform=(average+30)/40;
         document.getElementById('test').innerHTML = scale;
         
-        if(scale >= 1.4 && !bool){
-          document.getElementById("myCheck").click();
-          bool =true;
-        }
         }
     },
 
