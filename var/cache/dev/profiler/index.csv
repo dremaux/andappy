@@ -15,3 +15,4 @@ d3201d,::1,GET,https://localhost:8000/,1662368974,,200
 5b0fae,::1,GET,https://localhost:8000/login,1662368981,,200
 2a6c04,::1,POST,https://localhost:8000/login,1662368985,,302
 221e35,::1,GET,https://localhost:8000/,1662368986,,200
+fd1a86,::1,GET,https://localhost:8000/,1662369880,,200
