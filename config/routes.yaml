@@ -1,6 +1,7 @@
 home:
   path: /
   controller: App\Controller\HomeController::index
+  schemes: [https]
 
 shop:
   path: /shop

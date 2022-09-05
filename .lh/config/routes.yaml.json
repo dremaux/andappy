@@ -3,7 +3,7 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 5,
+            "activePatchIndex": 6,
             "patches": [
                 {
                     "date": 1662368898137,
@@ -28,6 +28,10 @@
                 {
                     "date": 1662370118479,
                     "content": "Index: \n===================================================================\n--- \n+++ \n@@ -16,6 +16,5 @@\n   path: /logout\r\n \r\n register:\r\n   path: /register\r\n-  controller: App\\Controller\\RegistrationController.php\r\n-  schemes: [https]\n\\ No newline at end of file\n+  controller: App\\Controller\\RegistrationController.php\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1662370273104,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -5,9 +5,8 @@\n \r\n shop:\r\n   path: /shop\r\n   controller: App\\Controller\\ShopController::index\r\n-  schemes: [https]\r\n \r\n #index:\r\n #    path: /\r\n #    controller: App\\Controller\\DefaultController::index\r\n"
                 }
             ],
             "date": 1662368898137,
