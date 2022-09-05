@@ -1,0 +1,26 @@
+{
+    "sourceFile": "config/routes.yaml",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 2,
+            "patches": [
+                {
+                    "date": 1662368898137,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1662368903471,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,8 +1,8 @@\n home:\r\n   path: /\r\n   controller: App\\Controller\\HomeController::index\r\n-  \r\n+  schemes\r\n \r\n shop:\r\n   path: /shop\r\n   controller: App\\Controller\\ShopController::index\r\n"
+                },
+                {
+                    "date": 1662368909994,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,8 +1,8 @@\n home:\r\n   path: /\r\n   controller: App\\Controller\\HomeController::index\r\n-  schemes\r\n+  schemes: [https]\r\n \r\n shop:\r\n   path: /shop\r\n   controller: App\\Controller\\ShopController::index\r\n"
+                }
+            ],
+            "date": 1662368898137,
+            "name": "Commit-0",
+            "content": "home:\r\n  path: /\r\n  controller: App\\Controller\\HomeController::index\r\n  \r\n\r\nshop:\r\n  path: /shop\r\n  controller: App\\Controller\\ShopController::index\r\n\r\n#index:\r\n#    path: /\r\n#    controller: App\\Controller\\DefaultController::index\r\n\r\nlogout:\r\n  path: /logout\r\n\r\nregister:\r\n  path: /register\r\n  controller: App\\Controller\\RegistrationController.php"
+        }
+    ]
+}

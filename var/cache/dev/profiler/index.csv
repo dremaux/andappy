@@ -9,3 +9,9 @@ a9ad3d,::1,GET,https://localhost:8000/favicon.ico,1662368557,,404
 69640c,::1,GET,https://localhost:8000/login,1662368575,,200
 484119,::1,POST,https://localhost:8000/login,1662368583,,302
 2e359f,::1,GET,https://localhost:8000/,1662368584,,200
+d3201d,::1,GET,https://localhost:8000/,1662368974,,200
+02012e,::1,GET,https://localhost:8000/favicon.ico,1662368977,939e0c,404
+939e0c,::1,GET,https://localhost:8000/favicon.ico,1662368977,,404
+5b0fae,::1,GET,https://localhost:8000/login,1662368981,,200
+2a6c04,::1,POST,https://localhost:8000/login,1662368985,,302
+221e35,::1,GET,https://localhost:8000/,1662368986,,200
