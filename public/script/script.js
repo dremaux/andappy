@@ -19,7 +19,7 @@ if (navigator.getUserMedia) {
       analyser.connect(javascriptNode);
       javascriptNode.connect(audioContext.destination);
 ;     
-      bool=false;
+      tour = 0;
       javascriptNode.onaudioprocess = function() {
           var array = new Uint8Array(analyser.frequencyBinCount);
           analyser.getByteFrequencyData(array);
@@ -36,10 +36,16 @@ if (navigator.getUserMedia) {
         scale = document.getElementById("circle").style.transform=(average+30)/40;
         document.getElementById('test').innerHTML = scale;
         
-        if(scale >= 1.4 && !bool){
+        
+        console.log("les tour: "+ tour);
+
+        if(scale >= 1.4 && tour > 200){
           document.getElementById("myCheck").click();
-          bool =true;
+          tour = 0;
+        }else{
+          tour = tour + 1;
         }
+
         }
     },
 

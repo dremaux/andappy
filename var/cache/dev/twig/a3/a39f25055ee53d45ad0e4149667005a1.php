@@ -72,7 +72,7 @@ class __TwigTemplate_1ac4972380582942e8485e2c7cc5a95e extends Template
         if ((isset($context["error"]) || array_key_exists("error", $context) ? $context["error"] : (function () { throw new RuntimeError('Variable "error" does not exist.', 5, $this->source); })())) {
             // line 6
             echo "        <div class=\"alert alert-danger\">
-            <a>Champ incorrect</a>
+            <a>Champs incorrect</a>
         </div>
     ";
         }
@@ -136,7 +136,7 @@ class __TwigTemplate_1ac4972380582942e8485e2c7cc5a95e extends Template
 
     {% if error %}
         <div class=\"alert alert-danger\">
-            <a>Champ incorrect</a>
+            <a>Champs incorrect</a>
         </div>
     {% endif %}
     <h1>Connexion</h1>
