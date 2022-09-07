@@ -1,0 +1,26 @@
+{
+    "sourceFile": "public/script/script.js",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 2,
+            "patches": [
+                {
+                    "date": 1662367505249,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1662367510719,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -35,9 +35,13 @@\n \r\n         scale = document.getElementById(\"circle\").style.transform=(average+30)/40;\r\n         document.getElementById('test').innerHTML = scale;\r\n         \r\n-             }\r\n+        if(scale >= 1.4 && !bool){\r\n+          document.getElementById(\"myCheck\").click();\r\n+          bool =true;\r\n+        }\r\n+        }\r\n     },\r\n \r\n     function(err) {\r\n       console.log(\"L'erreur suivante s'est produite : \" + err.name)\r\n"
+                },
+                {
+                    "date": 1662367907785,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,9 +1,9 @@\n \r\n navigator.getUserMedia = navigator.getUserMedia ||\r\n   navigator.webkitGetUserMedia ||\r\n   navigator.mozGetUserMedia;\r\n-  \r\n+  AudioWorkletNode \r\n if (navigator.getUserMedia) {\r\n   navigator.getUserMedia({\r\n       audio: true\r\n     },\r\n@@ -35,13 +35,9 @@\n \r\n         scale = document.getElementById(\"circle\").style.transform=(average+30)/40;\r\n         document.getElementById('test').innerHTML = scale;\r\n         \r\n-        if(scale >= 1.4 && !bool){\r\n-          document.getElementById(\"myCheck\").click();\r\n-          bool =true;\r\n         }\r\n-        }\r\n     },\r\n \r\n     function(err) {\r\n       console.log(\"L'erreur suivante s'est produite : \" + err.name)\r\n"
+                }
+            ],
+            "date": 1662367505249,
+            "name": "Commit-0",
+            "content": "\r\nnavigator.getUserMedia = navigator.getUserMedia ||\r\n  navigator.webkitGetUserMedia ||\r\n  navigator.mozGetUserMedia;\r\n  \r\nif (navigator.getUserMedia) {\r\n  navigator.getUserMedia({\r\n      audio: true\r\n    },\r\n    function(stream) {\r\n      audioContext = new AudioContext();\r\n      analyser = audioContext.createAnalyser();\r\n    microphone = audioContext.createMediaStreamSource(stream);\r\n      javascriptNode = audioContext.createScriptProcessor(2048, 1, 1);\r\n      analyser.smoothingTimeConstant = 0.8;\r\n      analyser.fftSize = 1024;\r\n\r\n      microphone.connect(analyser);\r\n      analyser.connect(javascriptNode);\r\n      javascriptNode.connect(audioContext.destination);\r\n;     \r\n      bool=false;\r\n      javascriptNode.onaudioprocess = function() {\r\n          var array = new Uint8Array(analyser.frequencyBinCount);\r\n          analyser.getByteFrequencyData(array);\r\n          var values = 0;\r\n          \r\n          var length = array.length;\r\n          for (var i = 0; i < 100; i++) {\r\n            values += (array[i]);\r\n          }\r\n\r\n          var average = values / length;\r\n        document.getElementById(\"circle\").style.transform=\"scale(\"+(average+30)/40+\")\";\r\n\r\n        scale = document.getElementById(\"circle\").style.transform=(average+30)/40;\r\n        document.getElementById('test').innerHTML = scale;\r\n        \r\n             }\r\n    },\r\n\r\n    function(err) {\r\n      console.log(\"L'erreur suivante s'est produite : \" + err.name)\r\n    });\r\n} else {\r\n  console.log(\"getUserMedia non pris en charge\");\r\n}\r\n"
+        }
+    ]
+}
