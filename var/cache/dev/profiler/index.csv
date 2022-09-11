@@ -63,3 +63,11 @@ d0aa82,127.0.0.1,GET,https://127.0.0.1:8000/,1662244402,,200
 e4e6bf,::1,POST,https://localhost:8000/,1662244420,,200
 05640b,::1,POST,https://localhost:8000/,1662244429,,200
 752601,::1,GET,https://localhost:8000/,1662245041,,200
+aeb252,::1,GET,https://localhost:8000/,1662915938,,200
+244865,::1,GET,https://localhost:8000/favicon.ico,1662915946,665ec3,404
+665ec3,::1,GET,https://localhost:8000/favicon.ico,1662915947,,404
+56a51d,::1,GET,https://localhost:8000/login,1662915951,,200
+d47003,::1,POST,https://localhost:8000/login,1662916011,,302
+13f9b8,::1,GET,https://localhost:8000/,1662916014,,200
+3c335a,::1,POST,https://localhost:8000/,1662916032,,200
+e38782,::1,POST,https://localhost:8000/,1662916053,,200
