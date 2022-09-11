@@ -1,15 +1,11 @@
 {% extends 'base.html.twig' %}
-
 {% block title %}Inscription{% endblock %}
-
 {% block body %}
     <section class="container">
         <div class="rom">
             <div class="col">
-
                 <fieldset class="mb-3">
                     <h1>Inscription</h1>
-
                     {{ form_start(registrationForm) }}
                         {{ form_row(registrationForm.username, {
                             label: 'Nom d\'utilisateur'
@@ -24,9 +20,7 @@
 
                     <a class="btn btn-primary my-3" href="{{ path('login') }}">j'ai déjà un compte</a>
                 </fieldset>
-
             </div>
         </div>
     </section>
-
 {% endblock %}
