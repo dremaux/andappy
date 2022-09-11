@@ -340,6 +340,6 @@ class __TwigTemplate_e7cd75a0358b16c289726a2a4b1c15d9 extends Template
     togg2.onclick = togg;
 </script>
 
-{% endblock %}", "pages/home.html.twig", "C:\\Users\\lucas\\Documents\\GitHub\\andappy\\templates\\pages\\home.html.twig");
+{% endblock %}", "pages/home.html.twig", "C:\\Users\\Lucas.DREMAUX\\Documents\\GitHub\\handappy\\templates\\pages\\home.html.twig");
     }
 }
