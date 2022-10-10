@@ -2,105 +2,11 @@
 {% extends 'base.html.twig' %}
 
 {% block javascripts %}
-        <script src="{{ asset('script/script.js') }}"></script>
-        <script src="{{ asset('script/script3.js') }}"></script>
-        <script src="{{ asset('script/script4.js') }}"></script>
+        
 {% endblock %}
 
 {% block body %}
 
-<div class="sensi">
-<h2>Sensibilité</h2>
-    <input name="range-left" id="range-left" list="tickmarks" />
-    
-    <datalist id="tickmarks">
-    <option value="512"  >
-    <option value="1024" >
-    <option value="2048" >
-    <option value="4096" >
-    <option value="8192" >
-    </datalist>
-</div>
-
-
-
-<body>
-    <div class="container mt-4">
-        <div class="jumbotron"> 
-            <div class="container">
-
-                <button id="togg1" class="btn btn-primary"><img src="\images\properties\cercle-style.png" height="50" width="50"></button>
-                <button id="togg2" class="btn btn-primary"><img src="\images\properties\roue.png" height="50" width="50"></button>
-             
-                <div class="form_row">
-                    <div id="d1">
-                        <div id="circle3"><img src="\images\properties\cercle-style.png" alt="" /></div>   
-                    </div>
-                </div>
-                <div class="form_row">
-                    <div id="d2">
-                        <div id="circle4"><img src="\images\properties\roue.png" alt="" /></div>    
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="cercle">
-        <div id="circle"></div>
-        <div id="circle2"></div>
-    </div>
-
-    <p> valeur:<span id="test"></span></p>
-    <br>
-    
-
-    {% if app.user %}    
-        {{ form_start(form) }}
-        
-        <div class="col-md-2">{{ form_row(form.coins) }}</div>
-            <button class="btn btn-primary mt-4" id="myCheck" onmouseover="test()">{{ button_label|default('Save') }}</button>
-        </div>
-        {{ form_end(form, {'render_rest': false}) }}
-    {% endif %}
-
-
-</body> 
-
-<style>
-.pagination {
-    justify-content: center;
-}
-</style>
-
-<script>
-    let togg1 = document.getElementById("togg1");
-    let togg2 = document.getElementById("togg2");
-    let d1 = document.getElementById("d1");
-    let d2 = document.getElementById("d2");
-
-    //on cache tout les cercles
-    d2.style.display = "none";
-    d1.style.display = "none";
-
-    //si le cercle id=d1 est appeller alors l'affiche en cachant tout les autre cercle
-    togg1.addEventListener("click", () => {
-    if(getComputedStyle(d1).display != "none"){
-        d1.style.display = "none";
-    } else {
-        d1.style.display = "block";
-        d2.style.display = "none";
-    }
-    })
-
-    function togg(){
-    if(getComputedStyle(d2).display != "none"){
-        d2.style.display = "none";
-    } else {
-        d2.style.display = "block";
-        d1.style.display = "none";
-    }
-    };
-    togg2.onclick = togg;
-</script>
+<button class="btn btn-primary mt-4" href="registration/login.html.twig">Connexion</button>
 
 {% endblock %}

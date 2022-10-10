@@ -102,18 +102,22 @@ class __TwigTemplate_519e098a4eb7f48ff362e24cfdb43306 extends Template
         // line 13
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("admin.agence.index");
         echo "\" class=\"btn btn-primary\">Gérer les agences</a>
+            <a href=\"";
+        // line 14
+        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("admin.question.index");
+        echo "\" class=\"btn btn-primary\">liste des questions</a>
         </div>
         <br>
 
         ";
-        // line 17
+        // line 18
         $context['_parent'] = $context;
-        $context['_seq'] = twig_ensure_traversable(twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 17, $this->source); })()), "flashes", [0 => "success"], "method", false, false, false, 17));
+        $context['_seq'] = twig_ensure_traversable(twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 18, $this->source); })()), "flashes", [0 => "success"], "method", false, false, false, 18));
         foreach ($context['_seq'] as $context["_key"] => $context["message"]) {
-            // line 18
+            // line 19
             echo "        <div class=\"alert alert-success\">
         ";
-            // line 19
+            // line 20
             echo twig_escape_filter($this->env, $context["message"], "html", null, true);
             echo "
         </div>
@@ -122,7 +126,7 @@ class __TwigTemplate_519e098a4eb7f48ff362e24cfdb43306 extends Template
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['message'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 22
+        // line 23
         echo "
         <table class=\"table table-striped\">
             <thead>
@@ -133,30 +137,30 @@ class __TwigTemplate_519e098a4eb7f48ff362e24cfdb43306 extends Template
             </thead>
             <tbody>
             ";
-        // line 31
+        // line 32
         $context['_parent'] = $context;
-        $context['_seq'] = twig_ensure_traversable((isset($context["agences"]) || array_key_exists("agences", $context) ? $context["agences"] : (function () { throw new RuntimeError('Variable "agences" does not exist.', 31, $this->source); })()));
+        $context['_seq'] = twig_ensure_traversable((isset($context["agences"]) || array_key_exists("agences", $context) ? $context["agences"] : (function () { throw new RuntimeError('Variable "agences" does not exist.', 32, $this->source); })()));
         foreach ($context['_seq'] as $context["_key"] => $context["agence"]) {
-            // line 32
+            // line 33
             echo "            <tr>
                 <td>";
-            // line 33
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["agence"], "name", [], "any", false, false, false, 33), "html", null, true);
+            // line 34
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["agence"], "name", [], "any", false, false, false, 34), "html", null, true);
             echo "</td>
 
                 <td><a href=\"";
-            // line 35
-            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("admin.agence.edit", ["id" => twig_get_attribute($this->env, $this->source, $context["agence"], "id", [], "any", false, false, false, 35)]), "html", null, true);
+            // line 36
+            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("admin.agence.edit", ["id" => twig_get_attribute($this->env, $this->source, $context["agence"], "id", [], "any", false, false, false, 36)]), "html", null, true);
             echo "\" class=\"btn btn-secondary\">Editer</a>
 
                     <form methode=\"post\" action=\"";
-            // line 37
-            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("admin.agence.delete", ["id" => twig_get_attribute($this->env, $this->source, $context["agence"], "id", [], "any", false, false, false, 37)]), "html", null, true);
+            // line 38
+            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("admin.agence.delete", ["id" => twig_get_attribute($this->env, $this->source, $context["agence"], "id", [], "any", false, false, false, 38)]), "html", null, true);
             echo "\" style=\"display: inline-block\" onsubmit=\"return confirm('êtes vous vraiment sûr ?')\">
                         <input type=\"hidden\" name=\"_method\" value=\"DELETE\">
                         <input type=\"hidden\" name=\"_token\" value=\"";
-            // line 39
-            echo twig_escape_filter($this->env, $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderCsrfToken(("delete" . twig_get_attribute($this->env, $this->source, $context["agence"], "id", [], "any", false, false, false, 39))), "html", null, true);
+            // line 40
+            echo twig_escape_filter($this->env, $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderCsrfToken(("delete" . twig_get_attribute($this->env, $this->source, $context["agence"], "id", [], "any", false, false, false, 40))), "html", null, true);
             echo "\">
                         <button class=\"btn btn-danger\">Supprimer</button>
                     </form>
@@ -168,13 +172,13 @@ class __TwigTemplate_519e098a4eb7f48ff362e24cfdb43306 extends Template
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['agence'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 46
+        // line 47
         echo "            </tbody>
         </table>
 
         <div class=\"text-center\">
             <a href=\"";
-        // line 50
+        // line 51
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("admin.agence.new");
         echo "\" class=\"btn btn-primary\">Ajouter une nouvelle agence</a>
         </div>
@@ -201,7 +205,7 @@ class __TwigTemplate_519e098a4eb7f48ff362e24cfdb43306 extends Template
 
     public function getDebugInfo()
     {
-        return array (  178 => 50,  172 => 46,  159 => 39,  154 => 37,  149 => 35,  144 => 33,  141 => 32,  137 => 31,  126 => 22,  117 => 19,  114 => 18,  110 => 17,  103 => 13,  99 => 12,  95 => 11,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
+        return array (  182 => 51,  176 => 47,  163 => 40,  158 => 38,  153 => 36,  148 => 34,  145 => 33,  141 => 32,  130 => 23,  121 => 20,  118 => 19,  114 => 18,  107 => 14,  103 => 13,  99 => 12,  95 => 11,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
     }
 
     public function getSourceContext()
@@ -219,6 +223,7 @@ class __TwigTemplate_519e098a4eb7f48ff362e24cfdb43306 extends Template
             <a href=\"{{ path('admin.property.index') }}\" class=\"btn btn-primary\">Gérer les biens</a>
             <a href=\"{{ path('admin.option.index') }}\" class=\"btn btn-primary\">Gérer les options</a>
             <a href=\"{{ path('admin.agence.index') }}\" class=\"btn btn-primary\">Gérer les agences</a>
+            <a href=\"{{ path('admin.question.index') }}\" class=\"btn btn-primary\">liste des questions</a>
         </div>
         <br>
 
@@ -259,6 +264,6 @@ class __TwigTemplate_519e098a4eb7f48ff362e24cfdb43306 extends Template
         </div>
 
     </div>     
-{% endblock %}", "admin/agence/index.html.twig", "C:\\Users\\Lucas.DREMAUX\\Documents\\GitHub\\andappy\\templates\\admin\\agence\\index.html.twig");
+{% endblock %}", "admin/agence/index.html.twig", "C:\\Users\\lucas\\Documents\\GitHub\\andappy\\templates\\admin\\agence\\index.html.twig");
     }
 }

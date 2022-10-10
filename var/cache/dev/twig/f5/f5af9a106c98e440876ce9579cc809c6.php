@@ -644,6 +644,6 @@ class __TwigTemplate_5274bcadd970464fcc90dd6b15ff3558 extends Template
         </div>
     {% endfor %}
 {% endblock %}
-", "@WebProfiler/Collector/notifier.html.twig", "C:\\Users\\Lucas.DREMAUX\\Documents\\GitHub\\handappy\\vendor\\symfony\\web-profiler-bundle\\Resources\\views\\Collector\\notifier.html.twig");
+", "@WebProfiler/Collector/notifier.html.twig", "C:\\Users\\lucas\\Documents\\GitHub\\andappy\\vendor\\symfony\\web-profiler-bundle\\Resources\\views\\Collector\\notifier.html.twig");
     }
 }

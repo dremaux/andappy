@@ -27,14 +27,7 @@
                              <a class="navbar-brand" href="{{ path('shop') }}"><img src="images\properties\logo_shop.png" weidht="40" height="40"></a>
                          </li>
                      </ul>
-                {% endif %}
-                {% if app.user %}    
-                     <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                         <li class="nav-item">   
-                             <a>{{ app.user.coins }}<img src="images\properties\piece.png" weidht="40" height="40"></a>
-                         </li>
-                     </ul>
-                {% else %}
+                
                     <ul  class="navbar-nav">
                         <li class="nav-item">
                             <a href="{{ path('login') }}" class="nav-link"> Se connecter</a>

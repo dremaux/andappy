@@ -41,7 +41,7 @@ class User extends AbstractController implements UserInterface, \Serializable
     /**
      * @ORM\Column(type="string", length=255)
      */
-    private $role;
+    private $role="User";
 
     /**
      * @ORM\OneToMany(targetEntity=Response::class, mappedBy="id_user")

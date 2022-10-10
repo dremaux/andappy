@@ -1,16 +1,15 @@
 {% extends 'base.html.twig' %}
 
-{% block title 'Gérer les biens' %}
+{% block title 'Home Admin' %}
 
 {% block body %}
     <div class="container mt-4">
 
-        <h1>Gérer les biens</h1>
+        <h1>Choisissez une liste</h1>
         <br>
         <div class="text-center">
-            <a href="{{ path('admin.property.index') }}" class="btn btn-primary">Gérer les biens</a>
-            <a href="{{ path('admin.option.index') }}" class="btn btn-primary">Gérer les options</a>
-            <a href="{{ path('admin.agence.index') }}" class="btn btn-primary">Gérer les agences</a>
+            <a href="{{ path('admin.question.index') }}" class="btn btn-primary">liste des questions</a>
+            <a href="{{ path('admin.question.index') }}" class="btn btn-primary">liste des reponses</a>
         </div>
         <br>
 
@@ -45,10 +44,6 @@
             {% endfor %}
             </tbody>
         </table>
-
-        <div class="text-center">
-            <a href="{{ path('admin.property.new') }}" class="btn btn-primary">Créer un nouveau bien</a>
-        </div>
 
     </div>     
 {% endblock %}

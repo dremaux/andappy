@@ -19,6 +19,8 @@ return [
         '/admin/option/new' => [[['_route' => 'admin.option.new', '_controller' => 'App\\Controller\\Admin\\AdminOptionController::new'], null, ['GET' => 0, 'POST' => 1], null, false, false, null]],
         '/admin' => [[['_route' => 'admin.property.index', '_controller' => 'App\\Controller\\Admin\\AdminPropertyController::index'], null, null, null, false, false, null]],
         '/admin/property/create' => [[['_route' => 'admin.property.new', '_controller' => 'App\\Controller\\Admin\\AdminPropertyController::new'], null, null, null, false, false, null]],
+        '/admin/question' => [[['_route' => 'admin.question.index', '_controller' => 'App\\Controller\\Admin\\AdminQuestionController::index'], null, ['GET' => 0], null, true, false, null]],
+        '/admin/question/new' => [[['_route' => 'admin.question.new', '_controller' => 'App\\Controller\\Admin\\AdminQuestionController::new'], null, ['GET' => 0, 'POST' => 1], null, false, false, null]],
         '/biens' => [[['_route' => 'property.index', '_controller' => 'App\\Controller\\PropertyController::index'], null, null, null, false, false, null]],
         '/register' => [
             [['_route' => 'app_register', '_controller' => 'App\\Controller\\RegistrationController::register'], null, null, null, false, false, null],
@@ -51,19 +53,20 @@ return [
                         .'|/([^/]++)/edit(*:201)'
                         .'|admin/agence/delete/([^/]++)(*:237)'
                     .')'
-                    .'|option(?'
-                        .'|/([^/]++)/edit(*:269)'
-                        .'|admin/option/delete/([^/]++)(*:305)'
-                    .')'
+                    .'|option/([^/]++)/edit(*:266)'
                     .'|property/(?'
-                        .'|edit/([^/]++)(*:339)'
-                        .'|delete/([^/]++)(*:362)'
+                        .'|edit/([^/]++)(*:299)'
+                        .'|delete/([^/]++)(*:322)'
+                    .')'
+                    .'|question(?'
+                        .'|/([^/]++)/edit(*:356)'
+                        .'|admin/option/delete/([^/]++)(*:392)'
                     .')'
                 .')'
-                .'|/biens/([a-z0-9\\-]*)\\-([^/]++)(*:402)'
+                .'|/biens/([a-z0-9\\-]*)\\-([^/]++)(*:432)'
                 .'|/media/cache/resolve/(?'
-                    .'|([A-z0-9_-]*)/rc/([^/]++)/(.+)(*:464)'
-                    .'|([A-z0-9_-]*)/(.+)(*:490)'
+                    .'|([A-z0-9_-]*)/rc/([^/]++)/(.+)(*:494)'
+                    .'|([A-z0-9_-]*)/(.+)(*:520)'
                 .')'
             .')/?$}sDu',
     ],
@@ -77,13 +80,14 @@ return [
         159 => [[['_route' => '_preview_error', '_controller' => 'error_controller::preview', '_format' => 'html'], ['code', '_format'], null, null, false, true, null]],
         201 => [[['_route' => 'admin.agence.edit', '_controller' => 'App\\Controller\\Admin\\AdminAgenceController::edit'], ['id'], ['GET' => 0, 'POST' => 1], null, false, false, null]],
         237 => [[['_route' => 'admin.agence.delete', '_controller' => 'App\\Controller\\Admin\\AdminAgenceController::delete'], ['id'], null, null, false, true, null]],
-        269 => [[['_route' => 'admin.option.edit', '_controller' => 'App\\Controller\\Admin\\AdminOptionController::edit'], ['id'], ['GET' => 0, 'POST' => 1], null, false, false, null]],
-        305 => [[['_route' => 'admin.option.delete', '_controller' => 'App\\Controller\\Admin\\AdminOptionController::delete'], ['id'], null, null, false, true, null]],
-        339 => [[['_route' => 'admin.property.edit', '_controller' => 'App\\Controller\\Admin\\AdminPropertyController::edit'], ['id'], null, null, false, true, null]],
-        362 => [[['_route' => 'admin.property.delete', '_controller' => 'App\\Controller\\Admin\\AdminPropertyController::delete'], ['id'], null, null, false, true, null]],
-        402 => [[['_route' => 'property.show', '_controller' => 'App\\Controller\\PropertyController::show'], ['slug', 'id'], null, null, false, true, null]],
-        464 => [[['_route' => 'liip_imagine_filter_runtime', '_controller' => 'Liip\\ImagineBundle\\Controller\\ImagineController::filterRuntimeAction'], ['filter', 'hash', 'path'], ['GET' => 0], null, false, true, null]],
-        490 => [
+        266 => [[['_route' => 'admin.option.edit', '_controller' => 'App\\Controller\\Admin\\AdminOptionController::edit'], ['id'], ['GET' => 0, 'POST' => 1], null, false, false, null]],
+        299 => [[['_route' => 'admin.property.edit', '_controller' => 'App\\Controller\\Admin\\AdminPropertyController::edit'], ['id'], null, null, false, true, null]],
+        322 => [[['_route' => 'admin.property.delete', '_controller' => 'App\\Controller\\Admin\\AdminPropertyController::delete'], ['id'], null, null, false, true, null]],
+        356 => [[['_route' => 'admin.question.edit', '_controller' => 'App\\Controller\\Admin\\AdminQuestionController::edit'], ['id'], ['GET' => 0, 'POST' => 1], null, false, false, null]],
+        392 => [[['_route' => 'admin.option.delete', '_controller' => 'App\\Controller\\Admin\\AdminQuestionController::delete'], ['id'], null, null, false, true, null]],
+        432 => [[['_route' => 'property.show', '_controller' => 'App\\Controller\\PropertyController::show'], ['slug', 'id'], null, null, false, true, null]],
+        494 => [[['_route' => 'liip_imagine_filter_runtime', '_controller' => 'Liip\\ImagineBundle\\Controller\\ImagineController::filterRuntimeAction'], ['filter', 'hash', 'path'], ['GET' => 0], null, false, true, null]],
+        520 => [
             [['_route' => 'liip_imagine_filter', '_controller' => 'Liip\\ImagineBundle\\Controller\\ImagineController::filterAction'], ['filter', 'path'], ['GET' => 0], null, false, true, null],
             [null, null, null, null, false, false, 0],
         ],
