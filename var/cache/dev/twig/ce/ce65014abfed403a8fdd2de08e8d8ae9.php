@@ -140,6 +140,6 @@ class __TwigTemplate_26b33a9920fdde4c5ab1bcb4e1affc0e extends Template
 <img src=\"\\images\\properties\\piece_cercle.png\" alt=\"\" style=\"height= 300px; weidht:300px\"/>
     <button name=\"button\" class=\"btn btn-primary\">Acheter </button>
 </div>
-{% endblock %}", "shop/home.html.twig", "C:\\Users\\lucas\\Documents\\GitHub\\andappy\\templates\\shop\\home.html.twig");
+{% endblock %}", "shop/home.html.twig", "C:\\Users\\Lucas.DREMAUX\\Documents\\GitHub\\handappy\\templates\\shop\\home.html.twig");
     }
 }

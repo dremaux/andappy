@@ -2,6 +2,8 @@
 
 namespace App\Entity;
 
+use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
 use Symfony\Component\Security\Core\User\UserInterface;
@@ -35,6 +37,22 @@ class User extends AbstractController implements UserInterface, \Serializable
      * @ORM\Column(type="string", length=255)
      */
     private $coins=0;
+
+    /**
+     * @ORM\Column(type="string", length=255)
+     */
+    private $role;
+
+    /**
+     * @ORM\OneToMany(targetEntity=Response::class, mappedBy="id_user")
+     */
+    private $responses;
+
+    public function __construct()
+    {
+        $this->responses = new ArrayCollection();
+    }
+
 
     public function getId(): ?int
     {
@@ -117,6 +135,48 @@ class User extends AbstractController implements UserInterface, \Serializable
     public function setCoins(string $coins): self
     {
         $this->coins = $coins;
+
+        return $this;
+    }
+
+    public function getRole(): ?string
+    {
+        return $this->role;
+    }
+
+    public function setRole(string $role): self
+    {
+        $this->role = $role;
+
+        return $this;
+    }
+
+    /**
+     * @return Collection<int, Response>
+     */
+    public function getResponses(): Collection
+    {
+        return $this->responses;
+    }
+
+    public function addResponse(Response $response): self
+    {
+        if (!$this->responses->contains($response)) {
+            $this->responses[] = $response;
+            $response->setIdUser($this);
+        }
+
+        return $this;
+    }
+
+    public function removeResponse(Response $response): self
+    {
+        if ($this->responses->removeElement($response)) {
+            // set the owning side to null (unless already changed)
+            if ($response->getIdUser() === $this) {
+                $response->setIdUser(null);
+            }
+        }
 
         return $this;
     }
