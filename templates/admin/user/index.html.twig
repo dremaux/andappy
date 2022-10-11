@@ -1,0 +1,53 @@
+{% extends 'base.html.twig' %}
+
+{% block title 'Gestion des questions' %}
+
+{% block body %}
+    <div class="container mt-4">
+
+        <h1>Gestion des utilisateur</h1>
+        <br>
+        <div class="text-center">
+            <a href="{{ path('admin.question.index') }}" class="btn btn-primary">liste des questions</a>
+            <a href="{{ path('admin.question.index') }}" class="btn btn-primary">liste des reponses</a>
+        </div>
+        <br>
+
+        {% for message in app.flashes('success') %}
+        <div class="alert alert-success">
+        {{ message }}
+        </div>
+        {% endfor %}
+
+        <table class="table table-striped">
+            <thead>
+            <tr>
+                <th>Nom</th>
+                <th>Actions</th>
+            </tr>
+            </thead>
+            <tbody>
+            {% for question in questions %}
+            <tr>
+                <td>{{ question.text }}</td>
+
+                <td><a href="{{ path('admin.question.edit', {id: question.id}) }}" class="btn btn-secondary">Editer</a>
+
+                    <form methode="post" action="{{ path('admin.question.delete', {id: question.id}) }}" style="display: inline-block" onsubmit="return confirm('êtes vous vraiment sûr ?')">
+                        <input type="hidden" name="_method" value="DELETE">
+                        <input type="hidden" name="_token" value="{{ csrf_token('delete' ~ question.id) }}">
+                        <button class="btn btn-danger">Supprimer</button>
+                    </form>
+                    
+                </td>
+            </tr>        
+            {% endfor %}
+            </tbody>
+        </table>
+
+        <div class="text-center">
+            <a href="{{ path('admin.question.new') }}" class="btn btn-primary">Ajouter une nouvelle question</a>
+        </div>
+
+    </div>     
+{% endblock %}

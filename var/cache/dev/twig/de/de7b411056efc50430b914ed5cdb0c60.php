@@ -78,40 +78,35 @@ class __TwigTemplate_e8aa4d165802b2417b7e82f250827b48 extends Template
                  <button class=\"navbar-toggler\" type=\"button\" data-bs-toggle=\"collapse\" data-bs-target=\"#navbarSupportedContent\" aria-controls=\"navbarSupportedContent\" aria-expanded=\"false\" aria-label=\"Toggle navigation\">
                      <span class=\"navbar-toggler-icon\"></span>
                  </button>
-                ";
-        // line 23
-        if (twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 23, $this->source); })()), "user", [], "any", false, false, false, 23)) {
-            // line 24
-            echo "                 <div class=\"collapse navbar-collapse\" id=\"navbarSupportedContent\">
+                
+                 <div class=\"collapse navbar-collapse\" id=\"navbarSupportedContent\">
                      <ul class=\"navbar-nav me-auto mb-2 mb-lg-0\">
                          <li class=\"nav-item\">    
                              <a class=\"navbar-brand\" href=\"";
-            // line 27
-            echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("shop");
-            echo "\"><img src=\"images\\properties\\logo_shop.png\" weidht=\"40\" height=\"40\"></a>
+        // line 27
+        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("shop");
+        echo "\"><img src=\"images\\properties\\logo_shop.png\" weidht=\"40\" height=\"40\"></a>
                          </li>
                      </ul>
                 
                     <ul  class=\"navbar-nav\">
                         <li class=\"nav-item\">
                             <a href=\"";
-            // line 33
-            echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("login");
-            echo "\" class=\"nav-link\"> Se connecter</a>
+        // line 33
+        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("login");
+        echo "\" class=\"nav-link\"> Se connecter</a>
                         </li>
                     </ul>
                     <ul  class=\"navbar-nav\">
                         <li class=\"nav-item\">
                             <a href=\"";
-            // line 38
-            echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("register");
-            echo "\" class=\"nav-link\">S'inscrire</a>
+        // line 38
+        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("register");
+        echo "\" class=\"nav-link\">S'inscrire</a>
                         </li>
                     </ul>
-                ";
-        }
-        // line 42
-        echo "                
+                
+                
                 ";
         // line 43
         if (twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 43, $this->source); })()), "user", [], "any", false, false, false, 43)) {
@@ -135,7 +130,33 @@ class __TwigTemplate_e8aa4d165802b2417b7e82f250827b48 extends Template
         // line 54
         $this->displayBlock('body', $context, $blocks);
         // line 55
-        echo "         <script src=\"https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js\" integrity=\"sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==\" crossorigin=\"anonymous\" referrerpolicy=\"no-referrer\"></script>
+        echo "        
+        ";
+        // line 56
+        if (twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 56, $this->source); })()), "user", [], "any", false, false, false, 56)) {
+            // line 57
+            echo "            <script>
+                console.log('<?php echo \"toto\"; ?>');
+                var toto2 = '";
+            // line 59
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 59, $this->source); })()), "user", [], "any", false, false, false, 59), "lastPopupDate", [], "any", false, false, false, 59), "html", null, true);
+            echo "'
+                console.log(toto2);
+            
+            
+
+                ";
+            // line 65
+            echo "                ";
+            // line 67
+            echo "            </script>
+        ";
+        }
+        // line 68
+        echo " 
+       
+        
+         <script src=\"https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js\" integrity=\"sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==\" crossorigin=\"anonymous\" referrerpolicy=\"no-referrer\"></script>
          <script src=\"https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.min.js\" integrity=\"sha384-skAcpIdS7UcVUC05LJ9Dxay8AXcDYfBJqt1CJ85S/CFujBsIzCIv+l9liuYLaMQ/\" crossorigin=\"anonymous\"></script>
          <script src=\"https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.13/js/select2.min.js\" integrity=\"sha512-2ImtlRlf2VVmiGZsjm9bEyhjGW4dU7B6TNwh/hx/iSByxNENtj3WVE6o/9Lj4TJeVXPi4bnOIMXFIJJAeufa0A==\" crossorigin=\"anonymous\" referrerpolicy=\"no-referrer\"></script>
          
@@ -144,9 +165,9 @@ class __TwigTemplate_e8aa4d165802b2417b7e82f250827b48 extends Template
          </script>
  
          ";
-        // line 63
+        // line 79
         $this->displayBlock('javascripts', $context, $blocks);
-        // line 64
+        // line 80
         echo "    </body>
  </html>";
         
@@ -212,7 +233,7 @@ class __TwigTemplate_e8aa4d165802b2417b7e82f250827b48 extends Template
 
     }
 
-    // line 63
+    // line 79
     public function block_javascripts($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -242,7 +263,7 @@ class __TwigTemplate_e8aa4d165802b2417b7e82f250827b48 extends Template
 
     public function getDebugInfo()
     {
-        return array (  216 => 63,  198 => 54,  180 => 13,  161 => 7,  150 => 64,  148 => 63,  138 => 55,  136 => 54,  130 => 50,  123 => 46,  117 => 43,  114 => 42,  107 => 38,  99 => 33,  90 => 27,  85 => 24,  83 => 23,  76 => 19,  69 => 14,  67 => 13,  60 => 9,  55 => 7,  47 => 1,);
+        return array (  237 => 79,  219 => 54,  201 => 13,  182 => 7,  171 => 80,  169 => 79,  156 => 68,  152 => 67,  150 => 65,  142 => 59,  138 => 57,  136 => 56,  133 => 55,  131 => 54,  125 => 50,  118 => 46,  112 => 43,  104 => 38,  96 => 33,  87 => 27,  76 => 19,  69 => 14,  67 => 13,  60 => 9,  55 => 7,  47 => 1,);
     }
 
     public function getSourceContext()
@@ -269,7 +290,7 @@ class __TwigTemplate_e8aa4d165802b2417b7e82f250827b48 extends Template
                  <button class=\"navbar-toggler\" type=\"button\" data-bs-toggle=\"collapse\" data-bs-target=\"#navbarSupportedContent\" aria-controls=\"navbarSupportedContent\" aria-expanded=\"false\" aria-label=\"Toggle navigation\">
                      <span class=\"navbar-toggler-icon\"></span>
                  </button>
-                {% if app.user %}
+                
                  <div class=\"collapse navbar-collapse\" id=\"navbarSupportedContent\">
                      <ul class=\"navbar-nav me-auto mb-2 mb-lg-0\">
                          <li class=\"nav-item\">    
@@ -287,7 +308,7 @@ class __TwigTemplate_e8aa4d165802b2417b7e82f250827b48 extends Template
                             <a href=\"{{ path('register') }}\" class=\"nav-link\">S'inscrire</a>
                         </li>
                     </ul>
-                {% endif %}
+                
                 
                 {% if app.user %}   
                      <ul  class=\"navbar-nav\">
@@ -301,6 +322,22 @@ class __TwigTemplate_e8aa4d165802b2417b7e82f250827b48 extends Template
          </nav>
     
          {% block body %}{% endblock %}
+        
+        {% if app.user %}
+            <script>
+                console.log('<?php echo \"toto\"; ?>');
+                var toto2 = '{{app.user.lastPopupDate}}'
+                console.log(toto2);
+            
+            
+
+                {# setTimeout(() => console.log(\"showing after one second\"), 2000) #}
+                {# setTimeout(() => window.open('https://www.google.com', \"Popup window\", 'width=600 height=300'), 4000)
+                setTimeout(() => window.open('https://github.com/', \"Popup window Testy\", 'width=600 height=300'), 6000) #}
+            </script>
+        {% endif %} 
+       
+        
          <script src=\"https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js\" integrity=\"sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==\" crossorigin=\"anonymous\" referrerpolicy=\"no-referrer\"></script>
          <script src=\"https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.min.js\" integrity=\"sha384-skAcpIdS7UcVUC05LJ9Dxay8AXcDYfBJqt1CJ85S/CFujBsIzCIv+l9liuYLaMQ/\" crossorigin=\"anonymous\"></script>
          <script src=\"https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.13/js/select2.min.js\" integrity=\"sha512-2ImtlRlf2VVmiGZsjm9bEyhjGW4dU7B6TNwh/hx/iSByxNENtj3WVE6o/9Lj4TJeVXPi4bnOIMXFIJJAeufa0A==\" crossorigin=\"anonymous\" referrerpolicy=\"no-referrer\"></script>
@@ -311,6 +348,6 @@ class __TwigTemplate_e8aa4d165802b2417b7e82f250827b48 extends Template
  
          {% block javascripts %}{% endblock %}
     </body>
- </html>", "base.html.twig", "C:\\Users\\lucas\\Documents\\GitHub\\andappy\\templates\\base.html.twig");
+ </html>", "base.html.twig", "C:\\Users\\Lucas.DREMAUX\\Documents\\GitHub\\handappy\\templates\\base.html.twig");
     }
 }

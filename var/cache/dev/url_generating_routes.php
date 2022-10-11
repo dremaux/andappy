@@ -29,6 +29,10 @@ return [
     'admin.question.new' => [[], ['_controller' => 'App\\Controller\\Admin\\AdminQuestionController::new'], [], [['text', '/admin/question/new']], [], []],
     'admin.question.edit' => [['id'], ['_controller' => 'App\\Controller\\Admin\\AdminQuestionController::edit'], [], [['text', '/edit'], ['variable', '/', '[^/]++', 'id', true], ['text', '/admin/question']], [], []],
     'admin.option.delete' => [['id'], ['_controller' => 'App\\Controller\\Admin\\AdminQuestionController::delete'], [], [['variable', '/', '[^/]++', 'id', true], ['text', '/admin/questionadmin/option/delete']], [], []],
+    'admin.question.choix' => [[], ['_controller' => 'App\\Controller\\Admin\\AdminQuestionController::choix'], [], [['text', '/admin/question/choix']], [], []],
+    'admin.question.newQCM' => [[], ['_controller' => 'App\\Controller\\Admin\\AdminQuestionController::newQCM'], [], [['text', '/admin/question/new/QCM']], [], []],
+    'admin.question.newON' => [[], ['_controller' => 'App\\Controller\\Admin\\AdminQuestionController::newON'], [], [['text', '/admin/question/new/ON']], [], []],
+    'admin.question.newLibre' => [[], ['_controller' => 'App\\Controller\\Admin\\AdminQuestionController::newLibre'], [], [['text', '/admin/question/new/Libre']], [], []],
     'property.index' => [[], ['_controller' => 'App\\Controller\\PropertyController::index'], [], [['text', '/biens']], [], []],
     'property.show' => [['slug', 'id'], ['_controller' => 'App\\Controller\\PropertyController::show'], ['slug' => '[a-z0-9\\-]*'], [['variable', '-', '[^/]++', 'id', true], ['variable', '/', '[a-z0-9\\-]*', 'slug', true], ['text', '/biens']], [], []],
     'app_register' => [[], ['_controller' => 'App\\Controller\\RegistrationController::register'], [], [['text', '/register']], [], []],
@@ -40,4 +44,5 @@ return [
     'shop' => [[], ['_controller' => 'App\\Controller\\ShopController::index'], [], [['text', '/shop']], [], []],
     'logout' => [[], [], [], [['text', '/logout']], [], []],
     'register' => [[], ['_controller' => 'App\\Controller\\RegistrationController.php'], [], [['text', '/register']], [], []],
+    'admin' => [[], ['_controller' => 'App\\Controller\\Admin\\AdminPropertyController::index'], [], [['text', '/admin']], [], []],
 ];

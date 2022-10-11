@@ -1,0 +1,12 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+
+    <div class="container mt-4">
+        <h1>Choisissez le type de questions</h1>
+        <a href="{{ path('admin.question.newQCM') }}" class="btn btn-primary">QCM</a>
+        <a href="{{ path('admin.question.newON') }}" class="btn btn-primary">Oui / Non </a>
+        <a href="{{ path('admin.question.newLibre') }}" class="btn btn-primary">Question à reponse libre</a>
+    </div>     
+
+{% endblock %}

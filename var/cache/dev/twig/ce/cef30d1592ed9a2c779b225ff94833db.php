@@ -88,8 +88,22 @@ class __TwigTemplate_e7cd75a0358b16c289726a2a4b1c15d9 extends Template
 
         // line 9
         echo "
-<button class=\"btn btn-primary mt-4\" href=\"registration/login.html.twig\">Connexion</button>
-
+";
+        // line 10
+        if (twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 10, $this->source); })()), "user", [], "any", false, false, false, 10)) {
+            // line 11
+            if ((twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 11, $this->source); })()), "user", [], "any", false, false, false, 11), "role", [], "any", false, false, false, 11) == "Admin")) {
+                // line 12
+                echo "<button class=\"btn btn-primary mt-4\" href=\"admin/property/index.html.twig\">Connexion</button>
+<a class=\"btn btn-primary mt-4\" href=\"";
+                // line 13
+                echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("admin");
+                echo "\">Pages Admin</a>
+";
+            }
+        }
+        // line 16
+        echo "
 ";
         
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->leave($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof);
@@ -111,7 +125,7 @@ class __TwigTemplate_e7cd75a0358b16c289726a2a4b1c15d9 extends Template
 
     public function getDebugInfo()
     {
-        return array (  90 => 9,  80 => 8,  69 => 5,  59 => 4,  36 => 2,);
+        return array (  106 => 16,  100 => 13,  97 => 12,  95 => 11,  93 => 10,  90 => 9,  80 => 8,  69 => 5,  59 => 4,  36 => 2,);
     }
 
     public function getSourceContext()
@@ -125,8 +139,13 @@ class __TwigTemplate_e7cd75a0358b16c289726a2a4b1c15d9 extends Template
 
 {% block body %}
 
-<button class=\"btn btn-primary mt-4\" href=\"registration/login.html.twig\">Connexion</button>
+{% if app.user %}
+{% if app.user.role == \"Admin\" %}
+<button class=\"btn btn-primary mt-4\" href=\"admin/property/index.html.twig\">Connexion</button>
+<a class=\"btn btn-primary mt-4\" href=\"{{ path('admin') }}\">Pages Admin</a>
+{% endif %}
+{% endif %}
 
-{% endblock %}", "pages/home.html.twig", "C:\\Users\\lucas\\Documents\\GitHub\\andappy\\templates\\pages\\home.html.twig");
+{% endblock %}", "pages/home.html.twig", "C:\\Users\\Lucas.DREMAUX\\Documents\\GitHub\\handappy\\templates\\pages\\home.html.twig");
     }
 }

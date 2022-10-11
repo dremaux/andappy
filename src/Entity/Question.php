@@ -12,6 +12,13 @@ use Doctrine\ORM\Mapping as ORM;
  */
 class Question
 {
+
+    const choix_question = [
+        0 => 'QCM',
+        1 => 'reponse libre',
+        2 => 'Oui / Non'
+    ];
+
     /**
      * @ORM\Id
      * @ORM\GeneratedValue

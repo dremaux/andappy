@@ -17,10 +17,17 @@ return [
         '/admin/agence/new' => [[['_route' => 'admin.agence.new', '_controller' => 'App\\Controller\\Admin\\AdminAgenceController::new'], null, ['GET' => 0, 'POST' => 1], null, false, false, null]],
         '/admin/option' => [[['_route' => 'admin.option.index', '_controller' => 'App\\Controller\\Admin\\AdminOptionController::index'], null, ['GET' => 0], null, true, false, null]],
         '/admin/option/new' => [[['_route' => 'admin.option.new', '_controller' => 'App\\Controller\\Admin\\AdminOptionController::new'], null, ['GET' => 0, 'POST' => 1], null, false, false, null]],
-        '/admin' => [[['_route' => 'admin.property.index', '_controller' => 'App\\Controller\\Admin\\AdminPropertyController::index'], null, null, null, false, false, null]],
+        '/admin' => [
+            [['_route' => 'admin.property.index', '_controller' => 'App\\Controller\\Admin\\AdminPropertyController::index'], null, null, null, false, false, null],
+            [['_route' => 'admin', '_controller' => 'App\\Controller\\Admin\\AdminPropertyController::index'], null, null, null, false, false, null],
+        ],
         '/admin/property/create' => [[['_route' => 'admin.property.new', '_controller' => 'App\\Controller\\Admin\\AdminPropertyController::new'], null, null, null, false, false, null]],
         '/admin/question' => [[['_route' => 'admin.question.index', '_controller' => 'App\\Controller\\Admin\\AdminQuestionController::index'], null, ['GET' => 0], null, true, false, null]],
         '/admin/question/new' => [[['_route' => 'admin.question.new', '_controller' => 'App\\Controller\\Admin\\AdminQuestionController::new'], null, ['GET' => 0, 'POST' => 1], null, false, false, null]],
+        '/admin/question/choix' => [[['_route' => 'admin.question.choix', '_controller' => 'App\\Controller\\Admin\\AdminQuestionController::choix'], null, ['GET' => 0], null, false, false, null]],
+        '/admin/question/new/QCM' => [[['_route' => 'admin.question.newQCM', '_controller' => 'App\\Controller\\Admin\\AdminQuestionController::newQCM'], null, ['GET' => 0, 'POST' => 1], null, false, false, null]],
+        '/admin/question/new/ON' => [[['_route' => 'admin.question.newON', '_controller' => 'App\\Controller\\Admin\\AdminQuestionController::newON'], null, ['GET' => 0, 'POST' => 1], null, false, false, null]],
+        '/admin/question/new/Libre' => [[['_route' => 'admin.question.newLibre', '_controller' => 'App\\Controller\\Admin\\AdminQuestionController::newLibre'], null, ['GET' => 0, 'POST' => 1], null, false, false, null]],
         '/biens' => [[['_route' => 'property.index', '_controller' => 'App\\Controller\\PropertyController::index'], null, null, null, false, false, null]],
         '/register' => [
             [['_route' => 'app_register', '_controller' => 'App\\Controller\\RegistrationController::register'], null, null, null, false, false, null],

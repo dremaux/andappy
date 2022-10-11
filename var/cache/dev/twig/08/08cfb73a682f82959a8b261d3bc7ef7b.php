@@ -171,7 +171,7 @@ class __TwigTemplate_4393e14af91e683200beed1e12ed75ec extends Template
         <div class=\"text-center\">
             <a href=\"";
         // line 49
-        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("admin.question.new");
+        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("admin.question.choix");
         echo "\" class=\"btn btn-primary\">Ajouter une nouvelle question</a>
         </div>
 
@@ -250,10 +250,10 @@ class __TwigTemplate_4393e14af91e683200beed1e12ed75ec extends Template
         </table>
 
         <div class=\"text-center\">
-            <a href=\"{{ path('admin.question.new') }}\" class=\"btn btn-primary\">Ajouter une nouvelle question</a>
+            <a href=\"{{ path('admin.question.choix') }}\" class=\"btn btn-primary\">Ajouter une nouvelle question</a>
         </div>
 
     </div>     
-{% endblock %}", "admin/question/index.html.twig", "C:\\Users\\lucas\\Documents\\GitHub\\andappy\\templates\\admin\\question\\index.html.twig");
+{% endblock %}", "admin/question/index.html.twig", "C:\\Users\\Lucas.DREMAUX\\Documents\\GitHub\\handappy\\templates\\admin\\question\\index.html.twig");
     }
 }

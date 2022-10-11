@@ -48,6 +48,11 @@ class User extends AbstractController implements UserInterface, \Serializable
      */
     private $responses;
 
+    /**
+     * @ORM\Column(type="integer", nullable=true)
+     */
+    private $lastPopupDate;
+
     public function __construct()
     {
         $this->responses = new ArrayCollection();
@@ -177,6 +182,18 @@ class User extends AbstractController implements UserInterface, \Serializable
                 $response->setIdUser(null);
             }
         }
+
+        return $this;
+    }
+
+    public function getLastPopupDate(): ?int
+    {
+        return $this->lastPopupDate;
+    }
+
+    public function setLastPopupDate(?int $lastPopupDate): self
+    {
+        $this->lastPopupDate = $lastPopupDate;
 
         return $this;
     }
