@@ -1,0 +1,41 @@
+
+{% extends 'base.html.twig' %}
+
+{% block javascripts %}
+        
+{% endblock %}
+
+{% block body %}
+
+    {% if app.user %}
+            
+            <td>{{ question.text }}</td>
+            <td>{{ app.user.id }}</td>
+            <td>{{ question.id }}</td>
+
+
+            {% if question.type == "O/N" %}
+
+                {{ form_start(form) }}
+                    {{ form_rest(form) }}
+                        <button class="btn btn-primary">{{ button|default('enregistrer') }}</button>
+                {{ form_end(form) }}
+
+            {% elseif  question.type == "QCM" %}
+
+                {# {{ form_start(form2) }}
+                    {{ form_rest(form2) }}
+                        <button class="btn btn-primary">{{ button|default('enregistrer') }}</button>
+                {{ form_end(form2) }} #}
+
+            {% else %}
+
+                {# {{ form_start(form3) }}
+                    {{ form_rest(form3) }}
+                        <button class="btn btn-primary">{{ button|default('enregistrer') }}</button>
+                {{ form_end(form3) }} #}
+
+            {% endif %}
+    {% endif %}
+
+{% endblock %}

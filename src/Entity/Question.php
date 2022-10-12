@@ -34,21 +34,17 @@ class Question
     /**
      * @ORM\Column(type="array", nullable=true)
      */
-    private $possibleResponse = [];
+    private $possibleResponse;
 
     /**
      * @ORM\Column(type="string", length=255)
      */
     private $text;
 
-    /**
-     * @ORM\OneToMany(targetEntity=Response::class, mappedBy="id_question")
-     */
-    private $responses;
-
     public function __construct()
     {
         $this->responses = new ArrayCollection();
+        $this->reponses = new ArrayCollection();
     }
 
     public function getId(): ?int
@@ -91,34 +87,5 @@ class Question
 
         return $this;
     }
-
-    /**
-     * @return Collection<int, Response>
-     */
-    public function getResponses(): Collection
-    {
-        return $this->responses;
-    }
-
-    public function addResponse(Response $response): self
-    {
-        if (!$this->responses->contains($response)) {
-            $this->responses[] = $response;
-            $response->setIdQuestion($this);
-        }
-
-        return $this;
-    }
-
-    public function removeResponse(Response $response): self
-    {
-        if ($this->responses->removeElement($response)) {
-            // set the owning side to null (unless already changed)
-            if ($response->getIdQuestion() === $this) {
-                $response->setIdQuestion(null);
-            }
-        }
-
-        return $this;
-    }
+ 
 }

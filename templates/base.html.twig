@@ -33,11 +33,15 @@
                             <a href="{{ path('login') }}" class="nav-link"> Se connecter</a>
                         </li>
                     </ul>
-                    <ul  class="navbar-nav">
-                        <li class="nav-item">
-                            <a href="{{ path('register') }}" class="nav-link">S'inscrire</a>
-                        </li>
-                    </ul>
+                    {% if app.user %}
+                        {% if app.user.role == "Admin" %}
+                            <ul  class="navbar-nav">
+                                <li class="nav-item">
+                                    <a href="{{ path('register') }}" class="nav-link">S'inscrire</a>
+                                </li>
+                            </ul>
+                        {% endif %}
+                    {% endif %}
                 
                 
                 {% if app.user %}   
@@ -54,17 +58,49 @@
          {% block body %}{% endblock %}
         
         {% if app.user %}
-            <script>
-                console.log('<?php echo "toto"; ?>');
-                var toto2 = '{{app.user.lastPopupDate}}'
-                console.log(toto2);
-            
-            
+            {% if app.request.attributes.get('_route') != "randomQuestion" %}
+                {# <script>
 
-                {# setTimeout(() => console.log("showing after one second"), 2000) #}
-                {# setTimeout(() => window.open('https://www.google.com', "Popup window", 'width=600 height=300'), 4000)
-                setTimeout(() => window.open('https://github.com/', "Popup window Testy", 'width=600 height=300'), 6000) #}
-            </script>
+                    const popupWidth    = 600;
+                    const popupHeight   = 300;
+
+                    const maxQuestionPopupPerPage           = 2;
+                    const questionPopupMinimumRestartTime   = 100;   //secondes
+                    const questionPopupRandomTimeRange      = 3;    //secondes
+                    const questionPopupURL                  = "http://localhost:8000/randomQuestion";
+                    
+                    function generateQuestionPopupRandomTime() {
+                        var min = 0;
+                        var max = questionPopupRandomTimeRange;
+                        randomValue = Math.floor(Math.random() * (max - min + 1)) + min;
+                        return randomValue;
+                    };
+
+                    randomQuestionPopup = function(randomQuestionPopupTime){
+                        setTimeout(() => window.open(questionPopupURL, "Popup window", `width=${popupWidth} height=${popupHeight}`), randomQuestionPopupTime * 1000)
+                    };
+                    
+                    var lastPopupTimestamp = '{{app.user.lastPopupDate}}';
+                    var currentTimestamp = Math.floor(Date.now() / 1000);
+                    var randomQuestionPopupTime = 0;
+
+                    if ((lastPopupTimestamp - currentTimestamp + questionPopupMinimumRestartTime) < 0){
+                        randomQuestionPopupTime = generateQuestionPopupRandomTime();
+                    }else{
+                        randomQuestionPopupTime = generateQuestionPopupRandomTime() + (lastPopupTimestamp - currentTimestamp + questionPopupMinimumRestartTime);
+                    }
+
+                    iteration = 0;
+                    while (iteration < maxQuestionPopupPerPage){
+                        questionPopupTime = randomQuestionPopupTime + iteration * questionPopupMinimumRestartTime + generateQuestionPopupRandomTime();
+                        console.log(iteration, questionPopupTime);
+                        randomQuestionPopup(questionPopupTime);
+                        iteration = iteration + 1;
+                    }
+                    
+                    
+                </script> #}
+            {% endif %}
         {% endif %} 
        
         

@@ -1,0 +1,26 @@
+{
+    "sourceFile": "src/Entity/Question.php",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 2,
+            "patches": [
+                {
+                    "date": 1665564762300,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1665564779289,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -95,18 +95,10 @@\n     {\n         return $this->reponses;\n     }\n \n-    public function addReponse(Reponse $reponse): self\n-    {\n-        if (!$this->reponses->contains($reponse)) {\n-            $this->reponses[] = $reponse;\n-            $reponse->setIdQuestion($this);\n-        }\n+ \n \n-        return $this;\n-    }\n-\n     public function removeReponse(Reponse $reponse): self\n     {\n         if ($this->reponses->removeElement($reponse)) {\n             // set the owning side to null (unless already changed)\n"
+                },
+                {
+                    "date": 1665564786043,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -87,28 +87,6 @@\n \n         return $this;\n     }\n \n-    /**\n-     * @return Collection<int, Reponse>\n-     */\n-    public function getReponses(): Collection\n-    {\n-        return $this->reponses;\n-    }\n-\n  \n-\n-    public function removeReponse(Reponse $reponse): self\n-    {\n-        if ($this->reponses->removeElement($reponse)) {\n-            // set the owning side to null (unless already changed)\n-            if ($reponse->getIdQuestion() === $this) {\n-                $reponse->setIdQuestion(null);\n-            }\n-        }\n-\n-        return $this;\n-    }\n-\n- \n }\n"
+                }
+            ],
+            "date": 1665564762300,
+            "name": "Commit-0",
+            "content": "<?php\n\nnamespace App\\Entity;\n\nuse App\\Repository\\QuestionRepository;\nuse Doctrine\\Common\\Collections\\ArrayCollection;\nuse Doctrine\\Common\\Collections\\Collection;\nuse Doctrine\\ORM\\Mapping as ORM;\n\n/**\n * @ORM\\Entity(repositoryClass=QuestionRepository::class)\n */\nclass Question\n{\n\n    const choix_question = [\n        0 => 'QCM',\n        1 => 'reponse libre',\n        2 => 'Oui / Non'\n    ];\n\n    /**\n     * @ORM\\Id\n     * @ORM\\GeneratedValue\n     * @ORM\\Column(type=\"integer\")\n     */\n    private $id;\n\n    /**\n     * @ORM\\Column(type=\"string\", length=255)\n     */\n    private $type;\n\n    /**\n     * @ORM\\Column(type=\"array\", nullable=true)\n     */\n    private $possibleResponse;\n\n    /**\n     * @ORM\\Column(type=\"string\", length=255)\n     */\n    private $text;\n\n    public function __construct()\n    {\n        $this->responses = new ArrayCollection();\n        $this->reponses = new ArrayCollection();\n    }\n\n    public function getId(): ?int\n    {\n        return $this->id;\n    }\n\n    public function getType(): ?string\n    {\n        return $this->type;\n    }\n\n    public function setType(string $type): self\n    {\n        $this->type = $type;\n\n        return $this;\n    }\n\n    public function getPossibleResponse(): ?array\n    {\n        return $this->possibleResponse;\n    }\n\n    public function setPossibleResponse(?array $possibleResponse): self\n    {\n        $this->possibleResponse = $possibleResponse;\n\n        return $this;\n    }\n\n    public function getText(): ?string\n    {\n        return $this->text;\n    }\n\n    public function setText(string $text): self\n    {\n        $this->text = $text;\n\n        return $this;\n    }\n\n    /**\n     * @return Collection<int, Reponse>\n     */\n    public function getReponses(): Collection\n    {\n        return $this->reponses;\n    }\n\n    public function addReponse(Reponse $reponse): self\n    {\n        if (!$this->reponses->contains($reponse)) {\n            $this->reponses[] = $reponse;\n            $reponse->setIdQuestion($this);\n        }\n\n        return $this;\n    }\n\n    public function removeReponse(Reponse $reponse): self\n    {\n        if ($this->reponses->removeElement($reponse)) {\n            // set the owning side to null (unless already changed)\n            if ($reponse->getIdQuestion() === $this) {\n                $reponse->setIdQuestion(null);\n            }\n        }\n\n        return $this;\n    }\n\n \n}\n"
+        }
+    ]
+}

@@ -1,0 +1,18 @@
+{
+    "sourceFile": "src/Form/ReponseONType.php",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 0,
+            "patches": [
+                {
+                    "date": 1665564535150,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                }
+            ],
+            "date": 1665564535150,
+            "name": "Commit-0",
+            "content": "<?php\r\n\r\nnamespace App\\Form;\r\n\r\nuse App\\Entity\\Reponse;\r\nuse App\\Entity\\User;\r\nuse Symfony\\Component\\Form\\AbstractType;\r\nuse Symfony\\Component\\Form\\FormBuilderInterface;\r\nuse Symfony\\Component\\OptionsResolver\\OptionsResolver;\r\n\r\nclass ReponseONType extends AbstractType\r\n{\r\n    public function buildForm(FormBuilderInterface $builder, array $options)\r\n    {\r\n        $builder\r\n            ->add('id_user')\r\n            ->add('id_question')\r\n            ->add('value')\r\n        ;\r\n    }\r\n\r\n    public function configureOptions(OptionsResolver $resolver)\r\n    {\r\n        $resolver->setDefaults([\r\n            'data_class' => Reponse::class,\r\n        ]);\r\n    }\r\n}\r\n"
+        }
+    ]
+}

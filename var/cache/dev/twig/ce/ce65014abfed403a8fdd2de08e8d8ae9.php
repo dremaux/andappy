@@ -25,13 +25,14 @@ class __TwigTemplate_26b33a9920fdde4c5ab1bcb4e1affc0e extends Template
         $this->source = $this->getSourceContext();
 
         $this->blocks = [
+            'javascripts' => [$this, 'block_javascripts'],
             'body' => [$this, 'block_body'],
         ];
     }
 
     protected function doGetParent(array $context)
     {
-        // line 1
+        // line 2
         return "base.html.twig";
     }
 
@@ -44,7 +45,7 @@ class __TwigTemplate_26b33a9920fdde4c5ab1bcb4e1affc0e extends Template
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "template", "shop/home.html.twig"));
 
-        $this->parent = $this->loadTemplate("base.html.twig", "shop/home.html.twig", 1);
+        $this->parent = $this->loadTemplate("base.html.twig", "shop/home.html.twig", 2);
         $this->parent->display($context, array_merge($this->blocks, $blocks));
         
         $__internal_5a27a8ba21ca79b61932376b2fa922d2->leave($__internal_5a27a8ba21ca79b61932376b2fa922d2_prof);
@@ -54,7 +55,28 @@ class __TwigTemplate_26b33a9920fdde4c5ab1bcb4e1affc0e extends Template
 
     }
 
-    // line 3
+    // line 4
+    public function block_javascripts($context, array $blocks = [])
+    {
+        $macros = $this->macros;
+        $__internal_5a27a8ba21ca79b61932376b2fa922d2 = $this->extensions["Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension"];
+        $__internal_5a27a8ba21ca79b61932376b2fa922d2->enter($__internal_5a27a8ba21ca79b61932376b2fa922d2_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "javascripts"));
+
+        $__internal_6f47bbe9983af81f1e7450e9a3e3768f = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
+        $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "javascripts"));
+
+        // line 5
+        echo "        
+";
+        
+        $__internal_6f47bbe9983af81f1e7450e9a3e3768f->leave($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof);
+
+        
+        $__internal_5a27a8ba21ca79b61932376b2fa922d2->leave($__internal_5a27a8ba21ca79b61932376b2fa922d2_prof);
+
+    }
+
+    // line 8
     public function block_body($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -64,30 +86,34 @@ class __TwigTemplate_26b33a9920fdde4c5ab1bcb4e1affc0e extends Template
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "body"));
 
-        // line 4
-        echo "<div id=\"head\" style=\"padding-top:30px;\">
-<h1>Choisis ton cercle !</h1>
-</div>
+        // line 9
+        echo "
+    ";
+        // line 10
+        if (twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 10, $this->source); })()), "user", [], "any", false, false, false, 10)) {
+            // line 11
+            echo "            
+            <td>";
+            // line 12
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["question"]) || array_key_exists("question", $context) ? $context["question"] : (function () { throw new RuntimeError('Variable "question" does not exist.', 12, $this->source); })()), "text", [], "any", false, false, false, 12), "html", null, true);
+            echo "</td>
 
-<div class=\"corpsG\">
-<img src=\"\\images\\properties\\cercle-style.png\" alt=\"\" style=\"height= 300px; weidht:300px\"/>
-    <button name=\"button\" class=\"btn btn-primary\">Acheter </button>
-</div>
-<div class=\"corpsD\">
-<img src=\"\\images\\properties\\roue.png\" alt=\"\" style=\"height= 300px; weidht:300px\"/>
-    <button name=\"button\" class=\"btn btn-primary\">Acheter </button>
-</div>
-
-
-
-<div class=\"corpsG\">
-<img src=\"\\images\\properties\\ballon.png\" alt=\"\" style=\"height= 300px; weidht:300px\"/>
-    <button name=\"button\" class=\"btn btn-primary\">Acheter</button>
-</div>
-<div class=\"corpsD\">
-<img src=\"\\images\\properties\\piece_cercle.png\" alt=\"\" style=\"height= 300px; weidht:300px\"/>
-    <button name=\"button\" class=\"btn btn-primary\">Acheter </button>
-</div>
+            ";
+            // line 14
+            if ((twig_get_attribute($this->env, $this->source, (isset($context["question"]) || array_key_exists("question", $context) ? $context["question"] : (function () { throw new RuntimeError('Variable "question" does not exist.', 14, $this->source); })()), "type", [], "any", false, false, false, 14) == "O/N")) {
+                // line 15
+                echo "
+            ";
+            } else {
+                // line 17
+                echo "
+            ";
+            }
+            // line 19
+            echo "    ";
+        }
+        // line 20
+        echo "
 ";
         
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->leave($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof);
@@ -109,37 +135,31 @@ class __TwigTemplate_26b33a9920fdde4c5ab1bcb4e1affc0e extends Template
 
     public function getDebugInfo()
     {
-        return array (  68 => 4,  58 => 3,  35 => 1,);
+        return array (  116 => 20,  113 => 19,  109 => 17,  105 => 15,  103 => 14,  98 => 12,  95 => 11,  93 => 10,  90 => 9,  80 => 8,  69 => 5,  59 => 4,  36 => 2,);
     }
 
     public function getSourceContext()
     {
-        return new Source("{% extends 'base.html.twig' %}
+        return new Source("
+{% extends 'base.html.twig' %}
+
+{% block javascripts %}
+        
+{% endblock %}
 
 {% block body %}
-<div id=\"head\" style=\"padding-top:30px;\">
-<h1>Choisis ton cercle !</h1>
-</div>
 
-<div class=\"corpsG\">
-<img src=\"\\images\\properties\\cercle-style.png\" alt=\"\" style=\"height= 300px; weidht:300px\"/>
-    <button name=\"button\" class=\"btn btn-primary\">Acheter </button>
-</div>
-<div class=\"corpsD\">
-<img src=\"\\images\\properties\\roue.png\" alt=\"\" style=\"height= 300px; weidht:300px\"/>
-    <button name=\"button\" class=\"btn btn-primary\">Acheter </button>
-</div>
+    {% if app.user %}
+            
+            <td>{{ question.text }}</td>
 
+            {% if question.type == \"O/N\" %}
 
+            {% else %}
 
-<div class=\"corpsG\">
-<img src=\"\\images\\properties\\ballon.png\" alt=\"\" style=\"height= 300px; weidht:300px\"/>
-    <button name=\"button\" class=\"btn btn-primary\">Acheter</button>
-</div>
-<div class=\"corpsD\">
-<img src=\"\\images\\properties\\piece_cercle.png\" alt=\"\" style=\"height= 300px; weidht:300px\"/>
-    <button name=\"button\" class=\"btn btn-primary\">Acheter </button>
-</div>
+            {% endif %}
+    {% endif %}
+
 {% endblock %}", "shop/home.html.twig", "C:\\Users\\Lucas.DREMAUX\\Documents\\GitHub\\handappy\\templates\\shop\\home.html.twig");
     }
 }

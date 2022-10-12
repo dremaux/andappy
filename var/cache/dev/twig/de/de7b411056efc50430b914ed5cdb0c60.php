@@ -97,62 +97,67 @@ class __TwigTemplate_e8aa4d165802b2417b7e82f250827b48 extends Template
         echo "\" class=\"nav-link\"> Se connecter</a>
                         </li>
                     </ul>
-                    <ul  class=\"navbar-nav\">
-                        <li class=\"nav-item\">
-                            <a href=\"";
-        // line 38
-        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("register");
-        echo "\" class=\"nav-link\">S'inscrire</a>
-                        </li>
-                    </ul>
-                
+                    ";
+        // line 36
+        if (twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 36, $this->source); })()), "user", [], "any", false, false, false, 36)) {
+            // line 37
+            echo "                        ";
+            if ((twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 37, $this->source); })()), "user", [], "any", false, false, false, 37), "role", [], "any", false, false, false, 37) == "Admin")) {
+                // line 38
+                echo "                            <ul  class=\"navbar-nav\">
+                                <li class=\"nav-item\">
+                                    <a href=\"";
+                // line 40
+                echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("register");
+                echo "\" class=\"nav-link\">S'inscrire</a>
+                                </li>
+                            </ul>
+                        ";
+            }
+            // line 44
+            echo "                    ";
+        }
+        // line 45
+        echo "                
                 
                 ";
-        // line 43
-        if (twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 43, $this->source); })()), "user", [], "any", false, false, false, 43)) {
+        // line 47
+        if (twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 47, $this->source); })()), "user", [], "any", false, false, false, 47)) {
             echo "   
                      <ul  class=\"navbar-nav\">
                          <li class=\"nav-item\">
                              <a href=\"";
-            // line 46
+            // line 50
             echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("logout");
             echo "\" style=\"color:white; text-decoration: none;\"><img src=\"images\\properties\\deconnexion.png\" weidht=\"40\" height=\"40\"></a>
                          </li>
                      </ul>
                 ";
         }
-        // line 50
+        // line 54
         echo "                 </div>
              </div>
          </nav>
     
          ";
-        // line 54
+        // line 58
         $this->displayBlock('body', $context, $blocks);
-        // line 55
+        // line 59
         echo "        
         ";
-        // line 56
-        if (twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 56, $this->source); })()), "user", [], "any", false, false, false, 56)) {
-            // line 57
-            echo "            <script>
-                console.log('<?php echo \"toto\"; ?>');
-                var toto2 = '";
-            // line 59
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 59, $this->source); })()), "user", [], "any", false, false, false, 59), "lastPopupDate", [], "any", false, false, false, 59), "html", null, true);
-            echo "'
-                console.log(toto2);
-            
-            
-
-                ";
-            // line 65
-            echo "                ";
-            // line 67
-            echo "            </script>
-        ";
+        // line 60
+        if (twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 60, $this->source); })()), "user", [], "any", false, false, false, 60)) {
+            // line 61
+            echo "            ";
+            if ((twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 61, $this->source); })()), "request", [], "any", false, false, false, 61), "attributes", [], "any", false, false, false, 61), "get", [0 => "_route"], "method", false, false, false, 61) != "randomQuestion")) {
+                // line 62
+                echo "                ";
+                // line 103
+                echo "            ";
+            }
+            // line 104
+            echo "        ";
         }
-        // line 68
         echo " 
        
         
@@ -165,9 +170,9 @@ class __TwigTemplate_e8aa4d165802b2417b7e82f250827b48 extends Template
          </script>
  
          ";
-        // line 79
+        // line 115
         $this->displayBlock('javascripts', $context, $blocks);
-        // line 80
+        // line 116
         echo "    </body>
  </html>";
         
@@ -215,7 +220,7 @@ class __TwigTemplate_e8aa4d165802b2417b7e82f250827b48 extends Template
 
     }
 
-    // line 54
+    // line 58
     public function block_body($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -233,7 +238,7 @@ class __TwigTemplate_e8aa4d165802b2417b7e82f250827b48 extends Template
 
     }
 
-    // line 79
+    // line 115
     public function block_javascripts($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -263,7 +268,7 @@ class __TwigTemplate_e8aa4d165802b2417b7e82f250827b48 extends Template
 
     public function getDebugInfo()
     {
-        return array (  237 => 79,  219 => 54,  201 => 13,  182 => 7,  171 => 80,  169 => 79,  156 => 68,  152 => 67,  150 => 65,  142 => 59,  138 => 57,  136 => 56,  133 => 55,  131 => 54,  125 => 50,  118 => 46,  112 => 43,  104 => 38,  96 => 33,  87 => 27,  76 => 19,  69 => 14,  67 => 13,  60 => 9,  55 => 7,  47 => 1,);
+        return array (  242 => 115,  224 => 58,  206 => 13,  187 => 7,  176 => 116,  174 => 115,  159 => 104,  156 => 103,  154 => 62,  151 => 61,  149 => 60,  146 => 59,  144 => 58,  138 => 54,  131 => 50,  125 => 47,  121 => 45,  118 => 44,  111 => 40,  107 => 38,  104 => 37,  102 => 36,  96 => 33,  87 => 27,  76 => 19,  69 => 14,  67 => 13,  60 => 9,  55 => 7,  47 => 1,);
     }
 
     public function getSourceContext()
@@ -303,11 +308,15 @@ class __TwigTemplate_e8aa4d165802b2417b7e82f250827b48 extends Template
                             <a href=\"{{ path('login') }}\" class=\"nav-link\"> Se connecter</a>
                         </li>
                     </ul>
-                    <ul  class=\"navbar-nav\">
-                        <li class=\"nav-item\">
-                            <a href=\"{{ path('register') }}\" class=\"nav-link\">S'inscrire</a>
-                        </li>
-                    </ul>
+                    {% if app.user %}
+                        {% if app.user.role == \"Admin\" %}
+                            <ul  class=\"navbar-nav\">
+                                <li class=\"nav-item\">
+                                    <a href=\"{{ path('register') }}\" class=\"nav-link\">S'inscrire</a>
+                                </li>
+                            </ul>
+                        {% endif %}
+                    {% endif %}
                 
                 
                 {% if app.user %}   
@@ -324,17 +333,49 @@ class __TwigTemplate_e8aa4d165802b2417b7e82f250827b48 extends Template
          {% block body %}{% endblock %}
         
         {% if app.user %}
-            <script>
-                console.log('<?php echo \"toto\"; ?>');
-                var toto2 = '{{app.user.lastPopupDate}}'
-                console.log(toto2);
-            
-            
+            {% if app.request.attributes.get('_route') != \"randomQuestion\" %}
+                {# <script>
 
-                {# setTimeout(() => console.log(\"showing after one second\"), 2000) #}
-                {# setTimeout(() => window.open('https://www.google.com', \"Popup window\", 'width=600 height=300'), 4000)
-                setTimeout(() => window.open('https://github.com/', \"Popup window Testy\", 'width=600 height=300'), 6000) #}
-            </script>
+                    const popupWidth    = 600;
+                    const popupHeight   = 300;
+
+                    const maxQuestionPopupPerPage           = 2;
+                    const questionPopupMinimumRestartTime   = 100;   //secondes
+                    const questionPopupRandomTimeRange      = 3;    //secondes
+                    const questionPopupURL                  = \"http://localhost:8000/randomQuestion\";
+                    
+                    function generateQuestionPopupRandomTime() {
+                        var min = 0;
+                        var max = questionPopupRandomTimeRange;
+                        randomValue = Math.floor(Math.random() * (max - min + 1)) + min;
+                        return randomValue;
+                    };
+
+                    randomQuestionPopup = function(randomQuestionPopupTime){
+                        setTimeout(() => window.open(questionPopupURL, \"Popup window\", `width=\${popupWidth} height=\${popupHeight}`), randomQuestionPopupTime * 1000)
+                    };
+                    
+                    var lastPopupTimestamp = '{{app.user.lastPopupDate}}';
+                    var currentTimestamp = Math.floor(Date.now() / 1000);
+                    var randomQuestionPopupTime = 0;
+
+                    if ((lastPopupTimestamp - currentTimestamp + questionPopupMinimumRestartTime) < 0){
+                        randomQuestionPopupTime = generateQuestionPopupRandomTime();
+                    }else{
+                        randomQuestionPopupTime = generateQuestionPopupRandomTime() + (lastPopupTimestamp - currentTimestamp + questionPopupMinimumRestartTime);
+                    }
+
+                    iteration = 0;
+                    while (iteration < maxQuestionPopupPerPage){
+                        questionPopupTime = randomQuestionPopupTime + iteration * questionPopupMinimumRestartTime + generateQuestionPopupRandomTime();
+                        console.log(iteration, questionPopupTime);
+                        randomQuestionPopup(questionPopupTime);
+                        iteration = iteration + 1;
+                    }
+                    
+                    
+                </script> #}
+            {% endif %}
         {% endif %} 
        
         

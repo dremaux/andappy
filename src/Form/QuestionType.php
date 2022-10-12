@@ -16,7 +16,6 @@ class QuestionType extends AbstractType
             ->add('type', ChoiceType::class, ['choices' => $this->getChoices()], [
                 'label' => 'Oui / Non'
             ])
-
             ->add('text')
         ;
     }

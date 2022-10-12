@@ -76,11 +76,11 @@ class AdminQuestionController extends AbstractController
         ]);
     }
 
-    /**
+    /*
      * @Route("admin/option/delete/{id}", name="admin.option.delete")
      * @param Option $option
      * @return \Symfony\Component\HttpFoudattion\RedirectResponse
-     */
+     
     public function delete(Option $option, Request $request)
     {    
         if ($this->isCsrfTokenValid('delete' . $option->getId(), $request->get('_token')))
@@ -90,6 +90,22 @@ class AdminQuestionController extends AbstractController
             $this->addFlash('success', 'suppression de votre bien');
         }
         return $this->redirectToRoute('admin.option.index');
+    }*/
+
+    /**
+     * @Route("admin/question/delete/{id}", name="admin.question.delete")
+     * @param Option $option
+     * @return \Symfony\Component\HttpFoudattion\RedirectResponse
+     */
+    public function delete(Question $question, Request $request)
+    {    
+        if ($this->isCsrfTokenValid('delete' . $question->getId(), $request->get('_token')))
+        {
+            $this->em->remove($question);
+            $this->em->flush();
+            $this->addFlash('success', 'suppression de votre bien');
+        }
+        return $this->redirectToRoute('admin.question.index');
     }
 
     #[Route('/choix', name: 'admin.question.choix', methods: ['GET'])]

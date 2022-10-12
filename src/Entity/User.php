@@ -44,18 +44,19 @@ class User extends AbstractController implements UserInterface, \Serializable
     private $role="User";
 
     /**
-     * @ORM\OneToMany(targetEntity=Response::class, mappedBy="id_user")
-     */
-    private $responses;
-
-    /**
      * @ORM\Column(type="integer", nullable=true)
      */
     private $lastPopupDate;
 
+    /**
+     * @ORM\Column(type="integer", nullable=true)
+     */
+    private $connectionDate;
+
     public function __construct()
     {
         $this->responses = new ArrayCollection();
+        $this->reponses = new ArrayCollection();
     }
 
 
@@ -156,36 +157,6 @@ class User extends AbstractController implements UserInterface, \Serializable
         return $this;
     }
 
-    /**
-     * @return Collection<int, Response>
-     */
-    public function getResponses(): Collection
-    {
-        return $this->responses;
-    }
-
-    public function addResponse(Response $response): self
-    {
-        if (!$this->responses->contains($response)) {
-            $this->responses[] = $response;
-            $response->setIdUser($this);
-        }
-
-        return $this;
-    }
-
-    public function removeResponse(Response $response): self
-    {
-        if ($this->responses->removeElement($response)) {
-            // set the owning side to null (unless already changed)
-            if ($response->getIdUser() === $this) {
-                $response->setIdUser(null);
-            }
-        }
-
-        return $this;
-    }
-
     public function getLastPopupDate(): ?int
     {
         return $this->lastPopupDate;
@@ -194,6 +165,18 @@ class User extends AbstractController implements UserInterface, \Serializable
     public function setLastPopupDate(?int $lastPopupDate): self
     {
         $this->lastPopupDate = $lastPopupDate;
+
+        return $this;
+    }
+
+    public function getConnectionDate(): ?int
+    {
+        return $this->connectionDate;
+    }
+
+    public function setConnectionDate(?int $connectionDate): self
+    {
+        $this->connectionDate = $connectionDate;
 
         return $this;
     }

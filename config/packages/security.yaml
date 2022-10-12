@@ -20,7 +20,7 @@ security:
                 check_path: login
             
     access_control:
-        - { path: ^/shop, roles: ROLE_ADMIN }
+        - { path: ^/randomQuestion, roles: ROLE_ADMIN }
         # - { path: ^/profile, roles: ROLE_USER }
         
     encoders: # plaintext

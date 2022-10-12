@@ -14,7 +14,8 @@ class QuestionLibreType extends AbstractType
     {
         $builder
             ->add('text')
-            
+            ->add('type', null, ['data' => 'Libre'])
+            ->add('possible_response', null, ['data' => []] )
         ;
     }
 
